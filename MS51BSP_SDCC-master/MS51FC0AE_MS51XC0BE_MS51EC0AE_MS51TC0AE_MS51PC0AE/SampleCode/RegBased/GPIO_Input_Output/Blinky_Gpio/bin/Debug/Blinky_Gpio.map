@@ -1,0 +1,2444 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_CABS                          
+C:   00000000  l_CONST                         
+C:   00000000  l_GSINIT                        
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l_XINIT                         
+C:   00000000  l_XISEG                         
+C:   00000000  l_XSEG                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_HOME                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  l_BSEG                          
+C:   00000001  l_BSEG_BYTES                    
+C:   00000001  s_PSEG                          
+C:   00000001  s_XISEG                         
+C:   00000001  s_XSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000003  l_GSINIT0                       
+C:   00000004  l_OSEG                          
+C:   00000006  l_HOME                          
+C:   00000006  s_GSINIT0                       
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000009  s_GSINIT1                       
+C:   00000009  s_GSINIT2                       
+C:   0000000A  l_GSINIT2                       
+C:   00000010  s_REG_BANK_2                    
+C:   00000013  s_GSINIT3                       
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_REG_BANK_3                    
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000022  l_GSINIT3                       
+C:   00000024  s_OSEG                          
+C:   00000028  s_SSEG                          
+C:   0000002A  l_GSINIT4                       
+C:   00000035  s_GSINIT4                       
+C:   0000005F  s_GSFINAL                       
+C:   0000005F  s_GSINIT                        
+C:   0000005F  s_GSINIT5                       
+C:   00000062  s_CSEG                          
+C:   0000007F  l_DSEG                          
+C:   000000D8  l_SSEG                          
+C:   00000100  l_IRAM                          
+C:   000008A4  l_CSEG                          
+C:   00000906  s_CONST                         
+C:   00000906  s_XINIT                         
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _startup
+     00000080  G$MOSI$0_0$0                       GPIO
+     00000080  G$P0$0_0$0                         GPIO
+     00000080  G$P00$0_0$0                        GPIO
+     00000080  _MOSI                              GPIO
+     00000080  _P0                                GPIO
+     00000080  _P00                               GPIO
+     00000081  G$MISO$0_0$0                       GPIO
+     00000081  G$P01$0_0$0                        GPIO
+     00000081  G$SP$0_0$0                         GPIO
+     00000081  _MISO                              GPIO
+     00000081  _P01                               GPIO
+     00000081  _SP                                GPIO
+     00000082  G$DPL$0_0$0                        GPIO
+     00000082  G$P02$0_0$0                        GPIO
+     00000082  G$RXD_1$0_0$0                      GPIO
+     00000082  _DPL                               GPIO
+     00000082  _P02                               GPIO
+     00000082  _RXD_1                             GPIO
+     00000083  G$DPH$0_0$0                        GPIO
+     00000083  G$P03$0_0$0                        GPIO
+     00000083  _DPH                               GPIO
+     00000083  _P03                               GPIO
+     00000084  G$ADCBAL$0_0$0                     GPIO
+     00000084  G$P04$0_0$0                        GPIO
+     00000084  G$RCTRIM0$0_0$0                    GPIO
+     00000084  G$STADC$0_0$0                      GPIO
+     00000084  _ADCBAL                            GPIO
+     00000084  _P04                               GPIO
+     00000084  _RCTRIM0                           GPIO
+     00000084  _STADC                             GPIO
+     00000085  G$ADCBAH$0_0$0                     GPIO
+     00000085  G$P05$0_0$0                        GPIO
+     00000085  G$RCTRIM1$0_0$0                    GPIO
+     00000085  _ADCBAH                            GPIO
+     00000085  _P05                               GPIO
+     00000085  _RCTRIM1                           GPIO
+     00000086  G$ADCCON3$0_0$0                    GPIO
+     00000086  G$P06$0_0$0                        GPIO
+     00000086  G$RWKL$0_0$0                       GPIO
+     00000086  G$TXD$0_0$0                        GPIO
+     00000086  _ADCCON3                           GPIO
+     00000086  _P06                               GPIO
+     00000086  _RWKL                              GPIO
+     00000086  _TXD                               GPIO
+     00000087  G$P07$0_0$0                        GPIO
+     00000087  G$PCON$0_0$0                       GPIO
+     00000087  G$RXD$0_0$0                        GPIO
+     00000087  _P07                               GPIO
+     00000087  _PCON                              GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000087  _RXD                               GPIO
+     00000088  G$IT0$0_0$0                        GPIO
+     00000088  G$TCON$0_0$0                       GPIO
+     00000088  _IT0                               GPIO
+     00000088  _TCON                              GPIO
+     00000089  G$IE0$0_0$0                        GPIO
+     00000089  G$P2M1$0_0$0                       GPIO
+     00000089  G$TMOD$0_0$0                       GPIO
+     00000089  _IE0                               GPIO
+     00000089  _P2M1                              GPIO
+     00000089  _TMOD                              GPIO
+     0000008A  G$IT1$0_0$0                        GPIO
+     0000008A  G$P2M2$0_0$0                       GPIO
+     0000008A  G$TL0$0_0$0                        GPIO
+     0000008A  _IT1                               GPIO
+     0000008A  _P2M2                              GPIO
+     0000008A  _TL0                               GPIO
+     0000008B  G$IE1$0_0$0                        GPIO
+     0000008B  G$P2SR$0_0$0                       GPIO
+     0000008B  G$TL1$0_0$0                        GPIO
+     0000008B  _IE1                               GPIO
+     0000008B  _P2SR                              GPIO
+     0000008B  _TL1                               GPIO
+     0000008C  G$P2S$0_0$0                        GPIO
+     0000008C  G$TH0$0_0$0                        GPIO
+     0000008C  G$TR0$0_0$0                        GPIO
+     0000008C  _P2S                               GPIO
+     0000008C  _TH0                               GPIO
+     0000008C  _TR0                               GPIO
+     0000008D  G$ADCSN$0_0$0                      GPIO
+     0000008D  G$TF0$0_0$0                        GPIO
+     0000008D  G$TH1$0_0$0                        GPIO
+     0000008D  _ADCSN                             GPIO
+     0000008D  _TF0                               GPIO
+     0000008D  _TH1                               GPIO
+     0000008E  G$ADCCN$0_0$0                      GPIO
+     0000008E  G$CKCON$0_0$0                      GPIO
+     0000008E  G$TR1$0_0$0                        GPIO
+     0000008E  _ADCCN                             GPIO
+     0000008E  _CKCON                             GPIO
+     0000008E  _TR1                               GPIO
+     0000008F  G$ADCSR$0_0$0                      GPIO
+     0000008F  G$TF1$0_0$0                        GPIO
+     0000008F  G$WKCON$0_0$0                      GPIO
+     0000008F  _ADCSR                             GPIO
+     0000008F  _TF1                               GPIO
+     0000008F  _WKCON                             GPIO
+     00000090  G$P1$0_0$0                         GPIO
+     00000090  G$P10$0_0$0                        GPIO
+     00000090  _P1                                GPIO
+     00000090  _P10                               GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000091  G$P11$0_0$0                        GPIO
+     00000091  G$SFRS$0_0$0                       GPIO
+     00000091  _P11                               GPIO
+     00000091  _SFRS                              GPIO
+     00000092  G$CAPCON0$0_0$0                    GPIO
+     00000092  G$P0UP$0_0$0                       GPIO
+     00000092  G$P12$0_0$0                        GPIO
+     00000092  _CAPCON0                           GPIO
+     00000092  _P0UP                              GPIO
+     00000092  _P12                               GPIO
+     00000093  G$CAPCON1$0_0$0                    GPIO
+     00000093  G$P13$0_0$0                        GPIO
+     00000093  G$P1UP$0_0$0                       GPIO
+     00000093  G$SCL$0_0$0                        GPIO
+     00000093  _CAPCON1                           GPIO
+     00000093  _P13                               GPIO
+     00000093  _P1UP                              GPIO
+     00000093  _SCL                               GPIO
+     00000094  G$CAPCON2$0_0$0                    GPIO
+     00000094  G$P14$0_0$0                        GPIO
+     00000094  G$P2UP$0_0$0                       GPIO
+     00000094  G$SDA$0_0$0                        GPIO
+     00000094  _CAPCON2                           GPIO
+     00000094  _P14                               GPIO
+     00000094  _P2UP                              GPIO
+     00000094  _SDA                               GPIO
+     00000095  G$CKDIV$0_0$0                      GPIO
+     00000095  G$P15$0_0$0                        GPIO
+     00000095  G$P3UP$0_0$0                       GPIO
+     00000095  _CKDIV                             GPIO
+     00000095  _P15                               GPIO
+     00000095  _P3UP                              GPIO
+     00000096  G$CKSWT$0_0$0                      GPIO
+     00000096  G$P16$0_0$0                        GPIO
+     00000096  G$TXD_1$0_0$0                      GPIO
+     00000096  _CKSWT                             GPIO
+     00000096  _P16                               GPIO
+     00000096  _TXD_1                             GPIO
+     00000097  G$CKEN$0_0$0                       GPIO
+     00000097  G$P17$0_0$0                        GPIO
+     00000097  G$RWKH$0_0$0                       GPIO
+     00000097  _CKEN                              GPIO
+     00000097  _P17                               GPIO
+     00000097  _RWKH                              GPIO
+     00000098  G$RI$0_0$0                         GPIO
+     00000098  G$SCON$0_0$0                       GPIO
+     00000098  _RI                                GPIO
+     00000098  _SCON                              GPIO
+     00000099  G$AINDIDS1$0_0$0                   GPIO
+     00000099  G$SBUF$0_0$0                       GPIO
+     00000099  G$TI$0_0$0                         GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000099  _AINDIDS1                          GPIO
+     00000099  _SBUF                              GPIO
+     00000099  _TI                                GPIO
+     0000009A  G$P0DW$0_0$0                       GPIO
+     0000009A  G$RB8$0_0$0                        GPIO
+     0000009A  G$SBUF_1$0_0$0                     GPIO
+     0000009A  _P0DW                              GPIO
+     0000009A  _RB8                               GPIO
+     0000009A  _SBUF_1                            GPIO
+     0000009B  G$EIE$0_0$0                        GPIO
+     0000009B  G$P1DW$0_0$0                       GPIO
+     0000009B  G$TB8$0_0$0                        GPIO
+     0000009B  _EIE                               GPIO
+     0000009B  _P1DW                              GPIO
+     0000009B  _TB8                               GPIO
+     0000009C  G$EIE1$0_0$0                       GPIO
+     0000009C  G$P2DW$0_0$0                       GPIO
+     0000009C  G$REN$0_0$0                        GPIO
+     0000009C  _EIE1                              GPIO
+     0000009C  _P2DW                              GPIO
+     0000009C  _REN                               GPIO
+     0000009D  G$P3DW$0_0$0                       GPIO
+     0000009D  G$SM2$0_0$0                        GPIO
+     0000009D  _P3DW                              GPIO
+     0000009D  _SM2                               GPIO
+     0000009E  G$SM1$0_0$0                        GPIO
+     0000009E  _SM1                               GPIO
+     0000009F  G$CHPCON$0_0$0                     GPIO
+     0000009F  G$FE$0_0$0                         GPIO
+     0000009F  G$SM0$0_0$0                        GPIO
+     0000009F  _CHPCON                            GPIO
+     0000009F  _FE                                GPIO
+     0000009F  _SM0                               GPIO
+     000000A0  G$P2$0_0$0                         GPIO
+     000000A0  G$P20$0_0$0                        GPIO
+     000000A0  _P2                                GPIO
+     000000A0  _P20                               GPIO
+     000000A0  __XPAGE                            
+     000000A1  G$AUXR2$0_0$0                      GPIO
+     000000A1  _AUXR2                             GPIO
+     000000A2  G$AUXR1$0_0$0                      GPIO
+     000000A2  G$AUXR3$0_0$0                      GPIO
+     000000A2  _AUXR1                             GPIO
+     000000A2  _AUXR3                             GPIO
+     000000A3  G$AUXR4$0_0$0                      GPIO
+     000000A3  G$BODCON0$0_0$0                    GPIO
+     000000A3  _AUXR4                             GPIO
+     000000A3  _BODCON0                           GPIO
+     000000A4  G$AUXR5$0_0$0                      GPIO
+     000000A4  G$IAPTRG$0_0$0                     GPIO
+     000000A4  _AUXR5                             GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000A4  _IAPTRG                            GPIO
+     000000A5  G$AUXR6$0_0$0                      GPIO
+     000000A5  G$IAPUEN$0_0$0                     GPIO
+     000000A5  _AUXR6                             GPIO
+     000000A5  _IAPUEN                            GPIO
+     000000A6  G$AUXR7$0_0$0                      GPIO
+     000000A6  G$IAPAL$0_0$0                      GPIO
+     000000A6  _AUXR7                             GPIO
+     000000A6  _IAPAL                             GPIO
+     000000A7  G$AUXR8$0_0$0                      GPIO
+     000000A7  G$IAPAH$0_0$0                      GPIO
+     000000A7  _AUXR8                             GPIO
+     000000A7  _IAPAH                             GPIO
+     000000A8  G$EX0$0_0$0                        GPIO
+     000000A8  G$IE$0_0$0                         GPIO
+     000000A8  _EX0                               GPIO
+     000000A8  _IE                                GPIO
+     000000A9  G$ET0$0_0$0                        GPIO
+     000000A9  G$PWM1PH$0_0$0                     GPIO
+     000000A9  G$SADDR$0_0$0                      GPIO
+     000000A9  _ET0                               GPIO
+     000000A9  _PWM1PH                            GPIO
+     000000A9  _SADDR                             GPIO
+     000000AA  G$EX1$0_0$0                        GPIO
+     000000AA  G$PWM1C0H$0_0$0                    GPIO
+     000000AA  G$WDCON$0_0$0                      GPIO
+     000000AA  _EX1                               GPIO
+     000000AA  _PWM1C0H                           GPIO
+     000000AA  _WDCON                             GPIO
+     000000AB  G$BODCON1$0_0$0                    GPIO
+     000000AB  G$ET1$0_0$0                        GPIO
+     000000AB  G$PWM1C1H$0_0$0                    GPIO
+     000000AB  _BODCON1                           GPIO
+     000000AB  _ET1                               GPIO
+     000000AB  _PWM1C1H                           GPIO
+     000000AC  G$ES$0_0$0                         GPIO
+     000000AC  G$P3M1$0_0$0                       GPIO
+     000000AC  G$P3S$0_0$0                        GPIO
+     000000AC  G$PWM1MD$0_0$0                     GPIO
+     000000AC  _ES                                GPIO
+     000000AC  _P3M1                              GPIO
+     000000AC  _P3S                               GPIO
+     000000AC  _PWM1MD                            GPIO
+     000000AD  G$EBOD$0_0$0                       GPIO
+     000000AD  G$P3M2$0_0$0                       GPIO
+     000000AD  G$P3SR$0_0$0                       GPIO
+     000000AD  G$PWM1MEN$0_0$0                    GPIO
+     000000AD  _EBOD                              GPIO
+     000000AD  _P3M2                              GPIO
+     000000AD  _P3SR                              GPIO
+     000000AD  _PWM1MEN                           GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000AE  G$EADC$0_0$0                       GPIO
+     000000AE  G$IAPFD$0_0$0                      GPIO
+     000000AE  _EADC                              GPIO
+     000000AE  _IAPFD                             GPIO
+     000000AF  G$EA$0_0$0                         GPIO
+     000000AF  G$IAPCN$0_0$0                      GPIO
+     000000AF  _EA                                GPIO
+     000000AF  _IAPCN                             GPIO
+     000000B0  G$P3$0_0$0                         GPIO
+     000000B0  G$P30$0_0$0                        GPIO
+     000000B0  _P3                                GPIO
+     000000B0  _P30                               GPIO
+     000000B1  G$P0M1$0_0$0                       GPIO
+     000000B1  G$P0S$0_0$0                        GPIO
+     000000B1  G$P31$0_0$0                        GPIO
+     000000B1  G$PWM1PL$0_0$0                     GPIO
+     000000B1  _P0M1                              GPIO
+     000000B1  _P0S                               GPIO
+     000000B1  _P31                               GPIO
+     000000B1  _PWM1PL                            GPIO
+     000000B2  G$P0M2$0_0$0                       GPIO
+     000000B2  G$P0SR$0_0$0                       GPIO
+     000000B2  G$P32$0_0$0                        GPIO
+     000000B2  G$PWM1C0L$0_0$0                    GPIO
+     000000B2  _P0M2                              GPIO
+     000000B2  _P0SR                              GPIO
+     000000B2  _P32                               GPIO
+     000000B2  _PWM1C0L                           GPIO
+     000000B3  G$P1M1$0_0$0                       GPIO
+     000000B3  G$P1S$0_0$0                        GPIO
+     000000B3  G$P33$0_0$0                        GPIO
+     000000B3  G$PWM1C1L$0_0$0                    GPIO
+     000000B3  _P1M1                              GPIO
+     000000B3  _P1S                               GPIO
+     000000B3  _P33                               GPIO
+     000000B3  _PWM1C1L                           GPIO
+     000000B4  G$P1M2$0_0$0                       GPIO
+     000000B4  G$P1SR$0_0$0                       GPIO
+     000000B4  G$P34$0_0$0                        GPIO
+     000000B4  G$PWM1CON0$0_0$0                   GPIO
+     000000B4  _P1M2                              GPIO
+     000000B4  _P1SR                              GPIO
+     000000B4  _P34                               GPIO
+     000000B4  _PWM1CON0                          GPIO
+     000000B5  G$P35$0_0$0                        GPIO
+     000000B5  G$PWM1CON1$0_0$0                   GPIO
+     000000B5  G$TOE$0_0$0                        GPIO
+     000000B5  _P35                               GPIO
+     000000B5  _PWM1CON1                          GPIO
+     000000B5  _TOE                               GPIO
+     000000B6  G$P36$0_0$0                        GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000B6  G$PWM1INTC$0_0$0                   GPIO
+     000000B6  _P36                               GPIO
+     000000B6  _PWM1INTC                          GPIO
+     000000B7  G$IPH$0_0$0                        GPIO
+     000000B7  G$P37$0_0$0                        GPIO
+     000000B7  G$PIOCON2$0_0$0                    GPIO
+     000000B7  G$PWM0INTC$0_0$0                   GPIO
+     000000B7  _IPH                               GPIO
+     000000B7  _P37                               GPIO
+     000000B7  _PIOCON2                           GPIO
+     000000B7  _PWM0INTC                          GPIO
+     000000B8  G$IP$0_0$0                         GPIO
+     000000B8  G$PX0$0_0$0                        GPIO
+     000000B8  _IP                                GPIO
+     000000B8  _PX0                               GPIO
+     000000B9  G$PT0$0_0$0                        GPIO
+     000000B9  G$PWM2PH$0_0$0                     GPIO
+     000000B9  G$SADEN$0_0$0                      GPIO
+     000000B9  _PT0                               GPIO
+     000000B9  _PWM2PH                            GPIO
+     000000B9  _SADEN                             GPIO
+     000000BA  G$PWM2C0H$0_0$0                    GPIO
+     000000BA  G$PX1$0_0$0                        GPIO
+     000000BA  G$SADEN_1$0_0$0                    GPIO
+     000000BA  _PWM2C0H                           GPIO
+     000000BA  _PX1                               GPIO
+     000000BA  _SADEN_1                           GPIO
+     000000BB  G$PT1$0_0$0                        GPIO
+     000000BB  G$PWM2C1H$0_0$0                    GPIO
+     000000BB  G$SADDR_1$0_0$0                    GPIO
+     000000BB  _PT1                               GPIO
+     000000BB  _PWM2C1H                           GPIO
+     000000BB  _SADDR_1                           GPIO
+     000000BC  G$I2DAT$0_0$0                      GPIO
+     000000BC  G$PS$0_0$0                         GPIO
+     000000BC  G$PWM2MD$0_0$0                     GPIO
+     000000BC  _I2DAT                             GPIO
+     000000BC  _PS                                GPIO
+     000000BC  _PWM2MD                            GPIO
+     000000BD  G$I2STAT$0_0$0                     GPIO
+     000000BD  G$PBOD$0_0$0                       GPIO
+     000000BD  G$PWM2MEN$0_0$0                    GPIO
+     000000BD  _I2STAT                            GPIO
+     000000BD  _PBOD                              GPIO
+     000000BD  _PWM2MEN                           GPIO
+     000000BE  G$I2CLK$0_0$0                      GPIO
+     000000BE  G$PADC$0_0$0                       GPIO
+     000000BE  _I2CLK                             GPIO
+     000000BE  _PADC                              GPIO
+     000000BF  G$I2TOC$0_0$0                      GPIO
+     000000BF  _I2TOC                             GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000C0  G$I2CON$0_0$0                      GPIO
+     000000C0  G$I2CPX$0_0$0                      GPIO
+     000000C0  _I2CON                             GPIO
+     000000C0  _I2CPX                             GPIO
+     000000C1  G$I2ADDR$0_0$0                     GPIO
+     000000C1  G$PWM2PL$0_0$0                     GPIO
+     000000C1  _I2ADDR                            GPIO
+     000000C1  _PWM2PL                            GPIO
+     000000C2  G$AA$0_0$0                         GPIO
+     000000C2  G$ADCRL$0_0$0                      GPIO
+     000000C2  G$PWM2C0L$0_0$0                    GPIO
+     000000C2  _AA                                GPIO
+     000000C2  _ADCRL                             GPIO
+     000000C2  _PWM2C0L                           GPIO
+     000000C3  G$ADCRH$0_0$0                      GPIO
+     000000C3  G$PWM2C1L$0_0$0                    GPIO
+     000000C3  G$SI$0_0$0                         GPIO
+     000000C3  _ADCRH                             GPIO
+     000000C3  _PWM2C1L                           GPIO
+     000000C3  _SI                                GPIO
+     000000C4  G$PWM0C4H$0_0$0                    GPIO
+     000000C4  G$PWM2CON0$0_0$0                   GPIO
+     000000C4  G$STO$0_0$0                        GPIO
+     000000C4  G$T3CON$0_0$0                      GPIO
+     000000C4  _PWM0C4H                           GPIO
+     000000C4  _PWM2CON0                          GPIO
+     000000C4  _STO                               GPIO
+     000000C4  _T3CON                             GPIO
+     000000C5  G$PWM0C5H$0_0$0                    GPIO
+     000000C5  G$PWM2CON1$0_0$0                   GPIO
+     000000C5  G$RL3$0_0$0                        GPIO
+     000000C5  G$STA$0_0$0                        GPIO
+     000000C5  _PWM0C5H                           GPIO
+     000000C5  _PWM2CON1                          GPIO
+     000000C5  _RL3                               GPIO
+     000000C5  _STA                               GPIO
+     000000C6  G$I2CEN$0_0$0                      GPIO
+     000000C6  G$PIOCON1$0_0$0                    GPIO
+     000000C6  G$PWM2INTC$0_0$0                   GPIO
+     000000C6  G$RH3$0_0$0                        GPIO
+     000000C6  _I2CEN                             GPIO
+     000000C6  _PIOCON1                           GPIO
+     000000C6  _PWM2INTC                          GPIO
+     000000C6  _RH3                               GPIO
+     000000C7  G$TA$0_0$0                         GPIO
+     000000C7  _TA                                GPIO
+     000000C8  G$CM_RL2$0_0$0                     GPIO
+     000000C8  G$T2CON$0_0$0                      GPIO
+     000000C8  _CM_RL2                            GPIO
+     000000C8  _T2CON                             GPIO
+     000000C9  G$PWM3PH$0_0$0                     GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000C9  G$T2MOD$0_0$0                      GPIO
+     000000C9  _PWM3PH                            GPIO
+     000000C9  _T2MOD                             GPIO
+     000000CA  G$PWM3C0H$0_0$0                    GPIO
+     000000CA  G$RCMP2L$0_0$0                     GPIO
+     000000CA  G$TR2$0_0$0                        GPIO
+     000000CA  _PWM3C0H                           GPIO
+     000000CA  _RCMP2L                            GPIO
+     000000CA  _TR2                               GPIO
+     000000CB  G$PWM3C1H$0_0$0                    GPIO
+     000000CB  G$RCMP2H$0_0$0                     GPIO
+     000000CB  _PWM3C1H                           GPIO
+     000000CB  _RCMP2H                            GPIO
+     000000CC  G$PWM0C4L$0_0$0                    GPIO
+     000000CC  G$PWM3MD$0_0$0                     GPIO
+     000000CC  G$TL2$0_0$0                        GPIO
+     000000CC  _PWM0C4L                           GPIO
+     000000CC  _PWM3MD                            GPIO
+     000000CC  _TL2                               GPIO
+     000000CD  G$PWM0C5L$0_0$0                    GPIO
+     000000CD  G$PWM3MEN$0_0$0                    GPIO
+     000000CD  G$TH2$0_0$0                        GPIO
+     000000CD  _PWM0C5L                           GPIO
+     000000CD  _PWM3MEN                           GPIO
+     000000CD  _TH2                               GPIO
+     000000CE  G$ADCMPL$0_0$0                     GPIO
+     000000CE  G$EIP2$0_0$0                       GPIO
+     000000CE  _ADCMPL                            GPIO
+     000000CE  _EIP2                              GPIO
+     000000CF  G$ADCMPH$0_0$0                     GPIO
+     000000CF  G$EIPH2$0_0$0                      GPIO
+     000000CF  G$TF2$0_0$0                        GPIO
+     000000CF  _ADCMPH                            GPIO
+     000000CF  _EIPH2                             GPIO
+     000000CF  _TF2                               GPIO
+     000000D0  G$P$0_0$0                          GPIO
+     000000D0  G$PSW$0_0$0                        GPIO
+     000000D0  _P                                 GPIO
+     000000D0  _PSW                               GPIO
+     000000D1  G$PWM0PH$0_0$0                     GPIO
+     000000D1  G$PWM3PL$0_0$0                     GPIO
+     000000D1  _PWM0PH                            GPIO
+     000000D1  _PWM3PL                            GPIO
+     000000D2  G$OV$0_0$0                         GPIO
+     000000D2  G$PWM0C0H$0_0$0                    GPIO
+     000000D2  G$PWM3C0L$0_0$0                    GPIO
+     000000D2  _OV                                GPIO
+     000000D2  _PWM0C0H                           GPIO
+     000000D2  _PWM3C0L                           GPIO
+     000000D3  G$PWM0C1H$0_0$0                    GPIO
+     000000D3  G$PWM3C1L$0_0$0                    GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000D3  G$RS0$0_0$0                        GPIO
+     000000D3  _PWM0C1H                           GPIO
+     000000D3  _PWM3C1L                           GPIO
+     000000D3  _RS0                               GPIO
+     000000D4  G$PWM0C2H$0_0$0                    GPIO
+     000000D4  G$PWM3CON0$0_0$0                   GPIO
+     000000D4  G$RS1$0_0$0                        GPIO
+     000000D4  _PWM0C2H                           GPIO
+     000000D4  _PWM3CON0                          GPIO
+     000000D4  _RS1                               GPIO
+     000000D5  G$F0$0_0$0                         GPIO
+     000000D5  G$PWM0C3H$0_0$0                    GPIO
+     000000D5  G$PWM3CON1$0_0$0                   GPIO
+     000000D5  _F0                                GPIO
+     000000D5  _PWM0C3H                           GPIO
+     000000D5  _PWM3CON1                          GPIO
+     000000D6  G$AC$0_0$0                         GPIO
+     000000D6  G$PNP$0_0$0                        GPIO
+     000000D6  G$PWM3INTC$0_0$0                   GPIO
+     000000D6  _AC                                GPIO
+     000000D6  _PNP                               GPIO
+     000000D6  _PWM3INTC                          GPIO
+     000000D7  G$CY$0_0$0                         GPIO
+     000000D7  G$PWM0FBD$0_0$0                    GPIO
+     000000D7  G$XTLCON$0_0$0                     GPIO
+     000000D7  _CY                                GPIO
+     000000D7  _PWM0FBD                           GPIO
+     000000D7  _XTLCON                            GPIO
+     000000D8  G$PWM0CON0$0_0$0                   GPIO
+     000000D8  _PWM0CON0                          GPIO
+     000000D9  G$PWM0PL$0_0$0                     GPIO
+     000000D9  G$SC0DR$0_0$0                      GPIO
+     000000D9  _PWM0PL                            GPIO
+     000000D9  _SC0DR                             GPIO
+     000000DA  G$PWM0C0L$0_0$0                    GPIO
+     000000DA  G$SC0EGT$0_0$0                     GPIO
+     000000DA  _PWM0C0L                           GPIO
+     000000DA  _SC0EGT                            GPIO
+     000000DB  G$PWM0C1L$0_0$0                    GPIO
+     000000DB  G$SC0ETURD0$0_0$0                  GPIO
+     000000DB  _PWM0C1L                           GPIO
+     000000DB  _SC0ETURD0                         GPIO
+     000000DC  G$CLRPWM$0_0$0                     GPIO
+     000000DC  G$PWM0C2L$0_0$0                    GPIO
+     000000DC  G$SC0ETURD1$0_0$0                  GPIO
+     000000DC  _CLRPWM                            GPIO
+     000000DC  _PWM0C2L                           GPIO
+     000000DC  _SC0ETURD1                         GPIO
+     000000DD  G$PWM0C3L$0_0$0                    GPIO
+     000000DD  G$PWMF$0_0$0                       GPIO
+     000000DD  G$SC0IE$0_0$0                      GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000DD  _PWM0C3L                           GPIO
+     000000DD  _PWMF                              GPIO
+     000000DD  _SC0IE                             GPIO
+     000000DE  G$LOAD$0_0$0                       GPIO
+     000000DE  G$PIOCON0$0_0$0                    GPIO
+     000000DE  G$SC0IS$0_0$0                      GPIO
+     000000DE  _LOAD                              GPIO
+     000000DE  _PIOCON0                           GPIO
+     000000DE  _SC0IS                             GPIO
+     000000DF  G$PWM0CON1$0_0$0                   GPIO
+     000000DF  G$PWMRUN$0_0$0                     GPIO
+     000000DF  G$SC0TSR$0_0$0                     GPIO
+     000000DF  _PWM0CON1                          GPIO
+     000000DF  _PWMRUN                            GPIO
+     000000DF  _SC0TSR                            GPIO
+     000000E0  G$ACC$0_0$0                        GPIO
+     000000E0  _ACC                               GPIO
+     000000E1  G$ADCCON1$0_0$0                    GPIO
+     000000E1  G$SC1DR$0_0$0                      GPIO
+     000000E1  _ADCCON1                           GPIO
+     000000E1  _SC1DR                             GPIO
+     000000E2  G$ADCCON2$0_0$0                    GPIO
+     000000E2  G$SC1EGT$0_0$0                     GPIO
+     000000E2  _ADCCON2                           GPIO
+     000000E2  _SC1EGT                            GPIO
+     000000E3  G$ADCDLY$0_0$0                     GPIO
+     000000E3  G$SC1ETURD0$0_0$0                  GPIO
+     000000E3  _ADCDLY                            GPIO
+     000000E3  _SC1ETURD0                         GPIO
+     000000E4  G$C0L$0_0$0                        GPIO
+     000000E4  G$SC1ETURD1$0_0$0                  GPIO
+     000000E4  _C0L                               GPIO
+     000000E4  _SC1ETURD1                         GPIO
+     000000E5  G$C0H$0_0$0                        GPIO
+     000000E5  G$SC1IE$0_0$0                      GPIO
+     000000E5  _C0H                               GPIO
+     000000E5  _SC1IE                             GPIO
+     000000E6  G$C1L$0_0$0                        GPIO
+     000000E6  G$SC1IS$0_0$0                      GPIO
+     000000E6  _C1L                               GPIO
+     000000E6  _SC1IS                             GPIO
+     000000E7  G$C1H$0_0$0                        GPIO
+     000000E7  G$SC1TSR$0_0$0                     GPIO
+     000000E7  _C1H                               GPIO
+     000000E7  _SC1TSR                            GPIO
+     000000E8  G$ADCCON0$0_0$0                    GPIO
+     000000E8  G$ADCHS0$0_0$0                     GPIO
+     000000E8  _ADCCON0                           GPIO
+     000000E8  _ADCHS0                            GPIO
+     000000E9  G$ADCHS1$0_0$0                     GPIO
+     000000E9  G$PICON$0_0$0                      GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000E9  G$SC2DR$0_0$0                      GPIO
+     000000E9  _ADCHS1                            GPIO
+     000000E9  _PICON                             GPIO
+     000000E9  _SC2DR                             GPIO
+     000000EA  G$ADCHS2$0_0$0                     GPIO
+     000000EA  G$PINEN$0_0$0                      GPIO
+     000000EA  G$SC2EGT$0_0$0                     GPIO
+     000000EA  _ADCHS2                            GPIO
+     000000EA  _PINEN                             GPIO
+     000000EA  _SC2EGT                            GPIO
+     000000EB  G$ADCHS3$0_0$0                     GPIO
+     000000EB  G$PIPEN$0_0$0                      GPIO
+     000000EB  G$SC2ETURD0$0_0$0                  GPIO
+     000000EB  _ADCHS3                            GPIO
+     000000EB  _PIPEN                             GPIO
+     000000EB  _SC2ETURD0                         GPIO
+     000000EC  G$ETGSEL0$0_0$0                    GPIO
+     000000EC  G$PIF$0_0$0                        GPIO
+     000000EC  G$SC2ETURD1$0_0$0                  GPIO
+     000000EC  _ETGSEL0                           GPIO
+     000000EC  _PIF                               GPIO
+     000000EC  _SC2ETURD1                         GPIO
+     000000ED  G$C2L$0_0$0                        GPIO
+     000000ED  G$ETGSEL1$0_0$0                    GPIO
+     000000ED  G$SC2IE$0_0$0                      GPIO
+     000000ED  _C2L                               GPIO
+     000000ED  _ETGSEL1                           GPIO
+     000000ED  _SC2IE                             GPIO
+     000000EE  G$ADCS$0_0$0                       GPIO
+     000000EE  G$C2H$0_0$0                        GPIO
+     000000EE  G$SC2IS$0_0$0                      GPIO
+     000000EE  _ADCS                              GPIO
+     000000EE  _C2H                               GPIO
+     000000EE  _SC2IS                             GPIO
+     000000EF  G$ADCF$0_0$0                       GPIO
+     000000EF  G$EIP$0_0$0                        GPIO
+     000000EF  G$SC2TSR$0_0$0                     GPIO
+     000000EF  _ADCF                              GPIO
+     000000EF  _EIP                               GPIO
+     000000EF  _SC2TSR                            GPIO
+     000000F0  G$B$0_0$0                          GPIO
+     000000F0  _B                                 GPIO
+     000000F1  G$CAPCON3$0_0$0                    GPIO
+     000000F1  G$SC0CR0$0_0$0                     GPIO
+     000000F1  _CAPCON3                           GPIO
+     000000F1  _SC0CR0                            GPIO
+     000000F2  G$CAPCON4$0_0$0                    GPIO
+     000000F2  G$SC0CR1$0_0$0                     GPIO
+     000000F2  _CAPCON4                           GPIO
+     000000F2  _SC0CR1                            GPIO
+     000000F3  G$SC1CR0$0_0$0                     GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000F3  G$SPCR$0_0$0                       GPIO
+     000000F3  G$SPCR2$0_0$0                      GPIO
+     000000F3  _SC1CR0                            GPIO
+     000000F3  _SPCR                              GPIO
+     000000F3  _SPCR2                             GPIO
+     000000F4  G$SC1CR1$0_0$0                     GPIO
+     000000F4  G$SPSR$0_0$0                       GPIO
+     000000F4  _SC1CR1                            GPIO
+     000000F4  _SPSR                              GPIO
+     000000F5  G$SC2CR0$0_0$0                     GPIO
+     000000F5  G$SPDR$0_0$0                       GPIO
+     000000F5  _SC2CR0                            GPIO
+     000000F5  _SPDR                              GPIO
+     000000F6  G$AINDIDS0$0_0$0                   GPIO
+     000000F6  G$SC2CR1$0_0$0                     GPIO
+     000000F6  _AINDIDS0                          GPIO
+     000000F6  _SC2CR1                            GPIO
+     000000F7  G$EIPH$0_0$0                       GPIO
+     000000F7  G$PIPS7$0_0$0                      GPIO
+     000000F7  _EIPH                              GPIO
+     000000F7  _PIPS7                             GPIO
+     000000F8  G$RI_1$0_0$0                       GPIO
+     000000F8  G$SCON_1$0_0$0                     GPIO
+     000000F8  _RI_1                              GPIO
+     000000F8  _SCON_1                            GPIO
+     000000F9  G$PIPS0$0_0$0                      GPIO
+     000000F9  G$PWM0DTEN$0_0$0                   GPIO
+     000000F9  G$TI_1$0_0$0                       GPIO
+     000000F9  _PIPS0                             GPIO
+     000000F9  _PWM0DTEN                          GPIO
+     000000F9  _TI_1                              GPIO
+     000000FA  G$PIPS1$0_0$0                      GPIO
+     000000FA  G$PWM0DTCNT$0_0$0                  GPIO
+     000000FA  G$RB8_1$0_0$0                      GPIO
+     000000FA  _PIPS1                             GPIO
+     000000FA  _PWM0DTCNT                         GPIO
+     000000FA  _RB8_1                             GPIO
+     000000FB  G$PIPS2$0_0$0                      GPIO
+     000000FB  G$PWM0MEN$0_0$0                    GPIO
+     000000FB  G$TB8_1$0_0$0                      GPIO
+     000000FB  _PIPS2                             GPIO
+     000000FB  _PWM0MEN                           GPIO
+     000000FB  _TB8_1                             GPIO
+     000000FC  G$PIPS3$0_0$0                      GPIO
+     000000FC  G$PWM0MD$0_0$0                     GPIO
+     000000FC  G$REN_1$0_0$0                      GPIO
+     000000FC  _PIPS3                             GPIO
+     000000FC  _PWM0MD                            GPIO
+     000000FC  _REN_1                             GPIO
+     000000FD  G$PIPS4$0_0$0                      GPIO
+     000000FD  G$PORDIS$0_0$0                     GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000FD  G$SM2_1$0_0$0                      GPIO
+     000000FD  _PIPS4                             GPIO
+     000000FD  _PORDIS                            GPIO
+     000000FD  _SM2_1                             GPIO
+     000000FE  G$EIP1$0_0$0                       GPIO
+     000000FE  G$PIPS5$0_0$0                      GPIO
+     000000FE  G$SM1_1$0_0$0                      GPIO
+     000000FE  _EIP1                              GPIO
+     000000FE  _PIPS5                             GPIO
+     000000FE  _SM1_1                             GPIO
+     000000FF  G$EIPH1$0_0$0                      GPIO
+     000000FF  G$FE_1$0_0$0                       GPIO
+     000000FF  G$LVRDIS$0_0$0                     GPIO
+     000000FF  G$PIPS6$0_0$0                      GPIO
+     000000FF  G$SM0_1$0_0$0                      GPIO
+     000000FF  _EIPH1                             GPIO
+     000000FF  _FE_1                              GPIO
+     000000FF  _LVRDIS                            GPIO
+     000000FF  _PIPS6                             GPIO
+     000000FF  _SM0_1                             GPIO
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+BSEG_BYTES                          00000020    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    0000007F =         127. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000008  Ldelay.Timer0_Delay$u16CNT$1_0$4   delay
+     00000008  _Timer0_Delay_PARM_2               delay
+     0000000A  Ldelay.Timer0_Delay$u16DLYUnit$1   delay
+     0000000A  _Timer0_Delay_PARM_3               delay
+     0000000C  Ldelay.Timer1_Delay$u16CNT$1_0$5   delay
+     0000000C  _Timer1_Delay_PARM_2               delay
+     0000000E  Ldelay.Timer1_Delay$u16DLYUnit$1   delay
+     0000000E  _Timer1_Delay_PARM_3               delay
+     00000010  Ldelay.Timer2_Delay$u16TMDIV$1_0   delay
+     00000010  _Timer2_Delay_PARM_2               delay
+     00000012  Ldelay.Timer2_Delay$u16CNT$1_0$5   delay
+     00000012  _Timer2_Delay_PARM_3               delay
+     00000014  Ldelay.Timer2_Delay$u32DLYUnit$1   delay
+     00000014  _Timer2_Delay_PARM_4               delay
+     00000018  Ldelay.Timer3_Delay$u8TMDIV$1_0$   delay
+     00000018  _Timer3_Delay_PARM_2               delay
+     00000019  Ldelay.Timer3_Delay$u16CNT$1_0$5   delay
+     00000019  _Timer3_Delay_PARM_3               delay
+     0000001B  Ldelay.Timer3_Delay$u32DLYUnit$1   delay
+     0000001B  _Timer3_Delay_PARM_4               delay
+     00000021  G$TA_REG_TMP$0_0$0                 sys
+     00000021  _TA_REG_TMP                        sys
+     00000022  G$BYTE_TMP$0_0$0                   sys
+     00000022  _BYTE_TMP                          sys
+     00000023  G$SFRS_TMP$0_0$0                   sys
+     00000023  _SFRS_TMP                          sys
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+OSEG                                00000024    00000004 =           4. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000024  __divslong_PARM_2                  _divulong
+     00000024  __divulong_PARM_2                  _divulong
+     00000024  __mullong_PARM_2                   _mullong
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                00000028    000000D8 =         216. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000028  __start__stack                     GPIO
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00000000    00000006 =           6. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000003  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000003  __sdcc_program_startup             GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT0                             00000006    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000006  __sdcc_gsinit_startup              
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT2                             00000009    0000000A =          10. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT3                             00000013    00000022 =          34. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000013  __mcs51_genXINIT                   
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT4                             00000035    0000002A =          42. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000035  __mcs51_genRAMCLEAR                
+C:   0000003B  __mcs51_genXRAMCLEAR               
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             0000005F    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000005F  A$GPIODebug\SampleCode\RegBased\   GPIO
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000062  A$delayebug\Library\StdDriver\sr   delay
+C:   00000062  C$delay.c$27$0_0$49                delay
+C:   00000062  G$Timer0_Delay$0$0                 delay
+C:   00000062  _Timer0_Delay                      delay
+C:   00000064  A$delayebug\Library\StdDriver\sr   delay
+C:   00000066  A$delayebug\Library\StdDriver\sr   delay
+C:   00000068  A$delayebug\Library\StdDriver\sr   delay
+C:   00000069  A$delayebug\Library\StdDriver\sr   delay
+C:   00000069  C$delay.c$31$1_0$49                delay
+C:   0000006C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000006C  C$delay.c$32$1_0$49                delay
+C:   0000006F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000072  A$delayebug\Library\StdDriver\sr   delay
+C:   00000072  C$delay.c$33$1_0$49                delay
+C:   00000075  A$delayebug\Library\StdDriver\sr   delay
+C:   00000078  A$delayebug\Library\StdDriver\sr   delay
+C:   0000007B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000007B  C$delay.c$34$1_0$49                delay
+C:   0000007E  A$delayebug\Library\StdDriver\sr   delay
+C:   00000081  A$delayebug\Library\StdDriver\sr   delay
+C:   00000084  A$delayebug\Library\StdDriver\sr   delay
+C:   00000087  A$delayebug\Library\StdDriver\sr   delay
+C:   00000089  A$delayebug\Library\StdDriver\sr   delay
+C:   0000008B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000008D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000008E  A$delayebug\Library\StdDriver\sr   delay
+C:   00000091  A$delayebug\Library\StdDriver\sr   delay
+C:   00000094  A$delayebug\Library\StdDriver\sr   delay
+C:   00000097  A$delayebug\Library\StdDriver\sr   delay
+C:   0000009A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000009D  A$delayebug\Library\StdDriver\sr   delay
+C:   000000A0  A$delayebug\Library\StdDriver\sr   delay
+C:   000000A2  A$delayebug\Library\StdDriver\sr   delay
+C:   000000A4  A$delayebug\Library\StdDriver\sr   delay
+C:   000000A6  A$delayebug\Library\StdDriver\sr   delay
+C:   000000A7  A$delayebug\Library\StdDriver\sr   delay
+C:   000000AA  A$delayebug\Library\StdDriver\sr   delay
+C:   000000AB  A$delayebug\Library\StdDriver\sr   delay
+C:   000000AD  A$delayebug\Library\StdDriver\sr   delay
+C:   000000AF  A$delayebug\Library\StdDriver\sr   delay
+C:   000000B1  A$delayebug\Library\StdDriver\sr   delay
+C:   000000B3  A$delayebug\Library\StdDriver\sr   delay
+C:   000000B5  A$delayebug\Library\StdDriver\sr   delay
+C:   000000B7  A$delayebug\Library\StdDriver\sr   delay
+C:   000000B8  A$delayebug\Library\StdDriver\sr   delay
+C:   000000BB  A$delayebug\Library\StdDriver\sr   delay
+C:   000000BD  A$delayebug\Library\StdDriver\sr   delay
+C:   000000BF  A$delayebug\Library\StdDriver\sr   delay
+C:   000000C1  A$delayebug\Library\StdDriver\sr   delay
+C:   000000C2  A$delayebug\Library\StdDriver\sr   delay
+ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000000C4  A$delayebug\Library\StdDriver\sr   delay
+C:   000000C6  A$delayebug\Library\StdDriver\sr   delay
+C:   000000C7  A$delayebug\Library\StdDriver\sr   delay
+C:   000000C8  A$delayebug\Library\StdDriver\sr   delay
+C:   000000C9  A$delayebug\Library\StdDriver\sr   delay
+C:   000000C9  C$delay.c$35$1_0$49                delay
+C:   000000CB  A$delayebug\Library\StdDriver\sr   delay
+C:   000000CC  A$delayebug\Library\StdDriver\sr   delay
+C:   000000CD  A$delayebug\Library\StdDriver\sr   delay
+C:   000000CF  A$delayebug\Library\StdDriver\sr   delay
+C:   000000D0  A$delayebug\Library\StdDriver\sr   delay
+C:   000000D1  A$delayebug\Library\StdDriver\sr   delay
+C:   000000D2  A$delayebug\Library\StdDriver\sr   delay
+C:   000000D3  A$delayebug\Library\StdDriver\sr   delay
+C:   000000D4  A$delayebug\Library\StdDriver\sr   delay
+C:   000000D5  A$delayebug\Library\StdDriver\sr   delay
+C:   000000D7  A$delayebug\Library\StdDriver\sr   delay
+C:   000000D7  C$delay.c$37$1_0$49                delay
+C:   000000D9  A$delayebug\Library\StdDriver\sr   delay
+C:   000000DB  A$delayebug\Library\StdDriver\sr   delay
+C:   000000DC  A$delayebug\Library\StdDriver\sr   delay
+C:   000000DD  A$delayebug\Library\StdDriver\sr   delay
+C:   000000DF  A$delayebug\Library\StdDriver\sr   delay
+C:   000000DF  C$delay.c$39$2_0$50                delay
+C:   000000E1  A$delayebug\Library\StdDriver\sr   delay
+C:   000000E1  C$delay.c$40$2_0$50                delay
+C:   000000E3  A$delayebug\Library\StdDriver\sr   delay
+C:   000000E3  C$delay.c$41$2_0$50                delay
+C:   000000E6  A$delayebug\Library\StdDriver\sr   delay
+C:   000000E6  C$delay.c$42$2_0$50                delay
+C:   000000E9  A$delayebug\Library\StdDriver\sr   delay
+C:   000000E9  C$delay.c$43$2_0$50                delay
+C:   000000EC  A$delayebug\Library\StdDriver\sr   delay
+C:   000000EC  C$delay.c$44$2_0$50                delay
+C:   000000EF  A$delayebug\Library\StdDriver\sr   delay
+C:   000000EF  C$delay.c$45$2_0$50                delay
+C:   000000F0  A$delayebug\Library\StdDriver\sr   delay
+C:   000000F3  A$delayebug\Library\StdDriver\sr   delay
+C:   000000F4  A$delayebug\Library\StdDriver\sr   delay
+C:   000000F6  A$delayebug\Library\StdDriver\sr   delay
+C:   000000F6  C$delay.c$48$1_0$49                delay
+C:   000000F9  A$delayebug\Library\StdDriver\sr   delay
+C:   000000F9  C$delay.c$49$1_0$49                delay
+C:   000000FC  A$delayebug\Library\StdDriver\sr   delay
+C:   000000FC  C$delay.c$50$1_0$49                delay
+C:   000000FC  XG$Timer0_Delay$0$0                delay
+C:   000000FD  A$delayebug\Library\StdDriver\sr   delay
+C:   000000FD  C$delay.c$65$1_0$52                delay
+C:   000000FD  G$Timer1_Delay$0$0                 delay
+C:   000000FD  _Timer1_Delay                      delay
+C:   000000FF  A$delayebug\Library\StdDriver\sr   delay
+ASxxxx Linker V03.00 + NoICE + sdld,  page 30.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000101  A$delayebug\Library\StdDriver\sr   delay
+C:   00000103  A$delayebug\Library\StdDriver\sr   delay
+C:   00000104  A$delayebug\Library\StdDriver\sr   delay
+C:   00000104  C$delay.c$69$1_0$52                delay
+C:   00000107  A$delayebug\Library\StdDriver\sr   delay
+C:   00000107  C$delay.c$70$1_0$52                delay
+C:   0000010A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000010D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000010D  C$delay.c$71$1_0$52                delay
+C:   00000110  A$delayebug\Library\StdDriver\sr   delay
+C:   00000113  A$delayebug\Library\StdDriver\sr   delay
+C:   00000116  A$delayebug\Library\StdDriver\sr   delay
+C:   00000116  C$delay.c$72$1_0$52                delay
+C:   00000119  A$delayebug\Library\StdDriver\sr   delay
+C:   0000011C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000011F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000122  A$delayebug\Library\StdDriver\sr   delay
+C:   00000124  A$delayebug\Library\StdDriver\sr   delay
+C:   00000126  A$delayebug\Library\StdDriver\sr   delay
+C:   00000128  A$delayebug\Library\StdDriver\sr   delay
+C:   00000129  A$delayebug\Library\StdDriver\sr   delay
+C:   0000012C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000012F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000132  A$delayebug\Library\StdDriver\sr   delay
+C:   00000135  A$delayebug\Library\StdDriver\sr   delay
+C:   00000138  A$delayebug\Library\StdDriver\sr   delay
+C:   0000013B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000013D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000013F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000141  A$delayebug\Library\StdDriver\sr   delay
+C:   00000142  A$delayebug\Library\StdDriver\sr   delay
+C:   00000145  A$delayebug\Library\StdDriver\sr   delay
+C:   00000146  A$delayebug\Library\StdDriver\sr   delay
+C:   00000148  A$delayebug\Library\StdDriver\sr   delay
+C:   0000014A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000014C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000014E  A$delayebug\Library\StdDriver\sr   delay
+C:   00000150  A$delayebug\Library\StdDriver\sr   delay
+C:   00000152  A$delayebug\Library\StdDriver\sr   delay
+C:   00000153  A$delayebug\Library\StdDriver\sr   delay
+C:   00000156  A$delayebug\Library\StdDriver\sr   delay
+C:   00000158  A$delayebug\Library\StdDriver\sr   delay
+C:   0000015A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000015C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000015D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000015F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000161  A$delayebug\Library\StdDriver\sr   delay
+C:   00000162  A$delayebug\Library\StdDriver\sr   delay
+C:   00000163  A$delayebug\Library\StdDriver\sr   delay
+C:   00000164  A$delayebug\Library\StdDriver\sr   delay
+C:   00000164  C$delay.c$73$1_0$52                delay
+ASxxxx Linker V03.00 + NoICE + sdld,  page 31.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000166  A$delayebug\Library\StdDriver\sr   delay
+C:   00000167  A$delayebug\Library\StdDriver\sr   delay
+C:   00000168  A$delayebug\Library\StdDriver\sr   delay
+C:   0000016A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000016B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000016C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000016D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000016E  A$delayebug\Library\StdDriver\sr   delay
+C:   0000016F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000170  A$delayebug\Library\StdDriver\sr   delay
+C:   00000172  A$delayebug\Library\StdDriver\sr   delay
+C:   00000172  C$delay.c$75$1_0$52                delay
+C:   00000174  A$delayebug\Library\StdDriver\sr   delay
+C:   00000176  A$delayebug\Library\StdDriver\sr   delay
+C:   00000177  A$delayebug\Library\StdDriver\sr   delay
+C:   00000178  A$delayebug\Library\StdDriver\sr   delay
+C:   0000017A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000017A  C$delay.c$77$2_0$53                delay
+C:   0000017C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000017C  C$delay.c$78$2_0$53                delay
+C:   0000017E  A$delayebug\Library\StdDriver\sr   delay
+C:   0000017E  C$delay.c$79$2_0$53                delay
+C:   00000181  A$delayebug\Library\StdDriver\sr   delay
+C:   00000181  C$delay.c$80$2_0$53                delay
+C:   00000184  A$delayebug\Library\StdDriver\sr   delay
+C:   00000184  C$delay.c$81$2_0$53                delay
+C:   00000187  A$delayebug\Library\StdDriver\sr   delay
+C:   00000187  C$delay.c$82$2_0$53                delay
+C:   0000018A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000018A  C$delay.c$83$2_0$53                delay
+C:   0000018B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000018E  A$delayebug\Library\StdDriver\sr   delay
+C:   0000018F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000191  A$delayebug\Library\StdDriver\sr   delay
+C:   00000191  C$delay.c$85$1_0$52                delay
+C:   00000191  XG$Timer1_Delay$0$0                delay
+C:   00000192  A$delayebug\Library\StdDriver\sr   delay
+C:   00000192  C$delay.c$102$1_0$55               delay
+C:   00000192  G$Timer2_Delay$0$0                 delay
+C:   00000192  _Timer2_Delay                      delay
+C:   00000194  A$delayebug\Library\StdDriver\sr   delay
+C:   00000196  A$delayebug\Library\StdDriver\sr   delay
+C:   00000198  A$delayebug\Library\StdDriver\sr   delay
+C:   00000199  A$delayebug\Library\StdDriver\sr   delay
+C:   00000199  C$delay.c$106$1_0$55               delay
+C:   0000019C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000019C  C$delay.c$107$1_0$55               delay
+C:   0000019E  A$delayebug\Library\StdDriver\sr   delay
+C:   000001A1  A$delayebug\Library\StdDriver\sr   delay
+C:   000001A2  A$delayebug\Library\StdDriver\sr   delay
+C:   000001A5  A$delayebug\Library\StdDriver\sr   delay
+ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000001A7  A$delayebug\Library\StdDriver\sr   delay
+C:   000001A9  A$delayebug\Library\StdDriver\sr   delay
+C:   000001AC  A$delayebug\Library\StdDriver\sr   delay
+C:   000001AD  A$delayebug\Library\StdDriver\sr   delay
+C:   000001B0  A$delayebug\Library\StdDriver\sr   delay
+C:   000001B2  A$delayebug\Library\StdDriver\sr   delay
+C:   000001B4  A$delayebug\Library\StdDriver\sr   delay
+C:   000001B7  A$delayebug\Library\StdDriver\sr   delay
+C:   000001B8  A$delayebug\Library\StdDriver\sr   delay
+C:   000001BB  A$delayebug\Library\StdDriver\sr   delay
+C:   000001BD  A$delayebug\Library\StdDriver\sr   delay
+C:   000001BF  A$delayebug\Library\StdDriver\sr   delay
+C:   000001C2  A$delayebug\Library\StdDriver\sr   delay
+C:   000001C3  A$delayebug\Library\StdDriver\sr   delay
+C:   000001C6  A$delayebug\Library\StdDriver\sr   delay
+C:   000001C8  A$delayebug\Library\StdDriver\sr   delay
+C:   000001CA  A$delayebug\Library\StdDriver\sr   delay
+C:   000001CD  A$delayebug\Library\StdDriver\sr   delay
+C:   000001CE  A$delayebug\Library\StdDriver\sr   delay
+C:   000001D1  A$delayebug\Library\StdDriver\sr   delay
+C:   000001D3  A$delayebug\Library\StdDriver\sr   delay
+C:   000001D5  A$delayebug\Library\StdDriver\sr   delay
+C:   000001D8  A$delayebug\Library\StdDriver\sr   delay
+C:   000001D9  A$delayebug\Library\StdDriver\sr   delay
+C:   000001DC  A$delayebug\Library\StdDriver\sr   delay
+C:   000001DE  A$delayebug\Library\StdDriver\sr   delay
+C:   000001DF  A$delayebug\Library\StdDriver\sr   delay
+C:   000001E2  A$delayebug\Library\StdDriver\sr   delay
+C:   000001E3  A$delayebug\Library\StdDriver\sr   delay
+C:   000001E6  A$delayebug\Library\StdDriver\sr   delay
+C:   000001E8  A$delayebug\Library\StdDriver\sr   delay
+C:   000001E9  A$delayebug\Library\StdDriver\sr   delay
+C:   000001E9  C$delay.c$109$2_0$56               delay
+C:   000001EC  A$delayebug\Library\StdDriver\sr   delay
+C:   000001EE  A$delayebug\Library\StdDriver\sr   delay
+C:   000001F1  A$delayebug\Library\StdDriver\sr   delay
+C:   000001F3  A$delayebug\Library\StdDriver\sr   delay
+C:   000001F6  A$delayebug\Library\StdDriver\sr   delay
+C:   000001F6  C$delay.c$110$2_0$56               delay
+C:   000001F8  A$delayebug\Library\StdDriver\sr   delay
+C:   000001FB  A$delayebug\Library\StdDriver\sr   delay
+C:   000001FE  A$delayebug\Library\StdDriver\sr   delay
+C:   000001FE  C$delay.c$111$2_0$56               delay
+C:   00000200  A$delayebug\Library\StdDriver\sr   delay
+C:   00000203  A$delayebug\Library\StdDriver\sr   delay
+C:   00000206  A$delayebug\Library\StdDriver\sr   delay
+C:   00000206  C$delay.c$112$2_0$56               delay
+C:   00000208  A$delayebug\Library\StdDriver\sr   delay
+C:   0000020B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000020E  A$delayebug\Library\StdDriver\sr   delay
+C:   0000020E  C$delay.c$113$2_0$56               delay
+ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000210  A$delayebug\Library\StdDriver\sr   delay
+C:   00000213  A$delayebug\Library\StdDriver\sr   delay
+C:   00000216  A$delayebug\Library\StdDriver\sr   delay
+C:   00000216  C$delay.c$114$2_0$56               delay
+C:   00000218  A$delayebug\Library\StdDriver\sr   delay
+C:   0000021B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000021E  A$delayebug\Library\StdDriver\sr   delay
+C:   0000021E  C$delay.c$115$2_0$56               delay
+C:   00000220  A$delayebug\Library\StdDriver\sr   delay
+C:   00000223  A$delayebug\Library\StdDriver\sr   delay
+C:   00000226  A$delayebug\Library\StdDriver\sr   delay
+C:   00000226  C$delay.c$116$2_0$56               delay
+C:   00000228  A$delayebug\Library\StdDriver\sr   delay
+C:   0000022B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000022E  A$delayebug\Library\StdDriver\sr   delay
+C:   0000022E  C$delay.c$117$1_0$55               delay
+C:   0000022E  C$delay.c$118$1_0$55               delay
+C:   00000231  A$delayebug\Library\StdDriver\sr   delay
+C:   00000231  C$delay.c$119$1_0$55               delay
+C:   00000234  A$delayebug\Library\StdDriver\sr   delay
+C:   00000237  A$delayebug\Library\StdDriver\sr   delay
+C:   00000237  C$delay.c$120$1_0$55               delay
+C:   0000023A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000023D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000023D  C$delay.c$121$1_0$55               delay
+C:   00000240  A$delayebug\Library\StdDriver\sr   delay
+C:   00000243  A$delayebug\Library\StdDriver\sr   delay
+C:   00000246  A$delayebug\Library\StdDriver\sr   delay
+C:   00000249  A$delayebug\Library\StdDriver\sr   delay
+C:   0000024B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000024D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000024F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000250  A$delayebug\Library\StdDriver\sr   delay
+C:   00000253  A$delayebug\Library\StdDriver\sr   delay
+C:   00000256  A$delayebug\Library\StdDriver\sr   delay
+C:   00000259  A$delayebug\Library\StdDriver\sr   delay
+C:   0000025C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000025F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000262  A$delayebug\Library\StdDriver\sr   delay
+C:   00000265  A$delayebug\Library\StdDriver\sr   delay
+C:   00000268  A$delayebug\Library\StdDriver\sr   delay
+C:   0000026B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000026E  A$delayebug\Library\StdDriver\sr   delay
+C:   00000271  A$delayebug\Library\StdDriver\sr   delay
+C:   00000273  A$delayebug\Library\StdDriver\sr   delay
+C:   00000275  A$delayebug\Library\StdDriver\sr   delay
+C:   00000277  A$delayebug\Library\StdDriver\sr   delay
+C:   00000278  A$delayebug\Library\StdDriver\sr   delay
+C:   0000027A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000027B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000027C  A$delayebug\Library\StdDriver\sr   delay
+ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000027D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000027E  A$delayebug\Library\StdDriver\sr   delay
+C:   0000027E  C$delay.c$122$1_0$55               delay
+C:   0000027F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000280  A$delayebug\Library\StdDriver\sr   delay
+C:   00000281  A$delayebug\Library\StdDriver\sr   delay
+C:   00000282  A$delayebug\Library\StdDriver\sr   delay
+C:   00000283  A$delayebug\Library\StdDriver\sr   delay
+C:   00000284  A$delayebug\Library\StdDriver\sr   delay
+C:   00000286  A$delayebug\Library\StdDriver\sr   delay
+C:   00000287  A$delayebug\Library\StdDriver\sr   delay
+C:   00000288  A$delayebug\Library\StdDriver\sr   delay
+C:   00000289  A$delayebug\Library\StdDriver\sr   delay
+C:   0000028B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000028B  C$delay.c$123$1_0$55               delay
+C:   0000028D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000028F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000290  A$delayebug\Library\StdDriver\sr   delay
+C:   00000291  A$delayebug\Library\StdDriver\sr   delay
+C:   00000293  A$delayebug\Library\StdDriver\sr   delay
+C:   00000293  C$delay.c$125$2_0$57               delay
+C:   00000295  A$delayebug\Library\StdDriver\sr   delay
+C:   00000295  C$delay.c$126$2_0$57               delay
+C:   00000297  A$delayebug\Library\StdDriver\sr   delay
+C:   00000297  C$delay.c$127$2_0$57               delay
+C:   0000029A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000029A  C$delay.c$128$2_0$57               delay
+C:   0000029D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000029D  C$delay.c$129$2_0$57               delay
+C:   000002A0  A$delayebug\Library\StdDriver\sr   delay
+C:   000002A0  C$delay.c$130$2_0$57               delay
+C:   000002A3  A$delayebug\Library\StdDriver\sr   delay
+C:   000002A3  C$delay.c$131$2_0$57               delay
+C:   000002A4  A$delayebug\Library\StdDriver\sr   delay
+C:   000002A7  A$delayebug\Library\StdDriver\sr   delay
+C:   000002A8  A$delayebug\Library\StdDriver\sr   delay
+C:   000002AA  A$delayebug\Library\StdDriver\sr   delay
+C:   000002AA  C$delay.c$133$1_0$55               delay
+C:   000002AA  XG$Timer2_Delay$0$0                delay
+C:   000002AB  A$delayebug\Library\StdDriver\sr   delay
+C:   000002AB  C$delay.c$149$1_0$59               delay
+C:   000002AB  G$Timer3_Delay$0$0                 delay
+C:   000002AB  _Timer3_Delay                      delay
+C:   000002AD  A$delayebug\Library\StdDriver\sr   delay
+C:   000002AF  A$delayebug\Library\StdDriver\sr   delay
+C:   000002B1  A$delayebug\Library\StdDriver\sr   delay
+C:   000002B2  A$delayebug\Library\StdDriver\sr   delay
+C:   000002B2  C$delay.c$153$1_0$59               delay
+C:   000002B5  A$delayebug\Library\StdDriver\sr   delay
+C:   000002B5  C$delay.c$154$1_0$59               delay
+C:   000002B7  A$delayebug\Library\StdDriver\sr   delay
+ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000002BA  A$delayebug\Library\StdDriver\sr   delay
+C:   000002BC  A$delayebug\Library\StdDriver\sr   delay
+C:   000002BE  A$delayebug\Library\StdDriver\sr   delay
+C:   000002C1  A$delayebug\Library\StdDriver\sr   delay
+C:   000002C3  A$delayebug\Library\StdDriver\sr   delay
+C:   000002C5  A$delayebug\Library\StdDriver\sr   delay
+C:   000002C8  A$delayebug\Library\StdDriver\sr   delay
+C:   000002CA  A$delayebug\Library\StdDriver\sr   delay
+C:   000002CC  A$delayebug\Library\StdDriver\sr   delay
+C:   000002CF  A$delayebug\Library\StdDriver\sr   delay
+C:   000002D1  A$delayebug\Library\StdDriver\sr   delay
+C:   000002D3  A$delayebug\Library\StdDriver\sr   delay
+C:   000002D6  A$delayebug\Library\StdDriver\sr   delay
+C:   000002D8  A$delayebug\Library\StdDriver\sr   delay
+C:   000002DA  A$delayebug\Library\StdDriver\sr   delay
+C:   000002DD  A$delayebug\Library\StdDriver\sr   delay
+C:   000002DF  A$delayebug\Library\StdDriver\sr   delay
+C:   000002E1  A$delayebug\Library\StdDriver\sr   delay
+C:   000002E4  A$delayebug\Library\StdDriver\sr   delay
+C:   000002E6  A$delayebug\Library\StdDriver\sr   delay
+C:   000002E8  A$delayebug\Library\StdDriver\sr   delay
+C:   000002E8  C$delay.c$156$2_0$60               delay
+C:   000002EB  A$delayebug\Library\StdDriver\sr   delay
+C:   000002ED  A$delayebug\Library\StdDriver\sr   delay
+C:   000002F0  A$delayebug\Library\StdDriver\sr   delay
+C:   000002F0  C$delay.c$157$2_0$60               delay
+C:   000002F2  A$delayebug\Library\StdDriver\sr   delay
+C:   000002F5  A$delayebug\Library\StdDriver\sr   delay
+C:   000002F8  A$delayebug\Library\StdDriver\sr   delay
+C:   000002F8  C$delay.c$158$2_0$60               delay
+C:   000002FA  A$delayebug\Library\StdDriver\sr   delay
+C:   000002FD  A$delayebug\Library\StdDriver\sr   delay
+C:   00000300  A$delayebug\Library\StdDriver\sr   delay
+C:   00000300  C$delay.c$159$2_0$60               delay
+C:   00000302  A$delayebug\Library\StdDriver\sr   delay
+C:   00000305  A$delayebug\Library\StdDriver\sr   delay
+C:   00000308  A$delayebug\Library\StdDriver\sr   delay
+C:   00000308  C$delay.c$160$2_0$60               delay
+C:   0000030A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000030D  A$delayebug\Library\StdDriver\sr   delay
+C:   00000310  A$delayebug\Library\StdDriver\sr   delay
+C:   00000310  C$delay.c$161$2_0$60               delay
+C:   00000312  A$delayebug\Library\StdDriver\sr   delay
+C:   00000315  A$delayebug\Library\StdDriver\sr   delay
+C:   00000318  A$delayebug\Library\StdDriver\sr   delay
+C:   00000318  C$delay.c$162$2_0$60               delay
+C:   0000031A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000031D  A$delayebug\Library\StdDriver\sr   delay
+C:   00000320  A$delayebug\Library\StdDriver\sr   delay
+C:   00000320  C$delay.c$163$2_0$60               delay
+C:   00000322  A$delayebug\Library\StdDriver\sr   delay
+ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000325  A$delayebug\Library\StdDriver\sr   delay
+C:   00000328  A$delayebug\Library\StdDriver\sr   delay
+C:   00000328  C$delay.c$164$1_0$59               delay
+C:   00000328  C$delay.c$165$1_0$59               delay
+C:   0000032B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000032E  A$delayebug\Library\StdDriver\sr   delay
+C:   00000331  A$delayebug\Library\StdDriver\sr   delay
+C:   00000334  A$delayebug\Library\StdDriver\sr   delay
+C:   00000336  A$delayebug\Library\StdDriver\sr   delay
+C:   00000338  A$delayebug\Library\StdDriver\sr   delay
+C:   0000033A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000033B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000033E  A$delayebug\Library\StdDriver\sr   delay
+C:   00000341  A$delayebug\Library\StdDriver\sr   delay
+C:   00000344  A$delayebug\Library\StdDriver\sr   delay
+C:   00000347  A$delayebug\Library\StdDriver\sr   delay
+C:   0000034A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000034D  A$delayebug\Library\StdDriver\sr   delay
+C:   00000350  A$delayebug\Library\StdDriver\sr   delay
+C:   00000353  A$delayebug\Library\StdDriver\sr   delay
+C:   00000356  A$delayebug\Library\StdDriver\sr   delay
+C:   00000359  A$delayebug\Library\StdDriver\sr   delay
+C:   0000035C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000035E  A$delayebug\Library\StdDriver\sr   delay
+C:   00000360  A$delayebug\Library\StdDriver\sr   delay
+C:   00000362  A$delayebug\Library\StdDriver\sr   delay
+C:   00000363  A$delayebug\Library\StdDriver\sr   delay
+C:   00000365  A$delayebug\Library\StdDriver\sr   delay
+C:   00000366  A$delayebug\Library\StdDriver\sr   delay
+C:   00000367  A$delayebug\Library\StdDriver\sr   delay
+C:   00000368  A$delayebug\Library\StdDriver\sr   delay
+C:   00000369  A$delayebug\Library\StdDriver\sr   delay
+C:   00000369  C$delay.c$166$1_0$59               delay
+C:   0000036A  A$delayebug\Library\StdDriver\sr   delay
+C:   0000036B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000036C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000036D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000036E  A$delayebug\Library\StdDriver\sr   delay
+C:   0000036F  A$delayebug\Library\StdDriver\sr   delay
+C:   00000370  A$delayebug\Library\StdDriver\sr   delay
+C:   00000372  A$delayebug\Library\StdDriver\sr   delay
+C:   00000373  A$delayebug\Library\StdDriver\sr   delay
+C:   00000374  A$delayebug\Library\StdDriver\sr   delay
+C:   00000375  A$delayebug\Library\StdDriver\sr   delay
+C:   00000377  A$delayebug\Library\StdDriver\sr   delay
+C:   00000377  C$delay.c$167$1_0$59               delay
+C:   00000379  A$delayebug\Library\StdDriver\sr   delay
+C:   0000037B  A$delayebug\Library\StdDriver\sr   delay
+C:   0000037C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000037D  A$delayebug\Library\StdDriver\sr   delay
+C:   0000037F  A$delayebug\Library\StdDriver\sr   delay
+ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000037F  C$delay.c$169$2_0$61               delay
+C:   00000382  A$delayebug\Library\StdDriver\sr   delay
+C:   00000385  A$delayebug\Library\StdDriver\sr   delay
+C:   00000385  C$delay.c$170$2_0$61               delay
+C:   00000387  A$delayebug\Library\StdDriver\sr   delay
+C:   00000387  C$delay.c$171$2_0$61               delay
+C:   00000389  A$delayebug\Library\StdDriver\sr   delay
+C:   00000389  C$delay.c$172$2_0$61               delay
+C:   0000038C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000038F  A$delayebug\Library\StdDriver\sr   delay
+C:   0000038F  C$delay.c$173$2_0$61               delay
+C:   00000391  A$delayebug\Library\StdDriver\sr   delay
+C:   00000393  A$delayebug\Library\StdDriver\sr   delay
+C:   00000396  A$delayebug\Library\StdDriver\sr   delay
+C:   00000399  A$delayebug\Library\StdDriver\sr   delay
+C:   0000039C  A$delayebug\Library\StdDriver\sr   delay
+C:   0000039E  A$delayebug\Library\StdDriver\sr   delay
+C:   0000039E  C$delay.c$174$2_0$61               delay
+C:   000003A1  A$delayebug\Library\StdDriver\sr   delay
+C:   000003A4  A$delayebug\Library\StdDriver\sr   delay
+C:   000003A4  C$delay.c$175$2_0$61               delay
+C:   000003A7  A$delayebug\Library\StdDriver\sr   delay
+C:   000003AA  A$delayebug\Library\StdDriver\sr   delay
+C:   000003AA  C$delay.c$176$2_0$61               delay
+C:   000003AB  A$delayebug\Library\StdDriver\sr   delay
+C:   000003AE  A$delayebug\Library\StdDriver\sr   delay
+C:   000003AF  A$delayebug\Library\StdDriver\sr   delay
+C:   000003B1  A$delayebug\Library\StdDriver\sr   delay
+C:   000003B1  C$delay.c$178$1_0$59               delay
+C:   000003B1  XG$Timer3_Delay$0$0                delay
+C:   000003B2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003B2  C$sys.c$25$0_0$49                  sys
+C:   000003B2  G$MODIFY_HIRC$0$0                  sys
+C:   000003B2  _MODIFY_HIRC                       sys
+C:   000003B4  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003B4  C$sys.c$30$1_0$49                  sys
+C:   000003B7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003B7  C$sys.c$31$1_0$49                  sys
+C:   000003BA  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003BC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003BF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003C1  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003C1  C$sys.c$33$2_0$50                  sys
+C:   000003C4  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003C6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003C6  C$sys.c$34$2_0$50                  sys
+C:   000003C9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003C9  C$sys.c$35$2_0$50                  sys
+C:   000003C9  C$sys.c$36$2_0$50                  sys
+C:   000003CB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003CB  C$sys.c$37$2_0$50                  sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000003CE  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003CE  C$sys.c$38$2_0$50                  sys
+C:   000003CE  C$sys.c$39$2_0$50                  sys
+C:   000003D0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003D0  C$sys.c$40$2_0$50                  sys
+C:   000003D3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003D3  C$sys.c$42$1_0$49                  sys
+C:   000003D3  C$sys.c$43$1_0$49                  sys
+C:   000003D6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003D8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003DA  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003DC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003DF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003E2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003E5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003E7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003E9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003E9  C$sys.c$44$1_0$49                  sys
+C:   000003EC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003EC  C$sys.c$45$1_0$49                  sys
+C:   000003EF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003EF  C$sys.c$46$1_0$49                  sys
+C:   000003F2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003F4  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003F6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003F8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003FB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000003FE  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000401  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000403  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000405  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000405  C$sys.c$47$1_0$49                  sys
+C:   00000407  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000407  C$sys.c$48$1_0$49                  sys
+C:   00000409  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000040A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000040C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000040C  C$sys.c$49$1_0$49                  sys
+C:   0000040F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000411  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000413  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000415  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000418  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000041B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000041E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000420  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000422  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000422  C$sys.c$50$1_0$49                  sys
+C:   00000424  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000424  C$sys.c$51$1_0$49                  sys
+C:   00000427  A$sys\Debug\Library\StdDriver\sr   sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000429  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000042B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000042D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000430  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000433  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000436  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000438  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000043A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000043A  C$sys.c$52$1_0$49                  sys
+C:   0000043D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000043D  C$sys.c$55$2_0$51                  sys
+C:   0000043F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000441  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000442  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000443  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000444  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000445  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000446  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000447  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000449  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000044C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000044E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000044F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000450  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000451  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000452  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000453  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000454  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000454  C$sys.c$56$2_0$51                  sys
+C:   00000455  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000457  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000458  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000459  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000045B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000045C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000045C  C$sys.c$57$1_0$49                  sys
+C:   0000045E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000460  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000461  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000462  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000462  C$sys.c$58$2_0$51                  sys
+C:   00000463  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000464  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000465  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000466  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000467  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000468  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000469  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000046B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000046B  C$sys.c$62$1_0$49                  sys
+C:   0000046B  C$sys.c$63$1_0$49                  sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000046E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000046E  C$sys.c$64$1_0$49                  sys
+C:   00000471  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000471  C$sys.c$65$1_0$49                  sys
+C:   00000473  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000473  C$sys.c$66$1_0$49                  sys
+C:   00000476  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000476  C$sys.c$67$1_0$49                  sys
+C:   00000479  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000479  C$sys.c$68$1_0$49                  sys
+C:   0000047B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000047B  C$sys.c$69$1_0$49                  sys
+C:   0000047E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000480  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000482  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000484  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000487  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000048A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000048D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000048F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000491  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000491  C$sys.c$70$1_0$49                  sys
+C:   00000494  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000494  C$sys.c$71$1_0$49                  sys
+C:   00000494  XG$MODIFY_HIRC$0$0                 sys
+C:   00000495  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000495  C$sys.c$85$1_0$53                  sys
+C:   00000495  C$sys.c$87$1_0$53                  sys
+C:   00000495  G$FsysSelect$0$0                   sys
+C:   00000495  _FsysSelect                        sys
+C:   00000497  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000498  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000049A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000049C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000049F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004A0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004A1  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004A2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004A5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004A6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004A9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004AC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004AF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004B2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004B5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004B8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004B8  C$sys.c$90$2_0$54                  sys
+C:   000004B8  C$sys.c$91$2_0$54                  sys
+C:   000004BB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004BE  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004BE  C$sys.c$92$2_0$54                  sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000004C1  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004C4  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004C4  C$sys.c$93$2_0$54                  sys
+C:   000004C7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004CA  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004CA  C$sys.c$94$2_0$54                  sys
+C:   000004CD  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004D0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004D0  C$sys.c$95$2_0$54                  sys
+C:   000004D3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004D5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004D7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004D9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004DC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004DF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004E2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004E4  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004E6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004E6  C$sys.c$96$2_0$54                  sys
+C:   000004E9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004E9  C$sys.c$100$2_0$54                 sys
+C:   000004E9  C$sys.c$99$2_0$54                  sys
+C:   000004EC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004EF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004EF  C$sys.c$101$2_0$54                 sys
+C:   000004F2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004F5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004F5  C$sys.c$102$2_0$54                 sys
+C:   000004F8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004F8  C$sys.c$105$2_0$54                 sys
+C:   000004F8  C$sys.c$106$2_0$54                 sys
+C:   000004FB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004FE  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000004FE  C$sys.c$107$2_0$54                 sys
+C:   00000501  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000504  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000504  C$sys.c$108$2_0$54                 sys
+C:   00000507  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000509  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000050B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000050D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000510  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000513  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000516  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000518  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000051A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000051A  C$sys.c$109$2_0$54                 sys
+C:   0000051A  C$sys.c$112$2_0$54                 sys
+C:   0000051C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000051C  C$sys.c$113$2_0$54                 sys
+C:   0000051F  A$sys\Debug\Library\StdDriver\sr   sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 42.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000522  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000522  C$sys.c$114$2_0$54                 sys
+C:   00000525  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000528  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000528  C$sys.c$115$2_0$54                 sys
+C:   0000052B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000052E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000052E  C$sys.c$116$2_0$54                 sys
+C:   00000531  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000534  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000534  C$sys.c$117$2_0$54                 sys
+C:   00000537  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000539  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000053B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000053D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000540  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000543  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000546  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000548  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000054A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000054A  C$sys.c$118$2_0$54                 sys
+C:   0000054A  C$sys.c$121$2_0$54                 sys
+C:   0000054C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000054C  C$sys.c$122$2_0$54                 sys
+C:   0000054F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000552  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000552  C$sys.c$123$2_0$54                 sys
+C:   00000555  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000558  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000558  C$sys.c$124$2_0$54                 sys
+C:   0000055B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000055E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000055E  C$sys.c$125$2_0$54                 sys
+C:   00000561  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000564  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000564  C$sys.c$126$2_0$54                 sys
+C:   00000567  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000569  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000056B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000056D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000570  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000573  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000576  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000578  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000057A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000057A  C$sys.c$128$1_0$53                 sys
+C:   0000057A  C$sys.c$129$1_0$53                 sys
+C:   0000057A  XG$FsysSelect$0$0                  sys
+C:   0000057B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000057B  C$sys.c$131$1_0$56                 sys
+C:   0000057B  C$sys.c$133$1_0$56                 sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 43.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000057B  G$ClockEnable$0$0                  sys
+C:   0000057B  _ClockEnable                       sys
+C:   0000057D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000057E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000580  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000582  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000585  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000586  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000587  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000588  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000058B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000058C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000058F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000592  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000595  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000598  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000059B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000059E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000059E  C$sys.c$136$2_0$57                 sys
+C:   0000059E  C$sys.c$137$2_0$57                 sys
+C:   000005A1  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005A3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005A5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005A7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005AA  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005AD  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005B0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005B2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005B4  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005B4  C$sys.c$138$2_0$57                 sys
+C:   000005B7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005B9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005BB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005BD  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005C0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005C3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005C6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005C8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005CA  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005CA  C$sys.c$139$2_0$57                 sys
+C:   000005CC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005CE  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005CE  C$sys.c$143$2_0$57                 sys
+C:   000005D0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005D0  C$sys.c$144$2_0$57                 sys
+C:   000005D3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005D5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005D7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005D9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005DC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005DF  A$sys\Debug\Library\StdDriver\sr   sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 44.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000005E2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005E4  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005E6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005E6  C$sys.c$145$2_0$57                 sys
+C:   000005E8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005EA  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005ED  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005F0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005F3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005F5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005F5  C$sys.c$149$2_0$57                 sys
+C:   000005F8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005F8  C$sys.c$150$2_0$57                 sys
+C:   000005FB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005FD  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000005FF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000601  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000604  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000607  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000060A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000060C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000060E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000060E  C$sys.c$151$2_0$57                 sys
+C:   00000610  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000612  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000615  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000618  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000061B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000061D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000061D  C$sys.c$155$2_0$57                 sys
+C:   0000061F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000061F  C$sys.c$156$2_0$57                 sys
+C:   00000622  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000624  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000626  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000628  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000062B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000062E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000631  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000633  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000635  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000635  C$sys.c$157$2_0$57                 sys
+C:   00000638  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000063A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000063C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000063E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000641  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000644  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000647  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000649  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000064B  A$sys\Debug\Library\StdDriver\sr   sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 45.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000064B  C$sys.c$158$2_0$57                 sys
+C:   0000064D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000064F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000652  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000655  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000658  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000658  C$sys.c$162$2_0$57                 sys
+C:   0000065A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000065A  C$sys.c$163$2_0$57                 sys
+C:   0000065D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000065F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000661  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000663  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000666  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000669  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000066C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000066E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000670  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000670  C$sys.c$164$2_0$57                 sys
+C:   00000673  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000675  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000677  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000679  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000067C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000067F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000682  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000684  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000686  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000686  C$sys.c$165$2_0$57                 sys
+C:   00000688  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000068A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000068D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000690  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000693  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000695  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000695  C$sys.c$167$1_0$56                 sys
+C:   00000695  C$sys.c$168$1_0$56                 sys
+C:   00000695  XG$ClockEnable$0$0                 sys
+C:   00000696  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000696  C$sys.c$170$1_0$59                 sys
+C:   00000696  G$ClockDisable$0$0                 sys
+C:   00000696  _ClockDisable                      sys
+C:   00000698  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000698  C$sys.c$172$2_0$59                 sys
+C:   0000069A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000069A  C$sys.c$174$1_0$59                 sys
+C:   0000069C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000069C  C$sys.c$175$1_0$59                 sys
+C:   0000069D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000069F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006A1  A$sys\Debug\Library\StdDriver\sr   sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 46.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000006A2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006A3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006A3  C$sys.c$178$2_0$60                 sys
+C:   000006A6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006A7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006A9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006AB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006AD  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006AF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006B1  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006B3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006B3  C$sys.c$179$2_0$60                 sys
+C:   000006B5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006B5  C$sys.c$180$2_0$60                 sys
+C:   000006B5  C$sys.c$182$2_0$60                 sys
+C:   000006B7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006B7  C$sys.c$183$2_0$60                 sys
+C:   000006BA  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006BC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006BE  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006C0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006C3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006C6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006C9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006CB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006CD  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006CD  C$sys.c$184$2_0$60                 sys
+C:   000006CD  C$sys.c$186$2_0$60                 sys
+C:   000006CF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006CF  C$sys.c$187$2_0$60                 sys
+C:   000006D2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006D4  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006D6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006D8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006DB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006DE  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006E1  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006E3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006E5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006E5  C$sys.c$188$2_0$60                 sys
+C:   000006E5  C$sys.c$190$2_0$60                 sys
+C:   000006E7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006E7  C$sys.c$191$2_0$60                 sys
+C:   000006E9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006E9  C$sys.c$192$2_0$60                 sys
+C:   000006E9  C$sys.c$194$2_0$60                 sys
+C:   000006EB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006EB  C$sys.c$195$2_0$60                 sys
+C:   000006ED  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006ED  C$sys.c$197$1_0$59                 sys
+C:   000006ED  C$sys.c$198$1_0$59                 sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000006EE  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006F0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006F0  C$sys.c$200$2_0$61                 sys
+C:   000006F3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006F5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006F7  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006F9  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006FC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000006FF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000702  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000704  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000706  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000706  C$sys.c$201$1_0$59                 sys
+C:   00000706  C$sys.c$204$1_0$59                 sys
+C:   00000706  XG$ClockDisable$0$0                sys
+C:   00000707  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000707  C$sys.c$206$1_0$63                 sys
+C:   00000707  G$ClockSwitch$0$0                  sys
+C:   00000707  _ClockSwitch                       sys
+C:   00000709  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000709  C$sys.c$208$2_0$63                 sys
+C:   0000070B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000070B  C$sys.c$209$1_0$63                 sys
+C:   0000070D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000070D  C$sys.c$210$1_0$63                 sys
+C:   0000070F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000711  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000713  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000713  C$sys.c$211$1_0$63                 sys
+C:   00000714  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000716  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000718  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000071B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000071C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000071D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000071D  C$sys.c$214$2_0$64                 sys
+C:   00000720  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000721  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000723  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000725  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000727  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000729  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000072B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000072D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000072D  C$sys.c$215$2_0$64                 sys
+C:   0000072F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000072F  C$sys.c$216$2_0$64                 sys
+C:   0000072F  C$sys.c$218$2_0$64                 sys
+C:   00000731  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000731  C$sys.c$219$2_0$64                 sys
+C:   00000734  A$sys\Debug\Library\StdDriver\sr   sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 48.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000736  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000738  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000073A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000073D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000740  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000743  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000745  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000747  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000747  C$sys.c$220$2_0$64                 sys
+C:   0000074A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000074C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000074E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000750  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000753  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000756  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000759  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000075B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000075D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000075D  C$sys.c$221$2_0$64                 sys
+C:   0000075D  C$sys.c$223$2_0$64                 sys
+C:   0000075F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000075F  C$sys.c$224$2_0$64                 sys
+C:   00000762  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000764  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000766  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000768  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000076B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000076E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000771  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000773  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000775  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000775  C$sys.c$225$2_0$64                 sys
+C:   00000778  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000077A  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000077C  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000077E  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000781  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000784  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000787  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000789  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000078B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000078B  C$sys.c$226$2_0$64                 sys
+C:   0000078B  C$sys.c$228$2_0$64                 sys
+C:   0000078D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000078D  C$sys.c$229$2_0$64                 sys
+C:   0000078F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000078F  C$sys.c$230$2_0$64                 sys
+C:   0000078F  C$sys.c$232$2_0$64                 sys
+C:   00000791  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000791  C$sys.c$233$2_0$64                 sys
+C:   00000793  A$sys\Debug\Library\StdDriver\sr   sys
+ASxxxx Linker V03.00 + NoICE + sdld,  page 49.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000793  C$sys.c$235$1_0$63                 sys
+C:   00000793  C$sys.c$236$1_0$63                 sys
+C:   00000794  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000796  A$sys\Debug\Library\StdDriver\sr   sys
+C:   00000796  C$sys.c$238$2_0$65                 sys
+C:   00000799  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000079B  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000079D  A$sys\Debug\Library\StdDriver\sr   sys
+C:   0000079F  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007A2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007A5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007A8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007AA  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007AC  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007AC  C$sys.c$239$2_0$65                 sys
+C:   000007AF  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007B1  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007B3  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007B5  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007B8  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007BB  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007BE  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007C0  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007C2  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007C2  C$sys.c$241$1_0$63                 sys
+C:   000007C4  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007C6  A$sys\Debug\Library\StdDriver\sr   sys
+C:   000007C6  C$sys.c$242$1_0$63                 sys
+C:   000007C6  XG$ClockSwitch$0$0                 sys
+C:   000007C7  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007C7  C$GPIO.C$20$0_0$49                 GPIO
+C:   000007C7  C$GPIO.C$22$1_0$49                 GPIO
+C:   000007C7  G$main$0$0                         GPIO
+C:   000007C7  _main                              GPIO
+C:   000007CA  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007CD  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007D0  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007D3  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007D6  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007D9  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007DC  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007DF  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007E2  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007E5  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007E8  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007E8  C$GPIO.C$23$1_0$49                 GPIO
+C:   000007E8  C$GPIO.C$25$2_0$50                 GPIO
+C:   000007EB  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007EB  C$GPIO.C$26$2_0$50                 GPIO
+C:   000007EE  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007EE  C$GPIO.C$27$2_0$50                 GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 50.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000008A4 =        2212. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000007F1  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007F1  C$GPIO.C$28$2_0$50                 GPIO
+C:   000007F4  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007F4  C$GPIO.C$29$2_0$50                 GPIO
+C:   000007F7  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007FA  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   000007FD  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000800  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000803  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000806  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000807  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   0000080A  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   0000080A  C$GPIO.C$30$2_0$50                 GPIO
+C:   0000080D  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   0000080D  C$GPIO.C$31$2_0$50                 GPIO
+C:   00000810  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000810  C$GPIO.C$32$2_0$50                 GPIO
+C:   00000813  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000813  C$GPIO.C$33$2_0$50                 GPIO
+C:   00000816  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000816  C$GPIO.C$34$2_0$50                 GPIO
+C:   00000819  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   0000081C  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   0000081F  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000822  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000825  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000828  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   00000829  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   0000082C  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   0000082E  A$GPIODebug\SampleCode\RegBased\   GPIO
+C:   0000082E  C$GPIO.C$36$1_0$49                 GPIO
+C:   0000082E  XG$main$0$0                        GPIO
+C:   0000082F  __divulong                         _divulong
+C:   00000894  __mullong                          _mullong
+C:   00000894  __mullong_dummy                    _mullong
+C:   00000902  __sdcc_external_startup            _startup
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 51.
+
+Files Linked                              [ module(s) ]
+
+obj\Debug\Library\StdDriver\src\delay.rel
+                                          [  ]
+obj\Debug\Library\StdDriver\src\sys.rel   [  ]
+obj\Debug\SampleCode\RegBased\GPIO_Input_Output\GPIO.rel
+                                          [  ]
+
+
+Libraries Linked                          [ object file ]
+
+C:\Program Files\SDCC\bin\..\lib\small/liblong.lib
+                                          [ _divulong.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxinit.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/liblong.lib
+                                          [ _mullong.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtpagesfr.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtstart.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/libsdcc.lib
+                                          [ _startup.rel ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 52.
+
+User Base Address Definitions
+
+HOME = 0x0000
+XSEG = 0x0001
+PSEG = 0x0001
+ISEG = 0x0000
+BSEG = 0x0000
+
+

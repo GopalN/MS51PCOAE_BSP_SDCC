@@ -1,0 +1,656 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_BSEG                          
+C:   00000000  l_BSEG_BYTES                    
+C:   00000000  l_CABS                          
+C:   00000000  l_CONST                         
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_OSEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l_XINIT                         
+C:   00000000  l_XISEG                         
+C:   00000000  l_XSEG                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_HOME                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  s_PSEG                          
+C:   00000001  s_XISEG                         
+C:   00000001  s_XSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000003  l_GSINIT0                       
+C:   00000006  l_HOME                          
+C:   00000006  s_GSINIT0                       
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000009  s_GSINIT1                       
+C:   00000009  s_GSINIT2                       
+C:   0000000A  l_GSINIT2                       
+C:   00000010  s_REG_BANK_2                    
+C:   00000013  s_GSINIT3                       
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_OSEG                          
+C:   00000018  s_REG_BANK_3                    
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000001E  s_SSEG                          
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000022  l_GSINIT3                       
+C:   0000002A  l_GSINIT                        
+C:   0000002A  l_GSINIT4                       
+C:   00000035  s_GSINIT4                       
+C:   0000005F  s_GSINIT                        
+C:   0000005F  s_GSINIT5                       
+C:   00000080  l_DSEG                          
+C:   00000089  s_GSFINAL                       
+C:   0000008C  s_CSEG                          
+C:   000000E2  l_SSEG                          
+C:   00000100  l_IRAM                          
+C:   000002D8  l_CSEG                          
+C:   00000364  s_CONST                         
+C:   00000364  s_XINIT                         
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _startup
+     00000080  _MOSI                              TM1650
+     00000080  _P0                                TM1650
+     00000080  _P00                               TM1650
+     00000081  _MISO                              TM1650
+     00000081  _P01                               TM1650
+     00000081  _SP                                TM1650
+     00000082  _DPL                               TM1650
+     00000082  _P02                               TM1650
+     00000082  _RXD_1                             TM1650
+     00000083  _DPH                               TM1650
+     00000083  _P03                               TM1650
+     00000084  _ADCBAL                            TM1650
+     00000084  _P04                               TM1650
+     00000084  _RCTRIM0                           TM1650
+     00000084  _STADC                             TM1650
+     00000085  _ADCBAH                            TM1650
+     00000085  _P05                               TM1650
+     00000085  _RCTRIM1                           TM1650
+     00000086  _ADCCON3                           TM1650
+     00000086  _P06                               TM1650
+     00000086  _RWKL                              TM1650
+     00000086  _TXD                               TM1650
+     00000087  _P07                               TM1650
+     00000087  _PCON                              TM1650
+     00000087  _RXD                               TM1650
+     00000088  _IT0                               TM1650
+     00000088  _TCON                              TM1650
+     00000089  _IE0                               TM1650
+     00000089  _P2M1                              TM1650
+     00000089  _TMOD                              TM1650
+     0000008A  _IT1                               TM1650
+     0000008A  _P2M2                              TM1650
+     0000008A  _TL0                               TM1650
+     0000008B  _IE1                               TM1650
+     0000008B  _P2SR                              TM1650
+     0000008B  _TL1                               TM1650
+     0000008C  _P2S                               TM1650
+     0000008C  _TH0                               TM1650
+     0000008C  _TR0                               TM1650
+     0000008D  _ADCSN                             TM1650
+     0000008D  _TF0                               TM1650
+     0000008D  _TH1                               TM1650
+     0000008E  _ADCCN                             TM1650
+     0000008E  _CKCON                             TM1650
+     0000008E  _TR1                               TM1650
+     0000008F  _ADCSR                             TM1650
+     0000008F  _TF1                               TM1650
+     0000008F  _WKCON                             TM1650
+     00000090  _P1                                TM1650
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000090  _P10                               TM1650
+     00000091  _P11                               TM1650
+     00000091  _SFRS                              TM1650
+     00000092  _CAPCON0                           TM1650
+     00000092  _P0UP                              TM1650
+     00000092  _P12                               TM1650
+     00000093  _CAPCON1                           TM1650
+     00000093  _P13                               TM1650
+     00000093  _P1UP                              TM1650
+     00000093  _SCL                               TM1650
+     00000094  _CAPCON2                           TM1650
+     00000094  _P14                               TM1650
+     00000094  _P2UP                              TM1650
+     00000094  _SDA                               TM1650
+     00000095  _CKDIV                             TM1650
+     00000095  _P15                               TM1650
+     00000095  _P3UP                              TM1650
+     00000096  _CKSWT                             TM1650
+     00000096  _P16                               TM1650
+     00000096  _TXD_1                             TM1650
+     00000097  _CKEN                              TM1650
+     00000097  _P17                               TM1650
+     00000097  _RWKH                              TM1650
+     00000098  _RI                                TM1650
+     00000098  _SCON                              TM1650
+     00000099  _AINDIDS1                          TM1650
+     00000099  _SBUF                              TM1650
+     00000099  _TI                                TM1650
+     0000009A  _P0DW                              TM1650
+     0000009A  _RB8                               TM1650
+     0000009A  _SBUF_1                            TM1650
+     0000009B  _EIE                               TM1650
+     0000009B  _P1DW                              TM1650
+     0000009B  _TB8                               TM1650
+     0000009C  _EIE1                              TM1650
+     0000009C  _P2DW                              TM1650
+     0000009C  _REN                               TM1650
+     0000009D  _P3DW                              TM1650
+     0000009D  _SM2                               TM1650
+     0000009E  _SM1                               TM1650
+     0000009F  _CHPCON                            TM1650
+     0000009F  _FE                                TM1650
+     0000009F  _SM0                               TM1650
+     000000A0  _P2                                TM1650
+     000000A0  _P20                               TM1650
+     000000A0  __XPAGE                            
+     000000A1  _AUXR2                             TM1650
+     000000A2  _AUXR1                             TM1650
+     000000A2  _AUXR3                             TM1650
+     000000A3  _AUXR4                             TM1650
+     000000A3  _BODCON0                           TM1650
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000A4  _AUXR5                             TM1650
+     000000A4  _IAPTRG                            TM1650
+     000000A5  _AUXR6                             TM1650
+     000000A5  _IAPUEN                            TM1650
+     000000A6  _AUXR7                             TM1650
+     000000A6  _IAPAL                             TM1650
+     000000A7  _AUXR8                             TM1650
+     000000A7  _IAPAH                             TM1650
+     000000A8  _EX0                               TM1650
+     000000A8  _IE                                TM1650
+     000000A9  _ET0                               TM1650
+     000000A9  _PWM1PH                            TM1650
+     000000A9  _SADDR                             TM1650
+     000000AA  _EX1                               TM1650
+     000000AA  _PWM1C0H                           TM1650
+     000000AA  _WDCON                             TM1650
+     000000AB  _BODCON1                           TM1650
+     000000AB  _ET1                               TM1650
+     000000AB  _PWM1C1H                           TM1650
+     000000AC  _ES                                TM1650
+     000000AC  _P3M1                              TM1650
+     000000AC  _P3S                               TM1650
+     000000AC  _PWM1MD                            TM1650
+     000000AD  _EBOD                              TM1650
+     000000AD  _P3M2                              TM1650
+     000000AD  _P3SR                              TM1650
+     000000AD  _PWM1MEN                           TM1650
+     000000AE  _EADC                              TM1650
+     000000AE  _IAPFD                             TM1650
+     000000AF  _EA                                TM1650
+     000000AF  _IAPCN                             TM1650
+     000000B0  _P3                                TM1650
+     000000B0  _P30                               TM1650
+     000000B1  _P0M1                              TM1650
+     000000B1  _P0S                               TM1650
+     000000B1  _P31                               TM1650
+     000000B1  _PWM1PL                            TM1650
+     000000B2  _P0M2                              TM1650
+     000000B2  _P0SR                              TM1650
+     000000B2  _P32                               TM1650
+     000000B2  _PWM1C0L                           TM1650
+     000000B3  _P1M1                              TM1650
+     000000B3  _P1S                               TM1650
+     000000B3  _P33                               TM1650
+     000000B3  _PWM1C1L                           TM1650
+     000000B4  _P1M2                              TM1650
+     000000B4  _P1SR                              TM1650
+     000000B4  _P34                               TM1650
+     000000B4  _PWM1CON0                          TM1650
+     000000B5  _P35                               TM1650
+     000000B5  _PWM1CON1                          TM1650
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000B5  _TOE                               TM1650
+     000000B6  _P36                               TM1650
+     000000B6  _PWM1INTC                          TM1650
+     000000B7  _IPH                               TM1650
+     000000B7  _P37                               TM1650
+     000000B7  _PIOCON2                           TM1650
+     000000B7  _PWM0INTC                          TM1650
+     000000B8  _IP                                TM1650
+     000000B8  _PX0                               TM1650
+     000000B9  _PT0                               TM1650
+     000000B9  _PWM2PH                            TM1650
+     000000B9  _SADEN                             TM1650
+     000000BA  _PWM2C0H                           TM1650
+     000000BA  _PX1                               TM1650
+     000000BA  _SADEN_1                           TM1650
+     000000BB  _PT1                               TM1650
+     000000BB  _PWM2C1H                           TM1650
+     000000BB  _SADDR_1                           TM1650
+     000000BC  _I2DAT                             TM1650
+     000000BC  _PS                                TM1650
+     000000BC  _PWM2MD                            TM1650
+     000000BD  _I2STAT                            TM1650
+     000000BD  _PBOD                              TM1650
+     000000BD  _PWM2MEN                           TM1650
+     000000BE  _I2CLK                             TM1650
+     000000BE  _PADC                              TM1650
+     000000BF  _I2TOC                             TM1650
+     000000C0  _I2CON                             TM1650
+     000000C0  _I2CPX                             TM1650
+     000000C1  _I2ADDR                            TM1650
+     000000C1  _PWM2PL                            TM1650
+     000000C2  _AA                                TM1650
+     000000C2  _ADCRL                             TM1650
+     000000C2  _PWM2C0L                           TM1650
+     000000C3  _ADCRH                             TM1650
+     000000C3  _PWM2C1L                           TM1650
+     000000C3  _SI                                TM1650
+     000000C4  _PWM0C4H                           TM1650
+     000000C4  _PWM2CON0                          TM1650
+     000000C4  _STO                               TM1650
+     000000C4  _T3CON                             TM1650
+     000000C5  _PWM0C5H                           TM1650
+     000000C5  _PWM2CON1                          TM1650
+     000000C5  _RL3                               TM1650
+     000000C5  _STA                               TM1650
+     000000C6  _I2CEN                             TM1650
+     000000C6  _PIOCON1                           TM1650
+     000000C6  _PWM2INTC                          TM1650
+     000000C6  _RH3                               TM1650
+     000000C7  _TA                                TM1650
+     000000C8  _CM_RL2                            TM1650
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000C8  _T2CON                             TM1650
+     000000C9  _PWM3PH                            TM1650
+     000000C9  _T2MOD                             TM1650
+     000000CA  _PWM3C0H                           TM1650
+     000000CA  _RCMP2L                            TM1650
+     000000CA  _TR2                               TM1650
+     000000CB  _PWM3C1H                           TM1650
+     000000CB  _RCMP2H                            TM1650
+     000000CC  _PWM0C4L                           TM1650
+     000000CC  _PWM3MD                            TM1650
+     000000CC  _TL2                               TM1650
+     000000CD  _PWM0C5L                           TM1650
+     000000CD  _PWM3MEN                           TM1650
+     000000CD  _TH2                               TM1650
+     000000CE  _ADCMPL                            TM1650
+     000000CE  _EIP2                              TM1650
+     000000CF  _ADCMPH                            TM1650
+     000000CF  _EIPH2                             TM1650
+     000000CF  _TF2                               TM1650
+     000000D0  _P                                 TM1650
+     000000D0  _PSW                               TM1650
+     000000D1  _PWM0PH                            TM1650
+     000000D1  _PWM3PL                            TM1650
+     000000D2  _OV                                TM1650
+     000000D2  _PWM0C0H                           TM1650
+     000000D2  _PWM3C0L                           TM1650
+     000000D3  _PWM0C1H                           TM1650
+     000000D3  _PWM3C1L                           TM1650
+     000000D3  _RS0                               TM1650
+     000000D4  _PWM0C2H                           TM1650
+     000000D4  _PWM3CON0                          TM1650
+     000000D4  _RS1                               TM1650
+     000000D5  _F0                                TM1650
+     000000D5  _PWM0C3H                           TM1650
+     000000D5  _PWM3CON1                          TM1650
+     000000D6  _AC                                TM1650
+     000000D6  _PNP                               TM1650
+     000000D6  _PWM3INTC                          TM1650
+     000000D7  _CY                                TM1650
+     000000D7  _PWM0FBD                           TM1650
+     000000D7  _XTLCON                            TM1650
+     000000D8  _PWM0CON0                          TM1650
+     000000D9  _PWM0PL                            TM1650
+     000000D9  _SC0DR                             TM1650
+     000000DA  _PWM0C0L                           TM1650
+     000000DA  _SC0EGT                            TM1650
+     000000DB  _PWM0C1L                           TM1650
+     000000DB  _SC0ETURD0                         TM1650
+     000000DC  _CLRPWM                            TM1650
+     000000DC  _PWM0C2L                           TM1650
+     000000DC  _SC0ETURD1                         TM1650
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000DD  _PWM0C3L                           TM1650
+     000000DD  _PWMF                              TM1650
+     000000DD  _SC0IE                             TM1650
+     000000DE  _LOAD                              TM1650
+     000000DE  _PIOCON0                           TM1650
+     000000DE  _SC0IS                             TM1650
+     000000DF  _PWM0CON1                          TM1650
+     000000DF  _PWMRUN                            TM1650
+     000000DF  _SC0TSR                            TM1650
+     000000E0  _ACC                               TM1650
+     000000E1  _ADCCON1                           TM1650
+     000000E1  _SC1DR                             TM1650
+     000000E2  _ADCCON2                           TM1650
+     000000E2  _SC1EGT                            TM1650
+     000000E3  _ADCDLY                            TM1650
+     000000E3  _SC1ETURD0                         TM1650
+     000000E4  _C0L                               TM1650
+     000000E4  _SC1ETURD1                         TM1650
+     000000E5  _C0H                               TM1650
+     000000E5  _SC1IE                             TM1650
+     000000E6  _C1L                               TM1650
+     000000E6  _SC1IS                             TM1650
+     000000E7  _C1H                               TM1650
+     000000E7  _SC1TSR                            TM1650
+     000000E8  _ADCCON0                           TM1650
+     000000E8  _ADCHS0                            TM1650
+     000000E9  _ADCHS1                            TM1650
+     000000E9  _PICON                             TM1650
+     000000E9  _SC2DR                             TM1650
+     000000EA  _ADCHS2                            TM1650
+     000000EA  _PINEN                             TM1650
+     000000EA  _SC2EGT                            TM1650
+     000000EB  _ADCHS3                            TM1650
+     000000EB  _PIPEN                             TM1650
+     000000EB  _SC2ETURD0                         TM1650
+     000000EC  _ETGSEL0                           TM1650
+     000000EC  _PIF                               TM1650
+     000000EC  _SC2ETURD1                         TM1650
+     000000ED  _C2L                               TM1650
+     000000ED  _ETGSEL1                           TM1650
+     000000ED  _SC2IE                             TM1650
+     000000EE  _ADCS                              TM1650
+     000000EE  _C2H                               TM1650
+     000000EE  _SC2IS                             TM1650
+     000000EF  _ADCF                              TM1650
+     000000EF  _EIP                               TM1650
+     000000EF  _SC2TSR                            TM1650
+     000000F0  _B                                 TM1650
+     000000F1  _CAPCON3                           TM1650
+     000000F1  _SC0CR0                            TM1650
+     000000F2  _CAPCON4                           TM1650
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000F2  _SC0CR1                            TM1650
+     000000F3  _SC1CR0                            TM1650
+     000000F3  _SPCR                              TM1650
+     000000F3  _SPCR2                             TM1650
+     000000F4  _SC1CR1                            TM1650
+     000000F4  _SPSR                              TM1650
+     000000F5  _B_5                               _gptrget
+     000000F5  _SC2CR0                            TM1650
+     000000F5  _SPDR                              TM1650
+     000000F6  _AINDIDS0                          TM1650
+     000000F6  _B_6                               _gptrget
+     000000F6  _SC2CR1                            TM1650
+     000000F7  _B_7                               _gptrget
+     000000F7  _EIPH                              TM1650
+     000000F7  _PIPS7                             TM1650
+     000000F8  _RI_1                              TM1650
+     000000F8  _SCON_1                            TM1650
+     000000F9  _PIPS0                             TM1650
+     000000F9  _PWM0DTEN                          TM1650
+     000000F9  _TI_1                              TM1650
+     000000FA  _PIPS1                             TM1650
+     000000FA  _PWM0DTCNT                         TM1650
+     000000FA  _RB8_1                             TM1650
+     000000FB  _PIPS2                             TM1650
+     000000FB  _PWM0MEN                           TM1650
+     000000FB  _TB8_1                             TM1650
+     000000FC  _PIPS3                             TM1650
+     000000FC  _PWM0MD                            TM1650
+     000000FC  _REN_1                             TM1650
+     000000FD  _PIPS4                             TM1650
+     000000FD  _PORDIS                            TM1650
+     000000FD  _SM2_1                             TM1650
+     000000FE  _EIP1                              TM1650
+     000000FE  _PIPS5                             TM1650
+     000000FE  _SM1_1                             TM1650
+     000000FF  _EIPH1                             TM1650
+     000000FF  _FE_1                              TM1650
+     000000FF  _LVRDIS                            TM1650
+     000000FF  _PIPS6                             TM1650
+     000000FF  _SM0_1                             TM1650
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    00000080 =         128. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000008  _sevencodes                        main
+     00000016  _disp_buff                         main
+     0000001A  _TM1650_write_PARM_2               TM1650
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                0000001E    000000E2 =         226. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000001E  __start__stack                     main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00000000    00000006 =           6. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000003  __sdcc_program_startup             main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT0                             00000006    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000006  __sdcc_gsinit_startup              
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT2                             00000009    0000000A =          10. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT3                             00000013    00000022 =          34. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000013  __mcs51_genXINIT                   
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT4                             00000035    0000002A =          42. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000035  __mcs51_genRAMCLEAR                
+C:   0000003B  __mcs51_genXRAMCLEAR               
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT                              0000005F    0000002A =          42. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             00000089    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                0000008C    000002D8 =         728. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000008C  _Init_I2C                          I2C_M
+C:   000000A5  _I2C_Error                         I2C_M
+C:   000000A6  _I2C_start                         I2C_M
+C:   000000B8  _I2C_stop                          I2C_M
+C:   000000C2  _I2C_write                         I2C_M
+C:   000000D8  _main                              main
+C:   000002D5  _TM1650_init                       TM1650
+C:   000002E6  _TM1650_write                      TM1650
+C:   000002FD  _TM1650_Send_Buff                  TM1650
+C:   00000344  __gptrget                          _gptrget
+C:   00000360  __sdcc_external_startup            _startup
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+
+Files Linked                              [ module(s) ]
+
+obj\Release\I2C_M.rel                     [  ]
+obj\Release\main.rel                      [  ]
+obj\Release\TM1650.rel                    [  ]
+
+
+Libraries Linked                          [ object file ]
+
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxinit.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtpagesfr.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtstart.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/libsdcc.lib
+                                          [ _gptrget.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/libsdcc.lib
+                                          [ _startup.rel ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+
+User Base Address Definitions
+
+HOME = 0x0000
+XSEG = 0x0001
+PSEG = 0x0001
+ISEG = 0x0000
+BSEG = 0x0000
+
+

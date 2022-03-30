@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1593700470 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\samplecode\regbased\isp_uart0\isp_uart0_main.c
+	"MS51_32K.h"
+	"isp_uart0.h"
+
+1647919884 c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\samplecode\regbased\isp_uart0\isp_uart0.h
+
+1647919941 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\samplecode\regbased\isp_uart0\isp_uart0.c
+	"MS51_32K.h"
+	"isp_uart0.h"
+

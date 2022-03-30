@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TM1650" />
+		<Option pch_mode="2" />
+		<Option compiler="sdcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/TM1650.ihx" prefix_auto="1" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="5" />
+				<Option compiler="sdcc" />
+				<Compiler>
+					<Add option="--opt-code-size" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-mmcs51" />
+			<Add option="--model-small" />
+		</Compiler>
+		<Linker>
+			<Add option="--xram-size 4096" />
+			<Add option="--iram-size 256" />
+			<Add option="--code-size 65536" />
+			<Add option="--out-fmt-ihx" />
+		</Linker>
+		<ExtraCommands>
+			<Add after='cmd /c &quot;packihx &lt;$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).ihx &gt;$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).hex&quot;' />
+			<Add after="C:\N76E003-BSP-master\Startup\EXE\hex2bin.exe $(PROJECT_DIR)$(TARGET_OUTPUT_DIR)$(PROJECT_NAME).hex" />
+		</ExtraCommands>
+		<Unit filename="I2C_M.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="TM1650.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

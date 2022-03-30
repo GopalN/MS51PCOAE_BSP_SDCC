@@ -1,0 +1,680 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_CABS                          
+C:   00000000  l_CONST                         
+C:   00000000  l_GSINIT                        
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_OSEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l_XINIT                         
+C:   00000000  l_XISEG                         
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_HOME                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  l_BSEG_BYTES                    
+C:   00000001  s_PSEG                          
+C:   00000001  s_XSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000003  l_GSINIT0                       
+C:   00000005  l_BSEG                          
+C:   00000006  l_HOME                          
+C:   00000006  s_GSINIT0                       
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000009  s_GSINIT1                       
+C:   00000009  s_GSINIT2                       
+C:   0000000A  l_GSINIT2                       
+C:   00000010  s_REG_BANK_2                    
+C:   00000013  s_GSINIT3                       
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_OSEG                          
+C:   00000018  s_REG_BANK_3                    
+C:   00000020  s_BSEG_BYTES                    
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000020  s__CODE                         
+C:   00000022  l_GSINIT3                       
+C:   0000002A  l_GSINIT4                       
+C:   00000035  s_GSINIT4                       
+C:   0000003E  s_SSEG                          
+C:   0000005F  s_GSFINAL                       
+C:   0000005F  s_GSINIT                        
+C:   0000005F  s_GSINIT5                       
+C:   00000062  s_CSEG                          
+C:   00000068  l_DSEG                          
+C:   00000080  l_XSEG                          
+C:   00000081  s_XISEG                         
+C:   000000C2  l_SSEG                          
+C:   00000100  l_IRAM                          
+C:   000007E0  l_CSEG                          
+C:   00000842  s_CONST                         
+C:   00000842  s_XINIT                         
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _startup
+     00000080  _MOSI                              ISP_UART0_main
+     00000080  _P0                                ISP_UART0_main
+     00000080  _P00                               ISP_UART0_main
+     00000081  _MISO                              ISP_UART0_main
+     00000081  _P01                               ISP_UART0_main
+     00000081  _SP                                ISP_UART0_main
+     00000082  _DPL                               ISP_UART0_main
+     00000082  _P02                               ISP_UART0_main
+     00000082  _RXD_1                             ISP_UART0_main
+     00000083  _DPH                               ISP_UART0_main
+     00000083  _P03                               ISP_UART0_main
+     00000084  _ADCBAL                            ISP_UART0_main
+     00000084  _P04                               ISP_UART0_main
+     00000084  _RCTRIM0                           ISP_UART0_main
+     00000084  _STADC                             ISP_UART0_main
+     00000085  _ADCBAH                            ISP_UART0_main
+     00000085  _P05                               ISP_UART0_main
+     00000085  _RCTRIM1                           ISP_UART0_main
+     00000086  _ADCCON3                           ISP_UART0_main
+     00000086  _P06                               ISP_UART0_main
+     00000086  _RWKL                              ISP_UART0_main
+     00000086  _TXD                               ISP_UART0_main
+     00000087  _P07                               ISP_UART0_main
+     00000087  _PCON                              ISP_UART0_main
+     00000087  _RXD                               ISP_UART0_main
+     00000088  _IT0                               ISP_UART0_main
+     00000088  _TCON                              ISP_UART0_main
+     00000089  _IE0                               ISP_UART0_main
+     00000089  _P2M1                              ISP_UART0_main
+     00000089  _TMOD                              ISP_UART0_main
+     0000008A  _IT1                               ISP_UART0_main
+     0000008A  _P2M2                              ISP_UART0_main
+     0000008A  _TL0                               ISP_UART0_main
+     0000008B  _IE1                               ISP_UART0_main
+     0000008B  _P2SR                              ISP_UART0_main
+     0000008B  _TL1                               ISP_UART0_main
+     0000008C  _P2S                               ISP_UART0_main
+     0000008C  _TH0                               ISP_UART0_main
+     0000008C  _TR0                               ISP_UART0_main
+     0000008D  _ADCSN                             ISP_UART0_main
+     0000008D  _TF0                               ISP_UART0_main
+     0000008D  _TH1                               ISP_UART0_main
+     0000008E  _ADCCN                             ISP_UART0_main
+     0000008E  _CKCON                             ISP_UART0_main
+     0000008E  _TR1                               ISP_UART0_main
+     0000008F  _ADCSR                             ISP_UART0_main
+     0000008F  _TF1                               ISP_UART0_main
+     0000008F  _WKCON                             ISP_UART0_main
+     00000090  _P1                                ISP_UART0_main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000090  _P10                               ISP_UART0_main
+     00000091  _P11                               ISP_UART0_main
+     00000091  _SFRS                              ISP_UART0_main
+     00000092  _CAPCON0                           ISP_UART0_main
+     00000092  _P0UP                              ISP_UART0_main
+     00000092  _P12                               ISP_UART0_main
+     00000093  _CAPCON1                           ISP_UART0_main
+     00000093  _P13                               ISP_UART0_main
+     00000093  _P1UP                              ISP_UART0_main
+     00000093  _SCL                               ISP_UART0_main
+     00000094  _CAPCON2                           ISP_UART0_main
+     00000094  _P14                               ISP_UART0_main
+     00000094  _P2UP                              ISP_UART0_main
+     00000094  _SDA                               ISP_UART0_main
+     00000095  _CKDIV                             ISP_UART0_main
+     00000095  _P15                               ISP_UART0_main
+     00000095  _P3UP                              ISP_UART0_main
+     00000096  _CKSWT                             ISP_UART0_main
+     00000096  _P16                               ISP_UART0_main
+     00000096  _TXD_1                             ISP_UART0_main
+     00000097  _CKEN                              ISP_UART0_main
+     00000097  _P17                               ISP_UART0_main
+     00000097  _RWKH                              ISP_UART0_main
+     00000098  _RI                                ISP_UART0_main
+     00000098  _SCON                              ISP_UART0_main
+     00000099  _AINDIDS1                          ISP_UART0_main
+     00000099  _SBUF                              ISP_UART0_main
+     00000099  _TI                                ISP_UART0_main
+     0000009A  _P0DW                              ISP_UART0_main
+     0000009A  _RB8                               ISP_UART0_main
+     0000009A  _SBUF_1                            ISP_UART0_main
+     0000009B  _EIE                               ISP_UART0_main
+     0000009B  _P1DW                              ISP_UART0_main
+     0000009B  _TB8                               ISP_UART0_main
+     0000009C  _EIE1                              ISP_UART0_main
+     0000009C  _P2DW                              ISP_UART0_main
+     0000009C  _REN                               ISP_UART0_main
+     0000009D  _P3DW                              ISP_UART0_main
+     0000009D  _SM2                               ISP_UART0_main
+     0000009E  _SM1                               ISP_UART0_main
+     0000009F  _CHPCON                            ISP_UART0_main
+     0000009F  _FE                                ISP_UART0_main
+     0000009F  _SM0                               ISP_UART0_main
+     000000A0  _P2                                ISP_UART0_main
+     000000A0  _P20                               ISP_UART0_main
+     000000A0  __XPAGE                            
+     000000A1  _AUXR2                             ISP_UART0_main
+     000000A2  _AUXR1                             ISP_UART0_main
+     000000A2  _AUXR3                             ISP_UART0_main
+     000000A3  _AUXR4                             ISP_UART0_main
+     000000A3  _BODCON0                           ISP_UART0_main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000A4  _AUXR5                             ISP_UART0_main
+     000000A4  _IAPTRG                            ISP_UART0_main
+     000000A5  _AUXR6                             ISP_UART0_main
+     000000A5  _IAPUEN                            ISP_UART0_main
+     000000A6  _AUXR7                             ISP_UART0_main
+     000000A6  _IAPAL                             ISP_UART0_main
+     000000A7  _AUXR8                             ISP_UART0_main
+     000000A7  _IAPAH                             ISP_UART0_main
+     000000A8  _EX0                               ISP_UART0_main
+     000000A8  _IE                                ISP_UART0_main
+     000000A9  _ET0                               ISP_UART0_main
+     000000A9  _PWM1PH                            ISP_UART0_main
+     000000A9  _SADDR                             ISP_UART0_main
+     000000AA  _EX1                               ISP_UART0_main
+     000000AA  _PWM1C0H                           ISP_UART0_main
+     000000AA  _WDCON                             ISP_UART0_main
+     000000AB  _BODCON1                           ISP_UART0_main
+     000000AB  _ET1                               ISP_UART0_main
+     000000AB  _PWM1C1H                           ISP_UART0_main
+     000000AC  _ES                                ISP_UART0_main
+     000000AC  _P3M1                              ISP_UART0_main
+     000000AC  _P3S                               ISP_UART0_main
+     000000AC  _PWM1MD                            ISP_UART0_main
+     000000AD  _EBOD                              ISP_UART0_main
+     000000AD  _P3M2                              ISP_UART0_main
+     000000AD  _P3SR                              ISP_UART0_main
+     000000AD  _PWM1MEN                           ISP_UART0_main
+     000000AE  _EADC                              ISP_UART0_main
+     000000AE  _IAPFD                             ISP_UART0_main
+     000000AF  _EA                                ISP_UART0_main
+     000000AF  _IAPCN                             ISP_UART0_main
+     000000B0  _P3                                ISP_UART0_main
+     000000B0  _P30                               ISP_UART0_main
+     000000B1  _P0M1                              ISP_UART0_main
+     000000B1  _P0S                               ISP_UART0_main
+     000000B1  _P31                               ISP_UART0_main
+     000000B1  _PWM1PL                            ISP_UART0_main
+     000000B2  _P0M2                              ISP_UART0_main
+     000000B2  _P0SR                              ISP_UART0_main
+     000000B2  _P32                               ISP_UART0_main
+     000000B2  _PWM1C0L                           ISP_UART0_main
+     000000B3  _P1M1                              ISP_UART0_main
+     000000B3  _P1S                               ISP_UART0_main
+     000000B3  _P33                               ISP_UART0_main
+     000000B3  _PWM1C1L                           ISP_UART0_main
+     000000B4  _P1M2                              ISP_UART0_main
+     000000B4  _P1SR                              ISP_UART0_main
+     000000B4  _P34                               ISP_UART0_main
+     000000B4  _PWM1CON0                          ISP_UART0_main
+     000000B5  _P35                               ISP_UART0_main
+     000000B5  _PWM1CON1                          ISP_UART0_main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000B5  _TOE                               ISP_UART0_main
+     000000B6  _P36                               ISP_UART0_main
+     000000B6  _PWM1INTC                          ISP_UART0_main
+     000000B7  _IPH                               ISP_UART0_main
+     000000B7  _P37                               ISP_UART0_main
+     000000B7  _PIOCON2                           ISP_UART0_main
+     000000B7  _PWM0INTC                          ISP_UART0_main
+     000000B8  _IP                                ISP_UART0_main
+     000000B8  _PX0                               ISP_UART0_main
+     000000B9  _PT0                               ISP_UART0_main
+     000000B9  _PWM2PH                            ISP_UART0_main
+     000000B9  _SADEN                             ISP_UART0_main
+     000000BA  _PWM2C0H                           ISP_UART0_main
+     000000BA  _PX1                               ISP_UART0_main
+     000000BA  _SADEN_1                           ISP_UART0_main
+     000000BB  _PT1                               ISP_UART0_main
+     000000BB  _PWM2C1H                           ISP_UART0_main
+     000000BB  _SADDR_1                           ISP_UART0_main
+     000000BC  _I2DAT                             ISP_UART0_main
+     000000BC  _PS                                ISP_UART0_main
+     000000BC  _PWM2MD                            ISP_UART0_main
+     000000BD  _I2STAT                            ISP_UART0_main
+     000000BD  _PBOD                              ISP_UART0_main
+     000000BD  _PWM2MEN                           ISP_UART0_main
+     000000BE  _I2CLK                             ISP_UART0_main
+     000000BE  _PADC                              ISP_UART0_main
+     000000BF  _I2TOC                             ISP_UART0_main
+     000000C0  _I2CON                             ISP_UART0_main
+     000000C0  _I2CPX                             ISP_UART0_main
+     000000C1  _I2ADDR                            ISP_UART0_main
+     000000C1  _PWM2PL                            ISP_UART0_main
+     000000C2  _AA                                ISP_UART0_main
+     000000C2  _ADCRL                             ISP_UART0_main
+     000000C2  _PWM2C0L                           ISP_UART0_main
+     000000C3  _ADCRH                             ISP_UART0_main
+     000000C3  _PWM2C1L                           ISP_UART0_main
+     000000C3  _SI                                ISP_UART0_main
+     000000C4  _PWM0C4H                           ISP_UART0_main
+     000000C4  _PWM2CON0                          ISP_UART0_main
+     000000C4  _STO                               ISP_UART0_main
+     000000C4  _T3CON                             ISP_UART0_main
+     000000C5  _PWM0C5H                           ISP_UART0_main
+     000000C5  _PWM2CON1                          ISP_UART0_main
+     000000C5  _RL3                               ISP_UART0_main
+     000000C5  _STA                               ISP_UART0_main
+     000000C6  _I2CEN                             ISP_UART0_main
+     000000C6  _PIOCON1                           ISP_UART0_main
+     000000C6  _PWM2INTC                          ISP_UART0_main
+     000000C6  _RH3                               ISP_UART0_main
+     000000C7  _TA                                ISP_UART0_main
+     000000C8  _CM_RL2                            ISP_UART0_main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000C8  _T2CON                             ISP_UART0_main
+     000000C9  _PWM3PH                            ISP_UART0_main
+     000000C9  _T2MOD                             ISP_UART0_main
+     000000CA  _PWM3C0H                           ISP_UART0_main
+     000000CA  _RCMP2L                            ISP_UART0_main
+     000000CA  _TR2                               ISP_UART0_main
+     000000CB  _PWM3C1H                           ISP_UART0_main
+     000000CB  _RCMP2H                            ISP_UART0_main
+     000000CC  _PWM0C4L                           ISP_UART0_main
+     000000CC  _PWM3MD                            ISP_UART0_main
+     000000CC  _TL2                               ISP_UART0_main
+     000000CD  _PWM0C5L                           ISP_UART0_main
+     000000CD  _PWM3MEN                           ISP_UART0_main
+     000000CD  _TH2                               ISP_UART0_main
+     000000CE  _ADCMPL                            ISP_UART0_main
+     000000CE  _EIP2                              ISP_UART0_main
+     000000CF  _ADCMPH                            ISP_UART0_main
+     000000CF  _EIPH2                             ISP_UART0_main
+     000000CF  _TF2                               ISP_UART0_main
+     000000D0  _P                                 ISP_UART0_main
+     000000D0  _PSW                               ISP_UART0_main
+     000000D1  _PWM0PH                            ISP_UART0_main
+     000000D1  _PWM3PL                            ISP_UART0_main
+     000000D2  _OV                                ISP_UART0_main
+     000000D2  _PWM0C0H                           ISP_UART0_main
+     000000D2  _PWM3C0L                           ISP_UART0_main
+     000000D3  _PWM0C1H                           ISP_UART0_main
+     000000D3  _PWM3C1L                           ISP_UART0_main
+     000000D3  _RS0                               ISP_UART0_main
+     000000D4  _PWM0C2H                           ISP_UART0_main
+     000000D4  _PWM3CON0                          ISP_UART0_main
+     000000D4  _RS1                               ISP_UART0_main
+     000000D5  _F0                                ISP_UART0_main
+     000000D5  _PWM0C3H                           ISP_UART0_main
+     000000D5  _PWM3CON1                          ISP_UART0_main
+     000000D6  _AC                                ISP_UART0_main
+     000000D6  _PNP                               ISP_UART0_main
+     000000D6  _PWM3INTC                          ISP_UART0_main
+     000000D7  _CY                                ISP_UART0_main
+     000000D7  _PWM0FBD                           ISP_UART0_main
+     000000D7  _XTLCON                            ISP_UART0_main
+     000000D8  _PWM0CON0                          ISP_UART0_main
+     000000D9  _PWM0PL                            ISP_UART0_main
+     000000D9  _SC0DR                             ISP_UART0_main
+     000000DA  _PWM0C0L                           ISP_UART0_main
+     000000DA  _SC0EGT                            ISP_UART0_main
+     000000DB  _PWM0C1L                           ISP_UART0_main
+     000000DB  _SC0ETURD0                         ISP_UART0_main
+     000000DC  _CLRPWM                            ISP_UART0_main
+     000000DC  _PWM0C2L                           ISP_UART0_main
+     000000DC  _SC0ETURD1                         ISP_UART0_main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000DD  _PWM0C3L                           ISP_UART0_main
+     000000DD  _PWMF                              ISP_UART0_main
+     000000DD  _SC0IE                             ISP_UART0_main
+     000000DE  _LOAD                              ISP_UART0_main
+     000000DE  _PIOCON0                           ISP_UART0_main
+     000000DE  _SC0IS                             ISP_UART0_main
+     000000DF  _PWM0CON1                          ISP_UART0_main
+     000000DF  _PWMRUN                            ISP_UART0_main
+     000000DF  _SC0TSR                            ISP_UART0_main
+     000000E0  _ACC                               ISP_UART0_main
+     000000E1  _ADCCON1                           ISP_UART0_main
+     000000E1  _SC1DR                             ISP_UART0_main
+     000000E2  _ADCCON2                           ISP_UART0_main
+     000000E2  _SC1EGT                            ISP_UART0_main
+     000000E3  _ADCDLY                            ISP_UART0_main
+     000000E3  _SC1ETURD0                         ISP_UART0_main
+     000000E4  _C0L                               ISP_UART0_main
+     000000E4  _SC1ETURD1                         ISP_UART0_main
+     000000E5  _C0H                               ISP_UART0_main
+     000000E5  _SC1IE                             ISP_UART0_main
+     000000E6  _C1L                               ISP_UART0_main
+     000000E6  _SC1IS                             ISP_UART0_main
+     000000E7  _C1H                               ISP_UART0_main
+     000000E7  _SC1TSR                            ISP_UART0_main
+     000000E8  _ADCCON0                           ISP_UART0_main
+     000000E8  _ADCHS0                            ISP_UART0_main
+     000000E9  _ADCHS1                            ISP_UART0_main
+     000000E9  _PICON                             ISP_UART0_main
+     000000E9  _SC2DR                             ISP_UART0_main
+     000000EA  _ADCHS2                            ISP_UART0_main
+     000000EA  _PINEN                             ISP_UART0_main
+     000000EA  _SC2EGT                            ISP_UART0_main
+     000000EB  _ADCHS3                            ISP_UART0_main
+     000000EB  _PIPEN                             ISP_UART0_main
+     000000EB  _SC2ETURD0                         ISP_UART0_main
+     000000EC  _ETGSEL0                           ISP_UART0_main
+     000000EC  _PIF                               ISP_UART0_main
+     000000EC  _SC2ETURD1                         ISP_UART0_main
+     000000ED  _C2L                               ISP_UART0_main
+     000000ED  _ETGSEL1                           ISP_UART0_main
+     000000ED  _SC2IE                             ISP_UART0_main
+     000000EE  _ADCS                              ISP_UART0_main
+     000000EE  _C2H                               ISP_UART0_main
+     000000EE  _SC2IS                             ISP_UART0_main
+     000000EF  _ADCF                              ISP_UART0_main
+     000000EF  _EIP                               ISP_UART0_main
+     000000EF  _SC2TSR                            ISP_UART0_main
+     000000F0  _B                                 ISP_UART0_main
+     000000F1  _CAPCON3                           ISP_UART0_main
+     000000F1  _SC0CR0                            ISP_UART0_main
+     000000F2  _CAPCON4                           ISP_UART0_main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000F2  _SC0CR1                            ISP_UART0_main
+     000000F3  _SC1CR0                            ISP_UART0_main
+     000000F3  _SPCR                              ISP_UART0_main
+     000000F3  _SPCR2                             ISP_UART0_main
+     000000F4  _SC1CR1                            ISP_UART0_main
+     000000F4  _SPSR                              ISP_UART0_main
+     000000F5  _SC2CR0                            ISP_UART0_main
+     000000F5  _SPDR                              ISP_UART0_main
+     000000F6  _AINDIDS0                          ISP_UART0_main
+     000000F6  _SC2CR1                            ISP_UART0_main
+     000000F7  _EIPH                              ISP_UART0_main
+     000000F7  _PIPS7                             ISP_UART0_main
+     000000F8  _RI_1                              ISP_UART0_main
+     000000F8  _SCON_1                            ISP_UART0_main
+     000000F9  _PIPS0                             ISP_UART0_main
+     000000F9  _PWM0DTEN                          ISP_UART0_main
+     000000F9  _TI_1                              ISP_UART0_main
+     000000FA  _PIPS1                             ISP_UART0_main
+     000000FA  _PWM0DTCNT                         ISP_UART0_main
+     000000FA  _RB8_1                             ISP_UART0_main
+     000000FB  _PIPS2                             ISP_UART0_main
+     000000FB  _PWM0MEN                           ISP_UART0_main
+     000000FB  _TB8_1                             ISP_UART0_main
+     000000FC  _PIPS3                             ISP_UART0_main
+     000000FC  _PWM0MD                            ISP_UART0_main
+     000000FC  _REN_1                             ISP_UART0_main
+     000000FD  _PIPS4                             ISP_UART0_main
+     000000FD  _PORDIS                            ISP_UART0_main
+     000000FD  _SM2_1                             ISP_UART0_main
+     000000FE  _EIP1                              ISP_UART0_main
+     000000FE  _PIPS5                             ISP_UART0_main
+     000000FE  _SM1_1                             ISP_UART0_main
+     000000FF  _EIPH1                             ISP_UART0_main
+     000000FF  _FE_1                              ISP_UART0_main
+     000000FF  _LVRDIS                            ISP_UART0_main
+     000000FF  _PIPS6                             ISP_UART0_main
+     000000FF  _SM0_1                             ISP_UART0_main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+BSEG_BYTES                          00000020    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    00000068 =         104. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000021  _bufhead                           isp_uart0
+     00000022  _flash_address                     isp_uart0
+     00000024  _AP_size                           isp_uart0
+     00000026  _g_timer1Counter                   isp_uart0
+     00000027  _count                             isp_uart0
+     00000028  _g_timer0Counter                   isp_uart0
+     0000002A  _g_checksum                        isp_uart0
+     0000002E  _g_totalchecksum                   isp_uart0
+     00000032  _PID_highB                         isp_uart0
+     00000033  _PID_lowB                          isp_uart0
+     00000034  _DID_highB                         isp_uart0
+     00000035  _DID_lowB                          isp_uart0
+     00000036  _CONF0                             isp_uart0
+     00000037  _CONF1                             isp_uart0
+     00000038  _CONF2                             isp_uart0
+     00000039  _CONF4                             isp_uart0
+     0000003A  _recv_CONF0                        isp_uart0
+     0000003B  _recv_CONF1                        isp_uart0
+     0000003C  _recv_CONF2                        isp_uart0
+     0000003D  _recv_CONF4                        isp_uart0
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                0000003E    000000C2 =         194. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000003E  __start__stack                     ISP_UART0_main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XSEG                                00000001    00000080 =         128. bytes (REL,CON,XDATA)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+D:   00000001  _uart_rcvbuf                       isp_uart0
+D:   00000041  _uart_txbuf                        isp_uart0
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00000000    00000006 =           6. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000003  __sdcc_program_startup             ISP_UART0_main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT0                             00000006    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000006  __sdcc_gsinit_startup              
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT2                             00000009    0000000A =          10. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT3                             00000013    00000022 =          34. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000013  __mcs51_genXINIT                   
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT4                             00000035    0000002A =          42. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000035  __mcs51_genRAMCLEAR                
+C:   0000003B  __mcs51_genXRAMCLEAR               
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             0000005F    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    000007E0 =        2016. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000062  _MODIFY_HIRC_24                    isp_uart0
+C:   000000AF  _MODIFY_HIRC_16                    isp_uart0
+C:   000000FC  _READ_ID                           isp_uart0
+C:   00000173  _READ_CONFIG                       isp_uart0
+C:   000001EA  _TM0_ini                           isp_uart0
+C:   000001FD  _UART0_ini_115200_24MHz            isp_uart0
+C:   0000022F  _Package_checksum                  isp_uart0
+C:   0000029F  _Send_64byte_To_UART0              isp_uart0
+C:   000002C6  _Serial_ISR                        isp_uart0
+C:   0000031A  _Timer0_ISR                        isp_uart0
+C:   0000035D  _main                              ISP_UART0_main
+C:   0000083E  __sdcc_external_startup            _startup
+ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+
+Files Linked                              [ module(s) ]
+
+obj\Release\isp_uart0.rel                 [  ]
+obj\Release\ISP_UART0_main.rel            [  ]
+
+
+Libraries Linked                          [ object file ]
+
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxinit.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtpagesfr.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtstart.rel ]
+C:\Program Files\SDCC\bin\..\lib\small/libsdcc.lib
+                                          [ _startup.rel ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
+
+User Base Address Definitions
+
+HOME = 0x0000
+XSEG = 0x0001
+PSEG = 0x0001
+ISEG = 0x0000
+BSEG = 0x0000
+
+

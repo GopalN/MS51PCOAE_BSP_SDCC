@@ -1,0 +1,9 @@
+<sdcc_project>
+    <project filename="C:\MS51PC0AE\sdcc_c\MS51BSP_SDCC-master\MS51FC0AE_MS51XC0BE_MS51EC0AE_MS51TC0AE_MS51PC0AE\SampleCode\RegBased\GPIO_Input_Output\Blinky.sdprj" path="C:\MS51PC0AE\sdcc_c\MS51BSP_SDCC-master\MS51FC0AE_MS51XC0BE_MS51EC0AE_MS51TC0AE_MS51PC0AE\SampleCode\RegBased\GPIO_Input_Output\" />
+    <include_files />
+    <source_files />
+    <other_files>
+        <file path="C:\MS51PC0AE\sdcc_c\MS51BSP_SDCC-master\MS51FC0AE_MS51XC0BE_MS51EC0AE_MS51TC0AE_MS51PC0AE\SampleCode\RegBased\GPIO_Input_Output\GPIO.C" />
+    </other_files>
+</sdcc_project>
+

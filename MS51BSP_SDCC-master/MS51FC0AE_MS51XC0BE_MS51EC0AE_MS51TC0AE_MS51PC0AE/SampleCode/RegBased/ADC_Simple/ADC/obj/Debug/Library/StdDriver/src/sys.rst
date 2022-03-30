@@ -1,0 +1,2075 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.0.0 #11528 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module sys
+                                      6 	.optsdcc -mmcs51 --model-small
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _MOSI
+                                     12 	.globl _P00
+                                     13 	.globl _MISO
+                                     14 	.globl _P01
+                                     15 	.globl _RXD_1
+                                     16 	.globl _P02
+                                     17 	.globl _P03
+                                     18 	.globl _STADC
+                                     19 	.globl _P04
+                                     20 	.globl _P05
+                                     21 	.globl _TXD
+                                     22 	.globl _P06
+                                     23 	.globl _RXD
+                                     24 	.globl _P07
+                                     25 	.globl _IT0
+                                     26 	.globl _IE0
+                                     27 	.globl _IT1
+                                     28 	.globl _IE1
+                                     29 	.globl _TR0
+                                     30 	.globl _TF0
+                                     31 	.globl _TR1
+                                     32 	.globl _TF1
+                                     33 	.globl _P10
+                                     34 	.globl _P11
+                                     35 	.globl _P12
+                                     36 	.globl _SCL
+                                     37 	.globl _P13
+                                     38 	.globl _SDA
+                                     39 	.globl _P14
+                                     40 	.globl _P15
+                                     41 	.globl _TXD_1
+                                     42 	.globl _P16
+                                     43 	.globl _P17
+                                     44 	.globl _RI
+                                     45 	.globl _TI
+                                     46 	.globl _RB8
+                                     47 	.globl _TB8
+                                     48 	.globl _REN
+                                     49 	.globl _SM2
+                                     50 	.globl _SM1
+                                     51 	.globl _FE
+                                     52 	.globl _SM0
+                                     53 	.globl _P20
+                                     54 	.globl _EX0
+                                     55 	.globl _ET0
+                                     56 	.globl _EX1
+                                     57 	.globl _ET1
+                                     58 	.globl _ES
+                                     59 	.globl _EBOD
+                                     60 	.globl _EADC
+                                     61 	.globl _EA
+                                     62 	.globl _P30
+                                     63 	.globl _P31
+                                     64 	.globl _P32
+                                     65 	.globl _P33
+                                     66 	.globl _P34
+                                     67 	.globl _P35
+                                     68 	.globl _P36
+                                     69 	.globl _P37
+                                     70 	.globl _PX0
+                                     71 	.globl _PT0
+                                     72 	.globl _PX1
+                                     73 	.globl _PT1
+                                     74 	.globl _PS
+                                     75 	.globl _PBOD
+                                     76 	.globl _PADC
+                                     77 	.globl _I2CPX
+                                     78 	.globl _AA
+                                     79 	.globl _SI
+                                     80 	.globl _STO
+                                     81 	.globl _STA
+                                     82 	.globl _I2CEN
+                                     83 	.globl _CM_RL2
+                                     84 	.globl _TR2
+                                     85 	.globl _TF2
+                                     86 	.globl _P
+                                     87 	.globl _OV
+                                     88 	.globl _RS0
+                                     89 	.globl _RS1
+                                     90 	.globl _F0
+                                     91 	.globl _AC
+                                     92 	.globl _CY
+                                     93 	.globl _CLRPWM
+                                     94 	.globl _PWMF
+                                     95 	.globl _LOAD
+                                     96 	.globl _PWMRUN
+                                     97 	.globl _ADCHS0
+                                     98 	.globl _ADCHS1
+                                     99 	.globl _ADCHS2
+                                    100 	.globl _ADCHS3
+                                    101 	.globl _ETGSEL0
+                                    102 	.globl _ETGSEL1
+                                    103 	.globl _ADCS
+                                    104 	.globl _ADCF
+                                    105 	.globl _RI_1
+                                    106 	.globl _TI_1
+                                    107 	.globl _RB8_1
+                                    108 	.globl _TB8_1
+                                    109 	.globl _REN_1
+                                    110 	.globl _SM2_1
+                                    111 	.globl _SM1_1
+                                    112 	.globl _FE_1
+                                    113 	.globl _SM0_1
+                                    114 	.globl _PIPS6
+                                    115 	.globl _PIPS5
+                                    116 	.globl _PIPS4
+                                    117 	.globl _PIPS3
+                                    118 	.globl _PIPS2
+                                    119 	.globl _PIPS1
+                                    120 	.globl _PIPS0
+                                    121 	.globl _PIPS7
+                                    122 	.globl _SC2CR1
+                                    123 	.globl _SC2CR0
+                                    124 	.globl _SC1CR1
+                                    125 	.globl _SC1CR0
+                                    126 	.globl _SC0CR1
+                                    127 	.globl _SC0CR0
+                                    128 	.globl _SC2TSR
+                                    129 	.globl _SC2IS
+                                    130 	.globl _SC2IE
+                                    131 	.globl _SC2ETURD1
+                                    132 	.globl _SC2ETURD0
+                                    133 	.globl _SC2EGT
+                                    134 	.globl _SC2DR
+                                    135 	.globl _SC1TSR
+                                    136 	.globl _SC1IS
+                                    137 	.globl _SC1IE
+                                    138 	.globl _SC1ETURD1
+                                    139 	.globl _SC1ETURD0
+                                    140 	.globl _SC1EGT
+                                    141 	.globl _SC1DR
+                                    142 	.globl _SC0TSR
+                                    143 	.globl _SC0IS
+                                    144 	.globl _SC0IE
+                                    145 	.globl _SC0ETURD1
+                                    146 	.globl _SC0ETURD0
+                                    147 	.globl _SC0EGT
+                                    148 	.globl _SC0DR
+                                    149 	.globl _XTLCON
+                                    150 	.globl _PWM3INTC
+                                    151 	.globl _PWM3CON1
+                                    152 	.globl _PWM3CON0
+                                    153 	.globl _PWM3C1L
+                                    154 	.globl _PWM3C0L
+                                    155 	.globl _PWM3PL
+                                    156 	.globl _EIPH2
+                                    157 	.globl _EIP2
+                                    158 	.globl _PWM3MEN
+                                    159 	.globl _PWM3MD
+                                    160 	.globl _PWM3C1H
+                                    161 	.globl _PWM3C0H
+                                    162 	.globl _PWM3PH
+                                    163 	.globl _PWM2INTC
+                                    164 	.globl _PWM2CON1
+                                    165 	.globl _PWM2CON0
+                                    166 	.globl _PWM2C1L
+                                    167 	.globl _PWM2C0L
+                                    168 	.globl _PWM2PL
+                                    169 	.globl _PWM2MEN
+                                    170 	.globl _PWM2MD
+                                    171 	.globl _PWM2C1H
+                                    172 	.globl _PWM2C0H
+                                    173 	.globl _PWM2PH
+                                    174 	.globl _PIOCON2
+                                    175 	.globl _PWM1INTC
+                                    176 	.globl _PWM1CON1
+                                    177 	.globl _PWM1CON0
+                                    178 	.globl _PWM1C1L
+                                    179 	.globl _PWM1C0L
+                                    180 	.globl _PWM1PL
+                                    181 	.globl _PWM1MEN
+                                    182 	.globl _PWM1MD
+                                    183 	.globl _PWM1C1H
+                                    184 	.globl _PWM1C0H
+                                    185 	.globl _PWM1PH
+                                    186 	.globl _AUXR8
+                                    187 	.globl _AUXR7
+                                    188 	.globl _AUXR6
+                                    189 	.globl _AUXR5
+                                    190 	.globl _AUXR4
+                                    191 	.globl _AUXR3
+                                    192 	.globl _AUXR2
+                                    193 	.globl _P3DW
+                                    194 	.globl _P2DW
+                                    195 	.globl _P1DW
+                                    196 	.globl _P0DW
+                                    197 	.globl _AINDIDS1
+                                    198 	.globl _RWKH
+                                    199 	.globl _P3UP
+                                    200 	.globl _P2UP
+                                    201 	.globl _P1UP
+                                    202 	.globl _P0UP
+                                    203 	.globl _ADCSR
+                                    204 	.globl _ADCCN
+                                    205 	.globl _ADCSN
+                                    206 	.globl _P2S
+                                    207 	.globl _P2SR
+                                    208 	.globl _P2M2
+                                    209 	.globl _P2M1
+                                    210 	.globl _ADCCON3
+                                    211 	.globl _ADCBAH
+                                    212 	.globl _ADCBAL
+                                    213 	.globl _LVRDIS
+                                    214 	.globl _SPCR2
+                                    215 	.globl _PWM0C5L
+                                    216 	.globl _PWM0C4L
+                                    217 	.globl _PIOCON1
+                                    218 	.globl _PWM0C5H
+                                    219 	.globl _PWM0C4H
+                                    220 	.globl _PWM0INTC
+                                    221 	.globl _P1SR
+                                    222 	.globl _P1S
+                                    223 	.globl _P0SR
+                                    224 	.globl _P0S
+                                    225 	.globl _P3SR
+                                    226 	.globl _P3S
+                                    227 	.globl _EIPH1
+                                    228 	.globl _EIP1
+                                    229 	.globl _PORDIS
+                                    230 	.globl _PWM0MD
+                                    231 	.globl _PWM0MEN
+                                    232 	.globl _PWM0DTCNT
+                                    233 	.globl _PWM0DTEN
+                                    234 	.globl _SCON_1
+                                    235 	.globl _EIPH
+                                    236 	.globl _AINDIDS0
+                                    237 	.globl _SPDR
+                                    238 	.globl _SPSR
+                                    239 	.globl _SPCR
+                                    240 	.globl _CAPCON4
+                                    241 	.globl _CAPCON3
+                                    242 	.globl _B
+                                    243 	.globl _EIP
+                                    244 	.globl _C2H
+                                    245 	.globl _C2L
+                                    246 	.globl _PIF
+                                    247 	.globl _PIPEN
+                                    248 	.globl _PINEN
+                                    249 	.globl _PICON
+                                    250 	.globl _ADCCON0
+                                    251 	.globl _C1H
+                                    252 	.globl _C1L
+                                    253 	.globl _C0H
+                                    254 	.globl _C0L
+                                    255 	.globl _ADCDLY
+                                    256 	.globl _ADCCON2
+                                    257 	.globl _ADCCON1
+                                    258 	.globl _ACC
+                                    259 	.globl _PWM0CON1
+                                    260 	.globl _PIOCON0
+                                    261 	.globl _PWM0C3L
+                                    262 	.globl _PWM0C2L
+                                    263 	.globl _PWM0C1L
+                                    264 	.globl _PWM0C0L
+                                    265 	.globl _PWM0PL
+                                    266 	.globl _PWM0CON0
+                                    267 	.globl _PWM0FBD
+                                    268 	.globl _PNP
+                                    269 	.globl _PWM0C3H
+                                    270 	.globl _PWM0C2H
+                                    271 	.globl _PWM0C1H
+                                    272 	.globl _PWM0C0H
+                                    273 	.globl _PWM0PH
+                                    274 	.globl _PSW
+                                    275 	.globl _ADCMPH
+                                    276 	.globl _ADCMPL
+                                    277 	.globl _TH2
+                                    278 	.globl _TL2
+                                    279 	.globl _RCMP2H
+                                    280 	.globl _RCMP2L
+                                    281 	.globl _T2MOD
+                                    282 	.globl _T2CON
+                                    283 	.globl _TA
+                                    284 	.globl _RH3
+                                    285 	.globl _RL3
+                                    286 	.globl _T3CON
+                                    287 	.globl _ADCRH
+                                    288 	.globl _ADCRL
+                                    289 	.globl _I2ADDR
+                                    290 	.globl _I2CON
+                                    291 	.globl _I2TOC
+                                    292 	.globl _I2CLK
+                                    293 	.globl _I2STAT
+                                    294 	.globl _I2DAT
+                                    295 	.globl _SADDR_1
+                                    296 	.globl _SADEN_1
+                                    297 	.globl _SADEN
+                                    298 	.globl _IP
+                                    299 	.globl _IPH
+                                    300 	.globl _TOE
+                                    301 	.globl _P1M2
+                                    302 	.globl _P1M1
+                                    303 	.globl _P0M2
+                                    304 	.globl _P0M1
+                                    305 	.globl _P3
+                                    306 	.globl _IAPCN
+                                    307 	.globl _IAPFD
+                                    308 	.globl _P3M2
+                                    309 	.globl _P3M1
+                                    310 	.globl _BODCON1
+                                    311 	.globl _WDCON
+                                    312 	.globl _SADDR
+                                    313 	.globl _IE
+                                    314 	.globl _IAPAH
+                                    315 	.globl _IAPAL
+                                    316 	.globl _IAPUEN
+                                    317 	.globl _IAPTRG
+                                    318 	.globl _BODCON0
+                                    319 	.globl _AUXR1
+                                    320 	.globl _P2
+                                    321 	.globl _CHPCON
+                                    322 	.globl _EIE1
+                                    323 	.globl _EIE
+                                    324 	.globl _SBUF_1
+                                    325 	.globl _SBUF
+                                    326 	.globl _SCON
+                                    327 	.globl _CKEN
+                                    328 	.globl _CKSWT
+                                    329 	.globl _CKDIV
+                                    330 	.globl _CAPCON2
+                                    331 	.globl _CAPCON1
+                                    332 	.globl _CAPCON0
+                                    333 	.globl _SFRS
+                                    334 	.globl _P1
+                                    335 	.globl _WKCON
+                                    336 	.globl _CKCON
+                                    337 	.globl _TH1
+                                    338 	.globl _TH0
+                                    339 	.globl _TL1
+                                    340 	.globl _TL0
+                                    341 	.globl _TMOD
+                                    342 	.globl _TCON
+                                    343 	.globl _PCON
+                                    344 	.globl _RWKL
+                                    345 	.globl _RCTRIM1
+                                    346 	.globl _RCTRIM0
+                                    347 	.globl _DPH
+                                    348 	.globl _DPL
+                                    349 	.globl _SP
+                                    350 	.globl _P0
+                                    351 	.globl _BIT_TMP
+                                    352 	.globl _SFRS_TMP
+                                    353 	.globl _BYTE_TMP
+                                    354 	.globl _TA_REG_TMP
+                                    355 	.globl _MODIFY_HIRC
+                                    356 	.globl _FsysSelect
+                                    357 	.globl _ClockEnable
+                                    358 	.globl _ClockDisable
+                                    359 	.globl _ClockSwitch
+                                    360 ;--------------------------------------------------------
+                                    361 ; special function registers
+                                    362 ;--------------------------------------------------------
+                                    363 	.area RSEG    (ABS,DATA)
+      000000                        364 	.org 0x0000
+                           000080   365 G$P0$0_0$0 == 0x0080
+                           000080   366 _P0	=	0x0080
+                           000081   367 G$SP$0_0$0 == 0x0081
+                           000081   368 _SP	=	0x0081
+                           000082   369 G$DPL$0_0$0 == 0x0082
+                           000082   370 _DPL	=	0x0082
+                           000083   371 G$DPH$0_0$0 == 0x0083
+                           000083   372 _DPH	=	0x0083
+                           000084   373 G$RCTRIM0$0_0$0 == 0x0084
+                           000084   374 _RCTRIM0	=	0x0084
+                           000085   375 G$RCTRIM1$0_0$0 == 0x0085
+                           000085   376 _RCTRIM1	=	0x0085
+                           000086   377 G$RWKL$0_0$0 == 0x0086
+                           000086   378 _RWKL	=	0x0086
+                           000087   379 G$PCON$0_0$0 == 0x0087
+                           000087   380 _PCON	=	0x0087
+                           000088   381 G$TCON$0_0$0 == 0x0088
+                           000088   382 _TCON	=	0x0088
+                           000089   383 G$TMOD$0_0$0 == 0x0089
+                           000089   384 _TMOD	=	0x0089
+                           00008A   385 G$TL0$0_0$0 == 0x008a
+                           00008A   386 _TL0	=	0x008a
+                           00008B   387 G$TL1$0_0$0 == 0x008b
+                           00008B   388 _TL1	=	0x008b
+                           00008C   389 G$TH0$0_0$0 == 0x008c
+                           00008C   390 _TH0	=	0x008c
+                           00008D   391 G$TH1$0_0$0 == 0x008d
+                           00008D   392 _TH1	=	0x008d
+                           00008E   393 G$CKCON$0_0$0 == 0x008e
+                           00008E   394 _CKCON	=	0x008e
+                           00008F   395 G$WKCON$0_0$0 == 0x008f
+                           00008F   396 _WKCON	=	0x008f
+                           000090   397 G$P1$0_0$0 == 0x0090
+                           000090   398 _P1	=	0x0090
+                           000091   399 G$SFRS$0_0$0 == 0x0091
+                           000091   400 _SFRS	=	0x0091
+                           000092   401 G$CAPCON0$0_0$0 == 0x0092
+                           000092   402 _CAPCON0	=	0x0092
+                           000093   403 G$CAPCON1$0_0$0 == 0x0093
+                           000093   404 _CAPCON1	=	0x0093
+                           000094   405 G$CAPCON2$0_0$0 == 0x0094
+                           000094   406 _CAPCON2	=	0x0094
+                           000095   407 G$CKDIV$0_0$0 == 0x0095
+                           000095   408 _CKDIV	=	0x0095
+                           000096   409 G$CKSWT$0_0$0 == 0x0096
+                           000096   410 _CKSWT	=	0x0096
+                           000097   411 G$CKEN$0_0$0 == 0x0097
+                           000097   412 _CKEN	=	0x0097
+                           000098   413 G$SCON$0_0$0 == 0x0098
+                           000098   414 _SCON	=	0x0098
+                           000099   415 G$SBUF$0_0$0 == 0x0099
+                           000099   416 _SBUF	=	0x0099
+                           00009A   417 G$SBUF_1$0_0$0 == 0x009a
+                           00009A   418 _SBUF_1	=	0x009a
+                           00009B   419 G$EIE$0_0$0 == 0x009b
+                           00009B   420 _EIE	=	0x009b
+                           00009C   421 G$EIE1$0_0$0 == 0x009c
+                           00009C   422 _EIE1	=	0x009c
+                           00009F   423 G$CHPCON$0_0$0 == 0x009f
+                           00009F   424 _CHPCON	=	0x009f
+                           0000A0   425 G$P2$0_0$0 == 0x00a0
+                           0000A0   426 _P2	=	0x00a0
+                           0000A2   427 G$AUXR1$0_0$0 == 0x00a2
+                           0000A2   428 _AUXR1	=	0x00a2
+                           0000A3   429 G$BODCON0$0_0$0 == 0x00a3
+                           0000A3   430 _BODCON0	=	0x00a3
+                           0000A4   431 G$IAPTRG$0_0$0 == 0x00a4
+                           0000A4   432 _IAPTRG	=	0x00a4
+                           0000A5   433 G$IAPUEN$0_0$0 == 0x00a5
+                           0000A5   434 _IAPUEN	=	0x00a5
+                           0000A6   435 G$IAPAL$0_0$0 == 0x00a6
+                           0000A6   436 _IAPAL	=	0x00a6
+                           0000A7   437 G$IAPAH$0_0$0 == 0x00a7
+                           0000A7   438 _IAPAH	=	0x00a7
+                           0000A8   439 G$IE$0_0$0 == 0x00a8
+                           0000A8   440 _IE	=	0x00a8
+                           0000A9   441 G$SADDR$0_0$0 == 0x00a9
+                           0000A9   442 _SADDR	=	0x00a9
+                           0000AA   443 G$WDCON$0_0$0 == 0x00aa
+                           0000AA   444 _WDCON	=	0x00aa
+                           0000AB   445 G$BODCON1$0_0$0 == 0x00ab
+                           0000AB   446 _BODCON1	=	0x00ab
+                           0000AC   447 G$P3M1$0_0$0 == 0x00ac
+                           0000AC   448 _P3M1	=	0x00ac
+                           0000AD   449 G$P3M2$0_0$0 == 0x00ad
+                           0000AD   450 _P3M2	=	0x00ad
+                           0000AE   451 G$IAPFD$0_0$0 == 0x00ae
+                           0000AE   452 _IAPFD	=	0x00ae
+                           0000AF   453 G$IAPCN$0_0$0 == 0x00af
+                           0000AF   454 _IAPCN	=	0x00af
+                           0000B0   455 G$P3$0_0$0 == 0x00b0
+                           0000B0   456 _P3	=	0x00b0
+                           0000B1   457 G$P0M1$0_0$0 == 0x00b1
+                           0000B1   458 _P0M1	=	0x00b1
+                           0000B2   459 G$P0M2$0_0$0 == 0x00b2
+                           0000B2   460 _P0M2	=	0x00b2
+                           0000B3   461 G$P1M1$0_0$0 == 0x00b3
+                           0000B3   462 _P1M1	=	0x00b3
+                           0000B4   463 G$P1M2$0_0$0 == 0x00b4
+                           0000B4   464 _P1M2	=	0x00b4
+                           0000B5   465 G$TOE$0_0$0 == 0x00b5
+                           0000B5   466 _TOE	=	0x00b5
+                           0000B7   467 G$IPH$0_0$0 == 0x00b7
+                           0000B7   468 _IPH	=	0x00b7
+                           0000B8   469 G$IP$0_0$0 == 0x00b8
+                           0000B8   470 _IP	=	0x00b8
+                           0000B9   471 G$SADEN$0_0$0 == 0x00b9
+                           0000B9   472 _SADEN	=	0x00b9
+                           0000BA   473 G$SADEN_1$0_0$0 == 0x00ba
+                           0000BA   474 _SADEN_1	=	0x00ba
+                           0000BB   475 G$SADDR_1$0_0$0 == 0x00bb
+                           0000BB   476 _SADDR_1	=	0x00bb
+                           0000BC   477 G$I2DAT$0_0$0 == 0x00bc
+                           0000BC   478 _I2DAT	=	0x00bc
+                           0000BD   479 G$I2STAT$0_0$0 == 0x00bd
+                           0000BD   480 _I2STAT	=	0x00bd
+                           0000BE   481 G$I2CLK$0_0$0 == 0x00be
+                           0000BE   482 _I2CLK	=	0x00be
+                           0000BF   483 G$I2TOC$0_0$0 == 0x00bf
+                           0000BF   484 _I2TOC	=	0x00bf
+                           0000C0   485 G$I2CON$0_0$0 == 0x00c0
+                           0000C0   486 _I2CON	=	0x00c0
+                           0000C1   487 G$I2ADDR$0_0$0 == 0x00c1
+                           0000C1   488 _I2ADDR	=	0x00c1
+                           0000C2   489 G$ADCRL$0_0$0 == 0x00c2
+                           0000C2   490 _ADCRL	=	0x00c2
+                           0000C3   491 G$ADCRH$0_0$0 == 0x00c3
+                           0000C3   492 _ADCRH	=	0x00c3
+                           0000C4   493 G$T3CON$0_0$0 == 0x00c4
+                           0000C4   494 _T3CON	=	0x00c4
+                           0000C5   495 G$RL3$0_0$0 == 0x00c5
+                           0000C5   496 _RL3	=	0x00c5
+                           0000C6   497 G$RH3$0_0$0 == 0x00c6
+                           0000C6   498 _RH3	=	0x00c6
+                           0000C7   499 G$TA$0_0$0 == 0x00c7
+                           0000C7   500 _TA	=	0x00c7
+                           0000C8   501 G$T2CON$0_0$0 == 0x00c8
+                           0000C8   502 _T2CON	=	0x00c8
+                           0000C9   503 G$T2MOD$0_0$0 == 0x00c9
+                           0000C9   504 _T2MOD	=	0x00c9
+                           0000CA   505 G$RCMP2L$0_0$0 == 0x00ca
+                           0000CA   506 _RCMP2L	=	0x00ca
+                           0000CB   507 G$RCMP2H$0_0$0 == 0x00cb
+                           0000CB   508 _RCMP2H	=	0x00cb
+                           0000CC   509 G$TL2$0_0$0 == 0x00cc
+                           0000CC   510 _TL2	=	0x00cc
+                           0000CD   511 G$TH2$0_0$0 == 0x00cd
+                           0000CD   512 _TH2	=	0x00cd
+                           0000CE   513 G$ADCMPL$0_0$0 == 0x00ce
+                           0000CE   514 _ADCMPL	=	0x00ce
+                           0000CF   515 G$ADCMPH$0_0$0 == 0x00cf
+                           0000CF   516 _ADCMPH	=	0x00cf
+                           0000D0   517 G$PSW$0_0$0 == 0x00d0
+                           0000D0   518 _PSW	=	0x00d0
+                           0000D1   519 G$PWM0PH$0_0$0 == 0x00d1
+                           0000D1   520 _PWM0PH	=	0x00d1
+                           0000D2   521 G$PWM0C0H$0_0$0 == 0x00d2
+                           0000D2   522 _PWM0C0H	=	0x00d2
+                           0000D3   523 G$PWM0C1H$0_0$0 == 0x00d3
+                           0000D3   524 _PWM0C1H	=	0x00d3
+                           0000D4   525 G$PWM0C2H$0_0$0 == 0x00d4
+                           0000D4   526 _PWM0C2H	=	0x00d4
+                           0000D5   527 G$PWM0C3H$0_0$0 == 0x00d5
+                           0000D5   528 _PWM0C3H	=	0x00d5
+                           0000D6   529 G$PNP$0_0$0 == 0x00d6
+                           0000D6   530 _PNP	=	0x00d6
+                           0000D7   531 G$PWM0FBD$0_0$0 == 0x00d7
+                           0000D7   532 _PWM0FBD	=	0x00d7
+                           0000D8   533 G$PWM0CON0$0_0$0 == 0x00d8
+                           0000D8   534 _PWM0CON0	=	0x00d8
+                           0000D9   535 G$PWM0PL$0_0$0 == 0x00d9
+                           0000D9   536 _PWM0PL	=	0x00d9
+                           0000DA   537 G$PWM0C0L$0_0$0 == 0x00da
+                           0000DA   538 _PWM0C0L	=	0x00da
+                           0000DB   539 G$PWM0C1L$0_0$0 == 0x00db
+                           0000DB   540 _PWM0C1L	=	0x00db
+                           0000DC   541 G$PWM0C2L$0_0$0 == 0x00dc
+                           0000DC   542 _PWM0C2L	=	0x00dc
+                           0000DD   543 G$PWM0C3L$0_0$0 == 0x00dd
+                           0000DD   544 _PWM0C3L	=	0x00dd
+                           0000DE   545 G$PIOCON0$0_0$0 == 0x00de
+                           0000DE   546 _PIOCON0	=	0x00de
+                           0000DF   547 G$PWM0CON1$0_0$0 == 0x00df
+                           0000DF   548 _PWM0CON1	=	0x00df
+                           0000E0   549 G$ACC$0_0$0 == 0x00e0
+                           0000E0   550 _ACC	=	0x00e0
+                           0000E1   551 G$ADCCON1$0_0$0 == 0x00e1
+                           0000E1   552 _ADCCON1	=	0x00e1
+                           0000E2   553 G$ADCCON2$0_0$0 == 0x00e2
+                           0000E2   554 _ADCCON2	=	0x00e2
+                           0000E3   555 G$ADCDLY$0_0$0 == 0x00e3
+                           0000E3   556 _ADCDLY	=	0x00e3
+                           0000E4   557 G$C0L$0_0$0 == 0x00e4
+                           0000E4   558 _C0L	=	0x00e4
+                           0000E5   559 G$C0H$0_0$0 == 0x00e5
+                           0000E5   560 _C0H	=	0x00e5
+                           0000E6   561 G$C1L$0_0$0 == 0x00e6
+                           0000E6   562 _C1L	=	0x00e6
+                           0000E7   563 G$C1H$0_0$0 == 0x00e7
+                           0000E7   564 _C1H	=	0x00e7
+                           0000E8   565 G$ADCCON0$0_0$0 == 0x00e8
+                           0000E8   566 _ADCCON0	=	0x00e8
+                           0000E9   567 G$PICON$0_0$0 == 0x00e9
+                           0000E9   568 _PICON	=	0x00e9
+                           0000EA   569 G$PINEN$0_0$0 == 0x00ea
+                           0000EA   570 _PINEN	=	0x00ea
+                           0000EB   571 G$PIPEN$0_0$0 == 0x00eb
+                           0000EB   572 _PIPEN	=	0x00eb
+                           0000EC   573 G$PIF$0_0$0 == 0x00ec
+                           0000EC   574 _PIF	=	0x00ec
+                           0000ED   575 G$C2L$0_0$0 == 0x00ed
+                           0000ED   576 _C2L	=	0x00ed
+                           0000EE   577 G$C2H$0_0$0 == 0x00ee
+                           0000EE   578 _C2H	=	0x00ee
+                           0000EF   579 G$EIP$0_0$0 == 0x00ef
+                           0000EF   580 _EIP	=	0x00ef
+                           0000F0   581 G$B$0_0$0 == 0x00f0
+                           0000F0   582 _B	=	0x00f0
+                           0000F1   583 G$CAPCON3$0_0$0 == 0x00f1
+                           0000F1   584 _CAPCON3	=	0x00f1
+                           0000F2   585 G$CAPCON4$0_0$0 == 0x00f2
+                           0000F2   586 _CAPCON4	=	0x00f2
+                           0000F3   587 G$SPCR$0_0$0 == 0x00f3
+                           0000F3   588 _SPCR	=	0x00f3
+                           0000F4   589 G$SPSR$0_0$0 == 0x00f4
+                           0000F4   590 _SPSR	=	0x00f4
+                           0000F5   591 G$SPDR$0_0$0 == 0x00f5
+                           0000F5   592 _SPDR	=	0x00f5
+                           0000F6   593 G$AINDIDS0$0_0$0 == 0x00f6
+                           0000F6   594 _AINDIDS0	=	0x00f6
+                           0000F7   595 G$EIPH$0_0$0 == 0x00f7
+                           0000F7   596 _EIPH	=	0x00f7
+                           0000F8   597 G$SCON_1$0_0$0 == 0x00f8
+                           0000F8   598 _SCON_1	=	0x00f8
+                           0000F9   599 G$PWM0DTEN$0_0$0 == 0x00f9
+                           0000F9   600 _PWM0DTEN	=	0x00f9
+                           0000FA   601 G$PWM0DTCNT$0_0$0 == 0x00fa
+                           0000FA   602 _PWM0DTCNT	=	0x00fa
+                           0000FB   603 G$PWM0MEN$0_0$0 == 0x00fb
+                           0000FB   604 _PWM0MEN	=	0x00fb
+                           0000FC   605 G$PWM0MD$0_0$0 == 0x00fc
+                           0000FC   606 _PWM0MD	=	0x00fc
+                           0000FD   607 G$PORDIS$0_0$0 == 0x00fd
+                           0000FD   608 _PORDIS	=	0x00fd
+                           0000FE   609 G$EIP1$0_0$0 == 0x00fe
+                           0000FE   610 _EIP1	=	0x00fe
+                           0000FF   611 G$EIPH1$0_0$0 == 0x00ff
+                           0000FF   612 _EIPH1	=	0x00ff
+                           0000AC   613 G$P3S$0_0$0 == 0x00ac
+                           0000AC   614 _P3S	=	0x00ac
+                           0000AD   615 G$P3SR$0_0$0 == 0x00ad
+                           0000AD   616 _P3SR	=	0x00ad
+                           0000B1   617 G$P0S$0_0$0 == 0x00b1
+                           0000B1   618 _P0S	=	0x00b1
+                           0000B2   619 G$P0SR$0_0$0 == 0x00b2
+                           0000B2   620 _P0SR	=	0x00b2
+                           0000B3   621 G$P1S$0_0$0 == 0x00b3
+                           0000B3   622 _P1S	=	0x00b3
+                           0000B4   623 G$P1SR$0_0$0 == 0x00b4
+                           0000B4   624 _P1SR	=	0x00b4
+                           0000B7   625 G$PWM0INTC$0_0$0 == 0x00b7
+                           0000B7   626 _PWM0INTC	=	0x00b7
+                           0000C4   627 G$PWM0C4H$0_0$0 == 0x00c4
+                           0000C4   628 _PWM0C4H	=	0x00c4
+                           0000C5   629 G$PWM0C5H$0_0$0 == 0x00c5
+                           0000C5   630 _PWM0C5H	=	0x00c5
+                           0000C6   631 G$PIOCON1$0_0$0 == 0x00c6
+                           0000C6   632 _PIOCON1	=	0x00c6
+                           0000CC   633 G$PWM0C4L$0_0$0 == 0x00cc
+                           0000CC   634 _PWM0C4L	=	0x00cc
+                           0000CD   635 G$PWM0C5L$0_0$0 == 0x00cd
+                           0000CD   636 _PWM0C5L	=	0x00cd
+                           0000F3   637 G$SPCR2$0_0$0 == 0x00f3
+                           0000F3   638 _SPCR2	=	0x00f3
+                           0000FF   639 G$LVRDIS$0_0$0 == 0x00ff
+                           0000FF   640 _LVRDIS	=	0x00ff
+                           000084   641 G$ADCBAL$0_0$0 == 0x0084
+                           000084   642 _ADCBAL	=	0x0084
+                           000085   643 G$ADCBAH$0_0$0 == 0x0085
+                           000085   644 _ADCBAH	=	0x0085
+                           000086   645 G$ADCCON3$0_0$0 == 0x0086
+                           000086   646 _ADCCON3	=	0x0086
+                           000089   647 G$P2M1$0_0$0 == 0x0089
+                           000089   648 _P2M1	=	0x0089
+                           00008A   649 G$P2M2$0_0$0 == 0x008a
+                           00008A   650 _P2M2	=	0x008a
+                           00008B   651 G$P2SR$0_0$0 == 0x008b
+                           00008B   652 _P2SR	=	0x008b
+                           00008C   653 G$P2S$0_0$0 == 0x008c
+                           00008C   654 _P2S	=	0x008c
+                           00008D   655 G$ADCSN$0_0$0 == 0x008d
+                           00008D   656 _ADCSN	=	0x008d
+                           00008E   657 G$ADCCN$0_0$0 == 0x008e
+                           00008E   658 _ADCCN	=	0x008e
+                           00008F   659 G$ADCSR$0_0$0 == 0x008f
+                           00008F   660 _ADCSR	=	0x008f
+                           000092   661 G$P0UP$0_0$0 == 0x0092
+                           000092   662 _P0UP	=	0x0092
+                           000093   663 G$P1UP$0_0$0 == 0x0093
+                           000093   664 _P1UP	=	0x0093
+                           000094   665 G$P2UP$0_0$0 == 0x0094
+                           000094   666 _P2UP	=	0x0094
+                           000095   667 G$P3UP$0_0$0 == 0x0095
+                           000095   668 _P3UP	=	0x0095
+                           000097   669 G$RWKH$0_0$0 == 0x0097
+                           000097   670 _RWKH	=	0x0097
+                           000099   671 G$AINDIDS1$0_0$0 == 0x0099
+                           000099   672 _AINDIDS1	=	0x0099
+                           00009A   673 G$P0DW$0_0$0 == 0x009a
+                           00009A   674 _P0DW	=	0x009a
+                           00009B   675 G$P1DW$0_0$0 == 0x009b
+                           00009B   676 _P1DW	=	0x009b
+                           00009C   677 G$P2DW$0_0$0 == 0x009c
+                           00009C   678 _P2DW	=	0x009c
+                           00009D   679 G$P3DW$0_0$0 == 0x009d
+                           00009D   680 _P3DW	=	0x009d
+                           0000A1   681 G$AUXR2$0_0$0 == 0x00a1
+                           0000A1   682 _AUXR2	=	0x00a1
+                           0000A2   683 G$AUXR3$0_0$0 == 0x00a2
+                           0000A2   684 _AUXR3	=	0x00a2
+                           0000A3   685 G$AUXR4$0_0$0 == 0x00a3
+                           0000A3   686 _AUXR4	=	0x00a3
+                           0000A4   687 G$AUXR5$0_0$0 == 0x00a4
+                           0000A4   688 _AUXR5	=	0x00a4
+                           0000A5   689 G$AUXR6$0_0$0 == 0x00a5
+                           0000A5   690 _AUXR6	=	0x00a5
+                           0000A6   691 G$AUXR7$0_0$0 == 0x00a6
+                           0000A6   692 _AUXR7	=	0x00a6
+                           0000A7   693 G$AUXR8$0_0$0 == 0x00a7
+                           0000A7   694 _AUXR8	=	0x00a7
+                           0000A9   695 G$PWM1PH$0_0$0 == 0x00a9
+                           0000A9   696 _PWM1PH	=	0x00a9
+                           0000AA   697 G$PWM1C0H$0_0$0 == 0x00aa
+                           0000AA   698 _PWM1C0H	=	0x00aa
+                           0000AB   699 G$PWM1C1H$0_0$0 == 0x00ab
+                           0000AB   700 _PWM1C1H	=	0x00ab
+                           0000AC   701 G$PWM1MD$0_0$0 == 0x00ac
+                           0000AC   702 _PWM1MD	=	0x00ac
+                           0000AD   703 G$PWM1MEN$0_0$0 == 0x00ad
+                           0000AD   704 _PWM1MEN	=	0x00ad
+                           0000B1   705 G$PWM1PL$0_0$0 == 0x00b1
+                           0000B1   706 _PWM1PL	=	0x00b1
+                           0000B2   707 G$PWM1C0L$0_0$0 == 0x00b2
+                           0000B2   708 _PWM1C0L	=	0x00b2
+                           0000B3   709 G$PWM1C1L$0_0$0 == 0x00b3
+                           0000B3   710 _PWM1C1L	=	0x00b3
+                           0000B4   711 G$PWM1CON0$0_0$0 == 0x00b4
+                           0000B4   712 _PWM1CON0	=	0x00b4
+                           0000B5   713 G$PWM1CON1$0_0$0 == 0x00b5
+                           0000B5   714 _PWM1CON1	=	0x00b5
+                           0000B6   715 G$PWM1INTC$0_0$0 == 0x00b6
+                           0000B6   716 _PWM1INTC	=	0x00b6
+                           0000B7   717 G$PIOCON2$0_0$0 == 0x00b7
+                           0000B7   718 _PIOCON2	=	0x00b7
+                           0000B9   719 G$PWM2PH$0_0$0 == 0x00b9
+                           0000B9   720 _PWM2PH	=	0x00b9
+                           0000BA   721 G$PWM2C0H$0_0$0 == 0x00ba
+                           0000BA   722 _PWM2C0H	=	0x00ba
+                           0000BB   723 G$PWM2C1H$0_0$0 == 0x00bb
+                           0000BB   724 _PWM2C1H	=	0x00bb
+                           0000BC   725 G$PWM2MD$0_0$0 == 0x00bc
+                           0000BC   726 _PWM2MD	=	0x00bc
+                           0000BD   727 G$PWM2MEN$0_0$0 == 0x00bd
+                           0000BD   728 _PWM2MEN	=	0x00bd
+                           0000C1   729 G$PWM2PL$0_0$0 == 0x00c1
+                           0000C1   730 _PWM2PL	=	0x00c1
+                           0000C2   731 G$PWM2C0L$0_0$0 == 0x00c2
+                           0000C2   732 _PWM2C0L	=	0x00c2
+                           0000C3   733 G$PWM2C1L$0_0$0 == 0x00c3
+                           0000C3   734 _PWM2C1L	=	0x00c3
+                           0000C4   735 G$PWM2CON0$0_0$0 == 0x00c4
+                           0000C4   736 _PWM2CON0	=	0x00c4
+                           0000C5   737 G$PWM2CON1$0_0$0 == 0x00c5
+                           0000C5   738 _PWM2CON1	=	0x00c5
+                           0000C6   739 G$PWM2INTC$0_0$0 == 0x00c6
+                           0000C6   740 _PWM2INTC	=	0x00c6
+                           0000C9   741 G$PWM3PH$0_0$0 == 0x00c9
+                           0000C9   742 _PWM3PH	=	0x00c9
+                           0000CA   743 G$PWM3C0H$0_0$0 == 0x00ca
+                           0000CA   744 _PWM3C0H	=	0x00ca
+                           0000CB   745 G$PWM3C1H$0_0$0 == 0x00cb
+                           0000CB   746 _PWM3C1H	=	0x00cb
+                           0000CC   747 G$PWM3MD$0_0$0 == 0x00cc
+                           0000CC   748 _PWM3MD	=	0x00cc
+                           0000CD   749 G$PWM3MEN$0_0$0 == 0x00cd
+                           0000CD   750 _PWM3MEN	=	0x00cd
+                           0000CE   751 G$EIP2$0_0$0 == 0x00ce
+                           0000CE   752 _EIP2	=	0x00ce
+                           0000CF   753 G$EIPH2$0_0$0 == 0x00cf
+                           0000CF   754 _EIPH2	=	0x00cf
+                           0000D1   755 G$PWM3PL$0_0$0 == 0x00d1
+                           0000D1   756 _PWM3PL	=	0x00d1
+                           0000D2   757 G$PWM3C0L$0_0$0 == 0x00d2
+                           0000D2   758 _PWM3C0L	=	0x00d2
+                           0000D3   759 G$PWM3C1L$0_0$0 == 0x00d3
+                           0000D3   760 _PWM3C1L	=	0x00d3
+                           0000D4   761 G$PWM3CON0$0_0$0 == 0x00d4
+                           0000D4   762 _PWM3CON0	=	0x00d4
+                           0000D5   763 G$PWM3CON1$0_0$0 == 0x00d5
+                           0000D5   764 _PWM3CON1	=	0x00d5
+                           0000D6   765 G$PWM3INTC$0_0$0 == 0x00d6
+                           0000D6   766 _PWM3INTC	=	0x00d6
+                           0000D7   767 G$XTLCON$0_0$0 == 0x00d7
+                           0000D7   768 _XTLCON	=	0x00d7
+                           0000D9   769 G$SC0DR$0_0$0 == 0x00d9
+                           0000D9   770 _SC0DR	=	0x00d9
+                           0000DA   771 G$SC0EGT$0_0$0 == 0x00da
+                           0000DA   772 _SC0EGT	=	0x00da
+                           0000DB   773 G$SC0ETURD0$0_0$0 == 0x00db
+                           0000DB   774 _SC0ETURD0	=	0x00db
+                           0000DC   775 G$SC0ETURD1$0_0$0 == 0x00dc
+                           0000DC   776 _SC0ETURD1	=	0x00dc
+                           0000DD   777 G$SC0IE$0_0$0 == 0x00dd
+                           0000DD   778 _SC0IE	=	0x00dd
+                           0000DE   779 G$SC0IS$0_0$0 == 0x00de
+                           0000DE   780 _SC0IS	=	0x00de
+                           0000DF   781 G$SC0TSR$0_0$0 == 0x00df
+                           0000DF   782 _SC0TSR	=	0x00df
+                           0000E1   783 G$SC1DR$0_0$0 == 0x00e1
+                           0000E1   784 _SC1DR	=	0x00e1
+                           0000E2   785 G$SC1EGT$0_0$0 == 0x00e2
+                           0000E2   786 _SC1EGT	=	0x00e2
+                           0000E3   787 G$SC1ETURD0$0_0$0 == 0x00e3
+                           0000E3   788 _SC1ETURD0	=	0x00e3
+                           0000E4   789 G$SC1ETURD1$0_0$0 == 0x00e4
+                           0000E4   790 _SC1ETURD1	=	0x00e4
+                           0000E5   791 G$SC1IE$0_0$0 == 0x00e5
+                           0000E5   792 _SC1IE	=	0x00e5
+                           0000E6   793 G$SC1IS$0_0$0 == 0x00e6
+                           0000E6   794 _SC1IS	=	0x00e6
+                           0000E7   795 G$SC1TSR$0_0$0 == 0x00e7
+                           0000E7   796 _SC1TSR	=	0x00e7
+                           0000E9   797 G$SC2DR$0_0$0 == 0x00e9
+                           0000E9   798 _SC2DR	=	0x00e9
+                           0000EA   799 G$SC2EGT$0_0$0 == 0x00ea
+                           0000EA   800 _SC2EGT	=	0x00ea
+                           0000EB   801 G$SC2ETURD0$0_0$0 == 0x00eb
+                           0000EB   802 _SC2ETURD0	=	0x00eb
+                           0000EC   803 G$SC2ETURD1$0_0$0 == 0x00ec
+                           0000EC   804 _SC2ETURD1	=	0x00ec
+                           0000ED   805 G$SC2IE$0_0$0 == 0x00ed
+                           0000ED   806 _SC2IE	=	0x00ed
+                           0000EE   807 G$SC2IS$0_0$0 == 0x00ee
+                           0000EE   808 _SC2IS	=	0x00ee
+                           0000EF   809 G$SC2TSR$0_0$0 == 0x00ef
+                           0000EF   810 _SC2TSR	=	0x00ef
+                           0000F1   811 G$SC0CR0$0_0$0 == 0x00f1
+                           0000F1   812 _SC0CR0	=	0x00f1
+                           0000F2   813 G$SC0CR1$0_0$0 == 0x00f2
+                           0000F2   814 _SC0CR1	=	0x00f2
+                           0000F3   815 G$SC1CR0$0_0$0 == 0x00f3
+                           0000F3   816 _SC1CR0	=	0x00f3
+                           0000F4   817 G$SC1CR1$0_0$0 == 0x00f4
+                           0000F4   818 _SC1CR1	=	0x00f4
+                           0000F5   819 G$SC2CR0$0_0$0 == 0x00f5
+                           0000F5   820 _SC2CR0	=	0x00f5
+                           0000F6   821 G$SC2CR1$0_0$0 == 0x00f6
+                           0000F6   822 _SC2CR1	=	0x00f6
+                           0000F7   823 G$PIPS7$0_0$0 == 0x00f7
+                           0000F7   824 _PIPS7	=	0x00f7
+                           0000F9   825 G$PIPS0$0_0$0 == 0x00f9
+                           0000F9   826 _PIPS0	=	0x00f9
+                           0000FA   827 G$PIPS1$0_0$0 == 0x00fa
+                           0000FA   828 _PIPS1	=	0x00fa
+                           0000FB   829 G$PIPS2$0_0$0 == 0x00fb
+                           0000FB   830 _PIPS2	=	0x00fb
+                           0000FC   831 G$PIPS3$0_0$0 == 0x00fc
+                           0000FC   832 _PIPS3	=	0x00fc
+                           0000FD   833 G$PIPS4$0_0$0 == 0x00fd
+                           0000FD   834 _PIPS4	=	0x00fd
+                           0000FE   835 G$PIPS5$0_0$0 == 0x00fe
+                           0000FE   836 _PIPS5	=	0x00fe
+                           0000FF   837 G$PIPS6$0_0$0 == 0x00ff
+                           0000FF   838 _PIPS6	=	0x00ff
+                                    839 ;--------------------------------------------------------
+                                    840 ; special function bits
+                                    841 ;--------------------------------------------------------
+                                    842 	.area RSEG    (ABS,DATA)
+      000000                        843 	.org 0x0000
+                           0000FF   844 G$SM0_1$0_0$0 == 0x00ff
+                           0000FF   845 _SM0_1	=	0x00ff
+                           0000FF   846 G$FE_1$0_0$0 == 0x00ff
+                           0000FF   847 _FE_1	=	0x00ff
+                           0000FE   848 G$SM1_1$0_0$0 == 0x00fe
+                           0000FE   849 _SM1_1	=	0x00fe
+                           0000FD   850 G$SM2_1$0_0$0 == 0x00fd
+                           0000FD   851 _SM2_1	=	0x00fd
+                           0000FC   852 G$REN_1$0_0$0 == 0x00fc
+                           0000FC   853 _REN_1	=	0x00fc
+                           0000FB   854 G$TB8_1$0_0$0 == 0x00fb
+                           0000FB   855 _TB8_1	=	0x00fb
+                           0000FA   856 G$RB8_1$0_0$0 == 0x00fa
+                           0000FA   857 _RB8_1	=	0x00fa
+                           0000F9   858 G$TI_1$0_0$0 == 0x00f9
+                           0000F9   859 _TI_1	=	0x00f9
+                           0000F8   860 G$RI_1$0_0$0 == 0x00f8
+                           0000F8   861 _RI_1	=	0x00f8
+                           0000EF   862 G$ADCF$0_0$0 == 0x00ef
+                           0000EF   863 _ADCF	=	0x00ef
+                           0000EE   864 G$ADCS$0_0$0 == 0x00ee
+                           0000EE   865 _ADCS	=	0x00ee
+                           0000ED   866 G$ETGSEL1$0_0$0 == 0x00ed
+                           0000ED   867 _ETGSEL1	=	0x00ed
+                           0000EC   868 G$ETGSEL0$0_0$0 == 0x00ec
+                           0000EC   869 _ETGSEL0	=	0x00ec
+                           0000EB   870 G$ADCHS3$0_0$0 == 0x00eb
+                           0000EB   871 _ADCHS3	=	0x00eb
+                           0000EA   872 G$ADCHS2$0_0$0 == 0x00ea
+                           0000EA   873 _ADCHS2	=	0x00ea
+                           0000E9   874 G$ADCHS1$0_0$0 == 0x00e9
+                           0000E9   875 _ADCHS1	=	0x00e9
+                           0000E8   876 G$ADCHS0$0_0$0 == 0x00e8
+                           0000E8   877 _ADCHS0	=	0x00e8
+                           0000DF   878 G$PWMRUN$0_0$0 == 0x00df
+                           0000DF   879 _PWMRUN	=	0x00df
+                           0000DE   880 G$LOAD$0_0$0 == 0x00de
+                           0000DE   881 _LOAD	=	0x00de
+                           0000DD   882 G$PWMF$0_0$0 == 0x00dd
+                           0000DD   883 _PWMF	=	0x00dd
+                           0000DC   884 G$CLRPWM$0_0$0 == 0x00dc
+                           0000DC   885 _CLRPWM	=	0x00dc
+                           0000D7   886 G$CY$0_0$0 == 0x00d7
+                           0000D7   887 _CY	=	0x00d7
+                           0000D6   888 G$AC$0_0$0 == 0x00d6
+                           0000D6   889 _AC	=	0x00d6
+                           0000D5   890 G$F0$0_0$0 == 0x00d5
+                           0000D5   891 _F0	=	0x00d5
+                           0000D4   892 G$RS1$0_0$0 == 0x00d4
+                           0000D4   893 _RS1	=	0x00d4
+                           0000D3   894 G$RS0$0_0$0 == 0x00d3
+                           0000D3   895 _RS0	=	0x00d3
+                           0000D2   896 G$OV$0_0$0 == 0x00d2
+                           0000D2   897 _OV	=	0x00d2
+                           0000D0   898 G$P$0_0$0 == 0x00d0
+                           0000D0   899 _P	=	0x00d0
+                           0000CF   900 G$TF2$0_0$0 == 0x00cf
+                           0000CF   901 _TF2	=	0x00cf
+                           0000CA   902 G$TR2$0_0$0 == 0x00ca
+                           0000CA   903 _TR2	=	0x00ca
+                           0000C8   904 G$CM_RL2$0_0$0 == 0x00c8
+                           0000C8   905 _CM_RL2	=	0x00c8
+                           0000C6   906 G$I2CEN$0_0$0 == 0x00c6
+                           0000C6   907 _I2CEN	=	0x00c6
+                           0000C5   908 G$STA$0_0$0 == 0x00c5
+                           0000C5   909 _STA	=	0x00c5
+                           0000C4   910 G$STO$0_0$0 == 0x00c4
+                           0000C4   911 _STO	=	0x00c4
+                           0000C3   912 G$SI$0_0$0 == 0x00c3
+                           0000C3   913 _SI	=	0x00c3
+                           0000C2   914 G$AA$0_0$0 == 0x00c2
+                           0000C2   915 _AA	=	0x00c2
+                           0000C0   916 G$I2CPX$0_0$0 == 0x00c0
+                           0000C0   917 _I2CPX	=	0x00c0
+                           0000BE   918 G$PADC$0_0$0 == 0x00be
+                           0000BE   919 _PADC	=	0x00be
+                           0000BD   920 G$PBOD$0_0$0 == 0x00bd
+                           0000BD   921 _PBOD	=	0x00bd
+                           0000BC   922 G$PS$0_0$0 == 0x00bc
+                           0000BC   923 _PS	=	0x00bc
+                           0000BB   924 G$PT1$0_0$0 == 0x00bb
+                           0000BB   925 _PT1	=	0x00bb
+                           0000BA   926 G$PX1$0_0$0 == 0x00ba
+                           0000BA   927 _PX1	=	0x00ba
+                           0000B9   928 G$PT0$0_0$0 == 0x00b9
+                           0000B9   929 _PT0	=	0x00b9
+                           0000B8   930 G$PX0$0_0$0 == 0x00b8
+                           0000B8   931 _PX0	=	0x00b8
+                           0000B7   932 G$P37$0_0$0 == 0x00b7
+                           0000B7   933 _P37	=	0x00b7
+                           0000B6   934 G$P36$0_0$0 == 0x00b6
+                           0000B6   935 _P36	=	0x00b6
+                           0000B5   936 G$P35$0_0$0 == 0x00b5
+                           0000B5   937 _P35	=	0x00b5
+                           0000B4   938 G$P34$0_0$0 == 0x00b4
+                           0000B4   939 _P34	=	0x00b4
+                           0000B3   940 G$P33$0_0$0 == 0x00b3
+                           0000B3   941 _P33	=	0x00b3
+                           0000B2   942 G$P32$0_0$0 == 0x00b2
+                           0000B2   943 _P32	=	0x00b2
+                           0000B1   944 G$P31$0_0$0 == 0x00b1
+                           0000B1   945 _P31	=	0x00b1
+                           0000B0   946 G$P30$0_0$0 == 0x00b0
+                           0000B0   947 _P30	=	0x00b0
+                           0000AF   948 G$EA$0_0$0 == 0x00af
+                           0000AF   949 _EA	=	0x00af
+                           0000AE   950 G$EADC$0_0$0 == 0x00ae
+                           0000AE   951 _EADC	=	0x00ae
+                           0000AD   952 G$EBOD$0_0$0 == 0x00ad
+                           0000AD   953 _EBOD	=	0x00ad
+                           0000AC   954 G$ES$0_0$0 == 0x00ac
+                           0000AC   955 _ES	=	0x00ac
+                           0000AB   956 G$ET1$0_0$0 == 0x00ab
+                           0000AB   957 _ET1	=	0x00ab
+                           0000AA   958 G$EX1$0_0$0 == 0x00aa
+                           0000AA   959 _EX1	=	0x00aa
+                           0000A9   960 G$ET0$0_0$0 == 0x00a9
+                           0000A9   961 _ET0	=	0x00a9
+                           0000A8   962 G$EX0$0_0$0 == 0x00a8
+                           0000A8   963 _EX0	=	0x00a8
+                           0000A0   964 G$P20$0_0$0 == 0x00a0
+                           0000A0   965 _P20	=	0x00a0
+                           00009F   966 G$SM0$0_0$0 == 0x009f
+                           00009F   967 _SM0	=	0x009f
+                           00009F   968 G$FE$0_0$0 == 0x009f
+                           00009F   969 _FE	=	0x009f
+                           00009E   970 G$SM1$0_0$0 == 0x009e
+                           00009E   971 _SM1	=	0x009e
+                           00009D   972 G$SM2$0_0$0 == 0x009d
+                           00009D   973 _SM2	=	0x009d
+                           00009C   974 G$REN$0_0$0 == 0x009c
+                           00009C   975 _REN	=	0x009c
+                           00009B   976 G$TB8$0_0$0 == 0x009b
+                           00009B   977 _TB8	=	0x009b
+                           00009A   978 G$RB8$0_0$0 == 0x009a
+                           00009A   979 _RB8	=	0x009a
+                           000099   980 G$TI$0_0$0 == 0x0099
+                           000099   981 _TI	=	0x0099
+                           000098   982 G$RI$0_0$0 == 0x0098
+                           000098   983 _RI	=	0x0098
+                           000097   984 G$P17$0_0$0 == 0x0097
+                           000097   985 _P17	=	0x0097
+                           000096   986 G$P16$0_0$0 == 0x0096
+                           000096   987 _P16	=	0x0096
+                           000096   988 G$TXD_1$0_0$0 == 0x0096
+                           000096   989 _TXD_1	=	0x0096
+                           000095   990 G$P15$0_0$0 == 0x0095
+                           000095   991 _P15	=	0x0095
+                           000094   992 G$P14$0_0$0 == 0x0094
+                           000094   993 _P14	=	0x0094
+                           000094   994 G$SDA$0_0$0 == 0x0094
+                           000094   995 _SDA	=	0x0094
+                           000093   996 G$P13$0_0$0 == 0x0093
+                           000093   997 _P13	=	0x0093
+                           000093   998 G$SCL$0_0$0 == 0x0093
+                           000093   999 _SCL	=	0x0093
+                           000092  1000 G$P12$0_0$0 == 0x0092
+                           000092  1001 _P12	=	0x0092
+                           000091  1002 G$P11$0_0$0 == 0x0091
+                           000091  1003 _P11	=	0x0091
+                           000090  1004 G$P10$0_0$0 == 0x0090
+                           000090  1005 _P10	=	0x0090
+                           00008F  1006 G$TF1$0_0$0 == 0x008f
+                           00008F  1007 _TF1	=	0x008f
+                           00008E  1008 G$TR1$0_0$0 == 0x008e
+                           00008E  1009 _TR1	=	0x008e
+                           00008D  1010 G$TF0$0_0$0 == 0x008d
+                           00008D  1011 _TF0	=	0x008d
+                           00008C  1012 G$TR0$0_0$0 == 0x008c
+                           00008C  1013 _TR0	=	0x008c
+                           00008B  1014 G$IE1$0_0$0 == 0x008b
+                           00008B  1015 _IE1	=	0x008b
+                           00008A  1016 G$IT1$0_0$0 == 0x008a
+                           00008A  1017 _IT1	=	0x008a
+                           000089  1018 G$IE0$0_0$0 == 0x0089
+                           000089  1019 _IE0	=	0x0089
+                           000088  1020 G$IT0$0_0$0 == 0x0088
+                           000088  1021 _IT0	=	0x0088
+                           000087  1022 G$P07$0_0$0 == 0x0087
+                           000087  1023 _P07	=	0x0087
+                           000087  1024 G$RXD$0_0$0 == 0x0087
+                           000087  1025 _RXD	=	0x0087
+                           000086  1026 G$P06$0_0$0 == 0x0086
+                           000086  1027 _P06	=	0x0086
+                           000086  1028 G$TXD$0_0$0 == 0x0086
+                           000086  1029 _TXD	=	0x0086
+                           000085  1030 G$P05$0_0$0 == 0x0085
+                           000085  1031 _P05	=	0x0085
+                           000084  1032 G$P04$0_0$0 == 0x0084
+                           000084  1033 _P04	=	0x0084
+                           000084  1034 G$STADC$0_0$0 == 0x0084
+                           000084  1035 _STADC	=	0x0084
+                           000083  1036 G$P03$0_0$0 == 0x0083
+                           000083  1037 _P03	=	0x0083
+                           000082  1038 G$P02$0_0$0 == 0x0082
+                           000082  1039 _P02	=	0x0082
+                           000082  1040 G$RXD_1$0_0$0 == 0x0082
+                           000082  1041 _RXD_1	=	0x0082
+                           000081  1042 G$P01$0_0$0 == 0x0081
+                           000081  1043 _P01	=	0x0081
+                           000081  1044 G$MISO$0_0$0 == 0x0081
+                           000081  1045 _MISO	=	0x0081
+                           000080  1046 G$P00$0_0$0 == 0x0080
+                           000080  1047 _P00	=	0x0080
+                           000080  1048 G$MOSI$0_0$0 == 0x0080
+                           000080  1049 _MOSI	=	0x0080
+                                   1050 ;--------------------------------------------------------
+                                   1051 ; overlayable register banks
+                                   1052 ;--------------------------------------------------------
+                                   1053 	.area REG_BANK_0	(REL,OVR,DATA)
+      000000                       1054 	.ds 8
+                                   1055 ;--------------------------------------------------------
+                                   1056 ; internal ram data
+                                   1057 ;--------------------------------------------------------
+                                   1058 	.area DSEG    (DATA)
+                           000000  1059 G$TA_REG_TMP$0_0$0==.
+      000021                       1060 _TA_REG_TMP::
+      000021                       1061 	.ds 1
+                           000001  1062 G$BYTE_TMP$0_0$0==.
+      000022                       1063 _BYTE_TMP::
+      000022                       1064 	.ds 1
+                           000002  1065 G$SFRS_TMP$0_0$0==.
+      000023                       1066 _SFRS_TMP::
+      000023                       1067 	.ds 1
+                                   1068 ;--------------------------------------------------------
+                                   1069 ; overlayable items in internal ram 
+                                   1070 ;--------------------------------------------------------
+                                   1071 	.area	OSEG    (OVR,DATA)
+                                   1072 	.area	OSEG    (OVR,DATA)
+                                   1073 	.area	OSEG    (OVR,DATA)
+                                   1074 	.area	OSEG    (OVR,DATA)
+                                   1075 ;--------------------------------------------------------
+                                   1076 ; indirectly addressable internal ram data
+                                   1077 ;--------------------------------------------------------
+                                   1078 	.area ISEG    (DATA)
+                                   1079 ;--------------------------------------------------------
+                                   1080 ; absolute internal ram data
+                                   1081 ;--------------------------------------------------------
+                                   1082 	.area IABS    (ABS,DATA)
+                                   1083 	.area IABS    (ABS,DATA)
+                                   1084 ;--------------------------------------------------------
+                                   1085 ; bit data
+                                   1086 ;--------------------------------------------------------
+                                   1087 	.area BSEG    (BIT)
+                           000000  1088 G$BIT_TMP$0_0$0==.
+      000000                       1089 _BIT_TMP::
+      000000                       1090 	.ds 1
+                                   1091 ;--------------------------------------------------------
+                                   1092 ; paged external ram data
+                                   1093 ;--------------------------------------------------------
+                                   1094 	.area PSEG    (PAG,XDATA)
+                                   1095 ;--------------------------------------------------------
+                                   1096 ; external ram data
+                                   1097 ;--------------------------------------------------------
+                                   1098 	.area XSEG    (XDATA)
+                                   1099 ;--------------------------------------------------------
+                                   1100 ; absolute external ram data
+                                   1101 ;--------------------------------------------------------
+                                   1102 	.area XABS    (ABS,XDATA)
+                                   1103 ;--------------------------------------------------------
+                                   1104 ; external initialized ram data
+                                   1105 ;--------------------------------------------------------
+                                   1106 	.area XISEG   (XDATA)
+                                   1107 	.area HOME    (CODE)
+                                   1108 	.area GSINIT0 (CODE)
+                                   1109 	.area GSINIT1 (CODE)
+                                   1110 	.area GSINIT2 (CODE)
+                                   1111 	.area GSINIT3 (CODE)
+                                   1112 	.area GSINIT4 (CODE)
+                                   1113 	.area GSINIT5 (CODE)
+                                   1114 	.area GSINIT  (CODE)
+                                   1115 	.area GSFINAL (CODE)
+                                   1116 	.area CSEG    (CODE)
+                                   1117 ;--------------------------------------------------------
+                                   1118 ; global & static initialisations
+                                   1119 ;--------------------------------------------------------
+                                   1120 	.area HOME    (CODE)
+                                   1121 	.area GSINIT  (CODE)
+                                   1122 	.area GSFINAL (CODE)
+                                   1123 	.area GSINIT  (CODE)
+                                   1124 ;--------------------------------------------------------
+                                   1125 ; Home
+                                   1126 ;--------------------------------------------------------
+                                   1127 	.area HOME    (CODE)
+                                   1128 	.area HOME    (CODE)
+                                   1129 ;--------------------------------------------------------
+                                   1130 ; code
+                                   1131 ;--------------------------------------------------------
+                                   1132 	.area CSEG    (CODE)
+                                   1133 ;------------------------------------------------------------
+                                   1134 ;Allocation info for local variables in function 'MODIFY_HIRC'
+                                   1135 ;------------------------------------------------------------
+                                   1136 ;u8HIRCSEL                 Allocated to registers r7 
+                                   1137 ;hircmap0                  Allocated to registers r6 
+                                   1138 ;hircmap1                  Allocated to registers r5 
+                                   1139 ;trimvalue16bit            Allocated to registers r4 r7 
+                                   1140 ;------------------------------------------------------------
+                           000000  1141 	G$MODIFY_HIRC$0$0 ==.
+                           000000  1142 	C$sys.c$25$0_0$49 ==.
+                                   1143 ;	..\..\..\..\Library\StdDriver\src\sys.c:25: void MODIFY_HIRC(unsigned char u8HIRCSEL)
+                                   1144 ;	-----------------------------------------
+                                   1145 ;	 function MODIFY_HIRC
+                                   1146 ;	-----------------------------------------
+      0004C2                       1147 _MODIFY_HIRC:
+                           000007  1148 	ar7 = 0x07
+                           000006  1149 	ar6 = 0x06
+                           000005  1150 	ar5 = 0x05
+                           000004  1151 	ar4 = 0x04
+                           000003  1152 	ar3 = 0x03
+                           000002  1153 	ar2 = 0x02
+                           000001  1154 	ar1 = 0x01
+                           000000  1155 	ar0 = 0x00
+      0004C2 AF 82            [24] 1156 	mov	r7,dpl
+                           000002  1157 	C$sys.c$30$1_0$49 ==.
+                                   1158 ;	..\..\..\..\Library\StdDriver\src\sys.c:30: SFRS = 0 ;
+      0004C4 75 91 00         [24] 1159 	mov	_SFRS,#0x00
+                           000005  1160 	C$sys.c$31$1_0$49 ==.
+                                   1161 ;	..\..\..\..\Library\StdDriver\src\sys.c:31: switch (u8HIRCSEL)
+      0004C7 BF 06 02         [24] 1162 	cjne	r7,#0x06,00130$
+      0004CA 80 0A            [24] 1163 	sjmp	00101$
+      0004CC                       1164 00130$:
+      0004CC BF 07 02         [24] 1165 	cjne	r7,#0x07,00131$
+      0004CF 80 0A            [24] 1166 	sjmp	00102$
+      0004D1                       1167 00131$:
+                           00000F  1168 	C$sys.c$33$2_0$50 ==.
+                                   1169 ;	..\..\..\..\Library\StdDriver\src\sys.c:33: case HIRC_24:
+      0004D1 BF 08 0F         [24] 1170 	cjne	r7,#0x08,00104$
+      0004D4 80 0A            [24] 1171 	sjmp	00103$
+      0004D6                       1172 00101$:
+                           000014  1173 	C$sys.c$34$2_0$50 ==.
+                                   1174 ;	..\..\..\..\Library\StdDriver\src\sys.c:34: IAPAL = 0x38;
+      0004D6 75 A6 38         [24] 1175 	mov	_IAPAL,#0x38
+                           000017  1176 	C$sys.c$35$2_0$50 ==.
+                                   1177 ;	..\..\..\..\Library\StdDriver\src\sys.c:35: break;
+                           000017  1178 	C$sys.c$36$2_0$50 ==.
+                                   1179 ;	..\..\..\..\Library\StdDriver\src\sys.c:36: case HIRC_16:
+      0004D9 80 08            [24] 1180 	sjmp	00104$
+      0004DB                       1181 00102$:
+                           000019  1182 	C$sys.c$37$2_0$50 ==.
+                                   1183 ;	..\..\..\..\Library\StdDriver\src\sys.c:37: IAPAL = 0x30;
+      0004DB 75 A6 30         [24] 1184 	mov	_IAPAL,#0x30
+                           00001C  1185 	C$sys.c$38$2_0$50 ==.
+                                   1186 ;	..\..\..\..\Library\StdDriver\src\sys.c:38: break;
+                           00001C  1187 	C$sys.c$39$2_0$50 ==.
+                                   1188 ;	..\..\..\..\Library\StdDriver\src\sys.c:39: case HIRC_166:
+      0004DE 80 03            [24] 1189 	sjmp	00104$
+      0004E0                       1190 00103$:
+                           00001E  1191 	C$sys.c$40$2_0$50 ==.
+                                   1192 ;	..\..\..\..\Library\StdDriver\src\sys.c:40: IAPAL = 0x30;
+      0004E0 75 A6 30         [24] 1193 	mov	_IAPAL,#0x30
+                           000021  1194 	C$sys.c$42$1_0$49 ==.
+                                   1195 ;	..\..\..\..\Library\StdDriver\src\sys.c:42: }
+      0004E3                       1196 00104$:
+                           000021  1197 	C$sys.c$43$1_0$49 ==.
+                                   1198 ;	..\..\..\..\Library\StdDriver\src\sys.c:43: set_CHPCON_IAPEN;
+      0004E3 75 91 00         [24] 1199 	mov	_SFRS,#0x00
+                                   1200 ;	assignBit
+      0004E6 A2 AF            [12] 1201 	mov	c,_EA
+      0004E8 92 00            [24] 1202 	mov	_BIT_TMP,c
+                                   1203 ;	assignBit
+      0004EA C2 AF            [12] 1204 	clr	_EA
+      0004EC 75 C7 AA         [24] 1205 	mov	_TA,#0xaa
+      0004EF 75 C7 55         [24] 1206 	mov	_TA,#0x55
+      0004F2 43 9F 01         [24] 1207 	orl	_CHPCON,#0x01
+                                   1208 ;	assignBit
+      0004F5 A2 00            [12] 1209 	mov	c,_BIT_TMP
+      0004F7 92 AF            [24] 1210 	mov	_EA,c
+                           000037  1211 	C$sys.c$44$1_0$49 ==.
+                                   1212 ;	..\..\..\..\Library\StdDriver\src\sys.c:44: IAPAH = 0x00;
+      0004F9 75 A7 00         [24] 1213 	mov	_IAPAH,#0x00
+                           00003A  1214 	C$sys.c$45$1_0$49 ==.
+                                   1215 ;	..\..\..\..\Library\StdDriver\src\sys.c:45: IAPCN = READ_UID;
+      0004FC 75 AF 04         [24] 1216 	mov	_IAPCN,#0x04
+                           00003D  1217 	C$sys.c$46$1_0$49 ==.
+                                   1218 ;	..\..\..\..\Library\StdDriver\src\sys.c:46: set_IAPTRG_IAPGO;
+      0004FF 75 91 00         [24] 1219 	mov	_SFRS,#0x00
+                                   1220 ;	assignBit
+      000502 A2 AF            [12] 1221 	mov	c,_EA
+      000504 92 00            [24] 1222 	mov	_BIT_TMP,c
+                                   1223 ;	assignBit
+      000506 C2 AF            [12] 1224 	clr	_EA
+      000508 75 C7 AA         [24] 1225 	mov	_TA,#0xaa
+      00050B 75 C7 55         [24] 1226 	mov	_TA,#0x55
+      00050E 43 A4 01         [24] 1227 	orl	_IAPTRG,#0x01
+                                   1228 ;	assignBit
+      000511 A2 00            [12] 1229 	mov	c,_BIT_TMP
+      000513 92 AF            [24] 1230 	mov	_EA,c
+                           000053  1231 	C$sys.c$47$1_0$49 ==.
+                                   1232 ;	..\..\..\..\Library\StdDriver\src\sys.c:47: hircmap0 = IAPFD;
+      000515 AE AE            [24] 1233 	mov	r6,_IAPFD
+                           000055  1234 	C$sys.c$48$1_0$49 ==.
+                                   1235 ;	..\..\..\..\Library\StdDriver\src\sys.c:48: IAPAL++;
+      000517 E5 A6            [12] 1236 	mov	a,_IAPAL
+      000519 04               [12] 1237 	inc	a
+      00051A F5 A6            [12] 1238 	mov	_IAPAL,a
+                           00005A  1239 	C$sys.c$49$1_0$49 ==.
+                                   1240 ;	..\..\..\..\Library\StdDriver\src\sys.c:49: set_IAPTRG_IAPGO;
+      00051C 75 91 00         [24] 1241 	mov	_SFRS,#0x00
+                                   1242 ;	assignBit
+      00051F A2 AF            [12] 1243 	mov	c,_EA
+      000521 92 00            [24] 1244 	mov	_BIT_TMP,c
+                                   1245 ;	assignBit
+      000523 C2 AF            [12] 1246 	clr	_EA
+      000525 75 C7 AA         [24] 1247 	mov	_TA,#0xaa
+      000528 75 C7 55         [24] 1248 	mov	_TA,#0x55
+      00052B 43 A4 01         [24] 1249 	orl	_IAPTRG,#0x01
+                                   1250 ;	assignBit
+      00052E A2 00            [12] 1251 	mov	c,_BIT_TMP
+      000530 92 AF            [24] 1252 	mov	_EA,c
+                           000070  1253 	C$sys.c$50$1_0$49 ==.
+                                   1254 ;	..\..\..\..\Library\StdDriver\src\sys.c:50: hircmap1 = IAPFD;
+      000532 AD AE            [24] 1255 	mov	r5,_IAPFD
+                           000072  1256 	C$sys.c$51$1_0$49 ==.
+                                   1257 ;	..\..\..\..\Library\StdDriver\src\sys.c:51: clr_CHPCON_IAPEN;
+      000534 75 91 00         [24] 1258 	mov	_SFRS,#0x00
+                                   1259 ;	assignBit
+      000537 A2 AF            [12] 1260 	mov	c,_EA
+      000539 92 00            [24] 1261 	mov	_BIT_TMP,c
+                                   1262 ;	assignBit
+      00053B C2 AF            [12] 1263 	clr	_EA
+      00053D 75 C7 AA         [24] 1264 	mov	_TA,#0xaa
+      000540 75 C7 55         [24] 1265 	mov	_TA,#0x55
+      000543 53 9F FE         [24] 1266 	anl	_CHPCON,#0xfe
+                                   1267 ;	assignBit
+      000546 A2 00            [12] 1268 	mov	c,_BIT_TMP
+      000548 92 AF            [24] 1269 	mov	_EA,c
+                           000088  1270 	C$sys.c$52$1_0$49 ==.
+                                   1271 ;	..\..\..\..\Library\StdDriver\src\sys.c:52: switch (u8HIRCSEL)
+      00054A BF 08 2E         [24] 1272 	cjne	r7,#0x08,00107$
+                           00008B  1273 	C$sys.c$55$2_0$51 ==.
+                                   1274 ;	..\..\..\..\Library\StdDriver\src\sys.c:55: trimvalue16bit = ((hircmap0 << 1) + (hircmap1 & 0x01));
+      00054D 8E 04            [24] 1275 	mov	ar4,r6
+      00054F 7F 00            [12] 1276 	mov	r7,#0x00
+      000551 EC               [12] 1277 	mov	a,r4
+      000552 2C               [12] 1278 	add	a,r4
+      000553 FC               [12] 1279 	mov	r4,a
+      000554 EF               [12] 1280 	mov	a,r7
+      000555 33               [12] 1281 	rlc	a
+      000556 FF               [12] 1282 	mov	r7,a
+      000557 8D 02            [24] 1283 	mov	ar2,r5
+      000559 53 02 01         [24] 1284 	anl	ar2,#0x01
+      00055C 7B 00            [12] 1285 	mov	r3,#0x00
+      00055E EA               [12] 1286 	mov	a,r2
+      00055F 2C               [12] 1287 	add	a,r4
+      000560 FC               [12] 1288 	mov	r4,a
+      000561 EB               [12] 1289 	mov	a,r3
+      000562 3F               [12] 1290 	addc	a,r7
+      000563 FF               [12] 1291 	mov	r7,a
+                           0000A2  1292 	C$sys.c$56$2_0$51 ==.
+                                   1293 ;	..\..\..\..\Library\StdDriver\src\sys.c:56: trimvalue16bit = trimvalue16bit - 15;
+      000564 EC               [12] 1294 	mov	a,r4
+      000565 24 F1            [12] 1295 	add	a,#0xf1
+      000567 FC               [12] 1296 	mov	r4,a
+      000568 EF               [12] 1297 	mov	a,r7
+      000569 34 FF            [12] 1298 	addc	a,#0xff
+      00056B FF               [12] 1299 	mov	r7,a
+                           0000AA  1300 	C$sys.c$57$1_0$49 ==.
+                                   1301 ;	..\..\..\..\Library\StdDriver\src\sys.c:57: hircmap1 = trimvalue16bit & 0x01;
+      00056C 8C 03            [24] 1302 	mov	ar3,r4
+      00056E 74 01            [12] 1303 	mov	a,#0x01
+      000570 5B               [12] 1304 	anl	a,r3
+      000571 FD               [12] 1305 	mov	r5,a
+                           0000B0  1306 	C$sys.c$58$2_0$51 ==.
+                                   1307 ;	..\..\..\..\Library\StdDriver\src\sys.c:58: hircmap0 = trimvalue16bit >> 1;
+      000572 EF               [12] 1308 	mov	a,r7
+      000573 C3               [12] 1309 	clr	c
+      000574 13               [12] 1310 	rrc	a
+      000575 CC               [12] 1311 	xch	a,r4
+      000576 13               [12] 1312 	rrc	a
+      000577 CC               [12] 1313 	xch	a,r4
+      000578 FF               [12] 1314 	mov	r7,a
+      000579 8C 06            [24] 1315 	mov	ar6,r4
+                           0000B9  1316 	C$sys.c$62$1_0$49 ==.
+                                   1317 ;	..\..\..\..\Library\StdDriver\src\sys.c:62: }
+      00057B                       1318 00107$:
+                           0000B9  1319 	C$sys.c$63$1_0$49 ==.
+                                   1320 ;	..\..\..\..\Library\StdDriver\src\sys.c:63: TA = 0xAA;
+      00057B 75 C7 AA         [24] 1321 	mov	_TA,#0xaa
+                           0000BC  1322 	C$sys.c$64$1_0$49 ==.
+                                   1323 ;	..\..\..\..\Library\StdDriver\src\sys.c:64: TA = 0x55;
+      00057E 75 C7 55         [24] 1324 	mov	_TA,#0x55
+                           0000BF  1325 	C$sys.c$65$1_0$49 ==.
+                                   1326 ;	..\..\..\..\Library\StdDriver\src\sys.c:65: RCTRIM0 = hircmap0;
+      000581 8E 84            [24] 1327 	mov	_RCTRIM0,r6
+                           0000C1  1328 	C$sys.c$66$1_0$49 ==.
+                                   1329 ;	..\..\..\..\Library\StdDriver\src\sys.c:66: TA = 0xAA;
+      000583 75 C7 AA         [24] 1330 	mov	_TA,#0xaa
+                           0000C4  1331 	C$sys.c$67$1_0$49 ==.
+                                   1332 ;	..\..\..\..\Library\StdDriver\src\sys.c:67: TA = 0x55;
+      000586 75 C7 55         [24] 1333 	mov	_TA,#0x55
+                           0000C7  1334 	C$sys.c$68$1_0$49 ==.
+                                   1335 ;	..\..\..\..\Library\StdDriver\src\sys.c:68: RCTRIM1 = hircmap1;
+      000589 8D 85            [24] 1336 	mov	_RCTRIM1,r5
+                           0000C9  1337 	C$sys.c$69$1_0$49 ==.
+                                   1338 ;	..\..\..\..\Library\StdDriver\src\sys.c:69: clr_CHPCON_IAPEN;
+      00058B 75 91 00         [24] 1339 	mov	_SFRS,#0x00
+                                   1340 ;	assignBit
+      00058E A2 AF            [12] 1341 	mov	c,_EA
+      000590 92 00            [24] 1342 	mov	_BIT_TMP,c
+                                   1343 ;	assignBit
+      000592 C2 AF            [12] 1344 	clr	_EA
+      000594 75 C7 AA         [24] 1345 	mov	_TA,#0xaa
+      000597 75 C7 55         [24] 1346 	mov	_TA,#0x55
+      00059A 53 9F FE         [24] 1347 	anl	_CHPCON,#0xfe
+                                   1348 ;	assignBit
+      00059D A2 00            [12] 1349 	mov	c,_BIT_TMP
+      00059F 92 AF            [24] 1350 	mov	_EA,c
+                           0000DF  1351 	C$sys.c$70$1_0$49 ==.
+                                   1352 ;	..\..\..\..\Library\StdDriver\src\sys.c:70: PCON &= CLR_BIT4;
+      0005A1 53 87 EF         [24] 1353 	anl	_PCON,#0xef
+                           0000E2  1354 	C$sys.c$71$1_0$49 ==.
+                                   1355 ;	..\..\..\..\Library\StdDriver\src\sys.c:71: }
+                           0000E2  1356 	C$sys.c$71$1_0$49 ==.
+                           0000E2  1357 	XG$MODIFY_HIRC$0$0 ==.
+      0005A4 22               [24] 1358 	ret
+                                   1359 ;------------------------------------------------------------
+                                   1360 ;Allocation info for local variables in function 'FsysSelect'
+                                   1361 ;------------------------------------------------------------
+                                   1362 ;u8FsysMode                Allocated to registers r7 
+                                   1363 ;------------------------------------------------------------
+                           0000E3  1364 	G$FsysSelect$0$0 ==.
+                           0000E3  1365 	C$sys.c$85$1_0$53 ==.
+                                   1366 ;	..\..\..\..\Library\StdDriver\src\sys.c:85: void FsysSelect(unsigned char u8FsysMode)
+                                   1367 ;	-----------------------------------------
+                                   1368 ;	 function FsysSelect
+                                   1369 ;	-----------------------------------------
+      0005A5                       1370 _FsysSelect:
+                           0000E3  1371 	C$sys.c$87$1_0$53 ==.
+                                   1372 ;	..\..\..\..\Library\StdDriver\src\sys.c:87: switch (u8FsysMode)
+      0005A5 E5 82            [12] 1373 	mov	a,dpl
+      0005A7 FF               [12] 1374 	mov	r7,a
+      0005A8 24 FA            [12] 1375 	add	a,#0xff - 0x05
+      0005AA 50 03            [24] 1376 	jnc	00113$
+      0005AC 02 06 8A         [24] 1377 	ljmp	00107$
+      0005AF                       1378 00113$:
+      0005AF EF               [12] 1379 	mov	a,r7
+      0005B0 2F               [12] 1380 	add	a,r7
+      0005B1 2F               [12] 1381 	add	a,r7
+      0005B2 90 05 B6         [24] 1382 	mov	dptr,#00114$
+      0005B5 73               [24] 1383 	jmp	@a+dptr
+      0005B6                       1384 00114$:
+      0005B6 02 05 C8         [24] 1385 	ljmp	00101$
+      0005B9 02 06 8A         [24] 1386 	ljmp	00107$
+      0005BC 02 05 F9         [24] 1387 	ljmp	00102$
+      0005BF 02 06 08         [24] 1388 	ljmp	00103$
+      0005C2 02 06 2C         [24] 1389 	ljmp	00104$
+      0005C5 02 06 5C         [24] 1390 	ljmp	00105$
+                           000106  1391 	C$sys.c$90$2_0$54 ==.
+                                   1392 ;	..\..\..\..\Library\StdDriver\src\sys.c:90: case FSYS_HXT:
+      0005C8                       1393 00101$:
+                           000106  1394 	C$sys.c$91$2_0$54 ==.
+                                   1395 ;	..\..\..\..\Library\StdDriver\src\sys.c:91: ClockEnable(FSYS_HIRC);                 //step1: switching system clock to HIRC
+      0005C8 75 82 02         [24] 1396 	mov	dpl,#0x02
+      0005CB 12 06 8B         [24] 1397 	lcall	_ClockEnable
+                           00010C  1398 	C$sys.c$92$2_0$54 ==.
+                                   1399 ;	..\..\..\..\Library\StdDriver\src\sys.c:92: ClockSwitch(FSYS_HIRC);
+      0005CE 75 82 02         [24] 1400 	mov	dpl,#0x02
+      0005D1 12 08 17         [24] 1401 	lcall	_ClockSwitch
+                           000112  1402 	C$sys.c$93$2_0$54 ==.
+                                   1403 ;	..\..\..\..\Library\StdDriver\src\sys.c:93: ClockEnable(FSYS_HXT);                  //step2: switching system clock to HXT
+      0005D4 75 82 00         [24] 1404 	mov	dpl,#0x00
+      0005D7 12 06 8B         [24] 1405 	lcall	_ClockEnable
+                           000118  1406 	C$sys.c$94$2_0$54 ==.
+                                   1407 ;	..\..\..\..\Library\StdDriver\src\sys.c:94: ClockSwitch(FSYS_HXT);
+      0005DA 75 82 00         [24] 1408 	mov	dpl,#0x00
+      0005DD 12 08 17         [24] 1409 	lcall	_ClockSwitch
+                           00011E  1410 	C$sys.c$95$2_0$54 ==.
+                                   1411 ;	..\..\..\..\Library\StdDriver\src\sys.c:95: clr_CKEN_HIRCEN;                      //step4: disable HIRC if needed
+      0005E0 75 91 00         [24] 1412 	mov	_SFRS,#0x00
+                                   1413 ;	assignBit
+      0005E3 A2 AF            [12] 1414 	mov	c,_EA
+      0005E5 92 00            [24] 1415 	mov	_BIT_TMP,c
+                                   1416 ;	assignBit
+      0005E7 C2 AF            [12] 1417 	clr	_EA
+      0005E9 75 C7 AA         [24] 1418 	mov	_TA,#0xaa
+      0005EC 75 C7 55         [24] 1419 	mov	_TA,#0x55
+      0005EF 53 97 DF         [24] 1420 	anl	_CKEN,#0xdf
+                                   1421 ;	assignBit
+      0005F2 A2 00            [12] 1422 	mov	c,_BIT_TMP
+      0005F4 92 AF            [24] 1423 	mov	_EA,c
+                           000134  1424 	C$sys.c$96$2_0$54 ==.
+                                   1425 ;	..\..\..\..\Library\StdDriver\src\sys.c:96: break;
+      0005F6 02 06 8A         [24] 1426 	ljmp	00107$
+                           000137  1427 	C$sys.c$99$2_0$54 ==.
+                                   1428 ;	..\..\..\..\Library\StdDriver\src\sys.c:99: case FSYS_HIRC:
+      0005F9                       1429 00102$:
+                           000137  1430 	C$sys.c$100$2_0$54 ==.
+                                   1431 ;	..\..\..\..\Library\StdDriver\src\sys.c:100: ClockEnable(FSYS_HIRC);                 //step1: switching system clock HIRC
+      0005F9 75 82 02         [24] 1432 	mov	dpl,#0x02
+      0005FC 12 06 8B         [24] 1433 	lcall	_ClockEnable
+                           00013D  1434 	C$sys.c$101$2_0$54 ==.
+                                   1435 ;	..\..\..\..\Library\StdDriver\src\sys.c:101: ClockSwitch(FSYS_HIRC);
+      0005FF 75 82 02         [24] 1436 	mov	dpl,#0x02
+      000602 12 08 17         [24] 1437 	lcall	_ClockSwitch
+                           000143  1438 	C$sys.c$102$2_0$54 ==.
+                                   1439 ;	..\..\..\..\Library\StdDriver\src\sys.c:102: break;
+      000605 02 06 8A         [24] 1440 	ljmp	00107$
+                           000146  1441 	C$sys.c$105$2_0$54 ==.
+                                   1442 ;	..\..\..\..\Library\StdDriver\src\sys.c:105: case FSYS_LIRC:
+      000608                       1443 00103$:
+                           000146  1444 	C$sys.c$106$2_0$54 ==.
+                                   1445 ;	..\..\..\..\Library\StdDriver\src\sys.c:106: ClockEnable(FSYS_LIRC);                 //step2: switching system clock LIRC
+      000608 75 82 03         [24] 1446 	mov	dpl,#0x03
+      00060B 12 06 8B         [24] 1447 	lcall	_ClockEnable
+                           00014C  1448 	C$sys.c$107$2_0$54 ==.
+                                   1449 ;	..\..\..\..\Library\StdDriver\src\sys.c:107: ClockSwitch(FSYS_LIRC);
+      00060E 75 82 03         [24] 1450 	mov	dpl,#0x03
+      000611 12 08 17         [24] 1451 	lcall	_ClockSwitch
+                           000152  1452 	C$sys.c$108$2_0$54 ==.
+                                   1453 ;	..\..\..\..\Library\StdDriver\src\sys.c:108: clr_CKEN_HIRCEN;                        //step4: disable HIRC if needed
+      000614 75 91 00         [24] 1454 	mov	_SFRS,#0x00
+                                   1455 ;	assignBit
+      000617 A2 AF            [12] 1456 	mov	c,_EA
+      000619 92 00            [24] 1457 	mov	_BIT_TMP,c
+                                   1458 ;	assignBit
+      00061B C2 AF            [12] 1459 	clr	_EA
+      00061D 75 C7 AA         [24] 1460 	mov	_TA,#0xaa
+      000620 75 C7 55         [24] 1461 	mov	_TA,#0x55
+      000623 53 97 DF         [24] 1462 	anl	_CKEN,#0xdf
+                                   1463 ;	assignBit
+      000626 A2 00            [12] 1464 	mov	c,_BIT_TMP
+      000628 92 AF            [24] 1465 	mov	_EA,c
+                           000168  1466 	C$sys.c$109$2_0$54 ==.
+                                   1467 ;	..\..\..\..\Library\StdDriver\src\sys.c:109: break;
+                           000168  1468 	C$sys.c$112$2_0$54 ==.
+                                   1469 ;	..\..\..\..\Library\StdDriver\src\sys.c:112: case FSYS_OSCIN_P30:
+      00062A 80 5E            [24] 1470 	sjmp	00107$
+      00062C                       1471 00104$:
+                           00016A  1472 	C$sys.c$113$2_0$54 ==.
+                                   1473 ;	..\..\..\..\Library\StdDriver\src\sys.c:113: ClockEnable(FSYS_HIRC);                 //step1: switching system clock to HIRC
+      00062C 75 82 02         [24] 1474 	mov	dpl,#0x02
+      00062F 12 06 8B         [24] 1475 	lcall	_ClockEnable
+                           000170  1476 	C$sys.c$114$2_0$54 ==.
+                                   1477 ;	..\..\..\..\Library\StdDriver\src\sys.c:114: ClockSwitch(FSYS_HIRC);
+      000632 75 82 02         [24] 1478 	mov	dpl,#0x02
+      000635 12 08 17         [24] 1479 	lcall	_ClockSwitch
+                           000176  1480 	C$sys.c$115$2_0$54 ==.
+                                   1481 ;	..\..\..\..\Library\StdDriver\src\sys.c:115: ClockEnable(FSYS_OSCIN_P30);                 //step1: switching system clock to External clock
+      000638 75 82 04         [24] 1482 	mov	dpl,#0x04
+      00063B 12 06 8B         [24] 1483 	lcall	_ClockEnable
+                           00017C  1484 	C$sys.c$116$2_0$54 ==.
+                                   1485 ;	..\..\..\..\Library\StdDriver\src\sys.c:116: ClockSwitch(FSYS_OSCIN_P30);
+      00063E 75 82 04         [24] 1486 	mov	dpl,#0x04
+      000641 12 08 17         [24] 1487 	lcall	_ClockSwitch
+                           000182  1488 	C$sys.c$117$2_0$54 ==.
+                                   1489 ;	..\..\..\..\Library\StdDriver\src\sys.c:117: clr_CKEN_HIRCEN;                        //step5: disable HIRC if needed
+      000644 75 91 00         [24] 1490 	mov	_SFRS,#0x00
+                                   1491 ;	assignBit
+      000647 A2 AF            [12] 1492 	mov	c,_EA
+      000649 92 00            [24] 1493 	mov	_BIT_TMP,c
+                                   1494 ;	assignBit
+      00064B C2 AF            [12] 1495 	clr	_EA
+      00064D 75 C7 AA         [24] 1496 	mov	_TA,#0xaa
+      000650 75 C7 55         [24] 1497 	mov	_TA,#0x55
+      000653 53 97 DF         [24] 1498 	anl	_CKEN,#0xdf
+                                   1499 ;	assignBit
+      000656 A2 00            [12] 1500 	mov	c,_BIT_TMP
+      000658 92 AF            [24] 1501 	mov	_EA,c
+                           000198  1502 	C$sys.c$118$2_0$54 ==.
+                                   1503 ;	..\..\..\..\Library\StdDriver\src\sys.c:118: break;
+                           000198  1504 	C$sys.c$121$2_0$54 ==.
+                                   1505 ;	..\..\..\..\Library\StdDriver\src\sys.c:121: case FSYS_HXTIN_P00:
+      00065A 80 2E            [24] 1506 	sjmp	00107$
+      00065C                       1507 00105$:
+                           00019A  1508 	C$sys.c$122$2_0$54 ==.
+                                   1509 ;	..\..\..\..\Library\StdDriver\src\sys.c:122: ClockEnable(FSYS_HIRC);                 //step1: switching system clock to HIRC
+      00065C 75 82 02         [24] 1510 	mov	dpl,#0x02
+      00065F 12 06 8B         [24] 1511 	lcall	_ClockEnable
+                           0001A0  1512 	C$sys.c$123$2_0$54 ==.
+                                   1513 ;	..\..\..\..\Library\StdDriver\src\sys.c:123: ClockSwitch(FSYS_HIRC);
+      000662 75 82 02         [24] 1514 	mov	dpl,#0x02
+      000665 12 08 17         [24] 1515 	lcall	_ClockSwitch
+                           0001A6  1516 	C$sys.c$124$2_0$54 ==.
+                                   1517 ;	..\..\..\..\Library\StdDriver\src\sys.c:124: ClockEnable(FSYS_HXTIN_P00);                 //step1: switching system clock to External clock
+      000668 75 82 05         [24] 1518 	mov	dpl,#0x05
+      00066B 12 06 8B         [24] 1519 	lcall	_ClockEnable
+                           0001AC  1520 	C$sys.c$125$2_0$54 ==.
+                                   1521 ;	..\..\..\..\Library\StdDriver\src\sys.c:125: ClockSwitch(FSYS_HXTIN_P00);
+      00066E 75 82 05         [24] 1522 	mov	dpl,#0x05
+      000671 12 08 17         [24] 1523 	lcall	_ClockSwitch
+                           0001B2  1524 	C$sys.c$126$2_0$54 ==.
+                                   1525 ;	..\..\..\..\Library\StdDriver\src\sys.c:126: clr_CKEN_HIRCEN;                        //step5: disable HIRC if needed
+      000674 75 91 00         [24] 1526 	mov	_SFRS,#0x00
+                                   1527 ;	assignBit
+      000677 A2 AF            [12] 1528 	mov	c,_EA
+      000679 92 00            [24] 1529 	mov	_BIT_TMP,c
+                                   1530 ;	assignBit
+      00067B C2 AF            [12] 1531 	clr	_EA
+      00067D 75 C7 AA         [24] 1532 	mov	_TA,#0xaa
+      000680 75 C7 55         [24] 1533 	mov	_TA,#0x55
+      000683 53 97 DF         [24] 1534 	anl	_CKEN,#0xdf
+                                   1535 ;	assignBit
+      000686 A2 00            [12] 1536 	mov	c,_BIT_TMP
+      000688 92 AF            [24] 1537 	mov	_EA,c
+                           0001C8  1538 	C$sys.c$128$1_0$53 ==.
+                                   1539 ;	..\..\..\..\Library\StdDriver\src\sys.c:128: }
+      00068A                       1540 00107$:
+                           0001C8  1541 	C$sys.c$129$1_0$53 ==.
+                                   1542 ;	..\..\..\..\Library\StdDriver\src\sys.c:129: }
+                           0001C8  1543 	C$sys.c$129$1_0$53 ==.
+                           0001C8  1544 	XG$FsysSelect$0$0 ==.
+      00068A 22               [24] 1545 	ret
+                                   1546 ;------------------------------------------------------------
+                                   1547 ;Allocation info for local variables in function 'ClockEnable'
+                                   1548 ;------------------------------------------------------------
+                                   1549 ;u8FsysMode                Allocated to registers r7 
+                                   1550 ;------------------------------------------------------------
+                           0001C9  1551 	G$ClockEnable$0$0 ==.
+                           0001C9  1552 	C$sys.c$131$1_0$56 ==.
+                                   1553 ;	..\..\..\..\Library\StdDriver\src\sys.c:131: void ClockEnable(unsigned char u8FsysMode)
+                                   1554 ;	-----------------------------------------
+                                   1555 ;	 function ClockEnable
+                                   1556 ;	-----------------------------------------
+      00068B                       1557 _ClockEnable:
+                           0001C9  1558 	C$sys.c$133$1_0$56 ==.
+                                   1559 ;	..\..\..\..\Library\StdDriver\src\sys.c:133: switch (u8FsysMode)
+      00068B E5 82            [12] 1560 	mov	a,dpl
+      00068D FF               [12] 1561 	mov	r7,a
+      00068E 24 FA            [12] 1562 	add	a,#0xff - 0x05
+      000690 50 03            [24] 1563 	jnc	00164$
+      000692 02 07 A5         [24] 1564 	ljmp	00122$
+      000695                       1565 00164$:
+      000695 EF               [12] 1566 	mov	a,r7
+      000696 2F               [12] 1567 	add	a,r7
+      000697 2F               [12] 1568 	add	a,r7
+      000698 90 06 9C         [24] 1569 	mov	dptr,#00165$
+      00069B 73               [24] 1570 	jmp	@a+dptr
+      00069C                       1571 00165$:
+      00069C 02 06 AE         [24] 1572 	ljmp	00101$
+      00069F 02 07 A5         [24] 1573 	ljmp	00122$
+      0006A2 02 06 E0         [24] 1574 	ljmp	00105$
+      0006A5 02 07 08         [24] 1575 	ljmp	00109$
+      0006A8 02 07 2F         [24] 1576 	ljmp	00113$
+      0006AB 02 07 6A         [24] 1577 	ljmp	00117$
+                           0001EC  1578 	C$sys.c$136$2_0$57 ==.
+                                   1579 ;	..\..\..\..\Library\StdDriver\src\sys.c:136: case FSYS_HXT:
+      0006AE                       1580 00101$:
+                           0001EC  1581 	C$sys.c$137$2_0$57 ==.
+                                   1582 ;	..\..\..\..\Library\StdDriver\src\sys.c:137: clr_CKEN_EXTEN1;                        /*step1: Enable extnal 4~ 24MHz crystal clock source.*/
+      0006AE 75 91 00         [24] 1583 	mov	_SFRS,#0x00
+                                   1584 ;	assignBit
+      0006B1 A2 AF            [12] 1585 	mov	c,_EA
+      0006B3 92 00            [24] 1586 	mov	_BIT_TMP,c
+                                   1587 ;	assignBit
+      0006B5 C2 AF            [12] 1588 	clr	_EA
+      0006B7 75 C7 AA         [24] 1589 	mov	_TA,#0xaa
+      0006BA 75 C7 55         [24] 1590 	mov	_TA,#0x55
+      0006BD 53 97 7F         [24] 1591 	anl	_CKEN,#0x7f
+                                   1592 ;	assignBit
+      0006C0 A2 00            [12] 1593 	mov	c,_BIT_TMP
+      0006C2 92 AF            [24] 1594 	mov	_EA,c
+                           000202  1595 	C$sys.c$138$2_0$57 ==.
+                                   1596 ;	..\..\..\..\Library\StdDriver\src\sys.c:138: set_CKEN_EXTEN0;
+      0006C4 75 91 00         [24] 1597 	mov	_SFRS,#0x00
+                                   1598 ;	assignBit
+      0006C7 A2 AF            [12] 1599 	mov	c,_EA
+      0006C9 92 00            [24] 1600 	mov	_BIT_TMP,c
+                                   1601 ;	assignBit
+      0006CB C2 AF            [12] 1602 	clr	_EA
+      0006CD 75 C7 AA         [24] 1603 	mov	_TA,#0xaa
+      0006D0 75 C7 55         [24] 1604 	mov	_TA,#0x55
+      0006D3 43 97 40         [24] 1605 	orl	_CKEN,#0x40
+                                   1606 ;	assignBit
+      0006D6 A2 00            [12] 1607 	mov	c,_BIT_TMP
+      0006D8 92 AF            [24] 1608 	mov	_EA,c
+                           000218  1609 	C$sys.c$139$2_0$57 ==.
+                                   1610 ;	..\..\..\..\Library\StdDriver\src\sys.c:139: while(CKSWT|CLR_BIT7);                  /*step2: check clock source status and wait for ready*/
+      0006DA                       1611 00102$:
+      0006DA AE 96            [24] 1612 	mov	r6,_CKSWT
+      0006DC 7F 00            [12] 1613 	mov	r7,#0x00
+                           00021C  1614 	C$sys.c$143$2_0$57 ==.
+                                   1615 ;	..\..\..\..\Library\StdDriver\src\sys.c:143: case FSYS_HIRC:
+      0006DE 80 FA            [24] 1616 	sjmp	00102$
+      0006E0                       1617 00105$:
+                           00021E  1618 	C$sys.c$144$2_0$57 ==.
+                                   1619 ;	..\..\..\..\Library\StdDriver\src\sys.c:144: set_CKEN_HIRCEN;                        //step1: Enable extnal clock source.
+      0006E0 75 91 00         [24] 1620 	mov	_SFRS,#0x00
+                                   1621 ;	assignBit
+      0006E3 A2 AF            [12] 1622 	mov	c,_EA
+      0006E5 92 00            [24] 1623 	mov	_BIT_TMP,c
+                                   1624 ;	assignBit
+      0006E7 C2 AF            [12] 1625 	clr	_EA
+      0006E9 75 C7 AA         [24] 1626 	mov	_TA,#0xaa
+      0006EC 75 C7 55         [24] 1627 	mov	_TA,#0x55
+      0006EF 43 97 20         [24] 1628 	orl	_CKEN,#0x20
+                                   1629 ;	assignBit
+      0006F2 A2 00            [12] 1630 	mov	c,_BIT_TMP
+      0006F4 92 AF            [24] 1631 	mov	_EA,c
+                           000234  1632 	C$sys.c$145$2_0$57 ==.
+                                   1633 ;	..\..\..\..\Library\StdDriver\src\sys.c:145: while((CKSWT|CLR_BIT5)==CLR_BIT5);      //step2: check clock source status and wait for ready
+      0006F6                       1634 00106$:
+      0006F6 AE 96            [24] 1635 	mov	r6,_CKSWT
+      0006F8 7F 00            [12] 1636 	mov	r7,#0x00
+      0006FA 43 06 DF         [24] 1637 	orl	ar6,#0xdf
+      0006FD BE DF 05         [24] 1638 	cjne	r6,#0xdf,00166$
+      000700 BF 00 02         [24] 1639 	cjne	r7,#0x00,00166$
+      000703 80 F1            [24] 1640 	sjmp	00106$
+      000705                       1641 00166$:
+                           000243  1642 	C$sys.c$149$2_0$57 ==.
+                                   1643 ;	..\..\..\..\Library\StdDriver\src\sys.c:149: case FSYS_LIRC:
+      000705 02 07 A5         [24] 1644 	ljmp	00122$
+      000708                       1645 00109$:
+                           000246  1646 	C$sys.c$150$2_0$57 ==.
+                                   1647 ;	..\..\..\..\Library\StdDriver\src\sys.c:150: set_CKEN_LIRCEN;                        //step1: Enable extnal clock source.
+      000708 75 91 00         [24] 1648 	mov	_SFRS,#0x00
+                                   1649 ;	assignBit
+      00070B A2 AF            [12] 1650 	mov	c,_EA
+      00070D 92 00            [24] 1651 	mov	_BIT_TMP,c
+                                   1652 ;	assignBit
+      00070F C2 AF            [12] 1653 	clr	_EA
+      000711 75 C7 AA         [24] 1654 	mov	_TA,#0xaa
+      000714 75 C7 55         [24] 1655 	mov	_TA,#0x55
+      000717 43 97 10         [24] 1656 	orl	_CKEN,#0x10
+                                   1657 ;	assignBit
+      00071A A2 00            [12] 1658 	mov	c,_BIT_TMP
+      00071C 92 AF            [24] 1659 	mov	_EA,c
+                           00025C  1660 	C$sys.c$151$2_0$57 ==.
+                                   1661 ;	..\..\..\..\Library\StdDriver\src\sys.c:151: while((CKSWT|CLR_BIT4)==CLR_BIT4);      //step2: check clock source status and wait for ready
+      00071E                       1662 00110$:
+      00071E AE 96            [24] 1663 	mov	r6,_CKSWT
+      000720 7F 00            [12] 1664 	mov	r7,#0x00
+      000722 43 06 EF         [24] 1665 	orl	ar6,#0xef
+      000725 BE EF 05         [24] 1666 	cjne	r6,#0xef,00168$
+      000728 BF 00 02         [24] 1667 	cjne	r7,#0x00,00168$
+      00072B 80 F1            [24] 1668 	sjmp	00110$
+      00072D                       1669 00168$:
+                           00026B  1670 	C$sys.c$155$2_0$57 ==.
+                                   1671 ;	..\..\..\..\Library\StdDriver\src\sys.c:155: case FSYS_OSCIN_P30:
+      00072D 80 76            [24] 1672 	sjmp	00122$
+      00072F                       1673 00113$:
+                           00026D  1674 	C$sys.c$156$2_0$57 ==.
+                                   1675 ;	..\..\..\..\Library\StdDriver\src\sys.c:156: set_CKEN_EXTEN1;                        //step1: Enable extnal clock source.
+      00072F 75 91 00         [24] 1676 	mov	_SFRS,#0x00
+                                   1677 ;	assignBit
+      000732 A2 AF            [12] 1678 	mov	c,_EA
+      000734 92 00            [24] 1679 	mov	_BIT_TMP,c
+                                   1680 ;	assignBit
+      000736 C2 AF            [12] 1681 	clr	_EA
+      000738 75 C7 AA         [24] 1682 	mov	_TA,#0xaa
+      00073B 75 C7 55         [24] 1683 	mov	_TA,#0x55
+      00073E 43 97 80         [24] 1684 	orl	_CKEN,#0x80
+                                   1685 ;	assignBit
+      000741 A2 00            [12] 1686 	mov	c,_BIT_TMP
+      000743 92 AF            [24] 1687 	mov	_EA,c
+                           000283  1688 	C$sys.c$157$2_0$57 ==.
+                                   1689 ;	..\..\..\..\Library\StdDriver\src\sys.c:157: set_CKEN_EXTEN0;
+      000745 75 91 00         [24] 1690 	mov	_SFRS,#0x00
+                                   1691 ;	assignBit
+      000748 A2 AF            [12] 1692 	mov	c,_EA
+      00074A 92 00            [24] 1693 	mov	_BIT_TMP,c
+                                   1694 ;	assignBit
+      00074C C2 AF            [12] 1695 	clr	_EA
+      00074E 75 C7 AA         [24] 1696 	mov	_TA,#0xaa
+      000751 75 C7 55         [24] 1697 	mov	_TA,#0x55
+      000754 43 97 40         [24] 1698 	orl	_CKEN,#0x40
+                                   1699 ;	assignBit
+      000757 A2 00            [12] 1700 	mov	c,_BIT_TMP
+      000759 92 AF            [24] 1701 	mov	_EA,c
+                           000299  1702 	C$sys.c$158$2_0$57 ==.
+                                   1703 ;	..\..\..\..\Library\StdDriver\src\sys.c:158: while((CKSWT|CLR_BIT3)==CLR_BIT3);      //step2: check clock source status and wait for ready
+      00075B                       1704 00114$:
+      00075B AE 96            [24] 1705 	mov	r6,_CKSWT
+      00075D 7F 00            [12] 1706 	mov	r7,#0x00
+      00075F 43 06 F7         [24] 1707 	orl	ar6,#0xf7
+      000762 BE F7 40         [24] 1708 	cjne	r6,#0xf7,00122$
+      000765 BF 00 3D         [24] 1709 	cjne	r7,#0x00,00122$
+                           0002A6  1710 	C$sys.c$162$2_0$57 ==.
+                                   1711 ;	..\..\..\..\Library\StdDriver\src\sys.c:162: case FSYS_HXTIN_P00:
+      000768 80 F1            [24] 1712 	sjmp	00114$
+      00076A                       1713 00117$:
+                           0002A8  1714 	C$sys.c$163$2_0$57 ==.
+                                   1715 ;	..\..\..\..\Library\StdDriver\src\sys.c:163: set_CKEN_EXTEN1;                        //step1: Enable extnal clock source.
+      00076A 75 91 00         [24] 1716 	mov	_SFRS,#0x00
+                                   1717 ;	assignBit
+      00076D A2 AF            [12] 1718 	mov	c,_EA
+      00076F 92 00            [24] 1719 	mov	_BIT_TMP,c
+                                   1720 ;	assignBit
+      000771 C2 AF            [12] 1721 	clr	_EA
+      000773 75 C7 AA         [24] 1722 	mov	_TA,#0xaa
+      000776 75 C7 55         [24] 1723 	mov	_TA,#0x55
+      000779 43 97 80         [24] 1724 	orl	_CKEN,#0x80
+                                   1725 ;	assignBit
+      00077C A2 00            [12] 1726 	mov	c,_BIT_TMP
+      00077E 92 AF            [24] 1727 	mov	_EA,c
+                           0002BE  1728 	C$sys.c$164$2_0$57 ==.
+                                   1729 ;	..\..\..\..\Library\StdDriver\src\sys.c:164: clr_CKEN_EXTEN0;
+      000780 75 91 00         [24] 1730 	mov	_SFRS,#0x00
+                                   1731 ;	assignBit
+      000783 A2 AF            [12] 1732 	mov	c,_EA
+      000785 92 00            [24] 1733 	mov	_BIT_TMP,c
+                                   1734 ;	assignBit
+      000787 C2 AF            [12] 1735 	clr	_EA
+      000789 75 C7 AA         [24] 1736 	mov	_TA,#0xaa
+      00078C 75 C7 55         [24] 1737 	mov	_TA,#0x55
+      00078F 53 97 BF         [24] 1738 	anl	_CKEN,#0xbf
+                                   1739 ;	assignBit
+      000792 A2 00            [12] 1740 	mov	c,_BIT_TMP
+      000794 92 AF            [24] 1741 	mov	_EA,c
+                           0002D4  1742 	C$sys.c$165$2_0$57 ==.
+                                   1743 ;	..\..\..\..\Library\StdDriver\src\sys.c:165: while((CKSWT|CLR_BIT6)==CLR_BIT6);      //step2: check clock source status and wait for ready
+      000796                       1744 00118$:
+      000796 AE 96            [24] 1745 	mov	r6,_CKSWT
+      000798 7F 00            [12] 1746 	mov	r7,#0x00
+      00079A 43 06 BF         [24] 1747 	orl	ar6,#0xbf
+      00079D BE BF 05         [24] 1748 	cjne	r6,#0xbf,00172$
+      0007A0 BF 00 02         [24] 1749 	cjne	r7,#0x00,00172$
+      0007A3 80 F1            [24] 1750 	sjmp	00118$
+      0007A5                       1751 00172$:
+                           0002E3  1752 	C$sys.c$167$1_0$56 ==.
+                                   1753 ;	..\..\..\..\Library\StdDriver\src\sys.c:167: }
+      0007A5                       1754 00122$:
+                           0002E3  1755 	C$sys.c$168$1_0$56 ==.
+                                   1756 ;	..\..\..\..\Library\StdDriver\src\sys.c:168: }
+                           0002E3  1757 	C$sys.c$168$1_0$56 ==.
+                           0002E3  1758 	XG$ClockEnable$0$0 ==.
+      0007A5 22               [24] 1759 	ret
+                                   1760 ;------------------------------------------------------------
+                                   1761 ;Allocation info for local variables in function 'ClockDisable'
+                                   1762 ;------------------------------------------------------------
+                                   1763 ;u8FsysMode                Allocated to registers r7 
+                                   1764 ;------------------------------------------------------------
+                           0002E4  1765 	G$ClockDisable$0$0 ==.
+                           0002E4  1766 	C$sys.c$170$1_0$59 ==.
+                                   1767 ;	..\..\..\..\Library\StdDriver\src\sys.c:170: void ClockDisable(unsigned char u8FsysMode)
+                                   1768 ;	-----------------------------------------
+                                   1769 ;	 function ClockDisable
+                                   1770 ;	-----------------------------------------
+      0007A6                       1771 _ClockDisable:
+      0007A6 AF 82            [24] 1772 	mov	r7,dpl
+                           0002E6  1773 	C$sys.c$172$2_0$59 ==.
+                                   1774 ;	..\..\..\..\Library\StdDriver\src\sys.c:172: __bit closeflag=0;
+      0007A8 7E 00            [12] 1775 	mov	r6,#0x00
+                           0002E8  1776 	C$sys.c$174$1_0$59 ==.
+                                   1777 ;	..\..\..\..\Library\StdDriver\src\sys.c:174: SFRS = 0;
+                                   1778 ;	1-genFromRTrack replaced	mov	_SFRS,#0x00
+      0007AA 8E 91            [24] 1779 	mov	_SFRS,r6
+                           0002EA  1780 	C$sys.c$175$1_0$59 ==.
+                                   1781 ;	..\..\..\..\Library\StdDriver\src\sys.c:175: switch (u8FsysMode)
+      0007AC EF               [12] 1782 	mov	a,r7
+      0007AD 24 FA            [12] 1783 	add	a,#0xff - 0x05
+      0007AF 40 4C            [24] 1784 	jc	00106$
+      0007B1 EF               [12] 1785 	mov	a,r7
+      0007B2 2F               [12] 1786 	add	a,r7
+                           0002F1  1787 	C$sys.c$178$2_0$60 ==.
+                                   1788 ;	..\..\..\..\Library\StdDriver\src\sys.c:178: case FSYS_HXT:
+      0007B3 90 07 B7         [24] 1789 	mov	dptr,#00120$
+      0007B6 73               [24] 1790 	jmp	@a+dptr
+      0007B7                       1791 00120$:
+      0007B7 80 0A            [24] 1792 	sjmp	00101$
+      0007B9 80 42            [24] 1793 	sjmp	00106$
+      0007BB 80 0A            [24] 1794 	sjmp	00102$
+      0007BD 80 20            [24] 1795 	sjmp	00103$
+      0007BF 80 36            [24] 1796 	sjmp	00104$
+      0007C1 80 38            [24] 1797 	sjmp	00105$
+      0007C3                       1798 00101$:
+                           000301  1799 	C$sys.c$179$2_0$60 ==.
+                                   1800 ;	..\..\..\..\Library\StdDriver\src\sys.c:179: closeflag = 1;
+      0007C3 7E 01            [12] 1801 	mov	r6,#0x01
+                           000303  1802 	C$sys.c$180$2_0$60 ==.
+                                   1803 ;	..\..\..\..\Library\StdDriver\src\sys.c:180: break;
+                           000303  1804 	C$sys.c$182$2_0$60 ==.
+                                   1805 ;	..\..\..\..\Library\StdDriver\src\sys.c:182: case FSYS_HIRC:
+      0007C5 80 36            [24] 1806 	sjmp	00106$
+      0007C7                       1807 00102$:
+                           000305  1808 	C$sys.c$183$2_0$60 ==.
+                                   1809 ;	..\..\..\..\Library\StdDriver\src\sys.c:183: clr_CKEN_HIRCEN;
+      0007C7 75 91 00         [24] 1810 	mov	_SFRS,#0x00
+                                   1811 ;	assignBit
+      0007CA A2 AF            [12] 1812 	mov	c,_EA
+      0007CC 92 00            [24] 1813 	mov	_BIT_TMP,c
+                                   1814 ;	assignBit
+      0007CE C2 AF            [12] 1815 	clr	_EA
+      0007D0 75 C7 AA         [24] 1816 	mov	_TA,#0xaa
+      0007D3 75 C7 55         [24] 1817 	mov	_TA,#0x55
+      0007D6 53 97 DF         [24] 1818 	anl	_CKEN,#0xdf
+                                   1819 ;	assignBit
+      0007D9 A2 00            [12] 1820 	mov	c,_BIT_TMP
+      0007DB 92 AF            [24] 1821 	mov	_EA,c
+                           00031B  1822 	C$sys.c$184$2_0$60 ==.
+                                   1823 ;	..\..\..\..\Library\StdDriver\src\sys.c:184: break;
+                           00031B  1824 	C$sys.c$186$2_0$60 ==.
+                                   1825 ;	..\..\..\..\Library\StdDriver\src\sys.c:186: case FSYS_LIRC:
+      0007DD 80 1E            [24] 1826 	sjmp	00106$
+      0007DF                       1827 00103$:
+                           00031D  1828 	C$sys.c$187$2_0$60 ==.
+                                   1829 ;	..\..\..\..\Library\StdDriver\src\sys.c:187: clr_CKEN_LIRCEN;
+      0007DF 75 91 00         [24] 1830 	mov	_SFRS,#0x00
+                                   1831 ;	assignBit
+      0007E2 A2 AF            [12] 1832 	mov	c,_EA
+      0007E4 92 00            [24] 1833 	mov	_BIT_TMP,c
+                                   1834 ;	assignBit
+      0007E6 C2 AF            [12] 1835 	clr	_EA
+      0007E8 75 C7 AA         [24] 1836 	mov	_TA,#0xaa
+      0007EB 75 C7 55         [24] 1837 	mov	_TA,#0x55
+      0007EE 53 97 EF         [24] 1838 	anl	_CKEN,#0xef
+                                   1839 ;	assignBit
+      0007F1 A2 00            [12] 1840 	mov	c,_BIT_TMP
+      0007F3 92 AF            [24] 1841 	mov	_EA,c
+                           000333  1842 	C$sys.c$188$2_0$60 ==.
+                                   1843 ;	..\..\..\..\Library\StdDriver\src\sys.c:188: break;
+                           000333  1844 	C$sys.c$190$2_0$60 ==.
+                                   1845 ;	..\..\..\..\Library\StdDriver\src\sys.c:190: case FSYS_OSCIN_P30:
+      0007F5 80 06            [24] 1846 	sjmp	00106$
+      0007F7                       1847 00104$:
+                           000335  1848 	C$sys.c$191$2_0$60 ==.
+                                   1849 ;	..\..\..\..\Library\StdDriver\src\sys.c:191: closeflag = 1;
+      0007F7 7E 01            [12] 1850 	mov	r6,#0x01
+                           000337  1851 	C$sys.c$192$2_0$60 ==.
+                                   1852 ;	..\..\..\..\Library\StdDriver\src\sys.c:192: break;
+                           000337  1853 	C$sys.c$194$2_0$60 ==.
+                                   1854 ;	..\..\..\..\Library\StdDriver\src\sys.c:194: case FSYS_HXTIN_P00:
+      0007F9 80 02            [24] 1855 	sjmp	00106$
+      0007FB                       1856 00105$:
+                           000339  1857 	C$sys.c$195$2_0$60 ==.
+                                   1858 ;	..\..\..\..\Library\StdDriver\src\sys.c:195: closeflag = 1;
+      0007FB 7E 01            [12] 1859 	mov	r6,#0x01
+                           00033B  1860 	C$sys.c$197$1_0$59 ==.
+                                   1861 ;	..\..\..\..\Library\StdDriver\src\sys.c:197: }
+      0007FD                       1862 00106$:
+                           00033B  1863 	C$sys.c$198$1_0$59 ==.
+                                   1864 ;	..\..\..\..\Library\StdDriver\src\sys.c:198: if (closeflag)
+      0007FD EE               [12] 1865 	mov	a,r6
+      0007FE 60 16            [24] 1866 	jz	00109$
+                           00033E  1867 	C$sys.c$200$2_0$61 ==.
+                                   1868 ;	..\..\..\..\Library\StdDriver\src\sys.c:200: SFRS=0;BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0x3F;EA=BIT_TMP;
+      000800 75 91 00         [24] 1869 	mov	_SFRS,#0x00
+                                   1870 ;	assignBit
+      000803 A2 AF            [12] 1871 	mov	c,_EA
+      000805 92 00            [24] 1872 	mov	_BIT_TMP,c
+                                   1873 ;	assignBit
+      000807 C2 AF            [12] 1874 	clr	_EA
+      000809 75 C7 AA         [24] 1875 	mov	_TA,#0xaa
+      00080C 75 C7 55         [24] 1876 	mov	_TA,#0x55
+      00080F 53 97 3F         [24] 1877 	anl	_CKEN,#0x3f
+                                   1878 ;	assignBit
+      000812 A2 00            [12] 1879 	mov	c,_BIT_TMP
+      000814 92 AF            [24] 1880 	mov	_EA,c
+                           000354  1881 	C$sys.c$201$1_0$59 ==.
+                                   1882 ;	..\..\..\..\Library\StdDriver\src\sys.c:201: closeflag = 0;
+      000816                       1883 00109$:
+                           000354  1884 	C$sys.c$204$1_0$59 ==.
+                                   1885 ;	..\..\..\..\Library\StdDriver\src\sys.c:204: }
+                           000354  1886 	C$sys.c$204$1_0$59 ==.
+                           000354  1887 	XG$ClockDisable$0$0 ==.
+      000816 22               [24] 1888 	ret
+                                   1889 ;------------------------------------------------------------
+                                   1890 ;Allocation info for local variables in function 'ClockSwitch'
+                                   1891 ;------------------------------------------------------------
+                                   1892 ;u8FsysMode                Allocated to registers r7 
+                                   1893 ;------------------------------------------------------------
+                           000355  1894 	G$ClockSwitch$0$0 ==.
+                           000355  1895 	C$sys.c$206$1_0$63 ==.
+                                   1896 ;	..\..\..\..\Library\StdDriver\src\sys.c:206: void ClockSwitch(unsigned char u8FsysMode)
+                                   1897 ;	-----------------------------------------
+                                   1898 ;	 function ClockSwitch
+                                   1899 ;	-----------------------------------------
+      000817                       1900 _ClockSwitch:
+      000817 AF 82            [24] 1901 	mov	r7,dpl
+                           000357  1902 	C$sys.c$208$2_0$63 ==.
+                                   1903 ;	..\..\..\..\Library\StdDriver\src\sys.c:208: __bit exflag=0;
+      000819 7E 00            [12] 1904 	mov	r6,#0x00
+                           000359  1905 	C$sys.c$209$1_0$63 ==.
+                                   1906 ;	..\..\..\..\Library\StdDriver\src\sys.c:209: SFRS = 0 ;
+                                   1907 ;	1-genFromRTrack replaced	mov	_SFRS,#0x00
+      00081B 8E 91            [24] 1908 	mov	_SFRS,r6
+                           00035B  1909 	C$sys.c$210$1_0$63 ==.
+                                   1910 ;	..\..\..\..\Library\StdDriver\src\sys.c:210: BIT_TMP=EA;EA=0;
+                                   1911 ;	assignBit
+      00081D A2 AF            [12] 1912 	mov	c,_EA
+      00081F 92 00            [24] 1913 	mov	_BIT_TMP,c
+                                   1914 ;	assignBit
+      000821 C2 AF            [12] 1915 	clr	_EA
+                           000361  1916 	C$sys.c$211$1_0$63 ==.
+                                   1917 ;	..\..\..\..\Library\StdDriver\src\sys.c:211: switch (u8FsysMode)
+      000823 EF               [12] 1918 	mov	a,r7
+      000824 24 FA            [12] 1919 	add	a,#0xff - 0x05
+      000826 50 03            [24] 1920 	jnc	00119$
+      000828 02 08 A3         [24] 1921 	ljmp	00106$
+      00082B                       1922 00119$:
+      00082B EF               [12] 1923 	mov	a,r7
+      00082C 2F               [12] 1924 	add	a,r7
+                           00036B  1925 	C$sys.c$214$2_0$64 ==.
+                                   1926 ;	..\..\..\..\Library\StdDriver\src\sys.c:214: case FSYS_HXT:
+      00082D 90 08 31         [24] 1927 	mov	dptr,#00120$
+      000830 73               [24] 1928 	jmp	@a+dptr
+      000831                       1929 00120$:
+      000831 80 0A            [24] 1930 	sjmp	00101$
+      000833 80 6E            [24] 1931 	sjmp	00106$
+      000835 80 0A            [24] 1932 	sjmp	00102$
+      000837 80 36            [24] 1933 	sjmp	00103$
+      000839 80 62            [24] 1934 	sjmp	00104$
+      00083B 80 64            [24] 1935 	sjmp	00105$
+      00083D                       1936 00101$:
+                           00037B  1937 	C$sys.c$215$2_0$64 ==.
+                                   1938 ;	..\..\..\..\Library\StdDriver\src\sys.c:215: exflag = 1;
+      00083D 7E 01            [12] 1939 	mov	r6,#0x01
+                           00037D  1940 	C$sys.c$216$2_0$64 ==.
+                                   1941 ;	..\..\..\..\Library\StdDriver\src\sys.c:216: break;
+                           00037D  1942 	C$sys.c$218$2_0$64 ==.
+                                   1943 ;	..\..\..\..\Library\StdDriver\src\sys.c:218: case FSYS_HIRC:
+      00083F 80 62            [24] 1944 	sjmp	00106$
+      000841                       1945 00102$:
+                           00037F  1946 	C$sys.c$219$2_0$64 ==.
+                                   1947 ;	..\..\..\..\Library\StdDriver\src\sys.c:219: clr_CKSWT_OSC1;
+      000841 75 91 00         [24] 1948 	mov	_SFRS,#0x00
+                                   1949 ;	assignBit
+      000844 A2 AF            [12] 1950 	mov	c,_EA
+      000846 92 00            [24] 1951 	mov	_BIT_TMP,c
+                                   1952 ;	assignBit
+      000848 C2 AF            [12] 1953 	clr	_EA
+      00084A 75 C7 AA         [24] 1954 	mov	_TA,#0xaa
+      00084D 75 C7 55         [24] 1955 	mov	_TA,#0x55
+      000850 53 96 FB         [24] 1956 	anl	_CKSWT,#0xfb
+                                   1957 ;	assignBit
+      000853 A2 00            [12] 1958 	mov	c,_BIT_TMP
+      000855 92 AF            [24] 1959 	mov	_EA,c
+                           000395  1960 	C$sys.c$220$2_0$64 ==.
+                                   1961 ;	..\..\..\..\Library\StdDriver\src\sys.c:220: clr_CKSWT_OSC0;
+      000857 75 91 00         [24] 1962 	mov	_SFRS,#0x00
+                                   1963 ;	assignBit
+      00085A A2 AF            [12] 1964 	mov	c,_EA
+      00085C 92 00            [24] 1965 	mov	_BIT_TMP,c
+                                   1966 ;	assignBit
+      00085E C2 AF            [12] 1967 	clr	_EA
+      000860 75 C7 AA         [24] 1968 	mov	_TA,#0xaa
+      000863 75 C7 55         [24] 1969 	mov	_TA,#0x55
+      000866 53 96 FD         [24] 1970 	anl	_CKSWT,#0xfd
+                                   1971 ;	assignBit
+      000869 A2 00            [12] 1972 	mov	c,_BIT_TMP
+      00086B 92 AF            [24] 1973 	mov	_EA,c
+                           0003AB  1974 	C$sys.c$221$2_0$64 ==.
+                                   1975 ;	..\..\..\..\Library\StdDriver\src\sys.c:221: break;
+                           0003AB  1976 	C$sys.c$223$2_0$64 ==.
+                                   1977 ;	..\..\..\..\Library\StdDriver\src\sys.c:223: case FSYS_LIRC:
+      00086D 80 34            [24] 1978 	sjmp	00106$
+      00086F                       1979 00103$:
+                           0003AD  1980 	C$sys.c$224$2_0$64 ==.
+                                   1981 ;	..\..\..\..\Library\StdDriver\src\sys.c:224: set_CKSWT_OSC1;
+      00086F 75 91 00         [24] 1982 	mov	_SFRS,#0x00
+                                   1983 ;	assignBit
+      000872 A2 AF            [12] 1984 	mov	c,_EA
+      000874 92 00            [24] 1985 	mov	_BIT_TMP,c
+                                   1986 ;	assignBit
+      000876 C2 AF            [12] 1987 	clr	_EA
+      000878 75 C7 AA         [24] 1988 	mov	_TA,#0xaa
+      00087B 75 C7 55         [24] 1989 	mov	_TA,#0x55
+      00087E 43 96 04         [24] 1990 	orl	_CKSWT,#0x04
+                                   1991 ;	assignBit
+      000881 A2 00            [12] 1992 	mov	c,_BIT_TMP
+      000883 92 AF            [24] 1993 	mov	_EA,c
+                           0003C3  1994 	C$sys.c$225$2_0$64 ==.
+                                   1995 ;	..\..\..\..\Library\StdDriver\src\sys.c:225: clr_CKSWT_OSC0;
+      000885 75 91 00         [24] 1996 	mov	_SFRS,#0x00
+                                   1997 ;	assignBit
+      000888 A2 AF            [12] 1998 	mov	c,_EA
+      00088A 92 00            [24] 1999 	mov	_BIT_TMP,c
+                                   2000 ;	assignBit
+      00088C C2 AF            [12] 2001 	clr	_EA
+      00088E 75 C7 AA         [24] 2002 	mov	_TA,#0xaa
+      000891 75 C7 55         [24] 2003 	mov	_TA,#0x55
+      000894 53 96 FD         [24] 2004 	anl	_CKSWT,#0xfd
+                                   2005 ;	assignBit
+      000897 A2 00            [12] 2006 	mov	c,_BIT_TMP
+      000899 92 AF            [24] 2007 	mov	_EA,c
+                           0003D9  2008 	C$sys.c$226$2_0$64 ==.
+                                   2009 ;	..\..\..\..\Library\StdDriver\src\sys.c:226: break;
+                           0003D9  2010 	C$sys.c$228$2_0$64 ==.
+                                   2011 ;	..\..\..\..\Library\StdDriver\src\sys.c:228: case FSYS_OSCIN_P30:
+      00089B 80 06            [24] 2012 	sjmp	00106$
+      00089D                       2013 00104$:
+                           0003DB  2014 	C$sys.c$229$2_0$64 ==.
+                                   2015 ;	..\..\..\..\Library\StdDriver\src\sys.c:229: exflag = 1;
+      00089D 7E 01            [12] 2016 	mov	r6,#0x01
+                           0003DD  2017 	C$sys.c$230$2_0$64 ==.
+                                   2018 ;	..\..\..\..\Library\StdDriver\src\sys.c:230: break;
+                           0003DD  2019 	C$sys.c$232$2_0$64 ==.
+                                   2020 ;	..\..\..\..\Library\StdDriver\src\sys.c:232: case FSYS_HXTIN_P00:
+      00089F 80 02            [24] 2021 	sjmp	00106$
+      0008A1                       2022 00105$:
+                           0003DF  2023 	C$sys.c$233$2_0$64 ==.
+                                   2024 ;	..\..\..\..\Library\StdDriver\src\sys.c:233: exflag = 1;
+      0008A1 7E 01            [12] 2025 	mov	r6,#0x01
+                           0003E1  2026 	C$sys.c$235$1_0$63 ==.
+                                   2027 ;	..\..\..\..\Library\StdDriver\src\sys.c:235: }
+      0008A3                       2028 00106$:
+                           0003E1  2029 	C$sys.c$236$1_0$63 ==.
+                                   2030 ;	..\..\..\..\Library\StdDriver\src\sys.c:236: if (exflag)
+      0008A3 EE               [12] 2031 	mov	a,r6
+      0008A4 60 2C            [24] 2032 	jz	00108$
+                           0003E4  2033 	C$sys.c$238$2_0$65 ==.
+                                   2034 ;	..\..\..\..\Library\StdDriver\src\sys.c:238: clr_CKSWT_OSC1;
+      0008A6 75 91 00         [24] 2035 	mov	_SFRS,#0x00
+                                   2036 ;	assignBit
+      0008A9 A2 AF            [12] 2037 	mov	c,_EA
+      0008AB 92 00            [24] 2038 	mov	_BIT_TMP,c
+                                   2039 ;	assignBit
+      0008AD C2 AF            [12] 2040 	clr	_EA
+      0008AF 75 C7 AA         [24] 2041 	mov	_TA,#0xaa
+      0008B2 75 C7 55         [24] 2042 	mov	_TA,#0x55
+      0008B5 53 96 FB         [24] 2043 	anl	_CKSWT,#0xfb
+                                   2044 ;	assignBit
+      0008B8 A2 00            [12] 2045 	mov	c,_BIT_TMP
+      0008BA 92 AF            [24] 2046 	mov	_EA,c
+                           0003FA  2047 	C$sys.c$239$2_0$65 ==.
+                                   2048 ;	..\..\..\..\Library\StdDriver\src\sys.c:239: set_CKSWT_OSC0;
+      0008BC 75 91 00         [24] 2049 	mov	_SFRS,#0x00
+                                   2050 ;	assignBit
+      0008BF A2 AF            [12] 2051 	mov	c,_EA
+      0008C1 92 00            [24] 2052 	mov	_BIT_TMP,c
+                                   2053 ;	assignBit
+      0008C3 C2 AF            [12] 2054 	clr	_EA
+      0008C5 75 C7 AA         [24] 2055 	mov	_TA,#0xaa
+      0008C8 75 C7 55         [24] 2056 	mov	_TA,#0x55
+      0008CB 43 96 02         [24] 2057 	orl	_CKSWT,#0x02
+                                   2058 ;	assignBit
+      0008CE A2 00            [12] 2059 	mov	c,_BIT_TMP
+      0008D0 92 AF            [24] 2060 	mov	_EA,c
+      0008D2                       2061 00108$:
+                           000410  2062 	C$sys.c$241$1_0$63 ==.
+                                   2063 ;	..\..\..\..\Library\StdDriver\src\sys.c:241: EA = BIT_TMP;
+                                   2064 ;	assignBit
+      0008D2 A2 00            [12] 2065 	mov	c,_BIT_TMP
+      0008D4 92 AF            [24] 2066 	mov	_EA,c
+                           000414  2067 	C$sys.c$242$1_0$63 ==.
+                                   2068 ;	..\..\..\..\Library\StdDriver\src\sys.c:242: }
+                           000414  2069 	C$sys.c$242$1_0$63 ==.
+                           000414  2070 	XG$ClockSwitch$0$0 ==.
+      0008D6 22               [24] 2071 	ret
+                                   2072 	.area CSEG    (CODE)
+                                   2073 	.area CONST   (CODE)
+                                   2074 	.area XINIT   (CODE)
+                                   2075 	.area CABS    (ABS,CODE)

@@ -1,0 +1,636 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  _Timer0_Delay                   
+C:   00000000  _Timer0_Delay_PARM_2            
+C:   00000000  _Timer0_Delay_PARM_3            
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_BSEG                          
+C:   00000000  l_BSEG_BYTES                    
+C:   00000000  l_CABS                          
+C:   00000000  l_CONST                         
+C:   00000000  l_GSINIT                        
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_OSEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l_XINIT                         
+C:   00000000  l_XISEG                         
+C:   00000000  l_XSEG                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_HOME                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  s_PSEG                          
+C:   00000001  s_XISEG                         
+C:   00000001  s_XSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000003  l_GSINIT0                       
+C:   00000006  l_HOME                          
+C:   00000006  s_GSINIT0                       
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000008  s_SSEG                          
+C:   00000009  s_GSINIT1                       
+C:   00000009  s_GSINIT2                       
+C:   0000000A  l_GSINIT2                       
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000010  s_REG_BANK_2                    
+C:   00000013  s_GSINIT3                       
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_OSEG                          
+C:   00000018  s_REG_BANK_3                    
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000022  l_GSINIT3                       
+C:   0000002A  l_GSINIT4                       
+C:   00000035  s_GSINIT4                       
+C:   0000005F  s_GSFINAL                       
+C:   0000005F  s_GSINIT                        
+C:   0000005F  s_GSINIT5                       
+C:   00000062  s_CSEG                          
+C:   0000006B  l_CSEG                          
+C:   00000080  l_DSEG                          
+C:   000000CD  s_CONST                         
+C:   000000CD  s_XINIT                         
+C:   000000F8  l_SSEG                          
+C:   00000100  l_IRAM                          
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _startup
+     00000080  _MOSI                              GPIO
+     00000080  _P0                                GPIO
+     00000080  _P00                               GPIO
+     00000081  _MISO                              GPIO
+     00000081  _P01                               GPIO
+     00000081  _SP                                GPIO
+     00000082  _DPL                               GPIO
+     00000082  _P02                               GPIO
+     00000082  _RXD_1                             GPIO
+     00000083  _DPH                               GPIO
+     00000083  _P03                               GPIO
+     00000084  _ADCBAL                            GPIO
+     00000084  _P04                               GPIO
+     00000084  _RCTRIM0                           GPIO
+     00000084  _STADC                             GPIO
+     00000085  _ADCBAH                            GPIO
+     00000085  _P05                               GPIO
+     00000085  _RCTRIM1                           GPIO
+     00000086  _ADCCON3                           GPIO
+     00000086  _P06                               GPIO
+     00000086  _RWKL                              GPIO
+     00000086  _TXD                               GPIO
+     00000087  _P07                               GPIO
+     00000087  _PCON                              GPIO
+     00000087  _RXD                               GPIO
+     00000088  _IT0                               GPIO
+     00000088  _TCON                              GPIO
+     00000089  _IE0                               GPIO
+     00000089  _P2M1                              GPIO
+     00000089  _TMOD                              GPIO
+     0000008A  _IT1                               GPIO
+     0000008A  _P2M2                              GPIO
+     0000008A  _TL0                               GPIO
+     0000008B  _IE1                               GPIO
+     0000008B  _P2SR                              GPIO
+     0000008B  _TL1                               GPIO
+     0000008C  _P2S                               GPIO
+     0000008C  _TH0                               GPIO
+     0000008C  _TR0                               GPIO
+     0000008D  _ADCSN                             GPIO
+     0000008D  _TF0                               GPIO
+     0000008D  _TH1                               GPIO
+     0000008E  _ADCCN                             GPIO
+     0000008E  _CKCON                             GPIO
+     0000008E  _TR1                               GPIO
+     0000008F  _ADCSR                             GPIO
+     0000008F  _TF1                               GPIO
+     0000008F  _WKCON                             GPIO
+     00000090  _P1                                GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000090  _P10                               GPIO
+     00000091  _P11                               GPIO
+     00000091  _SFRS                              GPIO
+     00000092  _CAPCON0                           GPIO
+     00000092  _P0UP                              GPIO
+     00000092  _P12                               GPIO
+     00000093  _CAPCON1                           GPIO
+     00000093  _P13                               GPIO
+     00000093  _P1UP                              GPIO
+     00000093  _SCL                               GPIO
+     00000094  _CAPCON2                           GPIO
+     00000094  _P14                               GPIO
+     00000094  _P2UP                              GPIO
+     00000094  _SDA                               GPIO
+     00000095  _CKDIV                             GPIO
+     00000095  _P15                               GPIO
+     00000095  _P3UP                              GPIO
+     00000096  _CKSWT                             GPIO
+     00000096  _P16                               GPIO
+     00000096  _TXD_1                             GPIO
+     00000097  _CKEN                              GPIO
+     00000097  _P17                               GPIO
+     00000097  _RWKH                              GPIO
+     00000098  _RI                                GPIO
+     00000098  _SCON                              GPIO
+     00000099  _AINDIDS1                          GPIO
+     00000099  _SBUF                              GPIO
+     00000099  _TI                                GPIO
+     0000009A  _P0DW                              GPIO
+     0000009A  _RB8                               GPIO
+     0000009A  _SBUF_1                            GPIO
+     0000009B  _EIE                               GPIO
+     0000009B  _P1DW                              GPIO
+     0000009B  _TB8                               GPIO
+     0000009C  _EIE1                              GPIO
+     0000009C  _P2DW                              GPIO
+     0000009C  _REN                               GPIO
+     0000009D  _P3DW                              GPIO
+     0000009D  _SM2                               GPIO
+     0000009E  _SM1                               GPIO
+     0000009F  _CHPCON                            GPIO
+     0000009F  _FE                                GPIO
+     0000009F  _SM0                               GPIO
+     000000A0  _P2                                GPIO
+     000000A0  _P20                               GPIO
+     000000A0  __XPAGE                            
+     000000A1  _AUXR2                             GPIO
+     000000A2  _AUXR1                             GPIO
+     000000A2  _AUXR3                             GPIO
+     000000A3  _AUXR4                             GPIO
+     000000A3  _BODCON0                           GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000A4  _AUXR5                             GPIO
+     000000A4  _IAPTRG                            GPIO
+     000000A5  _AUXR6                             GPIO
+     000000A5  _IAPUEN                            GPIO
+     000000A6  _AUXR7                             GPIO
+     000000A6  _IAPAL                             GPIO
+     000000A7  _AUXR8                             GPIO
+     000000A7  _IAPAH                             GPIO
+     000000A8  _EX0                               GPIO
+     000000A8  _IE                                GPIO
+     000000A9  _ET0                               GPIO
+     000000A9  _PWM1PH                            GPIO
+     000000A9  _SADDR                             GPIO
+     000000AA  _EX1                               GPIO
+     000000AA  _PWM1C0H                           GPIO
+     000000AA  _WDCON                             GPIO
+     000000AB  _BODCON1                           GPIO
+     000000AB  _ET1                               GPIO
+     000000AB  _PWM1C1H                           GPIO
+     000000AC  _ES                                GPIO
+     000000AC  _P3M1                              GPIO
+     000000AC  _P3S                               GPIO
+     000000AC  _PWM1MD                            GPIO
+     000000AD  _EBOD                              GPIO
+     000000AD  _P3M2                              GPIO
+     000000AD  _P3SR                              GPIO
+     000000AD  _PWM1MEN                           GPIO
+     000000AE  _EADC                              GPIO
+     000000AE  _IAPFD                             GPIO
+     000000AF  _EA                                GPIO
+     000000AF  _IAPCN                             GPIO
+     000000B0  _P3                                GPIO
+     000000B0  _P30                               GPIO
+     000000B1  _P0M1                              GPIO
+     000000B1  _P0S                               GPIO
+     000000B1  _P31                               GPIO
+     000000B1  _PWM1PL                            GPIO
+     000000B2  _P0M2                              GPIO
+     000000B2  _P0SR                              GPIO
+     000000B2  _P32                               GPIO
+     000000B2  _PWM1C0L                           GPIO
+     000000B3  _P1M1                              GPIO
+     000000B3  _P1S                               GPIO
+     000000B3  _P33                               GPIO
+     000000B3  _PWM1C1L                           GPIO
+     000000B4  _P1M2                              GPIO
+     000000B4  _P1SR                              GPIO
+     000000B4  _P34                               GPIO
+     000000B4  _PWM1CON0                          GPIO
+     000000B5  _P35                               GPIO
+     000000B5  _PWM1CON1                          GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000B5  _TOE                               GPIO
+     000000B6  _P36                               GPIO
+     000000B6  _PWM1INTC                          GPIO
+     000000B7  _IPH                               GPIO
+     000000B7  _P37                               GPIO
+     000000B7  _PIOCON2                           GPIO
+     000000B7  _PWM0INTC                          GPIO
+     000000B8  _IP                                GPIO
+     000000B8  _PX0                               GPIO
+     000000B9  _PT0                               GPIO
+     000000B9  _PWM2PH                            GPIO
+     000000B9  _SADEN                             GPIO
+     000000BA  _PWM2C0H                           GPIO
+     000000BA  _PX1                               GPIO
+     000000BA  _SADEN_1                           GPIO
+     000000BB  _PT1                               GPIO
+     000000BB  _PWM2C1H                           GPIO
+     000000BB  _SADDR_1                           GPIO
+     000000BC  _I2DAT                             GPIO
+     000000BC  _PS                                GPIO
+     000000BC  _PWM2MD                            GPIO
+     000000BD  _I2STAT                            GPIO
+     000000BD  _PBOD                              GPIO
+     000000BD  _PWM2MEN                           GPIO
+     000000BE  _I2CLK                             GPIO
+     000000BE  _PADC                              GPIO
+     000000BF  _I2TOC                             GPIO
+     000000C0  _I2CON                             GPIO
+     000000C0  _I2CPX                             GPIO
+     000000C1  _I2ADDR                            GPIO
+     000000C1  _PWM2PL                            GPIO
+     000000C2  _AA                                GPIO
+     000000C2  _ADCRL                             GPIO
+     000000C2  _PWM2C0L                           GPIO
+     000000C3  _ADCRH                             GPIO
+     000000C3  _PWM2C1L                           GPIO
+     000000C3  _SI                                GPIO
+     000000C4  _PWM0C4H                           GPIO
+     000000C4  _PWM2CON0                          GPIO
+     000000C4  _STO                               GPIO
+     000000C4  _T3CON                             GPIO
+     000000C5  _PWM0C5H                           GPIO
+     000000C5  _PWM2CON1                          GPIO
+     000000C5  _RL3                               GPIO
+     000000C5  _STA                               GPIO
+     000000C6  _I2CEN                             GPIO
+     000000C6  _PIOCON1                           GPIO
+     000000C6  _PWM2INTC                          GPIO
+     000000C6  _RH3                               GPIO
+     000000C7  _TA                                GPIO
+     000000C8  _CM_RL2                            GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000C8  _T2CON                             GPIO
+     000000C9  _PWM3PH                            GPIO
+     000000C9  _T2MOD                             GPIO
+     000000CA  _PWM3C0H                           GPIO
+     000000CA  _RCMP2L                            GPIO
+     000000CA  _TR2                               GPIO
+     000000CB  _PWM3C1H                           GPIO
+     000000CB  _RCMP2H                            GPIO
+     000000CC  _PWM0C4L                           GPIO
+     000000CC  _PWM3MD                            GPIO
+     000000CC  _TL2                               GPIO
+     000000CD  _PWM0C5L                           GPIO
+     000000CD  _PWM3MEN                           GPIO
+     000000CD  _TH2                               GPIO
+     000000CE  _ADCMPL                            GPIO
+     000000CE  _EIP2                              GPIO
+     000000CF  _ADCMPH                            GPIO
+     000000CF  _EIPH2                             GPIO
+     000000CF  _TF2                               GPIO
+     000000D0  _P                                 GPIO
+     000000D0  _PSW                               GPIO
+     000000D1  _PWM0PH                            GPIO
+     000000D1  _PWM3PL                            GPIO
+     000000D2  _OV                                GPIO
+     000000D2  _PWM0C0H                           GPIO
+     000000D2  _PWM3C0L                           GPIO
+     000000D3  _PWM0C1H                           GPIO
+     000000D3  _PWM3C1L                           GPIO
+     000000D3  _RS0                               GPIO
+     000000D4  _PWM0C2H                           GPIO
+     000000D4  _PWM3CON0                          GPIO
+     000000D4  _RS1                               GPIO
+     000000D5  _F0                                GPIO
+     000000D5  _PWM0C3H                           GPIO
+     000000D5  _PWM3CON1                          GPIO
+     000000D6  _AC                                GPIO
+     000000D6  _PNP                               GPIO
+     000000D6  _PWM3INTC                          GPIO
+     000000D7  _CY                                GPIO
+     000000D7  _PWM0FBD                           GPIO
+     000000D7  _XTLCON                            GPIO
+     000000D8  _PWM0CON0                          GPIO
+     000000D9  _PWM0PL                            GPIO
+     000000D9  _SC0DR                             GPIO
+     000000DA  _PWM0C0L                           GPIO
+     000000DA  _SC0EGT                            GPIO
+     000000DB  _PWM0C1L                           GPIO
+     000000DB  _SC0ETURD0                         GPIO
+     000000DC  _CLRPWM                            GPIO
+     000000DC  _PWM0C2L                           GPIO
+     000000DC  _SC0ETURD1                         GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000DD  _PWM0C3L                           GPIO
+     000000DD  _PWMF                              GPIO
+     000000DD  _SC0IE                             GPIO
+     000000DE  _LOAD                              GPIO
+     000000DE  _PIOCON0                           GPIO
+     000000DE  _SC0IS                             GPIO
+     000000DF  _PWM0CON1                          GPIO
+     000000DF  _PWMRUN                            GPIO
+     000000DF  _SC0TSR                            GPIO
+     000000E0  _ACC                               GPIO
+     000000E1  _ADCCON1                           GPIO
+     000000E1  _SC1DR                             GPIO
+     000000E2  _ADCCON2                           GPIO
+     000000E2  _SC1EGT                            GPIO
+     000000E3  _ADCDLY                            GPIO
+     000000E3  _SC1ETURD0                         GPIO
+     000000E4  _C0L                               GPIO
+     000000E4  _SC1ETURD1                         GPIO
+     000000E5  _C0H                               GPIO
+     000000E5  _SC1IE                             GPIO
+     000000E6  _C1L                               GPIO
+     000000E6  _SC1IS                             GPIO
+     000000E7  _C1H                               GPIO
+     000000E7  _SC1TSR                            GPIO
+     000000E8  _ADCCON0                           GPIO
+     000000E8  _ADCHS0                            GPIO
+     000000E9  _ADCHS1                            GPIO
+     000000E9  _PICON                             GPIO
+     000000E9  _SC2DR                             GPIO
+     000000EA  _ADCHS2                            GPIO
+     000000EA  _PINEN                             GPIO
+     000000EA  _SC2EGT                            GPIO
+     000000EB  _ADCHS3                            GPIO
+     000000EB  _PIPEN                             GPIO
+     000000EB  _SC2ETURD0                         GPIO
+     000000EC  _ETGSEL0                           GPIO
+     000000EC  _PIF                               GPIO
+     000000EC  _SC2ETURD1                         GPIO
+     000000ED  _C2L                               GPIO
+     000000ED  _ETGSEL1                           GPIO
+     000000ED  _SC2IE                             GPIO
+     000000EE  _ADCS                              GPIO
+     000000EE  _C2H                               GPIO
+     000000EE  _SC2IS                             GPIO
+     000000EF  _ADCF                              GPIO
+     000000EF  _EIP                               GPIO
+     000000EF  _SC2TSR                            GPIO
+     000000F0  _B                                 GPIO
+     000000F1  _CAPCON3                           GPIO
+     000000F1  _SC0CR0                            GPIO
+     000000F2  _CAPCON4                           GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000F2  _SC0CR1                            GPIO
+     000000F3  _SC1CR0                            GPIO
+     000000F3  _SPCR                              GPIO
+     000000F3  _SPCR2                             GPIO
+     000000F4  _SC1CR1                            GPIO
+     000000F4  _SPSR                              GPIO
+     000000F5  _SC2CR0                            GPIO
+     000000F5  _SPDR                              GPIO
+     000000F6  _AINDIDS0                          GPIO
+     000000F6  _SC2CR1                            GPIO
+     000000F7  _EIPH                              GPIO
+     000000F7  _PIPS7                             GPIO
+     000000F8  _RI_1                              GPIO
+     000000F8  _SCON_1                            GPIO
+     000000F9  _PIPS0                             GPIO
+     000000F9  _PWM0DTEN                          GPIO
+     000000F9  _TI_1                              GPIO
+     000000FA  _PIPS1                             GPIO
+     000000FA  _PWM0DTCNT                         GPIO
+     000000FA  _RB8_1                             GPIO
+     000000FB  _PIPS2                             GPIO
+     000000FB  _PWM0MEN                           GPIO
+     000000FB  _TB8_1                             GPIO
+     000000FC  _PIPS3                             GPIO
+     000000FC  _PWM0MD                            GPIO
+     000000FC  _REN_1                             GPIO
+     000000FD  _PIPS4                             GPIO
+     000000FD  _PORDIS                            GPIO
+     000000FD  _SM2_1                             GPIO
+     000000FE  _EIP1                              GPIO
+     000000FE  _PIPS5                             GPIO
+     000000FE  _SM1_1                             GPIO
+     000000FF  _EIPH1                             GPIO
+     000000FF  _FE_1                              GPIO
+     000000FF  _LVRDIS                            GPIO
+     000000FF  _PIPS6                             GPIO
+     000000FF  _SM0_1                             GPIO
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    00000080 =         128. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                00000008    000000F8 =         248. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000008  __start__stack                     GPIO
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00000000    00000006 =           6. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000003  __sdcc_program_startup             GPIO
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT0                             00000006    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000006  __sdcc_gsinit_startup              
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT2                             00000009    0000000A =          10. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT3                             00000013    00000022 =          34. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000013  __mcs51_genXINIT                   
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT4                             00000035    0000002A =          42. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000035  __mcs51_genRAMCLEAR                
+C:   0000003B  __mcs51_genXRAMCLEAR               
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             0000005F    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000062    0000006B =         107. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000062  _main                              GPIO
+C:   000000C9  __sdcc_external_startup            _startup
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+
+Files Linked                              [ module(s) ]
+
+GPIO.rel                                  [  ]
+
+
+Libraries Linked                          [ object file ]
+
+c:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtclear.rel ]
+c:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxinit.rel ]
+c:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtxclear.rel ]
+c:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtpagesfr.rel ]
+c:\Program Files\SDCC\bin\..\lib\small/mcs51.lib
+                                          [ crtstart.rel ]
+c:\Program Files\SDCC\bin\..\lib\small/libsdcc.lib
+                                          [ _startup.rel ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+
+User Base Address Definitions
+
+HOME = 0x0000
+XSEG = 0x0001
+PSEG = 0x0001
+ISEG = 0x0000
+BSEG = 0x0000
+
+
+?ASlink-Warning-Undefined Global '_Timer0_Delay' referenced by module 'GPIO'
+
+?ASlink-Warning-Undefined Global '_Timer0_Delay_PARM_2' referenced by module 'GPIO'
+
+?ASlink-Warning-Undefined Global '_Timer0_Delay_PARM_3' referenced by module 'GPIO'

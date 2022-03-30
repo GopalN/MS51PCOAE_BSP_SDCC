@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1646202154 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\samplecode\regbased\tm1650\tm1650\i2c_m.c
+	"MS51_32K.h"
+
+1646202247 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\samplecode\regbased\tm1650\tm1650\tm1650.c
+	"MS51_32K.h"
+	"TM1650.h"
+
+1611911740 c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\samplecode\regbased\tm1650\tm1650\tm1650.h
+
+1646724474 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\samplecode\regbased\tm1650\tm1650\main.c
+	"MS51_32K.h"
+	"TM1650.h"
+

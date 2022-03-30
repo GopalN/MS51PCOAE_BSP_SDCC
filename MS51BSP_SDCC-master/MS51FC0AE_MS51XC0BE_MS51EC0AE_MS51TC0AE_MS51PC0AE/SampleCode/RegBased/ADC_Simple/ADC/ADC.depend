@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1593700470 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\stddriver\src\delay.c
+	"MS51_32K.h"
+
+1643440089 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\stddriver\src\uart.c
+	"MS51_32K.h"
+	"uart.h"
+
+1636086106 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\stddriver\src\adc.c
+	"MS51_32K.h"
+	"adc.h"
+	"sys.h"
+
+1646548325 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\samplecode\regbased\adc_simple\adc_simple.c
+	"MS51_32K.h"
+	"adc.h"
+	"uart.h"
+	"sys.h"
+	<stdio.h>
+
+1636073692 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\stddriver\src\sys.c
+	"MS51_32K.h"
+

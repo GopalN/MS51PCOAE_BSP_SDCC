@@ -1,0 +1,302 @@
+C51 COMPILER V9.60.0.0   ISP_UART0_MAIN                                                    02/19/2022 13:07:34 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ISP_UART0_MAIN
+OBJECT MODULE PLACED IN .\Output\ISP_UART0_main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\ISP_UART0_main.c OPTIMIZE(7,SPEED) BROWSE INCDIR(..\..\..\..\Library\
+                    -Device\Include;..\..\..\..\Library\StdDriver\inc) DEBUG OBJECTEXTEND PRINT(.\LST\ISP_UART0_main.lst) TABS(2) OBJECT(.\Ou
+                    -tput\ISP_UART0_main.obj)
+
+line level    source
+
+   1          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   2          /*                                                                                                        
+             - */
+   3          /* Copyright(c) 2020 nuvoton Technology Corp. All rights reserved.                                        
+             - */
+   4          /*                                                                                                        
+             - */
+   5          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   6          
+   7          
+   8          //********************************************************************************************************
+             -***
+   9          //  File Function: MS51 UART0 ISP demo code
+  10          //********************************************************************************************************
+             -***
+  11          #include "MS51_32K.h"
+*** ERROR C129 IN LINE 13 OF ..\..\..\..\Library\Device\Include\MS51_32K.h: missing ';' before '__at'
+  12          #include "isp_uart0.h"
+  13          
+  14          /*********************************************************************************************************
+             -***
+  15          *    Main function 
+  16          **********************************************************************************************************
+             -**/
+  17          void main (void)
+  18          {
+  19            set_CHPCON_IAPEN;
+  20            MODIFY_HIRC_24();
+  21          //uart initial for ISP programmer GUI, always use 115200 baudrate
+  22            UART0_ini_115200_24MHz();
+  23            TM0_ini();
+  24          
+  25            g_timer0Over=0;
+  26            g_timer0Counter=5000;
+  27            g_progarmflag=0;
+  28          
+  29          while(1)
+  30          {
+  31                  if(bUartDataReady == TRUE)
+  32                  {
+  33                    EA=0; //DISABLE ALL INTERRUPT                  
+  34                    if(g_progarmflag==1)
+  35                    {
+  36                      for(count=8;count<64;count++)
+  37                      {
+  38                        IAPCN = BYTE_PROGRAM_AP;          //program byte
+  39                        IAPAL = flash_address&0xff;
+  40                        IAPAH = (flash_address>>8)&0xff;
+  41                        IAPFD=uart_rcvbuf[count];
+  42                        set_IAPTRG_IAPGO;
+  43                    
+C51 COMPILER V9.60.0.0   ISP_UART0_MAIN                                                    02/19/2022 13:07:34 PAGE 2   
+
+  44                        IAPCN = BYTE_READ_AP;              //program byte verify
+  45                        set_IAPTRG_IAPGO;
+  46                        if(IAPFD!=uart_rcvbuf[count])
+  47                        while(1);                          
+  48                        if (CHPCON==0x43)              //if error flag set, program error stop ISP
+  49                        while(1);
+  50                        
+  51                        g_totalchecksum=g_totalchecksum+uart_rcvbuf[count];
+  52                        flash_address++;
+  53            
+  54                        if(flash_address==AP_size)
+  55                        {
+  56                          g_progarmflag=0;
+  57                           goto END_2;          
+  58                        }
+  59                      } 
+  60          END_2:                
+  61                      Package_checksum();
+  62                      uart_txbuf[8]=g_totalchecksum&0xff;
+  63                      uart_txbuf[9]=(g_totalchecksum>>8)&0xff;
+  64                      Send_64byte_To_UART0();
+  65                      
+  66                    }
+  67                      
+  68                    switch(uart_rcvbuf[0])
+  69                    {                
+  70                      case CMD_CONNECT:
+  71                      case CMD_SYNC_PACKNO:
+  72                      {
+  73                        Package_checksum();
+  74                        Send_64byte_To_UART0();    
+  75                        g_timer0Counter=0; //clear timer 0 for no reset
+  76                        g_timer0Over=0;
+  77                      break;
+  78                      }
+  79                                  
+  80                      case CMD_GET_FWVER:
+  81                      {
+  82                        Package_checksum();
+  83                        uart_txbuf[8]=FW_VERSION;  
+  84                        Send_64byte_To_UART0();  
+  85                      break;
+  86                      }
+  87                      
+  88                      case CMD_RUN_APROM:
+  89                      {
+  90                        goto _APROM;
+  91                      break;
+  92                      }
+  93              
+  94                      //please for ISP programmer GUI, ID always use following rule to transmit.
+  95                      case CMD_GET_DEVICEID:            
+  96                      {
+  97                        READ_ID();
+  98                        Package_checksum();
+  99                        uart_txbuf[8]=DID_lowB;  
+ 100                        uart_txbuf[9]=DID_highB;  
+ 101                        uart_txbuf[10]=PID_lowB;  
+ 102                        uart_txbuf[11]=PID_highB;  
+ 103                        Send_64byte_To_UART0();  
+ 104                      break;
+ 105                      }
+C51 COMPILER V9.60.0.0   ISP_UART0_MAIN                                                    02/19/2022 13:07:34 PAGE 3   
+
+ 106                      case CMD_ERASE_ALL:
+ 107                      {
+ 108          //              set_CHPCON_IAPEN;
+ 109                        set_IAPUEN_APUEN;
+ 110                        IAPFD = 0xFF;          //Erase must set IAPFD = 0xFF
+ 111                        IAPCN = PAGE_ERASE_AP;
+ 112                        for(flash_address=0x0000;flash_address<APROM_SIZE/PAGE_SIZE;flash_address++)
+ 113                        {        
+ 114                          IAPAL = LOBYTE(flash_address*PAGE_SIZE);
+ 115                          IAPAH = HIBYTE(flash_address*PAGE_SIZE);
+ 116                          set_IAPTRG_IAPGO;
+ 117                        }            
+ 118                        Package_checksum();
+ 119                        Send_64byte_To_UART0();  
+ 120                        break;
+ 121                      }
+ 122                      case CMD_READ_CONFIG:            
+ 123                      {
+ 124                        READ_CONFIG();
+ 125                        Package_checksum();
+ 126                        uart_txbuf[8]=CONF0;  
+ 127                        uart_txbuf[9]=CONF1;  
+ 128                        uart_txbuf[10]=CONF2;  
+ 129                        uart_txbuf[11]=0xff;  
+ 130                        uart_txbuf[12]=CONF4;  
+ 131                        uart_txbuf[13]=0xff;  
+ 132                        uart_txbuf[14]=0xff;            
+ 133                        uart_txbuf[15]=0xff;
+ 134                        Send_64byte_To_UART0();  
+ 135                      break;
+ 136                      }
+ 137                      
+ 138                      case CMD_UPDATE_CONFIG:
+ 139                      {
+ 140                        recv_CONF0 = uart_rcvbuf[8];
+ 141                        recv_CONF1 = uart_rcvbuf[9];
+ 142                        recv_CONF2 = uart_rcvbuf[10];
+ 143                        recv_CONF4 = uart_rcvbuf[12];
+ 144          /*Erase CONFIG */              
+ 145          //              set_CHPCON_IAPEN;
+ 146                        set_IAPUEN_CFUEN;
+ 147                        IAPCN = PAGE_ERASE_CONFIG;
+ 148                        IAPAL = 0x00;
+ 149                        IAPAH = 0x00;
+ 150                        IAPFD = 0xFF;
+ 151                        set_IAPTRG_IAPGO;
+ 152          /*Program CONFIG*/  
+ 153                        IAPCN = BYTE_PROGRAM_CONFIG;
+ 154                        IAPAL = 0x00;
+ 155                        IAPAH = 0x00;
+ 156                        IAPFD = recv_CONF0;
+ 157                        set_IAPTRG_IAPGO;
+ 158                        IAPFD = recv_CONF1;
+ 159                        IAPAL = 0x01;
+ 160                        set_IAPTRG_IAPGO;
+ 161                        IAPAL = 0x02;
+ 162                        IAPFD = recv_CONF2;
+ 163                        set_IAPTRG_IAPGO;
+ 164                        IAPAL = 0x04;
+ 165                        IAPFD = recv_CONF4;
+ 166                        set_IAPTRG_IAPGO;
+ 167                        clr_IAPUEN_CFUEN;
+C51 COMPILER V9.60.0.0   ISP_UART0_MAIN                                                    02/19/2022 13:07:34 PAGE 4   
+
+ 168          /*Read new CONFIG*/  
+ 169                        READ_CONFIG();
+ 170                        Package_checksum();
+ 171                        uart_txbuf[8]=CONF0;
+ 172                        uart_txbuf[9]=CONF1;
+ 173                        uart_txbuf[10]=CONF2;
+ 174                        uart_txbuf[11]=0xff;
+ 175                        uart_txbuf[12]=CONF4;
+ 176                        uart_txbuf[13]=0xff;
+ 177                        uart_txbuf[14]=0xff;
+ 178                        uart_txbuf[15]=0xff;
+ 179                        Send_64byte_To_UART0();
+ 180                        break;
+ 181                      }
+ 182                      
+ 183                      case CMD_UPDATE_APROM:
+ 184                      {
+ 185          //              set_CHPCON_IAPEN;
+ 186                        set_IAPUEN_APUEN;
+ 187                        IAPFD = 0xFF;          //Erase must set IAPFD = 0xFF
+ 188                        IAPCN = PAGE_ERASE_AP;
+ 189                        
+ 190                        for(flash_address=0x0000;flash_address<APROM_SIZE/PAGE_SIZE;flash_address++)
+ 191                        {        
+ 192                          IAPAL = LOBYTE(flash_address*PAGE_SIZE);
+ 193                          IAPAH = HIBYTE(flash_address*PAGE_SIZE);
+ 194                          set_IAPTRG_IAPGO;
+ 195                        }
+ 196                        
+ 197                        g_totalchecksum=0;
+ 198                        flash_address=0;
+ 199                        AP_size=0;
+ 200                        AP_size=uart_rcvbuf[12];
+ 201                        AP_size|=(uart_rcvbuf[13]<<8);  
+ 202                        g_progarmflag=1;
+ 203          
+ 204                        for(count=16;count<64;count++)
+ 205                        {
+ 206                          IAPCN = BYTE_PROGRAM_AP;
+ 207                          IAPAL = flash_address&0xff;
+ 208                          IAPAH = (flash_address>>8)&0xff;
+ 209                          IAPFD=uart_rcvbuf[count];
+ 210                          set_IAPTRG_IAPGO;                              
+ 211                
+ 212                          IAPCN = BYTE_READ_AP;                //program byte verify
+ 213                          set_IAPTRG_IAPGO;                          
+ 214                          if(IAPFD!=uart_rcvbuf[count])
+ 215                          while(1);          
+ 216                          if (CHPCON==0x43)                //if error flag set, program error stop ISP
+ 217                          while(1);
+ 218                          
+ 219                          g_totalchecksum=g_totalchecksum+uart_rcvbuf[count];
+ 220                          flash_address++;
+ 221                          
+ 222                          if(flash_address==AP_size)
+ 223                          {
+ 224                            g_progarmflag=0;
+ 225                             goto END_1;          
+ 226                          }
+ 227                        }
+ 228          END_1:                
+ 229                        Package_checksum();
+C51 COMPILER V9.60.0.0   ISP_UART0_MAIN                                                    02/19/2022 13:07:34 PAGE 5   
+
+ 230                        uart_txbuf[8]=g_totalchecksum&0xff;
+ 231                        uart_txbuf[9]=(g_totalchecksum>>8)&0xff;
+ 232                        Send_64byte_To_UART0();  
+ 233                        break;
+ 234                      }
+ 235                    }  
+ 236                    bUartDataReady = FALSE;
+ 237                    bufhead = 0;            
+ 238                    EA=1;
+ 239                }
+ 240                //For connect timer out  
+ 241                if(g_timer0Over==1)
+ 242                {       
+ 243                 goto _APROM;
+ 244                }
+ 245                
+ 246                //for uart time out or buffer error
+ 247                 if(g_timer1Over==1)
+ 248                {       
+ 249                 if((bufhead<64)&&(bufhead>0)||(bufhead>64))
+ 250                   {
+ 251                       bufhead=0;         
+ 252                   }
+ 253                }  
+ 254          
+ 255          }   
+ 256          
+ 257          _APROM:
+ 258              MODIFY_HIRC_16();
+ 259              clr_CHPCON_IAPEN;
+ 260              TA = 0xAA;
+ 261              TA = 0x55;
+ 262              CHPCON &= 0xFD;                  //set boot from AP
+ 263              TA = 0xAA;
+ 264              TA = 0x55;
+ 265              CHPCON |= 0x80;                   //software reset enable
+ 266          
+ 267              /* Trap the CPU */
+ 268              while(1);  
+ 269          }
+ 270          
+ 271          
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

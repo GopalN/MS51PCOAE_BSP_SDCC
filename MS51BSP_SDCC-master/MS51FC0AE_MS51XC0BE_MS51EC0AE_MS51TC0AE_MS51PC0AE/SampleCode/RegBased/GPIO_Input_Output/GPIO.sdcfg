@@ -1,0 +1,11 @@
+mcu_name=mcs51
+mcu_device=
+custom_flag_only=False
+custom_cflags=
+custom_ldflags=
+inc_pathes=-I"c:\\Program Files\\SDCC\\include" -IC:\\MS51PC0AE\\sdcc_c\\MS51BSP_SDCC-master\\MS51FC0AE_MS51XC0BE_MS51EC0AE_MS51TC0AE_MS51PC0AE\\Library\\Device\\Include -IC:\\MS51PC0AE\\sdcc_c\\MS51BSP_SDCC-master\\MS51FC0AE_MS51XC0BE_MS51EC0AE_MS51TC0AE_MS51PC0AE\\Library\\StdDriver\\inc
+lib_pathes=-L"c:\\Program Files\\SDCC\\lib"
+cflag_lst=
+ldflag_lst=
+cflags=-mmcs51   -I"c:\\Program Files\\SDCC\\include" -IC:\\MS51PC0AE\\sdcc_c\\MS51BSP_SDCC-master\\MS51FC0AE_MS51XC0BE_MS51EC0AE_MS51TC0AE_MS51PC0AE\\Library\\Device\\Include -IC:\\MS51PC0AE\\sdcc_c\\MS51BSP_SDCC-master\\MS51FC0AE_MS51XC0BE_MS51EC0AE_MS51TC0AE_MS51PC0AE\\Library\\StdDriver\\inc
+ldflags="  -L\"c:\\Program Files\\SDCC\\lib\""

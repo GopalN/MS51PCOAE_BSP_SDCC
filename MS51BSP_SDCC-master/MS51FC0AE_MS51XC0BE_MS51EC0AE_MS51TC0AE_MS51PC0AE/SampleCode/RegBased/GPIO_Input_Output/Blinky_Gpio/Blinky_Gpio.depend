@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1593700470 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\stddriver\src\delay.c
+	"MS51_32K.h"
+
+1636073665 c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\device\include\ms51_32k.h
+	"sfr_Macro_MS51_32K.h"
+
+1636074746 c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\device\include\sfr_macro_ms51_32k.h
+	<stdio.h>
+	<string.h>
+	"Function_define_MS51_32K.h"
+	"sys.h"
+	"Delay.h"
+
+1645256301 c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\device\include\function_define_ms51_32k.h
+
+1645256293 c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\stddriver\inc\sys.h
+
+1593700470 c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\stddriver\inc\delay.h
+
+1636074110 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\samplecode\regbased\gpio_input_output\gpio.c
+	"MS51_32K.H"
+
+1636073692 source:c:\ms51pc0ae\sdcc_c\ms51bsp_sdcc-master\ms51fc0ae_ms51xc0be_ms51ec0ae_ms51tc0ae_ms51pc0ae\library\stddriver\src\sys.c
+	"MS51_32K.h"
+

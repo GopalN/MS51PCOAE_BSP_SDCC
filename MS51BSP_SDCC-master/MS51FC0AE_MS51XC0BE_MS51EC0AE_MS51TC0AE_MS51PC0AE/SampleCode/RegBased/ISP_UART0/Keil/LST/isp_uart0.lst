@@ -1,0 +1,245 @@
+C51 COMPILER V9.60.0.0   ISP_UART0                                                         02/19/2022 13:07:34 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ISP_UART0
+OBJECT MODULE PLACED IN .\Output\isp_uart0.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\isp_uart0.c OPTIMIZE(7,SPEED) BROWSE INCDIR(..\..\..\..\Library\Devic
+                    -e\Include;..\..\..\..\Library\StdDriver\inc) DEBUG OBJECTEXTEND PRINT(.\LST\isp_uart0.lst) TABS(2) OBJECT(.\Output\isp_u
+                    -art0.obj)
+
+line level    source
+
+   1          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   2          /*                                                                                                        
+             - */
+   3          /* Copyright(c) 2020 nuvoton Technology Corp. All rights reserved.                                        
+             - */
+   4          /*                                                                                                        
+             - */
+   5          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   6          
+   7          //********************************************************************************************************
+             -***
+   8          //  File Function: ML51 UART0 ISP subroutine
+   9          //********************************************************************************************************
+             -***
+  10          #include "MS51_32K.h"
+*** ERROR C129 IN LINE 13 OF ..\..\..\..\Library\Device\Include\MS51_32K.h: missing ';' before '__at'
+  11          #include "isp_uart0.h"
+  12          
+  13          xdata volatile uint8_t uart_rcvbuf[64];
+  14          xdata volatile uint8_t uart_txbuf[64];
+  15          data volatile uint8_t bufhead;
+  16          data volatile uint16_t flash_address;
+  17          data volatile uint16_t AP_size;
+  18          data volatile uint8_t g_timer1Counter;
+  19          data volatile uint8_t count;
+  20          data volatile uint16_t g_timer0Counter;
+  21          data volatile uint32_t g_checksum;
+  22          data volatile uint32_t g_totalchecksum;
+  23          bit volatile bUartDataReady;
+  24          bit volatile g_timer0Over;
+  25          bit volatile g_timer1Over;
+  26          bit volatile g_progarmflag;
+  27          bit  BIT_TMP;
+  28          unsigned char PID_highB, PID_lowB, DID_highB, DID_lowB, CONF0, CONF1, CONF2, CONF4;
+  29          unsigned char recv_CONF0, recv_CONF1, recv_CONF2, recv_CONF4;
+  30          
+  31          void MODIFY_HIRC_24(void)
+  32          {
+  33              unsigned char data hircmap0, hircmap1;
+  34              /* Check if power on reset, modify HIRC */
+  35          //    set_CHPCON_IAPEN;
+  36              IAPAL = 0x38;
+  37              IAPAH = 0x00;
+  38              IAPCN = READ_UID;
+  39              set_IAPTRG_IAPGO;
+  40              hircmap0 = IAPFD;
+  41              IAPAL = 0x39;
+  42              set_IAPTRG_IAPGO;
+  43              hircmap1 = IAPFD;
+  44          
+  45              TA = 0XAA;
+C51 COMPILER V9.60.0.0   ISP_UART0                                                         02/19/2022 13:07:34 PAGE 2   
+
+  46              TA = 0X55;
+  47              RCTRIM0 = hircmap0;
+  48              TA = 0XAA;
+  49              TA = 0X55;
+  50              RCTRIM1 = hircmap1;
+  51          //    clr_CHPCON_IAPEN;
+  52          }
+  53          
+  54          void MODIFY_HIRC_16(void)
+  55          {
+  56              unsigned char data hircmap0, hircmap1;
+  57          //    set_CHPCON_IAPEN;
+  58              IAPAL = 0x30;
+  59              IAPAH = 0x00;
+  60              IAPCN = READ_UID;
+  61              set_IAPTRG_IAPGO;
+  62              hircmap0 = IAPFD;
+  63              IAPAL = 0x31;
+  64              set_IAPTRG_IAPGO;
+  65              hircmap1 = IAPFD;
+  66          
+  67              TA = 0xAA;
+  68              TA = 0x55;
+  69              RCTRIM0 = hircmap0;
+  70              TA = 0xAA;
+  71              TA = 0x55;
+  72              RCTRIM1 = hircmap1;
+  73          }
+  74          
+  75          void READ_ID(void)
+  76          {
+  77          //    set_CHPCON_IAPEN;
+  78              IAPCN = READ_DID;
+  79              IAPAH = 0x00;
+  80              IAPAL = 0x00;
+  81              set_IAPTRG_IAPGO;
+  82              DID_lowB = IAPFD;
+  83              IAPAL = 0x01;
+  84              set_IAPTRG_IAPGO;
+  85              DID_highB = IAPFD;
+  86              IAPAL = 0x02;
+  87              set_IAPTRG_IAPGO;
+  88              PID_lowB = IAPFD;
+  89              IAPAL = 0x03;
+  90              set_IAPTRG_IAPGO;
+  91              PID_highB = IAPFD;
+  92          }
+  93          void READ_CONFIG(void)
+  94          {
+  95              IAPCN = BYTE_READ_CONFIG;
+  96              IAPAL = 0x00;
+  97              IAPAH = 0x00;
+  98              set_IAPTRG_IAPGO;
+  99              CONF0 = IAPFD;
+ 100              IAPAL = 0x01;
+ 101              set_IAPTRG_IAPGO;
+ 102              CONF1 = IAPFD;
+ 103              IAPAL = 0x02;
+ 104              set_IAPTRG_IAPGO;
+ 105              CONF2 = IAPFD;
+ 106              IAPAL = 0x04;
+ 107              set_IAPTRG_IAPGO;
+C51 COMPILER V9.60.0.0   ISP_UART0                                                         02/19/2022 13:07:34 PAGE 3   
+
+ 108              CONF4 = IAPFD;
+ 109          //    clr_CHPCON_IAPEN;
+ 110          }
+ 111          
+ 112          void TM0_ini(void)
+ 113          {
+ 114              TH0 = TL0 = 0; //interrupt timer 140us
+ 115              set_TCON_TR0;      //Start timer0
+ 116              set_IPH_PSH;       // Serial port 0 interrupt level2
+ 117              set_IE_ET0;
+ 118          }
+ 119          
+ 120          
+ 121          void UART0_ini_115200_24MHz(void)
+ 122          {
+ 123              P06_QUASI_MODE;
+ 124              P07_INPUT_MODE;
+ 125          
+ 126              SCON = 0x50;            /*UART0 Mode1,REN=1,TI=1*/
+ 127              set_PCON_SMOD;          /*UART0 Double Rate Enable*/
+ 128              T3CON &= 0xF8;           /*T3PS2=0,T3PS1=0,T3PS0=0(Prescale=1)*/
+ 129              set_T3CON_BRCK;          /*UART0 baud rate clock source = Timer3*/
+ 130              RH3    = HIBYTE(65536 - 13);
+ 131              RL3    = LOBYTE(65536 - 13);
+ 132              set_T3CON_TR3;          /*Trigger Timer3*/
+ 133          
+ 134              ES = 1;
+ 135              EA = 1;
+ 136          }
+ 137          
+ 138          
+ 139          void Package_checksum(void)
+ 140          {
+ 141              g_checksum = 0;
+ 142          
+ 143              for (count = 0; count < 64; count++)
+ 144              {
+ 145                  g_checksum = g_checksum + uart_rcvbuf[count];
+ 146              }
+ 147          
+ 148              uart_txbuf[0] = g_checksum & 0xff;
+ 149              uart_txbuf[1] = (g_checksum >> 8) & 0xff;
+ 150              uart_txbuf[4] = uart_rcvbuf[4] + 1;
+ 151              uart_txbuf[5] = uart_rcvbuf[5];
+ 152          
+ 153              if (uart_txbuf[4] == 0x00)
+ 154                  uart_txbuf[5]++;
+ 155          
+ 156          }
+ 157          
+ 158          
+ 159          void Send_64byte_To_UART0(void)
+ 160          {
+ 161              SFRS = 0;
+ 162              for (count = 0; count < 64; count++)
+ 163              {
+ 164                  TI = 0;
+ 165                  SBUF = uart_txbuf[count];
+ 166                  while (TI == 0);
+ 167              }
+ 168          }
+ 169          
+C51 COMPILER V9.60.0.0   ISP_UART0                                                         02/19/2022 13:07:34 PAGE 4   
+
+ 170          void Serial_ISR(void) interrupt 4
+ 171          {
+ 172              _push_(SFRS);
+ 173          
+ 174              if (RI == 1)
+ 175              {
+ 176                  uart_rcvbuf[bufhead++] =  SBUF;
+ 177                  clr_SCON_RI;                                         // Clear RI (Receive Interrupt).
+ 178              }
+ 179              if (TI == 1)
+ 180              {
+ 181                  clr_SCON_TI;                                         // Clear TI (Transmit Interrupt).
+ 182              }
+ 183              if (bufhead == 1)
+ 184              {
+ 185                  g_timer1Over = 0;
+ 186                  g_timer1Counter = 90; //for check uart timeout using
+ 187              }
+ 188              if (bufhead == 64)
+ 189              {
+ 190                  bUartDataReady = TRUE;
+ 191                  g_timer1Counter = 0;
+ 192                  g_timer1Over = 0;
+ 193                  bufhead = 0;
+ 194              }
+ 195              _pop_(SFRS);
+ 196          }
+ 197          
+ 198          void Timer0_ISR(void) interrupt 1
+ 199          {
+ 200              _push_(SFRS);
+ 201              if (g_timer0Counter)
+ 202              {
+ 203                  g_timer0Counter--;
+ 204                  if (!g_timer0Counter)
+ 205                  {
+ 206                      g_timer0Over = 1;
+ 207                  }
+ 208              }
+ 209              if (g_timer1Counter)
+ 210              {
+ 211                  g_timer1Counter--;
+ 212                  if (!g_timer1Counter)
+ 213                  {
+ 214                      g_timer1Over = 1;
+ 215                  }
+ 216              }
+ 217              _pop_(SFRS);
+ 218          }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

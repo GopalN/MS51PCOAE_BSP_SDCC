@@ -1,0 +1,1233 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.0.0 #11528 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module Print_UART0
+                                      6 	.optsdcc -mmcs51 --model-small
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl _UART_Open
+                                     13 	.globl _Timer0_Delay
+                                     14 	.globl _MODIFY_HIRC
+                                     15 	.globl _printf
+                                     16 	.globl _MOSI
+                                     17 	.globl _P00
+                                     18 	.globl _MISO
+                                     19 	.globl _P01
+                                     20 	.globl _RXD_1
+                                     21 	.globl _P02
+                                     22 	.globl _P03
+                                     23 	.globl _STADC
+                                     24 	.globl _P04
+                                     25 	.globl _P05
+                                     26 	.globl _TXD
+                                     27 	.globl _P06
+                                     28 	.globl _RXD
+                                     29 	.globl _P07
+                                     30 	.globl _IT0
+                                     31 	.globl _IE0
+                                     32 	.globl _IT1
+                                     33 	.globl _IE1
+                                     34 	.globl _TR0
+                                     35 	.globl _TF0
+                                     36 	.globl _TR1
+                                     37 	.globl _TF1
+                                     38 	.globl _P10
+                                     39 	.globl _P11
+                                     40 	.globl _P12
+                                     41 	.globl _SCL
+                                     42 	.globl _P13
+                                     43 	.globl _SDA
+                                     44 	.globl _P14
+                                     45 	.globl _P15
+                                     46 	.globl _TXD_1
+                                     47 	.globl _P16
+                                     48 	.globl _P17
+                                     49 	.globl _RI
+                                     50 	.globl _TI
+                                     51 	.globl _RB8
+                                     52 	.globl _TB8
+                                     53 	.globl _REN
+                                     54 	.globl _SM2
+                                     55 	.globl _SM1
+                                     56 	.globl _FE
+                                     57 	.globl _SM0
+                                     58 	.globl _P20
+                                     59 	.globl _EX0
+                                     60 	.globl _ET0
+                                     61 	.globl _EX1
+                                     62 	.globl _ET1
+                                     63 	.globl _ES
+                                     64 	.globl _EBOD
+                                     65 	.globl _EADC
+                                     66 	.globl _EA
+                                     67 	.globl _P30
+                                     68 	.globl _P31
+                                     69 	.globl _P32
+                                     70 	.globl _P33
+                                     71 	.globl _P34
+                                     72 	.globl _P35
+                                     73 	.globl _P36
+                                     74 	.globl _P37
+                                     75 	.globl _PX0
+                                     76 	.globl _PT0
+                                     77 	.globl _PX1
+                                     78 	.globl _PT1
+                                     79 	.globl _PS
+                                     80 	.globl _PBOD
+                                     81 	.globl _PADC
+                                     82 	.globl _I2CPX
+                                     83 	.globl _AA
+                                     84 	.globl _SI
+                                     85 	.globl _STO
+                                     86 	.globl _STA
+                                     87 	.globl _I2CEN
+                                     88 	.globl _CM_RL2
+                                     89 	.globl _TR2
+                                     90 	.globl _TF2
+                                     91 	.globl _P
+                                     92 	.globl _OV
+                                     93 	.globl _RS0
+                                     94 	.globl _RS1
+                                     95 	.globl _F0
+                                     96 	.globl _AC
+                                     97 	.globl _CY
+                                     98 	.globl _CLRPWM
+                                     99 	.globl _PWMF
+                                    100 	.globl _LOAD
+                                    101 	.globl _PWMRUN
+                                    102 	.globl _ADCHS0
+                                    103 	.globl _ADCHS1
+                                    104 	.globl _ADCHS2
+                                    105 	.globl _ADCHS3
+                                    106 	.globl _ETGSEL0
+                                    107 	.globl _ETGSEL1
+                                    108 	.globl _ADCS
+                                    109 	.globl _ADCF
+                                    110 	.globl _RI_1
+                                    111 	.globl _TI_1
+                                    112 	.globl _RB8_1
+                                    113 	.globl _TB8_1
+                                    114 	.globl _REN_1
+                                    115 	.globl _SM2_1
+                                    116 	.globl _SM1_1
+                                    117 	.globl _FE_1
+                                    118 	.globl _SM0_1
+                                    119 	.globl _PIPS6
+                                    120 	.globl _PIPS5
+                                    121 	.globl _PIPS4
+                                    122 	.globl _PIPS3
+                                    123 	.globl _PIPS2
+                                    124 	.globl _PIPS1
+                                    125 	.globl _PIPS0
+                                    126 	.globl _PIPS7
+                                    127 	.globl _SC2CR1
+                                    128 	.globl _SC2CR0
+                                    129 	.globl _SC1CR1
+                                    130 	.globl _SC1CR0
+                                    131 	.globl _SC0CR1
+                                    132 	.globl _SC0CR0
+                                    133 	.globl _SC2TSR
+                                    134 	.globl _SC2IS
+                                    135 	.globl _SC2IE
+                                    136 	.globl _SC2ETURD1
+                                    137 	.globl _SC2ETURD0
+                                    138 	.globl _SC2EGT
+                                    139 	.globl _SC2DR
+                                    140 	.globl _SC1TSR
+                                    141 	.globl _SC1IS
+                                    142 	.globl _SC1IE
+                                    143 	.globl _SC1ETURD1
+                                    144 	.globl _SC1ETURD0
+                                    145 	.globl _SC1EGT
+                                    146 	.globl _SC1DR
+                                    147 	.globl _SC0TSR
+                                    148 	.globl _SC0IS
+                                    149 	.globl _SC0IE
+                                    150 	.globl _SC0ETURD1
+                                    151 	.globl _SC0ETURD0
+                                    152 	.globl _SC0EGT
+                                    153 	.globl _SC0DR
+                                    154 	.globl _XTLCON
+                                    155 	.globl _PWM3INTC
+                                    156 	.globl _PWM3CON1
+                                    157 	.globl _PWM3CON0
+                                    158 	.globl _PWM3C1L
+                                    159 	.globl _PWM3C0L
+                                    160 	.globl _PWM3PL
+                                    161 	.globl _EIPH2
+                                    162 	.globl _EIP2
+                                    163 	.globl _PWM3MEN
+                                    164 	.globl _PWM3MD
+                                    165 	.globl _PWM3C1H
+                                    166 	.globl _PWM3C0H
+                                    167 	.globl _PWM3PH
+                                    168 	.globl _PWM2INTC
+                                    169 	.globl _PWM2CON1
+                                    170 	.globl _PWM2CON0
+                                    171 	.globl _PWM2C1L
+                                    172 	.globl _PWM2C0L
+                                    173 	.globl _PWM2PL
+                                    174 	.globl _PWM2MEN
+                                    175 	.globl _PWM2MD
+                                    176 	.globl _PWM2C1H
+                                    177 	.globl _PWM2C0H
+                                    178 	.globl _PWM2PH
+                                    179 	.globl _PIOCON2
+                                    180 	.globl _PWM1INTC
+                                    181 	.globl _PWM1CON1
+                                    182 	.globl _PWM1CON0
+                                    183 	.globl _PWM1C1L
+                                    184 	.globl _PWM1C0L
+                                    185 	.globl _PWM1PL
+                                    186 	.globl _PWM1MEN
+                                    187 	.globl _PWM1MD
+                                    188 	.globl _PWM1C1H
+                                    189 	.globl _PWM1C0H
+                                    190 	.globl _PWM1PH
+                                    191 	.globl _AUXR8
+                                    192 	.globl _AUXR7
+                                    193 	.globl _AUXR6
+                                    194 	.globl _AUXR5
+                                    195 	.globl _AUXR4
+                                    196 	.globl _AUXR3
+                                    197 	.globl _AUXR2
+                                    198 	.globl _P3DW
+                                    199 	.globl _P2DW
+                                    200 	.globl _P1DW
+                                    201 	.globl _P0DW
+                                    202 	.globl _AINDIDS1
+                                    203 	.globl _RWKH
+                                    204 	.globl _P3UP
+                                    205 	.globl _P2UP
+                                    206 	.globl _P1UP
+                                    207 	.globl _P0UP
+                                    208 	.globl _ADCSR
+                                    209 	.globl _ADCCN
+                                    210 	.globl _ADCSN
+                                    211 	.globl _P2S
+                                    212 	.globl _P2SR
+                                    213 	.globl _P2M2
+                                    214 	.globl _P2M1
+                                    215 	.globl _ADCCON3
+                                    216 	.globl _ADCBAH
+                                    217 	.globl _ADCBAL
+                                    218 	.globl _LVRDIS
+                                    219 	.globl _SPCR2
+                                    220 	.globl _PWM0C5L
+                                    221 	.globl _PWM0C4L
+                                    222 	.globl _PIOCON1
+                                    223 	.globl _PWM0C5H
+                                    224 	.globl _PWM0C4H
+                                    225 	.globl _PWM0INTC
+                                    226 	.globl _P1SR
+                                    227 	.globl _P1S
+                                    228 	.globl _P0SR
+                                    229 	.globl _P0S
+                                    230 	.globl _P3SR
+                                    231 	.globl _P3S
+                                    232 	.globl _EIPH1
+                                    233 	.globl _EIP1
+                                    234 	.globl _PORDIS
+                                    235 	.globl _PWM0MD
+                                    236 	.globl _PWM0MEN
+                                    237 	.globl _PWM0DTCNT
+                                    238 	.globl _PWM0DTEN
+                                    239 	.globl _SCON_1
+                                    240 	.globl _EIPH
+                                    241 	.globl _AINDIDS0
+                                    242 	.globl _SPDR
+                                    243 	.globl _SPSR
+                                    244 	.globl _SPCR
+                                    245 	.globl _CAPCON4
+                                    246 	.globl _CAPCON3
+                                    247 	.globl _B
+                                    248 	.globl _EIP
+                                    249 	.globl _C2H
+                                    250 	.globl _C2L
+                                    251 	.globl _PIF
+                                    252 	.globl _PIPEN
+                                    253 	.globl _PINEN
+                                    254 	.globl _PICON
+                                    255 	.globl _ADCCON0
+                                    256 	.globl _C1H
+                                    257 	.globl _C1L
+                                    258 	.globl _C0H
+                                    259 	.globl _C0L
+                                    260 	.globl _ADCDLY
+                                    261 	.globl _ADCCON2
+                                    262 	.globl _ADCCON1
+                                    263 	.globl _ACC
+                                    264 	.globl _PWM0CON1
+                                    265 	.globl _PIOCON0
+                                    266 	.globl _PWM0C3L
+                                    267 	.globl _PWM0C2L
+                                    268 	.globl _PWM0C1L
+                                    269 	.globl _PWM0C0L
+                                    270 	.globl _PWM0PL
+                                    271 	.globl _PWM0CON0
+                                    272 	.globl _PWM0FBD
+                                    273 	.globl _PNP
+                                    274 	.globl _PWM0C3H
+                                    275 	.globl _PWM0C2H
+                                    276 	.globl _PWM0C1H
+                                    277 	.globl _PWM0C0H
+                                    278 	.globl _PWM0PH
+                                    279 	.globl _PSW
+                                    280 	.globl _ADCMPH
+                                    281 	.globl _ADCMPL
+                                    282 	.globl _TH2
+                                    283 	.globl _TL2
+                                    284 	.globl _RCMP2H
+                                    285 	.globl _RCMP2L
+                                    286 	.globl _T2MOD
+                                    287 	.globl _T2CON
+                                    288 	.globl _TA
+                                    289 	.globl _RH3
+                                    290 	.globl _RL3
+                                    291 	.globl _T3CON
+                                    292 	.globl _ADCRH
+                                    293 	.globl _ADCRL
+                                    294 	.globl _I2ADDR
+                                    295 	.globl _I2CON
+                                    296 	.globl _I2TOC
+                                    297 	.globl _I2CLK
+                                    298 	.globl _I2STAT
+                                    299 	.globl _I2DAT
+                                    300 	.globl _SADDR_1
+                                    301 	.globl _SADEN_1
+                                    302 	.globl _SADEN
+                                    303 	.globl _IP
+                                    304 	.globl _IPH
+                                    305 	.globl _TOE
+                                    306 	.globl _P1M2
+                                    307 	.globl _P1M1
+                                    308 	.globl _P0M2
+                                    309 	.globl _P0M1
+                                    310 	.globl _P3
+                                    311 	.globl _IAPCN
+                                    312 	.globl _IAPFD
+                                    313 	.globl _P3M2
+                                    314 	.globl _P3M1
+                                    315 	.globl _BODCON1
+                                    316 	.globl _WDCON
+                                    317 	.globl _SADDR
+                                    318 	.globl _IE
+                                    319 	.globl _IAPAH
+                                    320 	.globl _IAPAL
+                                    321 	.globl _IAPUEN
+                                    322 	.globl _IAPTRG
+                                    323 	.globl _BODCON0
+                                    324 	.globl _AUXR1
+                                    325 	.globl _P2
+                                    326 	.globl _CHPCON
+                                    327 	.globl _EIE1
+                                    328 	.globl _EIE
+                                    329 	.globl _SBUF_1
+                                    330 	.globl _SBUF
+                                    331 	.globl _SCON
+                                    332 	.globl _CKEN
+                                    333 	.globl _CKSWT
+                                    334 	.globl _CKDIV
+                                    335 	.globl _CAPCON2
+                                    336 	.globl _CAPCON1
+                                    337 	.globl _CAPCON0
+                                    338 	.globl _SFRS
+                                    339 	.globl _P1
+                                    340 	.globl _WKCON
+                                    341 	.globl _CKCON
+                                    342 	.globl _TH1
+                                    343 	.globl _TH0
+                                    344 	.globl _TL1
+                                    345 	.globl _TL0
+                                    346 	.globl _TMOD
+                                    347 	.globl _TCON
+                                    348 	.globl _PCON
+                                    349 	.globl _RWKL
+                                    350 	.globl _RCTRIM1
+                                    351 	.globl _RCTRIM0
+                                    352 	.globl _DPH
+                                    353 	.globl _DPL
+                                    354 	.globl _SP
+                                    355 	.globl _P0
+                                    356 ;--------------------------------------------------------
+                                    357 ; special function registers
+                                    358 ;--------------------------------------------------------
+                                    359 	.area RSEG    (ABS,DATA)
+      000000                        360 	.org 0x0000
+                           000080   361 G$P0$0_0$0 == 0x0080
+                           000080   362 _P0	=	0x0080
+                           000081   363 G$SP$0_0$0 == 0x0081
+                           000081   364 _SP	=	0x0081
+                           000082   365 G$DPL$0_0$0 == 0x0082
+                           000082   366 _DPL	=	0x0082
+                           000083   367 G$DPH$0_0$0 == 0x0083
+                           000083   368 _DPH	=	0x0083
+                           000084   369 G$RCTRIM0$0_0$0 == 0x0084
+                           000084   370 _RCTRIM0	=	0x0084
+                           000085   371 G$RCTRIM1$0_0$0 == 0x0085
+                           000085   372 _RCTRIM1	=	0x0085
+                           000086   373 G$RWKL$0_0$0 == 0x0086
+                           000086   374 _RWKL	=	0x0086
+                           000087   375 G$PCON$0_0$0 == 0x0087
+                           000087   376 _PCON	=	0x0087
+                           000088   377 G$TCON$0_0$0 == 0x0088
+                           000088   378 _TCON	=	0x0088
+                           000089   379 G$TMOD$0_0$0 == 0x0089
+                           000089   380 _TMOD	=	0x0089
+                           00008A   381 G$TL0$0_0$0 == 0x008a
+                           00008A   382 _TL0	=	0x008a
+                           00008B   383 G$TL1$0_0$0 == 0x008b
+                           00008B   384 _TL1	=	0x008b
+                           00008C   385 G$TH0$0_0$0 == 0x008c
+                           00008C   386 _TH0	=	0x008c
+                           00008D   387 G$TH1$0_0$0 == 0x008d
+                           00008D   388 _TH1	=	0x008d
+                           00008E   389 G$CKCON$0_0$0 == 0x008e
+                           00008E   390 _CKCON	=	0x008e
+                           00008F   391 G$WKCON$0_0$0 == 0x008f
+                           00008F   392 _WKCON	=	0x008f
+                           000090   393 G$P1$0_0$0 == 0x0090
+                           000090   394 _P1	=	0x0090
+                           000091   395 G$SFRS$0_0$0 == 0x0091
+                           000091   396 _SFRS	=	0x0091
+                           000092   397 G$CAPCON0$0_0$0 == 0x0092
+                           000092   398 _CAPCON0	=	0x0092
+                           000093   399 G$CAPCON1$0_0$0 == 0x0093
+                           000093   400 _CAPCON1	=	0x0093
+                           000094   401 G$CAPCON2$0_0$0 == 0x0094
+                           000094   402 _CAPCON2	=	0x0094
+                           000095   403 G$CKDIV$0_0$0 == 0x0095
+                           000095   404 _CKDIV	=	0x0095
+                           000096   405 G$CKSWT$0_0$0 == 0x0096
+                           000096   406 _CKSWT	=	0x0096
+                           000097   407 G$CKEN$0_0$0 == 0x0097
+                           000097   408 _CKEN	=	0x0097
+                           000098   409 G$SCON$0_0$0 == 0x0098
+                           000098   410 _SCON	=	0x0098
+                           000099   411 G$SBUF$0_0$0 == 0x0099
+                           000099   412 _SBUF	=	0x0099
+                           00009A   413 G$SBUF_1$0_0$0 == 0x009a
+                           00009A   414 _SBUF_1	=	0x009a
+                           00009B   415 G$EIE$0_0$0 == 0x009b
+                           00009B   416 _EIE	=	0x009b
+                           00009C   417 G$EIE1$0_0$0 == 0x009c
+                           00009C   418 _EIE1	=	0x009c
+                           00009F   419 G$CHPCON$0_0$0 == 0x009f
+                           00009F   420 _CHPCON	=	0x009f
+                           0000A0   421 G$P2$0_0$0 == 0x00a0
+                           0000A0   422 _P2	=	0x00a0
+                           0000A2   423 G$AUXR1$0_0$0 == 0x00a2
+                           0000A2   424 _AUXR1	=	0x00a2
+                           0000A3   425 G$BODCON0$0_0$0 == 0x00a3
+                           0000A3   426 _BODCON0	=	0x00a3
+                           0000A4   427 G$IAPTRG$0_0$0 == 0x00a4
+                           0000A4   428 _IAPTRG	=	0x00a4
+                           0000A5   429 G$IAPUEN$0_0$0 == 0x00a5
+                           0000A5   430 _IAPUEN	=	0x00a5
+                           0000A6   431 G$IAPAL$0_0$0 == 0x00a6
+                           0000A6   432 _IAPAL	=	0x00a6
+                           0000A7   433 G$IAPAH$0_0$0 == 0x00a7
+                           0000A7   434 _IAPAH	=	0x00a7
+                           0000A8   435 G$IE$0_0$0 == 0x00a8
+                           0000A8   436 _IE	=	0x00a8
+                           0000A9   437 G$SADDR$0_0$0 == 0x00a9
+                           0000A9   438 _SADDR	=	0x00a9
+                           0000AA   439 G$WDCON$0_0$0 == 0x00aa
+                           0000AA   440 _WDCON	=	0x00aa
+                           0000AB   441 G$BODCON1$0_0$0 == 0x00ab
+                           0000AB   442 _BODCON1	=	0x00ab
+                           0000AC   443 G$P3M1$0_0$0 == 0x00ac
+                           0000AC   444 _P3M1	=	0x00ac
+                           0000AD   445 G$P3M2$0_0$0 == 0x00ad
+                           0000AD   446 _P3M2	=	0x00ad
+                           0000AE   447 G$IAPFD$0_0$0 == 0x00ae
+                           0000AE   448 _IAPFD	=	0x00ae
+                           0000AF   449 G$IAPCN$0_0$0 == 0x00af
+                           0000AF   450 _IAPCN	=	0x00af
+                           0000B0   451 G$P3$0_0$0 == 0x00b0
+                           0000B0   452 _P3	=	0x00b0
+                           0000B1   453 G$P0M1$0_0$0 == 0x00b1
+                           0000B1   454 _P0M1	=	0x00b1
+                           0000B2   455 G$P0M2$0_0$0 == 0x00b2
+                           0000B2   456 _P0M2	=	0x00b2
+                           0000B3   457 G$P1M1$0_0$0 == 0x00b3
+                           0000B3   458 _P1M1	=	0x00b3
+                           0000B4   459 G$P1M2$0_0$0 == 0x00b4
+                           0000B4   460 _P1M2	=	0x00b4
+                           0000B5   461 G$TOE$0_0$0 == 0x00b5
+                           0000B5   462 _TOE	=	0x00b5
+                           0000B7   463 G$IPH$0_0$0 == 0x00b7
+                           0000B7   464 _IPH	=	0x00b7
+                           0000B8   465 G$IP$0_0$0 == 0x00b8
+                           0000B8   466 _IP	=	0x00b8
+                           0000B9   467 G$SADEN$0_0$0 == 0x00b9
+                           0000B9   468 _SADEN	=	0x00b9
+                           0000BA   469 G$SADEN_1$0_0$0 == 0x00ba
+                           0000BA   470 _SADEN_1	=	0x00ba
+                           0000BB   471 G$SADDR_1$0_0$0 == 0x00bb
+                           0000BB   472 _SADDR_1	=	0x00bb
+                           0000BC   473 G$I2DAT$0_0$0 == 0x00bc
+                           0000BC   474 _I2DAT	=	0x00bc
+                           0000BD   475 G$I2STAT$0_0$0 == 0x00bd
+                           0000BD   476 _I2STAT	=	0x00bd
+                           0000BE   477 G$I2CLK$0_0$0 == 0x00be
+                           0000BE   478 _I2CLK	=	0x00be
+                           0000BF   479 G$I2TOC$0_0$0 == 0x00bf
+                           0000BF   480 _I2TOC	=	0x00bf
+                           0000C0   481 G$I2CON$0_0$0 == 0x00c0
+                           0000C0   482 _I2CON	=	0x00c0
+                           0000C1   483 G$I2ADDR$0_0$0 == 0x00c1
+                           0000C1   484 _I2ADDR	=	0x00c1
+                           0000C2   485 G$ADCRL$0_0$0 == 0x00c2
+                           0000C2   486 _ADCRL	=	0x00c2
+                           0000C3   487 G$ADCRH$0_0$0 == 0x00c3
+                           0000C3   488 _ADCRH	=	0x00c3
+                           0000C4   489 G$T3CON$0_0$0 == 0x00c4
+                           0000C4   490 _T3CON	=	0x00c4
+                           0000C5   491 G$RL3$0_0$0 == 0x00c5
+                           0000C5   492 _RL3	=	0x00c5
+                           0000C6   493 G$RH3$0_0$0 == 0x00c6
+                           0000C6   494 _RH3	=	0x00c6
+                           0000C7   495 G$TA$0_0$0 == 0x00c7
+                           0000C7   496 _TA	=	0x00c7
+                           0000C8   497 G$T2CON$0_0$0 == 0x00c8
+                           0000C8   498 _T2CON	=	0x00c8
+                           0000C9   499 G$T2MOD$0_0$0 == 0x00c9
+                           0000C9   500 _T2MOD	=	0x00c9
+                           0000CA   501 G$RCMP2L$0_0$0 == 0x00ca
+                           0000CA   502 _RCMP2L	=	0x00ca
+                           0000CB   503 G$RCMP2H$0_0$0 == 0x00cb
+                           0000CB   504 _RCMP2H	=	0x00cb
+                           0000CC   505 G$TL2$0_0$0 == 0x00cc
+                           0000CC   506 _TL2	=	0x00cc
+                           0000CD   507 G$TH2$0_0$0 == 0x00cd
+                           0000CD   508 _TH2	=	0x00cd
+                           0000CE   509 G$ADCMPL$0_0$0 == 0x00ce
+                           0000CE   510 _ADCMPL	=	0x00ce
+                           0000CF   511 G$ADCMPH$0_0$0 == 0x00cf
+                           0000CF   512 _ADCMPH	=	0x00cf
+                           0000D0   513 G$PSW$0_0$0 == 0x00d0
+                           0000D0   514 _PSW	=	0x00d0
+                           0000D1   515 G$PWM0PH$0_0$0 == 0x00d1
+                           0000D1   516 _PWM0PH	=	0x00d1
+                           0000D2   517 G$PWM0C0H$0_0$0 == 0x00d2
+                           0000D2   518 _PWM0C0H	=	0x00d2
+                           0000D3   519 G$PWM0C1H$0_0$0 == 0x00d3
+                           0000D3   520 _PWM0C1H	=	0x00d3
+                           0000D4   521 G$PWM0C2H$0_0$0 == 0x00d4
+                           0000D4   522 _PWM0C2H	=	0x00d4
+                           0000D5   523 G$PWM0C3H$0_0$0 == 0x00d5
+                           0000D5   524 _PWM0C3H	=	0x00d5
+                           0000D6   525 G$PNP$0_0$0 == 0x00d6
+                           0000D6   526 _PNP	=	0x00d6
+                           0000D7   527 G$PWM0FBD$0_0$0 == 0x00d7
+                           0000D7   528 _PWM0FBD	=	0x00d7
+                           0000D8   529 G$PWM0CON0$0_0$0 == 0x00d8
+                           0000D8   530 _PWM0CON0	=	0x00d8
+                           0000D9   531 G$PWM0PL$0_0$0 == 0x00d9
+                           0000D9   532 _PWM0PL	=	0x00d9
+                           0000DA   533 G$PWM0C0L$0_0$0 == 0x00da
+                           0000DA   534 _PWM0C0L	=	0x00da
+                           0000DB   535 G$PWM0C1L$0_0$0 == 0x00db
+                           0000DB   536 _PWM0C1L	=	0x00db
+                           0000DC   537 G$PWM0C2L$0_0$0 == 0x00dc
+                           0000DC   538 _PWM0C2L	=	0x00dc
+                           0000DD   539 G$PWM0C3L$0_0$0 == 0x00dd
+                           0000DD   540 _PWM0C3L	=	0x00dd
+                           0000DE   541 G$PIOCON0$0_0$0 == 0x00de
+                           0000DE   542 _PIOCON0	=	0x00de
+                           0000DF   543 G$PWM0CON1$0_0$0 == 0x00df
+                           0000DF   544 _PWM0CON1	=	0x00df
+                           0000E0   545 G$ACC$0_0$0 == 0x00e0
+                           0000E0   546 _ACC	=	0x00e0
+                           0000E1   547 G$ADCCON1$0_0$0 == 0x00e1
+                           0000E1   548 _ADCCON1	=	0x00e1
+                           0000E2   549 G$ADCCON2$0_0$0 == 0x00e2
+                           0000E2   550 _ADCCON2	=	0x00e2
+                           0000E3   551 G$ADCDLY$0_0$0 == 0x00e3
+                           0000E3   552 _ADCDLY	=	0x00e3
+                           0000E4   553 G$C0L$0_0$0 == 0x00e4
+                           0000E4   554 _C0L	=	0x00e4
+                           0000E5   555 G$C0H$0_0$0 == 0x00e5
+                           0000E5   556 _C0H	=	0x00e5
+                           0000E6   557 G$C1L$0_0$0 == 0x00e6
+                           0000E6   558 _C1L	=	0x00e6
+                           0000E7   559 G$C1H$0_0$0 == 0x00e7
+                           0000E7   560 _C1H	=	0x00e7
+                           0000E8   561 G$ADCCON0$0_0$0 == 0x00e8
+                           0000E8   562 _ADCCON0	=	0x00e8
+                           0000E9   563 G$PICON$0_0$0 == 0x00e9
+                           0000E9   564 _PICON	=	0x00e9
+                           0000EA   565 G$PINEN$0_0$0 == 0x00ea
+                           0000EA   566 _PINEN	=	0x00ea
+                           0000EB   567 G$PIPEN$0_0$0 == 0x00eb
+                           0000EB   568 _PIPEN	=	0x00eb
+                           0000EC   569 G$PIF$0_0$0 == 0x00ec
+                           0000EC   570 _PIF	=	0x00ec
+                           0000ED   571 G$C2L$0_0$0 == 0x00ed
+                           0000ED   572 _C2L	=	0x00ed
+                           0000EE   573 G$C2H$0_0$0 == 0x00ee
+                           0000EE   574 _C2H	=	0x00ee
+                           0000EF   575 G$EIP$0_0$0 == 0x00ef
+                           0000EF   576 _EIP	=	0x00ef
+                           0000F0   577 G$B$0_0$0 == 0x00f0
+                           0000F0   578 _B	=	0x00f0
+                           0000F1   579 G$CAPCON3$0_0$0 == 0x00f1
+                           0000F1   580 _CAPCON3	=	0x00f1
+                           0000F2   581 G$CAPCON4$0_0$0 == 0x00f2
+                           0000F2   582 _CAPCON4	=	0x00f2
+                           0000F3   583 G$SPCR$0_0$0 == 0x00f3
+                           0000F3   584 _SPCR	=	0x00f3
+                           0000F4   585 G$SPSR$0_0$0 == 0x00f4
+                           0000F4   586 _SPSR	=	0x00f4
+                           0000F5   587 G$SPDR$0_0$0 == 0x00f5
+                           0000F5   588 _SPDR	=	0x00f5
+                           0000F6   589 G$AINDIDS0$0_0$0 == 0x00f6
+                           0000F6   590 _AINDIDS0	=	0x00f6
+                           0000F7   591 G$EIPH$0_0$0 == 0x00f7
+                           0000F7   592 _EIPH	=	0x00f7
+                           0000F8   593 G$SCON_1$0_0$0 == 0x00f8
+                           0000F8   594 _SCON_1	=	0x00f8
+                           0000F9   595 G$PWM0DTEN$0_0$0 == 0x00f9
+                           0000F9   596 _PWM0DTEN	=	0x00f9
+                           0000FA   597 G$PWM0DTCNT$0_0$0 == 0x00fa
+                           0000FA   598 _PWM0DTCNT	=	0x00fa
+                           0000FB   599 G$PWM0MEN$0_0$0 == 0x00fb
+                           0000FB   600 _PWM0MEN	=	0x00fb
+                           0000FC   601 G$PWM0MD$0_0$0 == 0x00fc
+                           0000FC   602 _PWM0MD	=	0x00fc
+                           0000FD   603 G$PORDIS$0_0$0 == 0x00fd
+                           0000FD   604 _PORDIS	=	0x00fd
+                           0000FE   605 G$EIP1$0_0$0 == 0x00fe
+                           0000FE   606 _EIP1	=	0x00fe
+                           0000FF   607 G$EIPH1$0_0$0 == 0x00ff
+                           0000FF   608 _EIPH1	=	0x00ff
+                           0000AC   609 G$P3S$0_0$0 == 0x00ac
+                           0000AC   610 _P3S	=	0x00ac
+                           0000AD   611 G$P3SR$0_0$0 == 0x00ad
+                           0000AD   612 _P3SR	=	0x00ad
+                           0000B1   613 G$P0S$0_0$0 == 0x00b1
+                           0000B1   614 _P0S	=	0x00b1
+                           0000B2   615 G$P0SR$0_0$0 == 0x00b2
+                           0000B2   616 _P0SR	=	0x00b2
+                           0000B3   617 G$P1S$0_0$0 == 0x00b3
+                           0000B3   618 _P1S	=	0x00b3
+                           0000B4   619 G$P1SR$0_0$0 == 0x00b4
+                           0000B4   620 _P1SR	=	0x00b4
+                           0000B7   621 G$PWM0INTC$0_0$0 == 0x00b7
+                           0000B7   622 _PWM0INTC	=	0x00b7
+                           0000C4   623 G$PWM0C4H$0_0$0 == 0x00c4
+                           0000C4   624 _PWM0C4H	=	0x00c4
+                           0000C5   625 G$PWM0C5H$0_0$0 == 0x00c5
+                           0000C5   626 _PWM0C5H	=	0x00c5
+                           0000C6   627 G$PIOCON1$0_0$0 == 0x00c6
+                           0000C6   628 _PIOCON1	=	0x00c6
+                           0000CC   629 G$PWM0C4L$0_0$0 == 0x00cc
+                           0000CC   630 _PWM0C4L	=	0x00cc
+                           0000CD   631 G$PWM0C5L$0_0$0 == 0x00cd
+                           0000CD   632 _PWM0C5L	=	0x00cd
+                           0000F3   633 G$SPCR2$0_0$0 == 0x00f3
+                           0000F3   634 _SPCR2	=	0x00f3
+                           0000FF   635 G$LVRDIS$0_0$0 == 0x00ff
+                           0000FF   636 _LVRDIS	=	0x00ff
+                           000084   637 G$ADCBAL$0_0$0 == 0x0084
+                           000084   638 _ADCBAL	=	0x0084
+                           000085   639 G$ADCBAH$0_0$0 == 0x0085
+                           000085   640 _ADCBAH	=	0x0085
+                           000086   641 G$ADCCON3$0_0$0 == 0x0086
+                           000086   642 _ADCCON3	=	0x0086
+                           000089   643 G$P2M1$0_0$0 == 0x0089
+                           000089   644 _P2M1	=	0x0089
+                           00008A   645 G$P2M2$0_0$0 == 0x008a
+                           00008A   646 _P2M2	=	0x008a
+                           00008B   647 G$P2SR$0_0$0 == 0x008b
+                           00008B   648 _P2SR	=	0x008b
+                           00008C   649 G$P2S$0_0$0 == 0x008c
+                           00008C   650 _P2S	=	0x008c
+                           00008D   651 G$ADCSN$0_0$0 == 0x008d
+                           00008D   652 _ADCSN	=	0x008d
+                           00008E   653 G$ADCCN$0_0$0 == 0x008e
+                           00008E   654 _ADCCN	=	0x008e
+                           00008F   655 G$ADCSR$0_0$0 == 0x008f
+                           00008F   656 _ADCSR	=	0x008f
+                           000092   657 G$P0UP$0_0$0 == 0x0092
+                           000092   658 _P0UP	=	0x0092
+                           000093   659 G$P1UP$0_0$0 == 0x0093
+                           000093   660 _P1UP	=	0x0093
+                           000094   661 G$P2UP$0_0$0 == 0x0094
+                           000094   662 _P2UP	=	0x0094
+                           000095   663 G$P3UP$0_0$0 == 0x0095
+                           000095   664 _P3UP	=	0x0095
+                           000097   665 G$RWKH$0_0$0 == 0x0097
+                           000097   666 _RWKH	=	0x0097
+                           000099   667 G$AINDIDS1$0_0$0 == 0x0099
+                           000099   668 _AINDIDS1	=	0x0099
+                           00009A   669 G$P0DW$0_0$0 == 0x009a
+                           00009A   670 _P0DW	=	0x009a
+                           00009B   671 G$P1DW$0_0$0 == 0x009b
+                           00009B   672 _P1DW	=	0x009b
+                           00009C   673 G$P2DW$0_0$0 == 0x009c
+                           00009C   674 _P2DW	=	0x009c
+                           00009D   675 G$P3DW$0_0$0 == 0x009d
+                           00009D   676 _P3DW	=	0x009d
+                           0000A1   677 G$AUXR2$0_0$0 == 0x00a1
+                           0000A1   678 _AUXR2	=	0x00a1
+                           0000A2   679 G$AUXR3$0_0$0 == 0x00a2
+                           0000A2   680 _AUXR3	=	0x00a2
+                           0000A3   681 G$AUXR4$0_0$0 == 0x00a3
+                           0000A3   682 _AUXR4	=	0x00a3
+                           0000A4   683 G$AUXR5$0_0$0 == 0x00a4
+                           0000A4   684 _AUXR5	=	0x00a4
+                           0000A5   685 G$AUXR6$0_0$0 == 0x00a5
+                           0000A5   686 _AUXR6	=	0x00a5
+                           0000A6   687 G$AUXR7$0_0$0 == 0x00a6
+                           0000A6   688 _AUXR7	=	0x00a6
+                           0000A7   689 G$AUXR8$0_0$0 == 0x00a7
+                           0000A7   690 _AUXR8	=	0x00a7
+                           0000A9   691 G$PWM1PH$0_0$0 == 0x00a9
+                           0000A9   692 _PWM1PH	=	0x00a9
+                           0000AA   693 G$PWM1C0H$0_0$0 == 0x00aa
+                           0000AA   694 _PWM1C0H	=	0x00aa
+                           0000AB   695 G$PWM1C1H$0_0$0 == 0x00ab
+                           0000AB   696 _PWM1C1H	=	0x00ab
+                           0000AC   697 G$PWM1MD$0_0$0 == 0x00ac
+                           0000AC   698 _PWM1MD	=	0x00ac
+                           0000AD   699 G$PWM1MEN$0_0$0 == 0x00ad
+                           0000AD   700 _PWM1MEN	=	0x00ad
+                           0000B1   701 G$PWM1PL$0_0$0 == 0x00b1
+                           0000B1   702 _PWM1PL	=	0x00b1
+                           0000B2   703 G$PWM1C0L$0_0$0 == 0x00b2
+                           0000B2   704 _PWM1C0L	=	0x00b2
+                           0000B3   705 G$PWM1C1L$0_0$0 == 0x00b3
+                           0000B3   706 _PWM1C1L	=	0x00b3
+                           0000B4   707 G$PWM1CON0$0_0$0 == 0x00b4
+                           0000B4   708 _PWM1CON0	=	0x00b4
+                           0000B5   709 G$PWM1CON1$0_0$0 == 0x00b5
+                           0000B5   710 _PWM1CON1	=	0x00b5
+                           0000B6   711 G$PWM1INTC$0_0$0 == 0x00b6
+                           0000B6   712 _PWM1INTC	=	0x00b6
+                           0000B7   713 G$PIOCON2$0_0$0 == 0x00b7
+                           0000B7   714 _PIOCON2	=	0x00b7
+                           0000B9   715 G$PWM2PH$0_0$0 == 0x00b9
+                           0000B9   716 _PWM2PH	=	0x00b9
+                           0000BA   717 G$PWM2C0H$0_0$0 == 0x00ba
+                           0000BA   718 _PWM2C0H	=	0x00ba
+                           0000BB   719 G$PWM2C1H$0_0$0 == 0x00bb
+                           0000BB   720 _PWM2C1H	=	0x00bb
+                           0000BC   721 G$PWM2MD$0_0$0 == 0x00bc
+                           0000BC   722 _PWM2MD	=	0x00bc
+                           0000BD   723 G$PWM2MEN$0_0$0 == 0x00bd
+                           0000BD   724 _PWM2MEN	=	0x00bd
+                           0000C1   725 G$PWM2PL$0_0$0 == 0x00c1
+                           0000C1   726 _PWM2PL	=	0x00c1
+                           0000C2   727 G$PWM2C0L$0_0$0 == 0x00c2
+                           0000C2   728 _PWM2C0L	=	0x00c2
+                           0000C3   729 G$PWM2C1L$0_0$0 == 0x00c3
+                           0000C3   730 _PWM2C1L	=	0x00c3
+                           0000C4   731 G$PWM2CON0$0_0$0 == 0x00c4
+                           0000C4   732 _PWM2CON0	=	0x00c4
+                           0000C5   733 G$PWM2CON1$0_0$0 == 0x00c5
+                           0000C5   734 _PWM2CON1	=	0x00c5
+                           0000C6   735 G$PWM2INTC$0_0$0 == 0x00c6
+                           0000C6   736 _PWM2INTC	=	0x00c6
+                           0000C9   737 G$PWM3PH$0_0$0 == 0x00c9
+                           0000C9   738 _PWM3PH	=	0x00c9
+                           0000CA   739 G$PWM3C0H$0_0$0 == 0x00ca
+                           0000CA   740 _PWM3C0H	=	0x00ca
+                           0000CB   741 G$PWM3C1H$0_0$0 == 0x00cb
+                           0000CB   742 _PWM3C1H	=	0x00cb
+                           0000CC   743 G$PWM3MD$0_0$0 == 0x00cc
+                           0000CC   744 _PWM3MD	=	0x00cc
+                           0000CD   745 G$PWM3MEN$0_0$0 == 0x00cd
+                           0000CD   746 _PWM3MEN	=	0x00cd
+                           0000CE   747 G$EIP2$0_0$0 == 0x00ce
+                           0000CE   748 _EIP2	=	0x00ce
+                           0000CF   749 G$EIPH2$0_0$0 == 0x00cf
+                           0000CF   750 _EIPH2	=	0x00cf
+                           0000D1   751 G$PWM3PL$0_0$0 == 0x00d1
+                           0000D1   752 _PWM3PL	=	0x00d1
+                           0000D2   753 G$PWM3C0L$0_0$0 == 0x00d2
+                           0000D2   754 _PWM3C0L	=	0x00d2
+                           0000D3   755 G$PWM3C1L$0_0$0 == 0x00d3
+                           0000D3   756 _PWM3C1L	=	0x00d3
+                           0000D4   757 G$PWM3CON0$0_0$0 == 0x00d4
+                           0000D4   758 _PWM3CON0	=	0x00d4
+                           0000D5   759 G$PWM3CON1$0_0$0 == 0x00d5
+                           0000D5   760 _PWM3CON1	=	0x00d5
+                           0000D6   761 G$PWM3INTC$0_0$0 == 0x00d6
+                           0000D6   762 _PWM3INTC	=	0x00d6
+                           0000D7   763 G$XTLCON$0_0$0 == 0x00d7
+                           0000D7   764 _XTLCON	=	0x00d7
+                           0000D9   765 G$SC0DR$0_0$0 == 0x00d9
+                           0000D9   766 _SC0DR	=	0x00d9
+                           0000DA   767 G$SC0EGT$0_0$0 == 0x00da
+                           0000DA   768 _SC0EGT	=	0x00da
+                           0000DB   769 G$SC0ETURD0$0_0$0 == 0x00db
+                           0000DB   770 _SC0ETURD0	=	0x00db
+                           0000DC   771 G$SC0ETURD1$0_0$0 == 0x00dc
+                           0000DC   772 _SC0ETURD1	=	0x00dc
+                           0000DD   773 G$SC0IE$0_0$0 == 0x00dd
+                           0000DD   774 _SC0IE	=	0x00dd
+                           0000DE   775 G$SC0IS$0_0$0 == 0x00de
+                           0000DE   776 _SC0IS	=	0x00de
+                           0000DF   777 G$SC0TSR$0_0$0 == 0x00df
+                           0000DF   778 _SC0TSR	=	0x00df
+                           0000E1   779 G$SC1DR$0_0$0 == 0x00e1
+                           0000E1   780 _SC1DR	=	0x00e1
+                           0000E2   781 G$SC1EGT$0_0$0 == 0x00e2
+                           0000E2   782 _SC1EGT	=	0x00e2
+                           0000E3   783 G$SC1ETURD0$0_0$0 == 0x00e3
+                           0000E3   784 _SC1ETURD0	=	0x00e3
+                           0000E4   785 G$SC1ETURD1$0_0$0 == 0x00e4
+                           0000E4   786 _SC1ETURD1	=	0x00e4
+                           0000E5   787 G$SC1IE$0_0$0 == 0x00e5
+                           0000E5   788 _SC1IE	=	0x00e5
+                           0000E6   789 G$SC1IS$0_0$0 == 0x00e6
+                           0000E6   790 _SC1IS	=	0x00e6
+                           0000E7   791 G$SC1TSR$0_0$0 == 0x00e7
+                           0000E7   792 _SC1TSR	=	0x00e7
+                           0000E9   793 G$SC2DR$0_0$0 == 0x00e9
+                           0000E9   794 _SC2DR	=	0x00e9
+                           0000EA   795 G$SC2EGT$0_0$0 == 0x00ea
+                           0000EA   796 _SC2EGT	=	0x00ea
+                           0000EB   797 G$SC2ETURD0$0_0$0 == 0x00eb
+                           0000EB   798 _SC2ETURD0	=	0x00eb
+                           0000EC   799 G$SC2ETURD1$0_0$0 == 0x00ec
+                           0000EC   800 _SC2ETURD1	=	0x00ec
+                           0000ED   801 G$SC2IE$0_0$0 == 0x00ed
+                           0000ED   802 _SC2IE	=	0x00ed
+                           0000EE   803 G$SC2IS$0_0$0 == 0x00ee
+                           0000EE   804 _SC2IS	=	0x00ee
+                           0000EF   805 G$SC2TSR$0_0$0 == 0x00ef
+                           0000EF   806 _SC2TSR	=	0x00ef
+                           0000F1   807 G$SC0CR0$0_0$0 == 0x00f1
+                           0000F1   808 _SC0CR0	=	0x00f1
+                           0000F2   809 G$SC0CR1$0_0$0 == 0x00f2
+                           0000F2   810 _SC0CR1	=	0x00f2
+                           0000F3   811 G$SC1CR0$0_0$0 == 0x00f3
+                           0000F3   812 _SC1CR0	=	0x00f3
+                           0000F4   813 G$SC1CR1$0_0$0 == 0x00f4
+                           0000F4   814 _SC1CR1	=	0x00f4
+                           0000F5   815 G$SC2CR0$0_0$0 == 0x00f5
+                           0000F5   816 _SC2CR0	=	0x00f5
+                           0000F6   817 G$SC2CR1$0_0$0 == 0x00f6
+                           0000F6   818 _SC2CR1	=	0x00f6
+                           0000F7   819 G$PIPS7$0_0$0 == 0x00f7
+                           0000F7   820 _PIPS7	=	0x00f7
+                           0000F9   821 G$PIPS0$0_0$0 == 0x00f9
+                           0000F9   822 _PIPS0	=	0x00f9
+                           0000FA   823 G$PIPS1$0_0$0 == 0x00fa
+                           0000FA   824 _PIPS1	=	0x00fa
+                           0000FB   825 G$PIPS2$0_0$0 == 0x00fb
+                           0000FB   826 _PIPS2	=	0x00fb
+                           0000FC   827 G$PIPS3$0_0$0 == 0x00fc
+                           0000FC   828 _PIPS3	=	0x00fc
+                           0000FD   829 G$PIPS4$0_0$0 == 0x00fd
+                           0000FD   830 _PIPS4	=	0x00fd
+                           0000FE   831 G$PIPS5$0_0$0 == 0x00fe
+                           0000FE   832 _PIPS5	=	0x00fe
+                           0000FF   833 G$PIPS6$0_0$0 == 0x00ff
+                           0000FF   834 _PIPS6	=	0x00ff
+                                    835 ;--------------------------------------------------------
+                                    836 ; special function bits
+                                    837 ;--------------------------------------------------------
+                                    838 	.area RSEG    (ABS,DATA)
+      000000                        839 	.org 0x0000
+                           0000FF   840 G$SM0_1$0_0$0 == 0x00ff
+                           0000FF   841 _SM0_1	=	0x00ff
+                           0000FF   842 G$FE_1$0_0$0 == 0x00ff
+                           0000FF   843 _FE_1	=	0x00ff
+                           0000FE   844 G$SM1_1$0_0$0 == 0x00fe
+                           0000FE   845 _SM1_1	=	0x00fe
+                           0000FD   846 G$SM2_1$0_0$0 == 0x00fd
+                           0000FD   847 _SM2_1	=	0x00fd
+                           0000FC   848 G$REN_1$0_0$0 == 0x00fc
+                           0000FC   849 _REN_1	=	0x00fc
+                           0000FB   850 G$TB8_1$0_0$0 == 0x00fb
+                           0000FB   851 _TB8_1	=	0x00fb
+                           0000FA   852 G$RB8_1$0_0$0 == 0x00fa
+                           0000FA   853 _RB8_1	=	0x00fa
+                           0000F9   854 G$TI_1$0_0$0 == 0x00f9
+                           0000F9   855 _TI_1	=	0x00f9
+                           0000F8   856 G$RI_1$0_0$0 == 0x00f8
+                           0000F8   857 _RI_1	=	0x00f8
+                           0000EF   858 G$ADCF$0_0$0 == 0x00ef
+                           0000EF   859 _ADCF	=	0x00ef
+                           0000EE   860 G$ADCS$0_0$0 == 0x00ee
+                           0000EE   861 _ADCS	=	0x00ee
+                           0000ED   862 G$ETGSEL1$0_0$0 == 0x00ed
+                           0000ED   863 _ETGSEL1	=	0x00ed
+                           0000EC   864 G$ETGSEL0$0_0$0 == 0x00ec
+                           0000EC   865 _ETGSEL0	=	0x00ec
+                           0000EB   866 G$ADCHS3$0_0$0 == 0x00eb
+                           0000EB   867 _ADCHS3	=	0x00eb
+                           0000EA   868 G$ADCHS2$0_0$0 == 0x00ea
+                           0000EA   869 _ADCHS2	=	0x00ea
+                           0000E9   870 G$ADCHS1$0_0$0 == 0x00e9
+                           0000E9   871 _ADCHS1	=	0x00e9
+                           0000E8   872 G$ADCHS0$0_0$0 == 0x00e8
+                           0000E8   873 _ADCHS0	=	0x00e8
+                           0000DF   874 G$PWMRUN$0_0$0 == 0x00df
+                           0000DF   875 _PWMRUN	=	0x00df
+                           0000DE   876 G$LOAD$0_0$0 == 0x00de
+                           0000DE   877 _LOAD	=	0x00de
+                           0000DD   878 G$PWMF$0_0$0 == 0x00dd
+                           0000DD   879 _PWMF	=	0x00dd
+                           0000DC   880 G$CLRPWM$0_0$0 == 0x00dc
+                           0000DC   881 _CLRPWM	=	0x00dc
+                           0000D7   882 G$CY$0_0$0 == 0x00d7
+                           0000D7   883 _CY	=	0x00d7
+                           0000D6   884 G$AC$0_0$0 == 0x00d6
+                           0000D6   885 _AC	=	0x00d6
+                           0000D5   886 G$F0$0_0$0 == 0x00d5
+                           0000D5   887 _F0	=	0x00d5
+                           0000D4   888 G$RS1$0_0$0 == 0x00d4
+                           0000D4   889 _RS1	=	0x00d4
+                           0000D3   890 G$RS0$0_0$0 == 0x00d3
+                           0000D3   891 _RS0	=	0x00d3
+                           0000D2   892 G$OV$0_0$0 == 0x00d2
+                           0000D2   893 _OV	=	0x00d2
+                           0000D0   894 G$P$0_0$0 == 0x00d0
+                           0000D0   895 _P	=	0x00d0
+                           0000CF   896 G$TF2$0_0$0 == 0x00cf
+                           0000CF   897 _TF2	=	0x00cf
+                           0000CA   898 G$TR2$0_0$0 == 0x00ca
+                           0000CA   899 _TR2	=	0x00ca
+                           0000C8   900 G$CM_RL2$0_0$0 == 0x00c8
+                           0000C8   901 _CM_RL2	=	0x00c8
+                           0000C6   902 G$I2CEN$0_0$0 == 0x00c6
+                           0000C6   903 _I2CEN	=	0x00c6
+                           0000C5   904 G$STA$0_0$0 == 0x00c5
+                           0000C5   905 _STA	=	0x00c5
+                           0000C4   906 G$STO$0_0$0 == 0x00c4
+                           0000C4   907 _STO	=	0x00c4
+                           0000C3   908 G$SI$0_0$0 == 0x00c3
+                           0000C3   909 _SI	=	0x00c3
+                           0000C2   910 G$AA$0_0$0 == 0x00c2
+                           0000C2   911 _AA	=	0x00c2
+                           0000C0   912 G$I2CPX$0_0$0 == 0x00c0
+                           0000C0   913 _I2CPX	=	0x00c0
+                           0000BE   914 G$PADC$0_0$0 == 0x00be
+                           0000BE   915 _PADC	=	0x00be
+                           0000BD   916 G$PBOD$0_0$0 == 0x00bd
+                           0000BD   917 _PBOD	=	0x00bd
+                           0000BC   918 G$PS$0_0$0 == 0x00bc
+                           0000BC   919 _PS	=	0x00bc
+                           0000BB   920 G$PT1$0_0$0 == 0x00bb
+                           0000BB   921 _PT1	=	0x00bb
+                           0000BA   922 G$PX1$0_0$0 == 0x00ba
+                           0000BA   923 _PX1	=	0x00ba
+                           0000B9   924 G$PT0$0_0$0 == 0x00b9
+                           0000B9   925 _PT0	=	0x00b9
+                           0000B8   926 G$PX0$0_0$0 == 0x00b8
+                           0000B8   927 _PX0	=	0x00b8
+                           0000B7   928 G$P37$0_0$0 == 0x00b7
+                           0000B7   929 _P37	=	0x00b7
+                           0000B6   930 G$P36$0_0$0 == 0x00b6
+                           0000B6   931 _P36	=	0x00b6
+                           0000B5   932 G$P35$0_0$0 == 0x00b5
+                           0000B5   933 _P35	=	0x00b5
+                           0000B4   934 G$P34$0_0$0 == 0x00b4
+                           0000B4   935 _P34	=	0x00b4
+                           0000B3   936 G$P33$0_0$0 == 0x00b3
+                           0000B3   937 _P33	=	0x00b3
+                           0000B2   938 G$P32$0_0$0 == 0x00b2
+                           0000B2   939 _P32	=	0x00b2
+                           0000B1   940 G$P31$0_0$0 == 0x00b1
+                           0000B1   941 _P31	=	0x00b1
+                           0000B0   942 G$P30$0_0$0 == 0x00b0
+                           0000B0   943 _P30	=	0x00b0
+                           0000AF   944 G$EA$0_0$0 == 0x00af
+                           0000AF   945 _EA	=	0x00af
+                           0000AE   946 G$EADC$0_0$0 == 0x00ae
+                           0000AE   947 _EADC	=	0x00ae
+                           0000AD   948 G$EBOD$0_0$0 == 0x00ad
+                           0000AD   949 _EBOD	=	0x00ad
+                           0000AC   950 G$ES$0_0$0 == 0x00ac
+                           0000AC   951 _ES	=	0x00ac
+                           0000AB   952 G$ET1$0_0$0 == 0x00ab
+                           0000AB   953 _ET1	=	0x00ab
+                           0000AA   954 G$EX1$0_0$0 == 0x00aa
+                           0000AA   955 _EX1	=	0x00aa
+                           0000A9   956 G$ET0$0_0$0 == 0x00a9
+                           0000A9   957 _ET0	=	0x00a9
+                           0000A8   958 G$EX0$0_0$0 == 0x00a8
+                           0000A8   959 _EX0	=	0x00a8
+                           0000A0   960 G$P20$0_0$0 == 0x00a0
+                           0000A0   961 _P20	=	0x00a0
+                           00009F   962 G$SM0$0_0$0 == 0x009f
+                           00009F   963 _SM0	=	0x009f
+                           00009F   964 G$FE$0_0$0 == 0x009f
+                           00009F   965 _FE	=	0x009f
+                           00009E   966 G$SM1$0_0$0 == 0x009e
+                           00009E   967 _SM1	=	0x009e
+                           00009D   968 G$SM2$0_0$0 == 0x009d
+                           00009D   969 _SM2	=	0x009d
+                           00009C   970 G$REN$0_0$0 == 0x009c
+                           00009C   971 _REN	=	0x009c
+                           00009B   972 G$TB8$0_0$0 == 0x009b
+                           00009B   973 _TB8	=	0x009b
+                           00009A   974 G$RB8$0_0$0 == 0x009a
+                           00009A   975 _RB8	=	0x009a
+                           000099   976 G$TI$0_0$0 == 0x0099
+                           000099   977 _TI	=	0x0099
+                           000098   978 G$RI$0_0$0 == 0x0098
+                           000098   979 _RI	=	0x0098
+                           000097   980 G$P17$0_0$0 == 0x0097
+                           000097   981 _P17	=	0x0097
+                           000096   982 G$P16$0_0$0 == 0x0096
+                           000096   983 _P16	=	0x0096
+                           000096   984 G$TXD_1$0_0$0 == 0x0096
+                           000096   985 _TXD_1	=	0x0096
+                           000095   986 G$P15$0_0$0 == 0x0095
+                           000095   987 _P15	=	0x0095
+                           000094   988 G$P14$0_0$0 == 0x0094
+                           000094   989 _P14	=	0x0094
+                           000094   990 G$SDA$0_0$0 == 0x0094
+                           000094   991 _SDA	=	0x0094
+                           000093   992 G$P13$0_0$0 == 0x0093
+                           000093   993 _P13	=	0x0093
+                           000093   994 G$SCL$0_0$0 == 0x0093
+                           000093   995 _SCL	=	0x0093
+                           000092   996 G$P12$0_0$0 == 0x0092
+                           000092   997 _P12	=	0x0092
+                           000091   998 G$P11$0_0$0 == 0x0091
+                           000091   999 _P11	=	0x0091
+                           000090  1000 G$P10$0_0$0 == 0x0090
+                           000090  1001 _P10	=	0x0090
+                           00008F  1002 G$TF1$0_0$0 == 0x008f
+                           00008F  1003 _TF1	=	0x008f
+                           00008E  1004 G$TR1$0_0$0 == 0x008e
+                           00008E  1005 _TR1	=	0x008e
+                           00008D  1006 G$TF0$0_0$0 == 0x008d
+                           00008D  1007 _TF0	=	0x008d
+                           00008C  1008 G$TR0$0_0$0 == 0x008c
+                           00008C  1009 _TR0	=	0x008c
+                           00008B  1010 G$IE1$0_0$0 == 0x008b
+                           00008B  1011 _IE1	=	0x008b
+                           00008A  1012 G$IT1$0_0$0 == 0x008a
+                           00008A  1013 _IT1	=	0x008a
+                           000089  1014 G$IE0$0_0$0 == 0x0089
+                           000089  1015 _IE0	=	0x0089
+                           000088  1016 G$IT0$0_0$0 == 0x0088
+                           000088  1017 _IT0	=	0x0088
+                           000087  1018 G$P07$0_0$0 == 0x0087
+                           000087  1019 _P07	=	0x0087
+                           000087  1020 G$RXD$0_0$0 == 0x0087
+                           000087  1021 _RXD	=	0x0087
+                           000086  1022 G$P06$0_0$0 == 0x0086
+                           000086  1023 _P06	=	0x0086
+                           000086  1024 G$TXD$0_0$0 == 0x0086
+                           000086  1025 _TXD	=	0x0086
+                           000085  1026 G$P05$0_0$0 == 0x0085
+                           000085  1027 _P05	=	0x0085
+                           000084  1028 G$P04$0_0$0 == 0x0084
+                           000084  1029 _P04	=	0x0084
+                           000084  1030 G$STADC$0_0$0 == 0x0084
+                           000084  1031 _STADC	=	0x0084
+                           000083  1032 G$P03$0_0$0 == 0x0083
+                           000083  1033 _P03	=	0x0083
+                           000082  1034 G$P02$0_0$0 == 0x0082
+                           000082  1035 _P02	=	0x0082
+                           000082  1036 G$RXD_1$0_0$0 == 0x0082
+                           000082  1037 _RXD_1	=	0x0082
+                           000081  1038 G$P01$0_0$0 == 0x0081
+                           000081  1039 _P01	=	0x0081
+                           000081  1040 G$MISO$0_0$0 == 0x0081
+                           000081  1041 _MISO	=	0x0081
+                           000080  1042 G$P00$0_0$0 == 0x0080
+                           000080  1043 _P00	=	0x0080
+                           000080  1044 G$MOSI$0_0$0 == 0x0080
+                           000080  1045 _MOSI	=	0x0080
+                                   1046 ;--------------------------------------------------------
+                                   1047 ; overlayable register banks
+                                   1048 ;--------------------------------------------------------
+                                   1049 	.area REG_BANK_0	(REL,OVR,DATA)
+      000000                       1050 	.ds 8
+                                   1051 ;--------------------------------------------------------
+                                   1052 ; internal ram data
+                                   1053 ;--------------------------------------------------------
+                                   1054 	.area DSEG    (DATA)
+                                   1055 ;--------------------------------------------------------
+                                   1056 ; overlayable items in internal ram 
+                                   1057 ;--------------------------------------------------------
+                                   1058 ;--------------------------------------------------------
+                                   1059 ; Stack segment in internal ram 
+                                   1060 ;--------------------------------------------------------
+                                   1061 	.area	SSEG
+      000000                       1062 __start__stack:
+      000000                       1063 	.ds	1
+                                   1064 
+                                   1065 ;--------------------------------------------------------
+                                   1066 ; indirectly addressable internal ram data
+                                   1067 ;--------------------------------------------------------
+                                   1068 	.area ISEG    (DATA)
+                                   1069 ;--------------------------------------------------------
+                                   1070 ; absolute internal ram data
+                                   1071 ;--------------------------------------------------------
+                                   1072 	.area IABS    (ABS,DATA)
+                                   1073 	.area IABS    (ABS,DATA)
+                                   1074 ;--------------------------------------------------------
+                                   1075 ; bit data
+                                   1076 ;--------------------------------------------------------
+                                   1077 	.area BSEG    (BIT)
+                                   1078 ;--------------------------------------------------------
+                                   1079 ; paged external ram data
+                                   1080 ;--------------------------------------------------------
+                                   1081 	.area PSEG    (PAG,XDATA)
+                                   1082 ;--------------------------------------------------------
+                                   1083 ; external ram data
+                                   1084 ;--------------------------------------------------------
+                                   1085 	.area XSEG    (XDATA)
+                                   1086 ;--------------------------------------------------------
+                                   1087 ; absolute external ram data
+                                   1088 ;--------------------------------------------------------
+                                   1089 	.area XABS    (ABS,XDATA)
+                                   1090 ;--------------------------------------------------------
+                                   1091 ; external initialized ram data
+                                   1092 ;--------------------------------------------------------
+                                   1093 	.area XISEG   (XDATA)
+                                   1094 	.area HOME    (CODE)
+                                   1095 	.area GSINIT0 (CODE)
+                                   1096 	.area GSINIT1 (CODE)
+                                   1097 	.area GSINIT2 (CODE)
+                                   1098 	.area GSINIT3 (CODE)
+                                   1099 	.area GSINIT4 (CODE)
+                                   1100 	.area GSINIT5 (CODE)
+                                   1101 	.area GSINIT  (CODE)
+                                   1102 	.area GSFINAL (CODE)
+                                   1103 	.area CSEG    (CODE)
+                                   1104 ;--------------------------------------------------------
+                                   1105 ; interrupt vector 
+                                   1106 ;--------------------------------------------------------
+                                   1107 	.area HOME    (CODE)
+      000000                       1108 __interrupt_vect:
+      000000 02r00r00         [24] 1109 	ljmp	__sdcc_gsinit_startup
+                                   1110 ;--------------------------------------------------------
+                                   1111 ; global & static initialisations
+                                   1112 ;--------------------------------------------------------
+                                   1113 	.area HOME    (CODE)
+                                   1114 	.area GSINIT  (CODE)
+                                   1115 	.area GSFINAL (CODE)
+                                   1116 	.area GSINIT  (CODE)
+                                   1117 	.globl __sdcc_gsinit_startup
+                                   1118 	.globl __sdcc_program_startup
+                                   1119 	.globl __start__stack
+                                   1120 	.globl __mcs51_genXINIT
+                                   1121 	.globl __mcs51_genXRAMCLEAR
+                                   1122 	.globl __mcs51_genRAMCLEAR
+                                   1123 	.area GSFINAL (CODE)
+      000000 02r00r03         [24] 1124 	ljmp	__sdcc_program_startup
+                                   1125 ;--------------------------------------------------------
+                                   1126 ; Home
+                                   1127 ;--------------------------------------------------------
+                                   1128 	.area HOME    (CODE)
+                                   1129 	.area HOME    (CODE)
+      000003                       1130 __sdcc_program_startup:
+      000003 02r00r00         [24] 1131 	ljmp	_main
+                                   1132 ;	return from main will return to caller
+                                   1133 ;--------------------------------------------------------
+                                   1134 ; code
+                                   1135 ;--------------------------------------------------------
+                                   1136 	.area CSEG    (CODE)
+                                   1137 ;------------------------------------------------------------
+                                   1138 ;Allocation info for local variables in function 'main'
+                                   1139 ;------------------------------------------------------------
+                           000000  1140 	G$main$0$0 ==.
+                           000000  1141 	C$Print_UART0.C$19$0_0$53 ==.
+                                   1142 ;	..\Print_UART0.C:19: void main (void)
+                                   1143 ;	-----------------------------------------
+                                   1144 ;	 function main
+                                   1145 ;	-----------------------------------------
+      000000                       1146 _main:
+                           000007  1147 	ar7 = 0x07
+                           000006  1148 	ar6 = 0x06
+                           000005  1149 	ar5 = 0x05
+                           000004  1150 	ar4 = 0x04
+                           000003  1151 	ar3 = 0x03
+                           000002  1152 	ar2 = 0x02
+                           000001  1153 	ar1 = 0x01
+                           000000  1154 	ar0 = 0x00
+                           000000  1155 	C$Print_UART0.C$24$1_0$53 ==.
+                                   1156 ;	..\Print_UART0.C:24: MODIFY_HIRC(HIRC_24);
+      000000 75 91 00         [24] 1157 	mov	_SFRS,#0x00
+      000003 53 B1 BF         [24] 1158 	anl	_P0M1,#0xbf
+      000006 53 B2 BF         [24] 1159 	anl	_P0M2,#0xbf
+                           000009  1160 	C$Print_UART0.C$25$1_0$53 ==.
+                                   1161 ;	..\Print_UART0.C:25: UART_Open(24000000,UART0_Timer3,115200);
+      000009 75 82 06         [24] 1162 	mov	dpl,#0x06
+      00000C 12r00r00         [24] 1163 	lcall	_MODIFY_HIRC
+                           00000F  1164 	C$Print_UART0.C$26$1_0$53 ==.
+                                   1165 ;	..\Print_UART0.C:26: ENABLE_UART0_PRINTF;                              // Important! use prinft function must set TI=1;
+      00000F 75*00 01         [24] 1166 	mov	_UART_Open_PARM_2,#0x01
+      000012 E4               [12] 1167 	clr	a
+      000013 F5*00            [12] 1168 	mov	_UART_Open_PARM_3,a
+      000015 75*01 C2         [24] 1169 	mov	(_UART_Open_PARM_3 + 1),#0xc2
+      000018 75*02 01         [24] 1170 	mov	(_UART_Open_PARM_3 + 2),#0x01
+      00001B F5*03            [12] 1171 	mov	(_UART_Open_PARM_3 + 3),a
+      00001D 90 36 00         [24] 1172 	mov	dptr,#0x3600
+      000020 75 F0 6E         [24] 1173 	mov	b,#0x6e
+      000023 74 01            [12] 1174 	mov	a,#0x01
+      000025 12r00r00         [24] 1175 	lcall	_UART_Open
+                           000028  1176 	C$Print_UART0.C$27$1_0$53 ==.
+                                   1177 ;	..\Print_UART0.C:27: 
+      000028 43 98 02         [24] 1178 	orl	_SCON,#0x02
+                                   1179 ;	assignBit
+      00002B D2*00            [12] 1180 	setb	_PRINTFG
+                           00002D  1181 	C$Print_UART0.C$29$1_0$53 ==.
+                                   1182 ;	..\Print_UART0.C:29: {
+      00002D                       1183 00102$:
+                           00002D  1184 	C$Print_UART0.C$31$2_0$54 ==.
+                                   1185 ;	..\Print_UART0.C:31: printf("\n Hello world!");
+      00002D 43 98 02         [24] 1186 	orl	_SCON,#0x02
+                                   1187 ;	assignBit
+      000030 D2*00            [12] 1188 	setb	_PRINTFG
+                           000032  1189 	C$Print_UART0.C$32$2_0$54 ==.
+                                   1190 ;	..\Print_UART0.C:32: DISABLE_UART0_PRINTF;
+      000032 74r00            [12] 1191 	mov	a,#___str_0
+      000034 C0 E0            [24] 1192 	push	acc
+      000036 74s00            [12] 1193 	mov	a,#(___str_0 >> 8)
+      000038 C0 E0            [24] 1194 	push	acc
+      00003A 74 80            [12] 1195 	mov	a,#0x80
+      00003C C0 E0            [24] 1196 	push	acc
+      00003E 12r00r00         [24] 1197 	lcall	_printf
+      000041 15 81            [12] 1198 	dec	sp
+      000043 15 81            [12] 1199 	dec	sp
+      000045 15 81            [12] 1200 	dec	sp
+                           000047  1201 	C$Print_UART0.C$33$2_0$54 ==.
+                                   1202 ;	..\Print_UART0.C:33: Timer0_Delay(24000000,300,1000);
+      000047 53 98 FD         [24] 1203 	anl	_SCON,#0xfd
+                                   1204 ;	assignBit
+      00004A C2*00            [12] 1205 	clr	_PRINTFG
+                           00004C  1206 	C$Print_UART0.C$34$2_0$54 ==.
+                                   1207 ;	..\Print_UART0.C:34: }
+      00004C 75*00 2C         [24] 1208 	mov	_Timer0_Delay_PARM_2,#0x2c
+      00004F 75*01 01         [24] 1209 	mov	(_Timer0_Delay_PARM_2 + 1),#0x01
+      000052 75*00 E8         [24] 1210 	mov	_Timer0_Delay_PARM_3,#0xe8
+      000055 75*01 03         [24] 1211 	mov	(_Timer0_Delay_PARM_3 + 1),#0x03
+      000058 90 36 00         [24] 1212 	mov	dptr,#0x3600
+      00005B 75 F0 6E         [24] 1213 	mov	b,#0x6e
+      00005E 74 01            [12] 1214 	mov	a,#0x01
+      000060 12r00r00         [24] 1215 	lcall	_Timer0_Delay
+      000063 80 C8            [24] 1216 	sjmp	00102$
+                           000065  1217 	C$Print_UART0.C$36$1_0$53 ==.
+                                   1218 ;	..\Print_UART0.C:36: ERROR: no line number 36 in file ..\Print_UART0.C
+                           000065  1219 	C$Print_UART0.C$36$1_0$53 ==.
+                           000065  1220 	XG$main$0$0 ==.
+      000065 22               [24] 1221 	ret
+                                   1222 	.area CSEG    (CODE)
+                                   1223 	.area CONST   (CODE)
+                           000000  1224 FPrint_UART0$__str_0$0_0$0 == .
+                                   1225 	.area CONST   (CODE)
+      000000                       1226 ___str_0:
+      000000 0A                    1227 	.db 0x0a
+      000001 20 48 65 6C 6C 6F 20  1228 	.ascii " Hello world!"
+             77 6F 72 6C 64 21
+      00000E 00                    1229 	.db 0x00
+                                   1230 	.area CSEG    (CODE)
+                                   1231 	.area XINIT   (CODE)
+                                   1232 	.area CABS    (ABS,CODE)

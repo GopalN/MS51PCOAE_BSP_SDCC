@@ -1,0 +1,1684 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.0.0 #11528 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module ISP_UART0_main
+                                      6 	.optsdcc -mmcs51 --model-small
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl _Package_checksum
+                                     13 	.globl _READ_CONFIG
+                                     14 	.globl _READ_ID
+                                     15 	.globl _Send_64byte_To_UART0
+                                     16 	.globl _UART0_ini_115200_24MHz
+                                     17 	.globl _TM0_ini
+                                     18 	.globl _MODIFY_HIRC_16
+                                     19 	.globl _MODIFY_HIRC_24
+                                     20 	.globl _MOSI
+                                     21 	.globl _P00
+                                     22 	.globl _MISO
+                                     23 	.globl _P01
+                                     24 	.globl _RXD_1
+                                     25 	.globl _P02
+                                     26 	.globl _P03
+                                     27 	.globl _STADC
+                                     28 	.globl _P04
+                                     29 	.globl _P05
+                                     30 	.globl _TXD
+                                     31 	.globl _P06
+                                     32 	.globl _RXD
+                                     33 	.globl _P07
+                                     34 	.globl _IT0
+                                     35 	.globl _IE0
+                                     36 	.globl _IT1
+                                     37 	.globl _IE1
+                                     38 	.globl _TR0
+                                     39 	.globl _TF0
+                                     40 	.globl _TR1
+                                     41 	.globl _TF1
+                                     42 	.globl _P10
+                                     43 	.globl _P11
+                                     44 	.globl _P12
+                                     45 	.globl _SCL
+                                     46 	.globl _P13
+                                     47 	.globl _SDA
+                                     48 	.globl _P14
+                                     49 	.globl _P15
+                                     50 	.globl _TXD_1
+                                     51 	.globl _P16
+                                     52 	.globl _P17
+                                     53 	.globl _RI
+                                     54 	.globl _TI
+                                     55 	.globl _RB8
+                                     56 	.globl _TB8
+                                     57 	.globl _REN
+                                     58 	.globl _SM2
+                                     59 	.globl _SM1
+                                     60 	.globl _FE
+                                     61 	.globl _SM0
+                                     62 	.globl _P20
+                                     63 	.globl _EX0
+                                     64 	.globl _ET0
+                                     65 	.globl _EX1
+                                     66 	.globl _ET1
+                                     67 	.globl _ES
+                                     68 	.globl _EBOD
+                                     69 	.globl _EADC
+                                     70 	.globl _EA
+                                     71 	.globl _P30
+                                     72 	.globl _P31
+                                     73 	.globl _P32
+                                     74 	.globl _P33
+                                     75 	.globl _P34
+                                     76 	.globl _P35
+                                     77 	.globl _P36
+                                     78 	.globl _P37
+                                     79 	.globl _PX0
+                                     80 	.globl _PT0
+                                     81 	.globl _PX1
+                                     82 	.globl _PT1
+                                     83 	.globl _PS
+                                     84 	.globl _PBOD
+                                     85 	.globl _PADC
+                                     86 	.globl _I2CPX
+                                     87 	.globl _AA
+                                     88 	.globl _SI
+                                     89 	.globl _STO
+                                     90 	.globl _STA
+                                     91 	.globl _I2CEN
+                                     92 	.globl _CM_RL2
+                                     93 	.globl _TR2
+                                     94 	.globl _TF2
+                                     95 	.globl _P
+                                     96 	.globl _OV
+                                     97 	.globl _RS0
+                                     98 	.globl _RS1
+                                     99 	.globl _F0
+                                    100 	.globl _AC
+                                    101 	.globl _CY
+                                    102 	.globl _CLRPWM
+                                    103 	.globl _PWMF
+                                    104 	.globl _LOAD
+                                    105 	.globl _PWMRUN
+                                    106 	.globl _ADCHS0
+                                    107 	.globl _ADCHS1
+                                    108 	.globl _ADCHS2
+                                    109 	.globl _ADCHS3
+                                    110 	.globl _ETGSEL0
+                                    111 	.globl _ETGSEL1
+                                    112 	.globl _ADCS
+                                    113 	.globl _ADCF
+                                    114 	.globl _RI_1
+                                    115 	.globl _TI_1
+                                    116 	.globl _RB8_1
+                                    117 	.globl _TB8_1
+                                    118 	.globl _REN_1
+                                    119 	.globl _SM2_1
+                                    120 	.globl _SM1_1
+                                    121 	.globl _FE_1
+                                    122 	.globl _SM0_1
+                                    123 	.globl _PIPS6
+                                    124 	.globl _PIPS5
+                                    125 	.globl _PIPS4
+                                    126 	.globl _PIPS3
+                                    127 	.globl _PIPS2
+                                    128 	.globl _PIPS1
+                                    129 	.globl _PIPS0
+                                    130 	.globl _PIPS7
+                                    131 	.globl _SC2CR1
+                                    132 	.globl _SC2CR0
+                                    133 	.globl _SC1CR1
+                                    134 	.globl _SC1CR0
+                                    135 	.globl _SC0CR1
+                                    136 	.globl _SC0CR0
+                                    137 	.globl _SC2TSR
+                                    138 	.globl _SC2IS
+                                    139 	.globl _SC2IE
+                                    140 	.globl _SC2ETURD1
+                                    141 	.globl _SC2ETURD0
+                                    142 	.globl _SC2EGT
+                                    143 	.globl _SC2DR
+                                    144 	.globl _SC1TSR
+                                    145 	.globl _SC1IS
+                                    146 	.globl _SC1IE
+                                    147 	.globl _SC1ETURD1
+                                    148 	.globl _SC1ETURD0
+                                    149 	.globl _SC1EGT
+                                    150 	.globl _SC1DR
+                                    151 	.globl _SC0TSR
+                                    152 	.globl _SC0IS
+                                    153 	.globl _SC0IE
+                                    154 	.globl _SC0ETURD1
+                                    155 	.globl _SC0ETURD0
+                                    156 	.globl _SC0EGT
+                                    157 	.globl _SC0DR
+                                    158 	.globl _XTLCON
+                                    159 	.globl _PWM3INTC
+                                    160 	.globl _PWM3CON1
+                                    161 	.globl _PWM3CON0
+                                    162 	.globl _PWM3C1L
+                                    163 	.globl _PWM3C0L
+                                    164 	.globl _PWM3PL
+                                    165 	.globl _EIPH2
+                                    166 	.globl _EIP2
+                                    167 	.globl _PWM3MEN
+                                    168 	.globl _PWM3MD
+                                    169 	.globl _PWM3C1H
+                                    170 	.globl _PWM3C0H
+                                    171 	.globl _PWM3PH
+                                    172 	.globl _PWM2INTC
+                                    173 	.globl _PWM2CON1
+                                    174 	.globl _PWM2CON0
+                                    175 	.globl _PWM2C1L
+                                    176 	.globl _PWM2C0L
+                                    177 	.globl _PWM2PL
+                                    178 	.globl _PWM2MEN
+                                    179 	.globl _PWM2MD
+                                    180 	.globl _PWM2C1H
+                                    181 	.globl _PWM2C0H
+                                    182 	.globl _PWM2PH
+                                    183 	.globl _PIOCON2
+                                    184 	.globl _PWM1INTC
+                                    185 	.globl _PWM1CON1
+                                    186 	.globl _PWM1CON0
+                                    187 	.globl _PWM1C1L
+                                    188 	.globl _PWM1C0L
+                                    189 	.globl _PWM1PL
+                                    190 	.globl _PWM1MEN
+                                    191 	.globl _PWM1MD
+                                    192 	.globl _PWM1C1H
+                                    193 	.globl _PWM1C0H
+                                    194 	.globl _PWM1PH
+                                    195 	.globl _AUXR8
+                                    196 	.globl _AUXR7
+                                    197 	.globl _AUXR6
+                                    198 	.globl _AUXR5
+                                    199 	.globl _AUXR4
+                                    200 	.globl _AUXR3
+                                    201 	.globl _AUXR2
+                                    202 	.globl _P3DW
+                                    203 	.globl _P2DW
+                                    204 	.globl _P1DW
+                                    205 	.globl _P0DW
+                                    206 	.globl _AINDIDS1
+                                    207 	.globl _RWKH
+                                    208 	.globl _P3UP
+                                    209 	.globl _P2UP
+                                    210 	.globl _P1UP
+                                    211 	.globl _P0UP
+                                    212 	.globl _ADCSR
+                                    213 	.globl _ADCCN
+                                    214 	.globl _ADCSN
+                                    215 	.globl _P2S
+                                    216 	.globl _P2SR
+                                    217 	.globl _P2M2
+                                    218 	.globl _P2M1
+                                    219 	.globl _ADCCON3
+                                    220 	.globl _ADCBAH
+                                    221 	.globl _ADCBAL
+                                    222 	.globl _LVRDIS
+                                    223 	.globl _SPCR2
+                                    224 	.globl _PWM0C5L
+                                    225 	.globl _PWM0C4L
+                                    226 	.globl _PIOCON1
+                                    227 	.globl _PWM0C5H
+                                    228 	.globl _PWM0C4H
+                                    229 	.globl _PWM0INTC
+                                    230 	.globl _P1SR
+                                    231 	.globl _P1S
+                                    232 	.globl _P0SR
+                                    233 	.globl _P0S
+                                    234 	.globl _P3SR
+                                    235 	.globl _P3S
+                                    236 	.globl _EIPH1
+                                    237 	.globl _EIP1
+                                    238 	.globl _PORDIS
+                                    239 	.globl _PWM0MD
+                                    240 	.globl _PWM0MEN
+                                    241 	.globl _PWM0DTCNT
+                                    242 	.globl _PWM0DTEN
+                                    243 	.globl _SCON_1
+                                    244 	.globl _EIPH
+                                    245 	.globl _AINDIDS0
+                                    246 	.globl _SPDR
+                                    247 	.globl _SPSR
+                                    248 	.globl _SPCR
+                                    249 	.globl _CAPCON4
+                                    250 	.globl _CAPCON3
+                                    251 	.globl _B
+                                    252 	.globl _EIP
+                                    253 	.globl _C2H
+                                    254 	.globl _C2L
+                                    255 	.globl _PIF
+                                    256 	.globl _PIPEN
+                                    257 	.globl _PINEN
+                                    258 	.globl _PICON
+                                    259 	.globl _ADCCON0
+                                    260 	.globl _C1H
+                                    261 	.globl _C1L
+                                    262 	.globl _C0H
+                                    263 	.globl _C0L
+                                    264 	.globl _ADCDLY
+                                    265 	.globl _ADCCON2
+                                    266 	.globl _ADCCON1
+                                    267 	.globl _ACC
+                                    268 	.globl _PWM0CON1
+                                    269 	.globl _PIOCON0
+                                    270 	.globl _PWM0C3L
+                                    271 	.globl _PWM0C2L
+                                    272 	.globl _PWM0C1L
+                                    273 	.globl _PWM0C0L
+                                    274 	.globl _PWM0PL
+                                    275 	.globl _PWM0CON0
+                                    276 	.globl _PWM0FBD
+                                    277 	.globl _PNP
+                                    278 	.globl _PWM0C3H
+                                    279 	.globl _PWM0C2H
+                                    280 	.globl _PWM0C1H
+                                    281 	.globl _PWM0C0H
+                                    282 	.globl _PWM0PH
+                                    283 	.globl _PSW
+                                    284 	.globl _ADCMPH
+                                    285 	.globl _ADCMPL
+                                    286 	.globl _TH2
+                                    287 	.globl _TL2
+                                    288 	.globl _RCMP2H
+                                    289 	.globl _RCMP2L
+                                    290 	.globl _T2MOD
+                                    291 	.globl _T2CON
+                                    292 	.globl _TA
+                                    293 	.globl _RH3
+                                    294 	.globl _RL3
+                                    295 	.globl _T3CON
+                                    296 	.globl _ADCRH
+                                    297 	.globl _ADCRL
+                                    298 	.globl _I2ADDR
+                                    299 	.globl _I2CON
+                                    300 	.globl _I2TOC
+                                    301 	.globl _I2CLK
+                                    302 	.globl _I2STAT
+                                    303 	.globl _I2DAT
+                                    304 	.globl _SADDR_1
+                                    305 	.globl _SADEN_1
+                                    306 	.globl _SADEN
+                                    307 	.globl _IP
+                                    308 	.globl _IPH
+                                    309 	.globl _TOE
+                                    310 	.globl _P1M2
+                                    311 	.globl _P1M1
+                                    312 	.globl _P0M2
+                                    313 	.globl _P0M1
+                                    314 	.globl _P3
+                                    315 	.globl _IAPCN
+                                    316 	.globl _IAPFD
+                                    317 	.globl _P3M2
+                                    318 	.globl _P3M1
+                                    319 	.globl _BODCON1
+                                    320 	.globl _WDCON
+                                    321 	.globl _SADDR
+                                    322 	.globl _IE
+                                    323 	.globl _IAPAH
+                                    324 	.globl _IAPAL
+                                    325 	.globl _IAPUEN
+                                    326 	.globl _IAPTRG
+                                    327 	.globl _BODCON0
+                                    328 	.globl _AUXR1
+                                    329 	.globl _P2
+                                    330 	.globl _CHPCON
+                                    331 	.globl _EIE1
+                                    332 	.globl _EIE
+                                    333 	.globl _SBUF_1
+                                    334 	.globl _SBUF
+                                    335 	.globl _SCON
+                                    336 	.globl _CKEN
+                                    337 	.globl _CKSWT
+                                    338 	.globl _CKDIV
+                                    339 	.globl _CAPCON2
+                                    340 	.globl _CAPCON1
+                                    341 	.globl _CAPCON0
+                                    342 	.globl _SFRS
+                                    343 	.globl _P1
+                                    344 	.globl _WKCON
+                                    345 	.globl _CKCON
+                                    346 	.globl _TH1
+                                    347 	.globl _TH0
+                                    348 	.globl _TL1
+                                    349 	.globl _TL0
+                                    350 	.globl _TMOD
+                                    351 	.globl _TCON
+                                    352 	.globl _PCON
+                                    353 	.globl _RWKL
+                                    354 	.globl _RCTRIM1
+                                    355 	.globl _RCTRIM0
+                                    356 	.globl _DPH
+                                    357 	.globl _DPL
+                                    358 	.globl _SP
+                                    359 	.globl _P0
+                                    360 ;--------------------------------------------------------
+                                    361 ; special function registers
+                                    362 ;--------------------------------------------------------
+                                    363 	.area RSEG    (ABS,DATA)
+      000000                        364 	.org 0x0000
+                           000080   365 _P0	=	0x0080
+                           000081   366 _SP	=	0x0081
+                           000082   367 _DPL	=	0x0082
+                           000083   368 _DPH	=	0x0083
+                           000084   369 _RCTRIM0	=	0x0084
+                           000085   370 _RCTRIM1	=	0x0085
+                           000086   371 _RWKL	=	0x0086
+                           000087   372 _PCON	=	0x0087
+                           000088   373 _TCON	=	0x0088
+                           000089   374 _TMOD	=	0x0089
+                           00008A   375 _TL0	=	0x008a
+                           00008B   376 _TL1	=	0x008b
+                           00008C   377 _TH0	=	0x008c
+                           00008D   378 _TH1	=	0x008d
+                           00008E   379 _CKCON	=	0x008e
+                           00008F   380 _WKCON	=	0x008f
+                           000090   381 _P1	=	0x0090
+                           000091   382 _SFRS	=	0x0091
+                           000092   383 _CAPCON0	=	0x0092
+                           000093   384 _CAPCON1	=	0x0093
+                           000094   385 _CAPCON2	=	0x0094
+                           000095   386 _CKDIV	=	0x0095
+                           000096   387 _CKSWT	=	0x0096
+                           000097   388 _CKEN	=	0x0097
+                           000098   389 _SCON	=	0x0098
+                           000099   390 _SBUF	=	0x0099
+                           00009A   391 _SBUF_1	=	0x009a
+                           00009B   392 _EIE	=	0x009b
+                           00009C   393 _EIE1	=	0x009c
+                           00009F   394 _CHPCON	=	0x009f
+                           0000A0   395 _P2	=	0x00a0
+                           0000A2   396 _AUXR1	=	0x00a2
+                           0000A3   397 _BODCON0	=	0x00a3
+                           0000A4   398 _IAPTRG	=	0x00a4
+                           0000A5   399 _IAPUEN	=	0x00a5
+                           0000A6   400 _IAPAL	=	0x00a6
+                           0000A7   401 _IAPAH	=	0x00a7
+                           0000A8   402 _IE	=	0x00a8
+                           0000A9   403 _SADDR	=	0x00a9
+                           0000AA   404 _WDCON	=	0x00aa
+                           0000AB   405 _BODCON1	=	0x00ab
+                           0000AC   406 _P3M1	=	0x00ac
+                           0000AD   407 _P3M2	=	0x00ad
+                           0000AE   408 _IAPFD	=	0x00ae
+                           0000AF   409 _IAPCN	=	0x00af
+                           0000B0   410 _P3	=	0x00b0
+                           0000B1   411 _P0M1	=	0x00b1
+                           0000B2   412 _P0M2	=	0x00b2
+                           0000B3   413 _P1M1	=	0x00b3
+                           0000B4   414 _P1M2	=	0x00b4
+                           0000B5   415 _TOE	=	0x00b5
+                           0000B7   416 _IPH	=	0x00b7
+                           0000B8   417 _IP	=	0x00b8
+                           0000B9   418 _SADEN	=	0x00b9
+                           0000BA   419 _SADEN_1	=	0x00ba
+                           0000BB   420 _SADDR_1	=	0x00bb
+                           0000BC   421 _I2DAT	=	0x00bc
+                           0000BD   422 _I2STAT	=	0x00bd
+                           0000BE   423 _I2CLK	=	0x00be
+                           0000BF   424 _I2TOC	=	0x00bf
+                           0000C0   425 _I2CON	=	0x00c0
+                           0000C1   426 _I2ADDR	=	0x00c1
+                           0000C2   427 _ADCRL	=	0x00c2
+                           0000C3   428 _ADCRH	=	0x00c3
+                           0000C4   429 _T3CON	=	0x00c4
+                           0000C5   430 _RL3	=	0x00c5
+                           0000C6   431 _RH3	=	0x00c6
+                           0000C7   432 _TA	=	0x00c7
+                           0000C8   433 _T2CON	=	0x00c8
+                           0000C9   434 _T2MOD	=	0x00c9
+                           0000CA   435 _RCMP2L	=	0x00ca
+                           0000CB   436 _RCMP2H	=	0x00cb
+                           0000CC   437 _TL2	=	0x00cc
+                           0000CD   438 _TH2	=	0x00cd
+                           0000CE   439 _ADCMPL	=	0x00ce
+                           0000CF   440 _ADCMPH	=	0x00cf
+                           0000D0   441 _PSW	=	0x00d0
+                           0000D1   442 _PWM0PH	=	0x00d1
+                           0000D2   443 _PWM0C0H	=	0x00d2
+                           0000D3   444 _PWM0C1H	=	0x00d3
+                           0000D4   445 _PWM0C2H	=	0x00d4
+                           0000D5   446 _PWM0C3H	=	0x00d5
+                           0000D6   447 _PNP	=	0x00d6
+                           0000D7   448 _PWM0FBD	=	0x00d7
+                           0000D8   449 _PWM0CON0	=	0x00d8
+                           0000D9   450 _PWM0PL	=	0x00d9
+                           0000DA   451 _PWM0C0L	=	0x00da
+                           0000DB   452 _PWM0C1L	=	0x00db
+                           0000DC   453 _PWM0C2L	=	0x00dc
+                           0000DD   454 _PWM0C3L	=	0x00dd
+                           0000DE   455 _PIOCON0	=	0x00de
+                           0000DF   456 _PWM0CON1	=	0x00df
+                           0000E0   457 _ACC	=	0x00e0
+                           0000E1   458 _ADCCON1	=	0x00e1
+                           0000E2   459 _ADCCON2	=	0x00e2
+                           0000E3   460 _ADCDLY	=	0x00e3
+                           0000E4   461 _C0L	=	0x00e4
+                           0000E5   462 _C0H	=	0x00e5
+                           0000E6   463 _C1L	=	0x00e6
+                           0000E7   464 _C1H	=	0x00e7
+                           0000E8   465 _ADCCON0	=	0x00e8
+                           0000E9   466 _PICON	=	0x00e9
+                           0000EA   467 _PINEN	=	0x00ea
+                           0000EB   468 _PIPEN	=	0x00eb
+                           0000EC   469 _PIF	=	0x00ec
+                           0000ED   470 _C2L	=	0x00ed
+                           0000EE   471 _C2H	=	0x00ee
+                           0000EF   472 _EIP	=	0x00ef
+                           0000F0   473 _B	=	0x00f0
+                           0000F1   474 _CAPCON3	=	0x00f1
+                           0000F2   475 _CAPCON4	=	0x00f2
+                           0000F3   476 _SPCR	=	0x00f3
+                           0000F4   477 _SPSR	=	0x00f4
+                           0000F5   478 _SPDR	=	0x00f5
+                           0000F6   479 _AINDIDS0	=	0x00f6
+                           0000F7   480 _EIPH	=	0x00f7
+                           0000F8   481 _SCON_1	=	0x00f8
+                           0000F9   482 _PWM0DTEN	=	0x00f9
+                           0000FA   483 _PWM0DTCNT	=	0x00fa
+                           0000FB   484 _PWM0MEN	=	0x00fb
+                           0000FC   485 _PWM0MD	=	0x00fc
+                           0000FD   486 _PORDIS	=	0x00fd
+                           0000FE   487 _EIP1	=	0x00fe
+                           0000FF   488 _EIPH1	=	0x00ff
+                           0000AC   489 _P3S	=	0x00ac
+                           0000AD   490 _P3SR	=	0x00ad
+                           0000B1   491 _P0S	=	0x00b1
+                           0000B2   492 _P0SR	=	0x00b2
+                           0000B3   493 _P1S	=	0x00b3
+                           0000B4   494 _P1SR	=	0x00b4
+                           0000B7   495 _PWM0INTC	=	0x00b7
+                           0000C4   496 _PWM0C4H	=	0x00c4
+                           0000C5   497 _PWM0C5H	=	0x00c5
+                           0000C6   498 _PIOCON1	=	0x00c6
+                           0000CC   499 _PWM0C4L	=	0x00cc
+                           0000CD   500 _PWM0C5L	=	0x00cd
+                           0000F3   501 _SPCR2	=	0x00f3
+                           0000FF   502 _LVRDIS	=	0x00ff
+                           000084   503 _ADCBAL	=	0x0084
+                           000085   504 _ADCBAH	=	0x0085
+                           000086   505 _ADCCON3	=	0x0086
+                           000089   506 _P2M1	=	0x0089
+                           00008A   507 _P2M2	=	0x008a
+                           00008B   508 _P2SR	=	0x008b
+                           00008C   509 _P2S	=	0x008c
+                           00008D   510 _ADCSN	=	0x008d
+                           00008E   511 _ADCCN	=	0x008e
+                           00008F   512 _ADCSR	=	0x008f
+                           000092   513 _P0UP	=	0x0092
+                           000093   514 _P1UP	=	0x0093
+                           000094   515 _P2UP	=	0x0094
+                           000095   516 _P3UP	=	0x0095
+                           000097   517 _RWKH	=	0x0097
+                           000099   518 _AINDIDS1	=	0x0099
+                           00009A   519 _P0DW	=	0x009a
+                           00009B   520 _P1DW	=	0x009b
+                           00009C   521 _P2DW	=	0x009c
+                           00009D   522 _P3DW	=	0x009d
+                           0000A1   523 _AUXR2	=	0x00a1
+                           0000A2   524 _AUXR3	=	0x00a2
+                           0000A3   525 _AUXR4	=	0x00a3
+                           0000A4   526 _AUXR5	=	0x00a4
+                           0000A5   527 _AUXR6	=	0x00a5
+                           0000A6   528 _AUXR7	=	0x00a6
+                           0000A7   529 _AUXR8	=	0x00a7
+                           0000A9   530 _PWM1PH	=	0x00a9
+                           0000AA   531 _PWM1C0H	=	0x00aa
+                           0000AB   532 _PWM1C1H	=	0x00ab
+                           0000AC   533 _PWM1MD	=	0x00ac
+                           0000AD   534 _PWM1MEN	=	0x00ad
+                           0000B1   535 _PWM1PL	=	0x00b1
+                           0000B2   536 _PWM1C0L	=	0x00b2
+                           0000B3   537 _PWM1C1L	=	0x00b3
+                           0000B4   538 _PWM1CON0	=	0x00b4
+                           0000B5   539 _PWM1CON1	=	0x00b5
+                           0000B6   540 _PWM1INTC	=	0x00b6
+                           0000B7   541 _PIOCON2	=	0x00b7
+                           0000B9   542 _PWM2PH	=	0x00b9
+                           0000BA   543 _PWM2C0H	=	0x00ba
+                           0000BB   544 _PWM2C1H	=	0x00bb
+                           0000BC   545 _PWM2MD	=	0x00bc
+                           0000BD   546 _PWM2MEN	=	0x00bd
+                           0000C1   547 _PWM2PL	=	0x00c1
+                           0000C2   548 _PWM2C0L	=	0x00c2
+                           0000C3   549 _PWM2C1L	=	0x00c3
+                           0000C4   550 _PWM2CON0	=	0x00c4
+                           0000C5   551 _PWM2CON1	=	0x00c5
+                           0000C6   552 _PWM2INTC	=	0x00c6
+                           0000C9   553 _PWM3PH	=	0x00c9
+                           0000CA   554 _PWM3C0H	=	0x00ca
+                           0000CB   555 _PWM3C1H	=	0x00cb
+                           0000CC   556 _PWM3MD	=	0x00cc
+                           0000CD   557 _PWM3MEN	=	0x00cd
+                           0000CE   558 _EIP2	=	0x00ce
+                           0000CF   559 _EIPH2	=	0x00cf
+                           0000D1   560 _PWM3PL	=	0x00d1
+                           0000D2   561 _PWM3C0L	=	0x00d2
+                           0000D3   562 _PWM3C1L	=	0x00d3
+                           0000D4   563 _PWM3CON0	=	0x00d4
+                           0000D5   564 _PWM3CON1	=	0x00d5
+                           0000D6   565 _PWM3INTC	=	0x00d6
+                           0000D7   566 _XTLCON	=	0x00d7
+                           0000D9   567 _SC0DR	=	0x00d9
+                           0000DA   568 _SC0EGT	=	0x00da
+                           0000DB   569 _SC0ETURD0	=	0x00db
+                           0000DC   570 _SC0ETURD1	=	0x00dc
+                           0000DD   571 _SC0IE	=	0x00dd
+                           0000DE   572 _SC0IS	=	0x00de
+                           0000DF   573 _SC0TSR	=	0x00df
+                           0000E1   574 _SC1DR	=	0x00e1
+                           0000E2   575 _SC1EGT	=	0x00e2
+                           0000E3   576 _SC1ETURD0	=	0x00e3
+                           0000E4   577 _SC1ETURD1	=	0x00e4
+                           0000E5   578 _SC1IE	=	0x00e5
+                           0000E6   579 _SC1IS	=	0x00e6
+                           0000E7   580 _SC1TSR	=	0x00e7
+                           0000E9   581 _SC2DR	=	0x00e9
+                           0000EA   582 _SC2EGT	=	0x00ea
+                           0000EB   583 _SC2ETURD0	=	0x00eb
+                           0000EC   584 _SC2ETURD1	=	0x00ec
+                           0000ED   585 _SC2IE	=	0x00ed
+                           0000EE   586 _SC2IS	=	0x00ee
+                           0000EF   587 _SC2TSR	=	0x00ef
+                           0000F1   588 _SC0CR0	=	0x00f1
+                           0000F2   589 _SC0CR1	=	0x00f2
+                           0000F3   590 _SC1CR0	=	0x00f3
+                           0000F4   591 _SC1CR1	=	0x00f4
+                           0000F5   592 _SC2CR0	=	0x00f5
+                           0000F6   593 _SC2CR1	=	0x00f6
+                           0000F7   594 _PIPS7	=	0x00f7
+                           0000F9   595 _PIPS0	=	0x00f9
+                           0000FA   596 _PIPS1	=	0x00fa
+                           0000FB   597 _PIPS2	=	0x00fb
+                           0000FC   598 _PIPS3	=	0x00fc
+                           0000FD   599 _PIPS4	=	0x00fd
+                           0000FE   600 _PIPS5	=	0x00fe
+                           0000FF   601 _PIPS6	=	0x00ff
+                                    602 ;--------------------------------------------------------
+                                    603 ; special function bits
+                                    604 ;--------------------------------------------------------
+                                    605 	.area RSEG    (ABS,DATA)
+      000000                        606 	.org 0x0000
+                           0000FF   607 _SM0_1	=	0x00ff
+                           0000FF   608 _FE_1	=	0x00ff
+                           0000FE   609 _SM1_1	=	0x00fe
+                           0000FD   610 _SM2_1	=	0x00fd
+                           0000FC   611 _REN_1	=	0x00fc
+                           0000FB   612 _TB8_1	=	0x00fb
+                           0000FA   613 _RB8_1	=	0x00fa
+                           0000F9   614 _TI_1	=	0x00f9
+                           0000F8   615 _RI_1	=	0x00f8
+                           0000EF   616 _ADCF	=	0x00ef
+                           0000EE   617 _ADCS	=	0x00ee
+                           0000ED   618 _ETGSEL1	=	0x00ed
+                           0000EC   619 _ETGSEL0	=	0x00ec
+                           0000EB   620 _ADCHS3	=	0x00eb
+                           0000EA   621 _ADCHS2	=	0x00ea
+                           0000E9   622 _ADCHS1	=	0x00e9
+                           0000E8   623 _ADCHS0	=	0x00e8
+                           0000DF   624 _PWMRUN	=	0x00df
+                           0000DE   625 _LOAD	=	0x00de
+                           0000DD   626 _PWMF	=	0x00dd
+                           0000DC   627 _CLRPWM	=	0x00dc
+                           0000D7   628 _CY	=	0x00d7
+                           0000D6   629 _AC	=	0x00d6
+                           0000D5   630 _F0	=	0x00d5
+                           0000D4   631 _RS1	=	0x00d4
+                           0000D3   632 _RS0	=	0x00d3
+                           0000D2   633 _OV	=	0x00d2
+                           0000D0   634 _P	=	0x00d0
+                           0000CF   635 _TF2	=	0x00cf
+                           0000CA   636 _TR2	=	0x00ca
+                           0000C8   637 _CM_RL2	=	0x00c8
+                           0000C6   638 _I2CEN	=	0x00c6
+                           0000C5   639 _STA	=	0x00c5
+                           0000C4   640 _STO	=	0x00c4
+                           0000C3   641 _SI	=	0x00c3
+                           0000C2   642 _AA	=	0x00c2
+                           0000C0   643 _I2CPX	=	0x00c0
+                           0000BE   644 _PADC	=	0x00be
+                           0000BD   645 _PBOD	=	0x00bd
+                           0000BC   646 _PS	=	0x00bc
+                           0000BB   647 _PT1	=	0x00bb
+                           0000BA   648 _PX1	=	0x00ba
+                           0000B9   649 _PT0	=	0x00b9
+                           0000B8   650 _PX0	=	0x00b8
+                           0000B7   651 _P37	=	0x00b7
+                           0000B6   652 _P36	=	0x00b6
+                           0000B5   653 _P35	=	0x00b5
+                           0000B4   654 _P34	=	0x00b4
+                           0000B3   655 _P33	=	0x00b3
+                           0000B2   656 _P32	=	0x00b2
+                           0000B1   657 _P31	=	0x00b1
+                           0000B0   658 _P30	=	0x00b0
+                           0000AF   659 _EA	=	0x00af
+                           0000AE   660 _EADC	=	0x00ae
+                           0000AD   661 _EBOD	=	0x00ad
+                           0000AC   662 _ES	=	0x00ac
+                           0000AB   663 _ET1	=	0x00ab
+                           0000AA   664 _EX1	=	0x00aa
+                           0000A9   665 _ET0	=	0x00a9
+                           0000A8   666 _EX0	=	0x00a8
+                           0000A0   667 _P20	=	0x00a0
+                           00009F   668 _SM0	=	0x009f
+                           00009F   669 _FE	=	0x009f
+                           00009E   670 _SM1	=	0x009e
+                           00009D   671 _SM2	=	0x009d
+                           00009C   672 _REN	=	0x009c
+                           00009B   673 _TB8	=	0x009b
+                           00009A   674 _RB8	=	0x009a
+                           000099   675 _TI	=	0x0099
+                           000098   676 _RI	=	0x0098
+                           000097   677 _P17	=	0x0097
+                           000096   678 _P16	=	0x0096
+                           000096   679 _TXD_1	=	0x0096
+                           000095   680 _P15	=	0x0095
+                           000094   681 _P14	=	0x0094
+                           000094   682 _SDA	=	0x0094
+                           000093   683 _P13	=	0x0093
+                           000093   684 _SCL	=	0x0093
+                           000092   685 _P12	=	0x0092
+                           000091   686 _P11	=	0x0091
+                           000090   687 _P10	=	0x0090
+                           00008F   688 _TF1	=	0x008f
+                           00008E   689 _TR1	=	0x008e
+                           00008D   690 _TF0	=	0x008d
+                           00008C   691 _TR0	=	0x008c
+                           00008B   692 _IE1	=	0x008b
+                           00008A   693 _IT1	=	0x008a
+                           000089   694 _IE0	=	0x0089
+                           000088   695 _IT0	=	0x0088
+                           000087   696 _P07	=	0x0087
+                           000087   697 _RXD	=	0x0087
+                           000086   698 _P06	=	0x0086
+                           000086   699 _TXD	=	0x0086
+                           000085   700 _P05	=	0x0085
+                           000084   701 _P04	=	0x0084
+                           000084   702 _STADC	=	0x0084
+                           000083   703 _P03	=	0x0083
+                           000082   704 _P02	=	0x0082
+                           000082   705 _RXD_1	=	0x0082
+                           000081   706 _P01	=	0x0081
+                           000081   707 _MISO	=	0x0081
+                           000080   708 _P00	=	0x0080
+                           000080   709 _MOSI	=	0x0080
+                                    710 ;--------------------------------------------------------
+                                    711 ; overlayable register banks
+                                    712 ;--------------------------------------------------------
+                                    713 	.area REG_BANK_0	(REL,OVR,DATA)
+      000000                        714 	.ds 8
+                                    715 ;--------------------------------------------------------
+                                    716 ; internal ram data
+                                    717 ;--------------------------------------------------------
+                                    718 	.area DSEG    (DATA)
+                                    719 ;--------------------------------------------------------
+                                    720 ; overlayable items in internal ram 
+                                    721 ;--------------------------------------------------------
+                                    722 ;--------------------------------------------------------
+                                    723 ; Stack segment in internal ram 
+                                    724 ;--------------------------------------------------------
+                                    725 	.area	SSEG
+      00003E                        726 __start__stack:
+      00003E                        727 	.ds	1
+                                    728 
+                                    729 ;--------------------------------------------------------
+                                    730 ; indirectly addressable internal ram data
+                                    731 ;--------------------------------------------------------
+                                    732 	.area ISEG    (DATA)
+                                    733 ;--------------------------------------------------------
+                                    734 ; absolute internal ram data
+                                    735 ;--------------------------------------------------------
+                                    736 	.area IABS    (ABS,DATA)
+                                    737 	.area IABS    (ABS,DATA)
+                                    738 ;--------------------------------------------------------
+                                    739 ; bit data
+                                    740 ;--------------------------------------------------------
+                                    741 	.area BSEG    (BIT)
+                                    742 ;--------------------------------------------------------
+                                    743 ; paged external ram data
+                                    744 ;--------------------------------------------------------
+                                    745 	.area PSEG    (PAG,XDATA)
+                                    746 ;--------------------------------------------------------
+                                    747 ; external ram data
+                                    748 ;--------------------------------------------------------
+                                    749 	.area XSEG    (XDATA)
+                                    750 ;--------------------------------------------------------
+                                    751 ; absolute external ram data
+                                    752 ;--------------------------------------------------------
+                                    753 	.area XABS    (ABS,XDATA)
+                                    754 ;--------------------------------------------------------
+                                    755 ; external initialized ram data
+                                    756 ;--------------------------------------------------------
+                                    757 	.area XISEG   (XDATA)
+                                    758 	.area HOME    (CODE)
+                                    759 	.area GSINIT0 (CODE)
+                                    760 	.area GSINIT1 (CODE)
+                                    761 	.area GSINIT2 (CODE)
+                                    762 	.area GSINIT3 (CODE)
+                                    763 	.area GSINIT4 (CODE)
+                                    764 	.area GSINIT5 (CODE)
+                                    765 	.area GSINIT  (CODE)
+                                    766 	.area GSFINAL (CODE)
+                                    767 	.area CSEG    (CODE)
+                                    768 ;--------------------------------------------------------
+                                    769 ; interrupt vector 
+                                    770 ;--------------------------------------------------------
+                                    771 	.area HOME    (CODE)
+      000000                        772 __interrupt_vect:
+      000000 02 00 06         [24]  773 	ljmp	__sdcc_gsinit_startup
+                                    774 ;--------------------------------------------------------
+                                    775 ; global & static initialisations
+                                    776 ;--------------------------------------------------------
+                                    777 	.area HOME    (CODE)
+                                    778 	.area GSINIT  (CODE)
+                                    779 	.area GSFINAL (CODE)
+                                    780 	.area GSINIT  (CODE)
+                                    781 	.globl __sdcc_gsinit_startup
+                                    782 	.globl __sdcc_program_startup
+                                    783 	.globl __start__stack
+                                    784 	.globl __mcs51_genXINIT
+                                    785 	.globl __mcs51_genXRAMCLEAR
+                                    786 	.globl __mcs51_genRAMCLEAR
+                                    787 	.area GSFINAL (CODE)
+      00005F 02 00 03         [24]  788 	ljmp	__sdcc_program_startup
+                                    789 ;--------------------------------------------------------
+                                    790 ; Home
+                                    791 ;--------------------------------------------------------
+                                    792 	.area HOME    (CODE)
+                                    793 	.area HOME    (CODE)
+      000003                        794 __sdcc_program_startup:
+      000003 02 03 5D         [24]  795 	ljmp	_main
+                                    796 ;	return from main will return to caller
+                                    797 ;--------------------------------------------------------
+                                    798 ; code
+                                    799 ;--------------------------------------------------------
+                                    800 	.area CSEG    (CODE)
+                                    801 ;------------------------------------------------------------
+                                    802 ;Allocation info for local variables in function 'main'
+                                    803 ;------------------------------------------------------------
+                                    804 ;	..\ISP_UART0_main.c:17: void main (void)
+                                    805 ;	-----------------------------------------
+                                    806 ;	 function main
+                                    807 ;	-----------------------------------------
+      00035D                        808 _main:
+                           000007   809 	ar7 = 0x07
+                           000006   810 	ar6 = 0x06
+                           000005   811 	ar5 = 0x05
+                           000004   812 	ar4 = 0x04
+                           000003   813 	ar3 = 0x03
+                           000002   814 	ar2 = 0x02
+                           000001   815 	ar1 = 0x01
+                           000000   816 	ar0 = 0x00
+                                    817 ;	..\ISP_UART0_main.c:19: set_CHPCON_IAPEN;
+      00035D 75 91 00         [24]  818 	mov	_SFRS,#0x00
+                                    819 ;	assignBit
+      000360 A2 AF            [12]  820 	mov	c,_EA
+      000362 92 04            [24]  821 	mov	_BIT_TMP,c
+                                    822 ;	assignBit
+      000364 C2 AF            [12]  823 	clr	_EA
+      000366 75 C7 AA         [24]  824 	mov	_TA,#0xaa
+      000369 75 C7 55         [24]  825 	mov	_TA,#0x55
+      00036C 43 9F 01         [24]  826 	orl	_CHPCON,#0x01
+                                    827 ;	assignBit
+      00036F A2 04            [12]  828 	mov	c,_BIT_TMP
+      000371 92 AF            [24]  829 	mov	_EA,c
+                                    830 ;	..\ISP_UART0_main.c:20: MODIFY_HIRC_24();
+      000373 12 00 62         [24]  831 	lcall	_MODIFY_HIRC_24
+                                    832 ;	..\ISP_UART0_main.c:22: UART0_ini_115200_24MHz();
+      000376 12 01 FD         [24]  833 	lcall	_UART0_ini_115200_24MHz
+                                    834 ;	..\ISP_UART0_main.c:23: TM0_ini();
+      000379 12 01 EA         [24]  835 	lcall	_TM0_ini
+                                    836 ;	..\ISP_UART0_main.c:25: g_timer0Over=0;
+                                    837 ;	assignBit
+      00037C C2 01            [12]  838 	clr	_g_timer0Over
+                                    839 ;	..\ISP_UART0_main.c:26: g_timer0Counter=5000;
+      00037E 75 28 88         [24]  840 	mov	_g_timer0Counter,#0x88
+      000381 75 29 13         [24]  841 	mov	(_g_timer0Counter + 1),#0x13
+                                    842 ;	..\ISP_UART0_main.c:27: g_progarmflag=0;
+                                    843 ;	assignBit
+      000384 C2 03            [12]  844 	clr	_g_progarmflag
+                                    845 ;	..\ISP_UART0_main.c:29: while(1)
+      000386                        846 00154$:
+                                    847 ;	..\ISP_UART0_main.c:31: if(bUartDataReady == TRUE)
+      000386 20 00 03         [24]  848 	jb	_bUartDataReady,00294$
+      000389 02 07 EF         [24]  849 	ljmp	00144$
+      00038C                        850 00294$:
+                                    851 ;	..\ISP_UART0_main.c:33: EA=0; //DISABLE ALL INTERRUPT                  
+                                    852 ;	assignBit
+      00038C C2 AF            [12]  853 	clr	_EA
+                                    854 ;	..\ISP_UART0_main.c:34: if(g_progarmflag==1)
+      00038E 20 03 03         [24]  855 	jb	_g_progarmflag,00295$
+      000391 02 04 5D         [24]  856 	ljmp	00116$
+      000394                        857 00295$:
+                                    858 ;	..\ISP_UART0_main.c:36: for(count=8;count<64;count++)
+      000394 75 27 08         [24]  859 	mov	_count,#0x08
+      000397                        860 00161$:
+      000397 74 C0            [12]  861 	mov	a,#0x100 - 0x40
+      000399 25 27            [12]  862 	add	a,_count
+      00039B 50 03            [24]  863 	jnc	00296$
+      00039D 02 04 49         [24]  864 	ljmp	00114$
+      0003A0                        865 00296$:
+                                    866 ;	..\ISP_UART0_main.c:38: IAPCN = BYTE_PROGRAM_AP;          //program byte
+      0003A0 75 AF 21         [24]  867 	mov	_IAPCN,#0x21
+                                    868 ;	..\ISP_UART0_main.c:39: IAPAL = flash_address&0xff;
+      0003A3 85 22 A6         [24]  869 	mov	_IAPAL,_flash_address
+                                    870 ;	..\ISP_UART0_main.c:40: IAPAH = (flash_address>>8)&0xff;
+      0003A6 85 23 A7         [24]  871 	mov	_IAPAH,(_flash_address + 1)
+                                    872 ;	..\ISP_UART0_main.c:41: IAPFD=uart_rcvbuf[count];
+      0003A9 E5 27            [12]  873 	mov	a,_count
+      0003AB 24 01            [12]  874 	add	a,#_uart_rcvbuf
+      0003AD F5 82            [12]  875 	mov	dpl,a
+      0003AF E4               [12]  876 	clr	a
+      0003B0 34 00            [12]  877 	addc	a,#(_uart_rcvbuf >> 8)
+      0003B2 F5 83            [12]  878 	mov	dph,a
+      0003B4 E0               [24]  879 	movx	a,@dptr
+      0003B5 F5 AE            [12]  880 	mov	_IAPFD,a
+                                    881 ;	..\ISP_UART0_main.c:42: set_IAPTRG_IAPGO;
+      0003B7 75 91 00         [24]  882 	mov	_SFRS,#0x00
+                                    883 ;	assignBit
+      0003BA A2 AF            [12]  884 	mov	c,_EA
+      0003BC 92 04            [24]  885 	mov	_BIT_TMP,c
+                                    886 ;	assignBit
+      0003BE C2 AF            [12]  887 	clr	_EA
+      0003C0 75 C7 AA         [24]  888 	mov	_TA,#0xaa
+      0003C3 75 C7 55         [24]  889 	mov	_TA,#0x55
+      0003C6 43 A4 01         [24]  890 	orl	_IAPTRG,#0x01
+                                    891 ;	assignBit
+      0003C9 A2 04            [12]  892 	mov	c,_BIT_TMP
+      0003CB 92 AF            [24]  893 	mov	_EA,c
+                                    894 ;	..\ISP_UART0_main.c:44: IAPCN = BYTE_READ_AP;              //program byte verify
+      0003CD 75 AF 00         [24]  895 	mov	_IAPCN,#0x00
+                                    896 ;	..\ISP_UART0_main.c:45: set_IAPTRG_IAPGO;
+      0003D0 75 91 00         [24]  897 	mov	_SFRS,#0x00
+                                    898 ;	assignBit
+      0003D3 A2 AF            [12]  899 	mov	c,_EA
+      0003D5 92 04            [24]  900 	mov	_BIT_TMP,c
+                                    901 ;	assignBit
+      0003D7 C2 AF            [12]  902 	clr	_EA
+      0003D9 75 C7 AA         [24]  903 	mov	_TA,#0xaa
+      0003DC 75 C7 55         [24]  904 	mov	_TA,#0x55
+      0003DF 43 A4 01         [24]  905 	orl	_IAPTRG,#0x01
+                                    906 ;	assignBit
+      0003E2 A2 04            [12]  907 	mov	c,_BIT_TMP
+      0003E4 92 AF            [24]  908 	mov	_EA,c
+                                    909 ;	..\ISP_UART0_main.c:46: if(IAPFD!=uart_rcvbuf[count])
+      0003E6 E5 27            [12]  910 	mov	a,_count
+      0003E8 24 01            [12]  911 	add	a,#_uart_rcvbuf
+      0003EA F5 82            [12]  912 	mov	dpl,a
+      0003EC E4               [12]  913 	clr	a
+      0003ED 34 00            [12]  914 	addc	a,#(_uart_rcvbuf >> 8)
+      0003EF F5 83            [12]  915 	mov	dph,a
+      0003F1 E0               [24]  916 	movx	a,@dptr
+      0003F2 FF               [12]  917 	mov	r7,a
+      0003F3 B5 AE 02         [24]  918 	cjne	a,_IAPFD,00297$
+      0003F6 80 02            [24]  919 	sjmp	00105$
+      0003F8                        920 00297$:
+                                    921 ;	..\ISP_UART0_main.c:47: while(1);                          
+      0003F8                        922 00102$:
+      0003F8 80 FE            [24]  923 	sjmp	00102$
+      0003FA                        924 00105$:
+                                    925 ;	..\ISP_UART0_main.c:48: if (CHPCON==0x43)              //if error flag set, program error stop ISP
+      0003FA 74 43            [12]  926 	mov	a,#0x43
+      0003FC B5 9F 02         [24]  927 	cjne	a,_CHPCON,00110$
+                                    928 ;	..\ISP_UART0_main.c:49: while(1);
+      0003FF                        929 00107$:
+      0003FF 80 FE            [24]  930 	sjmp	00107$
+      000401                        931 00110$:
+                                    932 ;	..\ISP_UART0_main.c:51: g_totalchecksum=g_totalchecksum+uart_rcvbuf[count];
+      000401 E5 27            [12]  933 	mov	a,_count
+      000403 24 01            [12]  934 	add	a,#_uart_rcvbuf
+      000405 F5 82            [12]  935 	mov	dpl,a
+      000407 E4               [12]  936 	clr	a
+      000408 34 00            [12]  937 	addc	a,#(_uart_rcvbuf >> 8)
+      00040A F5 83            [12]  938 	mov	dph,a
+      00040C E0               [24]  939 	movx	a,@dptr
+      00040D FF               [12]  940 	mov	r7,a
+      00040E E4               [12]  941 	clr	a
+      00040F FE               [12]  942 	mov	r6,a
+      000410 FD               [12]  943 	mov	r5,a
+      000411 FC               [12]  944 	mov	r4,a
+      000412 EF               [12]  945 	mov	a,r7
+      000413 25 2E            [12]  946 	add	a,_g_totalchecksum
+      000415 F5 2E            [12]  947 	mov	_g_totalchecksum,a
+      000417 EE               [12]  948 	mov	a,r6
+      000418 35 2F            [12]  949 	addc	a,(_g_totalchecksum + 1)
+      00041A F5 2F            [12]  950 	mov	(_g_totalchecksum + 1),a
+      00041C ED               [12]  951 	mov	a,r5
+      00041D 35 30            [12]  952 	addc	a,(_g_totalchecksum + 2)
+      00041F F5 30            [12]  953 	mov	(_g_totalchecksum + 2),a
+      000421 EC               [12]  954 	mov	a,r4
+      000422 35 31            [12]  955 	addc	a,(_g_totalchecksum + 3)
+      000424 F5 31            [12]  956 	mov	(_g_totalchecksum + 3),a
+                                    957 ;	..\ISP_UART0_main.c:52: flash_address++;
+      000426 AE 22            [24]  958 	mov	r6,_flash_address
+      000428 AF 23            [24]  959 	mov	r7,(_flash_address + 1)
+      00042A 74 01            [12]  960 	mov	a,#0x01
+      00042C 2E               [12]  961 	add	a,r6
+      00042D F5 22            [12]  962 	mov	_flash_address,a
+      00042F E4               [12]  963 	clr	a
+      000430 3F               [12]  964 	addc	a,r7
+      000431 F5 23            [12]  965 	mov	(_flash_address + 1),a
+                                    966 ;	..\ISP_UART0_main.c:54: if(flash_address==AP_size)
+      000433 E5 24            [12]  967 	mov	a,_AP_size
+      000435 B5 22 09         [24]  968 	cjne	a,_flash_address,00162$
+      000438 E5 25            [12]  969 	mov	a,(_AP_size + 1)
+      00043A B5 23 04         [24]  970 	cjne	a,(_flash_address + 1),00162$
+                                    971 ;	..\ISP_UART0_main.c:56: g_progarmflag=0;
+                                    972 ;	assignBit
+      00043D C2 03            [12]  973 	clr	_g_progarmflag
+                                    974 ;	..\ISP_UART0_main.c:57: goto END_2;          
+      00043F 80 08            [24]  975 	sjmp	00114$
+      000441                        976 00162$:
+                                    977 ;	..\ISP_UART0_main.c:36: for(count=8;count<64;count++)
+      000441 E5 27            [12]  978 	mov	a,_count
+      000443 04               [12]  979 	inc	a
+      000444 F5 27            [12]  980 	mov	_count,a
+      000446 02 03 97         [24]  981 	ljmp	00161$
+                                    982 ;	..\ISP_UART0_main.c:60: END_2:                
+      000449                        983 00114$:
+                                    984 ;	..\ISP_UART0_main.c:61: Package_checksum();
+      000449 12 02 2F         [24]  985 	lcall	_Package_checksum
+                                    986 ;	..\ISP_UART0_main.c:62: uart_txbuf[8]=g_totalchecksum&0xff;
+      00044C AF 2E            [24]  987 	mov	r7,_g_totalchecksum
+      00044E 90 00 49         [24]  988 	mov	dptr,#(_uart_txbuf + 0x0008)
+      000451 EF               [12]  989 	mov	a,r7
+      000452 F0               [24]  990 	movx	@dptr,a
+                                    991 ;	..\ISP_UART0_main.c:63: uart_txbuf[9]=(g_totalchecksum>>8)&0xff;
+      000453 AF 2F            [24]  992 	mov	r7,(_g_totalchecksum + 1)
+      000455 90 00 4A         [24]  993 	mov	dptr,#(_uart_txbuf + 0x0009)
+      000458 EF               [12]  994 	mov	a,r7
+      000459 F0               [24]  995 	movx	@dptr,a
+                                    996 ;	..\ISP_UART0_main.c:64: Send_64byte_To_UART0();
+      00045A 12 02 9F         [24]  997 	lcall	_Send_64byte_To_UART0
+      00045D                        998 00116$:
+                                    999 ;	..\ISP_UART0_main.c:68: switch(uart_rcvbuf[0])
+      00045D 90 00 01         [24] 1000 	mov	dptr,#_uart_rcvbuf
+      000460 E0               [24] 1001 	movx	a,@dptr
+      000461 FF               [12] 1002 	mov	r7,a
+      000462 BF A0 03         [24] 1003 	cjne	r7,#0xa0,00302$
+      000465 02 06 8F         [24] 1004 	ljmp	00126$
+      000468                       1005 00302$:
+      000468 BF A1 03         [24] 1006 	cjne	r7,#0xa1,00303$
+      00046B 02 05 81         [24] 1007 	ljmp	00125$
+      00046E                       1008 00303$:
+      00046E BF A2 03         [24] 1009 	cjne	r7,#0xa2,00304$
+      000471 02 05 49         [24] 1010 	ljmp	00124$
+      000474                       1011 00304$:
+      000474 BF A3 02         [24] 1012 	cjne	r7,#0xa3,00305$
+      000477 80 60            [24] 1013 	sjmp	00122$
+      000479                       1014 00305$:
+      000479 BF A4 02         [24] 1015 	cjne	r7,#0xa4,00306$
+      00047C 80 18            [24] 1016 	sjmp	00118$
+      00047E                       1017 00306$:
+      00047E BF A6 02         [24] 1018 	cjne	r7,#0xa6,00307$
+      000481 80 23            [24] 1019 	sjmp	00119$
+      000483                       1020 00307$:
+      000483 BF AB 03         [24] 1021 	cjne	r7,#0xab,00308$
+      000486 02 08 11         [24] 1022 	ljmp	00156$
+      000489                       1023 00308$:
+      000489 BF AE 02         [24] 1024 	cjne	r7,#0xae,00309$
+      00048C 80 08            [24] 1025 	sjmp	00118$
+      00048E                       1026 00309$:
+      00048E BF B1 02         [24] 1027 	cjne	r7,#0xb1,00310$
+      000491 80 22            [24] 1028 	sjmp	00121$
+      000493                       1029 00310$:
+      000493 02 07 E8         [24] 1030 	ljmp	00142$
+                                   1031 ;	..\ISP_UART0_main.c:71: case CMD_SYNC_PACKNO:
+      000496                       1032 00118$:
+                                   1033 ;	..\ISP_UART0_main.c:73: Package_checksum();
+      000496 12 02 2F         [24] 1034 	lcall	_Package_checksum
+                                   1035 ;	..\ISP_UART0_main.c:74: Send_64byte_To_UART0();    
+      000499 12 02 9F         [24] 1036 	lcall	_Send_64byte_To_UART0
+                                   1037 ;	..\ISP_UART0_main.c:75: g_timer0Counter=0; //clear timer 0 for no reset
+      00049C E4               [12] 1038 	clr	a
+      00049D F5 28            [12] 1039 	mov	_g_timer0Counter,a
+      00049F F5 29            [12] 1040 	mov	(_g_timer0Counter + 1),a
+                                   1041 ;	..\ISP_UART0_main.c:76: g_timer0Over=0;
+                                   1042 ;	assignBit
+      0004A1 C2 01            [12] 1043 	clr	_g_timer0Over
+                                   1044 ;	..\ISP_UART0_main.c:77: break;
+      0004A3 02 07 E8         [24] 1045 	ljmp	00142$
+                                   1046 ;	..\ISP_UART0_main.c:80: case CMD_GET_FWVER:
+      0004A6                       1047 00119$:
+                                   1048 ;	..\ISP_UART0_main.c:82: Package_checksum();
+      0004A6 12 02 2F         [24] 1049 	lcall	_Package_checksum
+                                   1050 ;	..\ISP_UART0_main.c:83: uart_txbuf[8]=FW_VERSION;  
+      0004A9 90 00 49         [24] 1051 	mov	dptr,#(_uart_txbuf + 0x0008)
+      0004AC 74 28            [12] 1052 	mov	a,#0x28
+      0004AE F0               [24] 1053 	movx	@dptr,a
+                                   1054 ;	..\ISP_UART0_main.c:84: Send_64byte_To_UART0();  
+      0004AF 12 02 9F         [24] 1055 	lcall	_Send_64byte_To_UART0
+                                   1056 ;	..\ISP_UART0_main.c:85: break;
+      0004B2 02 07 E8         [24] 1057 	ljmp	00142$
+                                   1058 ;	..\ISP_UART0_main.c:95: case CMD_GET_DEVICEID:            
+      0004B5                       1059 00121$:
+                                   1060 ;	..\ISP_UART0_main.c:97: READ_ID();
+      0004B5 12 00 FC         [24] 1061 	lcall	_READ_ID
+                                   1062 ;	..\ISP_UART0_main.c:98: Package_checksum();
+      0004B8 12 02 2F         [24] 1063 	lcall	_Package_checksum
+                                   1064 ;	..\ISP_UART0_main.c:99: uart_txbuf[8]=DID_lowB;  
+      0004BB 90 00 49         [24] 1065 	mov	dptr,#(_uart_txbuf + 0x0008)
+      0004BE E5 35            [12] 1066 	mov	a,_DID_lowB
+      0004C0 F0               [24] 1067 	movx	@dptr,a
+                                   1068 ;	..\ISP_UART0_main.c:100: uart_txbuf[9]=DID_highB;  
+      0004C1 90 00 4A         [24] 1069 	mov	dptr,#(_uart_txbuf + 0x0009)
+      0004C4 E5 34            [12] 1070 	mov	a,_DID_highB
+      0004C6 F0               [24] 1071 	movx	@dptr,a
+                                   1072 ;	..\ISP_UART0_main.c:101: uart_txbuf[10]=PID_lowB;  
+      0004C7 90 00 4B         [24] 1073 	mov	dptr,#(_uart_txbuf + 0x000a)
+      0004CA E5 33            [12] 1074 	mov	a,_PID_lowB
+      0004CC F0               [24] 1075 	movx	@dptr,a
+                                   1076 ;	..\ISP_UART0_main.c:102: uart_txbuf[11]=PID_highB;  
+      0004CD 90 00 4C         [24] 1077 	mov	dptr,#(_uart_txbuf + 0x000b)
+      0004D0 E5 32            [12] 1078 	mov	a,_PID_highB
+      0004D2 F0               [24] 1079 	movx	@dptr,a
+                                   1080 ;	..\ISP_UART0_main.c:103: Send_64byte_To_UART0();  
+      0004D3 12 02 9F         [24] 1081 	lcall	_Send_64byte_To_UART0
+                                   1082 ;	..\ISP_UART0_main.c:104: break;
+      0004D6 02 07 E8         [24] 1083 	ljmp	00142$
+                                   1084 ;	..\ISP_UART0_main.c:106: case CMD_ERASE_ALL:
+      0004D9                       1085 00122$:
+                                   1086 ;	..\ISP_UART0_main.c:109: set_IAPUEN_APUEN;
+                                   1087 ;	assignBit
+      0004D9 A2 AF            [12] 1088 	mov	c,_EA
+      0004DB 92 04            [24] 1089 	mov	_BIT_TMP,c
+                                   1090 ;	assignBit
+      0004DD C2 AF            [12] 1091 	clr	_EA
+      0004DF 75 C7 AA         [24] 1092 	mov	_TA,#0xaa
+      0004E2 75 C7 55         [24] 1093 	mov	_TA,#0x55
+      0004E5 43 A5 01         [24] 1094 	orl	_IAPUEN,#0x01
+                                   1095 ;	assignBit
+      0004E8 A2 04            [12] 1096 	mov	c,_BIT_TMP
+      0004EA 92 AF            [24] 1097 	mov	_EA,c
+                                   1098 ;	..\ISP_UART0_main.c:110: IAPFD = 0xFF;          //Erase must set IAPFD = 0xFF
+      0004EC 75 AE FF         [24] 1099 	mov	_IAPFD,#0xff
+                                   1100 ;	..\ISP_UART0_main.c:111: IAPCN = PAGE_ERASE_AP;
+      0004EF 75 AF 22         [24] 1101 	mov	_IAPCN,#0x22
+                                   1102 ;	..\ISP_UART0_main.c:112: for(flash_address=0x0000;flash_address<APROM_SIZE/PAGE_SIZE;flash_address++)
+      0004F2 E4               [12] 1103 	clr	a
+      0004F3 F5 22            [12] 1104 	mov	_flash_address,a
+      0004F5 F5 23            [12] 1105 	mov	(_flash_address + 1),a
+      0004F7                       1106 00164$:
+      0004F7 C3               [12] 1107 	clr	c
+      0004F8 E5 22            [12] 1108 	mov	a,_flash_address
+      0004FA 94 E0            [12] 1109 	subb	a,#0xe0
+      0004FC E5 23            [12] 1110 	mov	a,(_flash_address + 1)
+      0004FE 94 00            [12] 1111 	subb	a,#0x00
+      000500 50 3E            [24] 1112 	jnc	00123$
+                                   1113 ;	..\ISP_UART0_main.c:114: IAPAL = LOBYTE(flash_address*PAGE_SIZE);
+      000502 E5 22            [12] 1114 	mov	a,_flash_address
+      000504 75 F0 80         [24] 1115 	mov	b,#0x80
+      000507 A4               [48] 1116 	mul	ab
+      000508 FF               [12] 1117 	mov	r7,a
+      000509 8F A6            [24] 1118 	mov	_IAPAL,r7
+                                   1119 ;	..\ISP_UART0_main.c:115: IAPAH = HIBYTE(flash_address*PAGE_SIZE);
+      00050B AE 22            [24] 1120 	mov	r6,_flash_address
+      00050D E5 23            [12] 1121 	mov	a,(_flash_address + 1)
+      00050F 54 01            [12] 1122 	anl	a,#0x01
+      000511 A2 E0            [12] 1123 	mov	c,acc.0
+      000513 CE               [12] 1124 	xch	a,r6
+      000514 13               [12] 1125 	rrc	a
+      000515 CE               [12] 1126 	xch	a,r6
+      000516 13               [12] 1127 	rrc	a
+      000517 CE               [12] 1128 	xch	a,r6
+      000518 FF               [12] 1129 	mov	r7,a
+      000519 8F A7            [24] 1130 	mov	_IAPAH,r7
+                                   1131 ;	..\ISP_UART0_main.c:116: set_IAPTRG_IAPGO;
+      00051B 75 91 00         [24] 1132 	mov	_SFRS,#0x00
+                                   1133 ;	assignBit
+      00051E A2 AF            [12] 1134 	mov	c,_EA
+      000520 92 04            [24] 1135 	mov	_BIT_TMP,c
+                                   1136 ;	assignBit
+      000522 C2 AF            [12] 1137 	clr	_EA
+      000524 75 C7 AA         [24] 1138 	mov	_TA,#0xaa
+      000527 75 C7 55         [24] 1139 	mov	_TA,#0x55
+      00052A 43 A4 01         [24] 1140 	orl	_IAPTRG,#0x01
+                                   1141 ;	assignBit
+      00052D A2 04            [12] 1142 	mov	c,_BIT_TMP
+      00052F 92 AF            [24] 1143 	mov	_EA,c
+                                   1144 ;	..\ISP_UART0_main.c:112: for(flash_address=0x0000;flash_address<APROM_SIZE/PAGE_SIZE;flash_address++)
+      000531 AE 22            [24] 1145 	mov	r6,_flash_address
+      000533 AF 23            [24] 1146 	mov	r7,(_flash_address + 1)
+      000535 74 01            [12] 1147 	mov	a,#0x01
+      000537 2E               [12] 1148 	add	a,r6
+      000538 F5 22            [12] 1149 	mov	_flash_address,a
+      00053A E4               [12] 1150 	clr	a
+      00053B 3F               [12] 1151 	addc	a,r7
+      00053C F5 23            [12] 1152 	mov	(_flash_address + 1),a
+      00053E 80 B7            [24] 1153 	sjmp	00164$
+      000540                       1154 00123$:
+                                   1155 ;	..\ISP_UART0_main.c:118: Package_checksum();
+      000540 12 02 2F         [24] 1156 	lcall	_Package_checksum
+                                   1157 ;	..\ISP_UART0_main.c:119: Send_64byte_To_UART0();  
+      000543 12 02 9F         [24] 1158 	lcall	_Send_64byte_To_UART0
+                                   1159 ;	..\ISP_UART0_main.c:120: break;
+      000546 02 07 E8         [24] 1160 	ljmp	00142$
+                                   1161 ;	..\ISP_UART0_main.c:122: case CMD_READ_CONFIG:            
+      000549                       1162 00124$:
+                                   1163 ;	..\ISP_UART0_main.c:124: READ_CONFIG();
+      000549 12 01 73         [24] 1164 	lcall	_READ_CONFIG
+                                   1165 ;	..\ISP_UART0_main.c:125: Package_checksum();
+      00054C 12 02 2F         [24] 1166 	lcall	_Package_checksum
+                                   1167 ;	..\ISP_UART0_main.c:126: uart_txbuf[8]=CONF0;  
+      00054F 90 00 49         [24] 1168 	mov	dptr,#(_uart_txbuf + 0x0008)
+      000552 E5 36            [12] 1169 	mov	a,_CONF0
+      000554 F0               [24] 1170 	movx	@dptr,a
+                                   1171 ;	..\ISP_UART0_main.c:127: uart_txbuf[9]=CONF1;  
+      000555 90 00 4A         [24] 1172 	mov	dptr,#(_uart_txbuf + 0x0009)
+      000558 E5 37            [12] 1173 	mov	a,_CONF1
+      00055A F0               [24] 1174 	movx	@dptr,a
+                                   1175 ;	..\ISP_UART0_main.c:128: uart_txbuf[10]=CONF2;  
+      00055B 90 00 4B         [24] 1176 	mov	dptr,#(_uart_txbuf + 0x000a)
+      00055E E5 38            [12] 1177 	mov	a,_CONF2
+      000560 F0               [24] 1178 	movx	@dptr,a
+                                   1179 ;	..\ISP_UART0_main.c:129: uart_txbuf[11]=0xff;  
+      000561 90 00 4C         [24] 1180 	mov	dptr,#(_uart_txbuf + 0x000b)
+      000564 74 FF            [12] 1181 	mov	a,#0xff
+      000566 F0               [24] 1182 	movx	@dptr,a
+                                   1183 ;	..\ISP_UART0_main.c:130: uart_txbuf[12]=CONF4;  
+      000567 90 00 4D         [24] 1184 	mov	dptr,#(_uart_txbuf + 0x000c)
+      00056A E5 39            [12] 1185 	mov	a,_CONF4
+      00056C F0               [24] 1186 	movx	@dptr,a
+                                   1187 ;	..\ISP_UART0_main.c:131: uart_txbuf[13]=0xff;  
+      00056D 90 00 4E         [24] 1188 	mov	dptr,#(_uart_txbuf + 0x000d)
+      000570 74 FF            [12] 1189 	mov	a,#0xff
+      000572 F0               [24] 1190 	movx	@dptr,a
+                                   1191 ;	..\ISP_UART0_main.c:132: uart_txbuf[14]=0xff;            
+      000573 90 00 4F         [24] 1192 	mov	dptr,#(_uart_txbuf + 0x000e)
+      000576 F0               [24] 1193 	movx	@dptr,a
+                                   1194 ;	..\ISP_UART0_main.c:133: uart_txbuf[15]=0xff;
+      000577 90 00 50         [24] 1195 	mov	dptr,#(_uart_txbuf + 0x000f)
+      00057A F0               [24] 1196 	movx	@dptr,a
+                                   1197 ;	..\ISP_UART0_main.c:134: Send_64byte_To_UART0();  
+      00057B 12 02 9F         [24] 1198 	lcall	_Send_64byte_To_UART0
+                                   1199 ;	..\ISP_UART0_main.c:135: break;
+      00057E 02 07 E8         [24] 1200 	ljmp	00142$
+                                   1201 ;	..\ISP_UART0_main.c:138: case CMD_UPDATE_CONFIG:
+      000581                       1202 00125$:
+                                   1203 ;	..\ISP_UART0_main.c:140: recv_CONF0 = uart_rcvbuf[8];
+      000581 90 00 09         [24] 1204 	mov	dptr,#(_uart_rcvbuf + 0x0008)
+      000584 E0               [24] 1205 	movx	a,@dptr
+      000585 F5 3A            [12] 1206 	mov	_recv_CONF0,a
+                                   1207 ;	..\ISP_UART0_main.c:141: recv_CONF1 = uart_rcvbuf[9];
+      000587 90 00 0A         [24] 1208 	mov	dptr,#(_uart_rcvbuf + 0x0009)
+      00058A E0               [24] 1209 	movx	a,@dptr
+      00058B F5 3B            [12] 1210 	mov	_recv_CONF1,a
+                                   1211 ;	..\ISP_UART0_main.c:142: recv_CONF2 = uart_rcvbuf[10];
+      00058D 90 00 0B         [24] 1212 	mov	dptr,#(_uart_rcvbuf + 0x000a)
+      000590 E0               [24] 1213 	movx	a,@dptr
+      000591 F5 3C            [12] 1214 	mov	_recv_CONF2,a
+                                   1215 ;	..\ISP_UART0_main.c:143: recv_CONF4 = uart_rcvbuf[12];
+      000593 90 00 0D         [24] 1216 	mov	dptr,#(_uart_rcvbuf + 0x000c)
+      000596 E0               [24] 1217 	movx	a,@dptr
+      000597 F5 3D            [12] 1218 	mov	_recv_CONF4,a
+                                   1219 ;	..\ISP_UART0_main.c:146: set_IAPUEN_CFUEN;
+                                   1220 ;	assignBit
+      000599 A2 AF            [12] 1221 	mov	c,_EA
+      00059B 92 04            [24] 1222 	mov	_BIT_TMP,c
+                                   1223 ;	assignBit
+      00059D C2 AF            [12] 1224 	clr	_EA
+      00059F 75 C7 AA         [24] 1225 	mov	_TA,#0xaa
+      0005A2 75 C7 55         [24] 1226 	mov	_TA,#0x55
+      0005A5 43 A5 04         [24] 1227 	orl	_IAPUEN,#0x04
+                                   1228 ;	assignBit
+      0005A8 A2 04            [12] 1229 	mov	c,_BIT_TMP
+      0005AA 92 AF            [24] 1230 	mov	_EA,c
+                                   1231 ;	..\ISP_UART0_main.c:147: IAPCN = PAGE_ERASE_CONFIG;
+      0005AC 75 AF E2         [24] 1232 	mov	_IAPCN,#0xe2
+                                   1233 ;	..\ISP_UART0_main.c:148: IAPAL = 0x00;
+      0005AF 75 A6 00         [24] 1234 	mov	_IAPAL,#0x00
+                                   1235 ;	..\ISP_UART0_main.c:149: IAPAH = 0x00;
+      0005B2 75 A7 00         [24] 1236 	mov	_IAPAH,#0x00
+                                   1237 ;	..\ISP_UART0_main.c:150: IAPFD = 0xFF;
+      0005B5 75 AE FF         [24] 1238 	mov	_IAPFD,#0xff
+                                   1239 ;	..\ISP_UART0_main.c:151: set_IAPTRG_IAPGO;
+      0005B8 75 91 00         [24] 1240 	mov	_SFRS,#0x00
+                                   1241 ;	assignBit
+      0005BB A2 AF            [12] 1242 	mov	c,_EA
+      0005BD 92 04            [24] 1243 	mov	_BIT_TMP,c
+                                   1244 ;	assignBit
+      0005BF C2 AF            [12] 1245 	clr	_EA
+      0005C1 75 C7 AA         [24] 1246 	mov	_TA,#0xaa
+      0005C4 75 C7 55         [24] 1247 	mov	_TA,#0x55
+      0005C7 43 A4 01         [24] 1248 	orl	_IAPTRG,#0x01
+                                   1249 ;	assignBit
+      0005CA A2 04            [12] 1250 	mov	c,_BIT_TMP
+      0005CC 92 AF            [24] 1251 	mov	_EA,c
+                                   1252 ;	..\ISP_UART0_main.c:153: IAPCN = BYTE_PROGRAM_CONFIG;
+      0005CE 75 AF E1         [24] 1253 	mov	_IAPCN,#0xe1
+                                   1254 ;	..\ISP_UART0_main.c:154: IAPAL = 0x00;
+      0005D1 75 A6 00         [24] 1255 	mov	_IAPAL,#0x00
+                                   1256 ;	..\ISP_UART0_main.c:155: IAPAH = 0x00;
+      0005D4 75 A7 00         [24] 1257 	mov	_IAPAH,#0x00
+                                   1258 ;	..\ISP_UART0_main.c:156: IAPFD = recv_CONF0;
+      0005D7 85 3A AE         [24] 1259 	mov	_IAPFD,_recv_CONF0
+                                   1260 ;	..\ISP_UART0_main.c:157: set_IAPTRG_IAPGO;
+      0005DA 75 91 00         [24] 1261 	mov	_SFRS,#0x00
+                                   1262 ;	assignBit
+      0005DD A2 AF            [12] 1263 	mov	c,_EA
+      0005DF 92 04            [24] 1264 	mov	_BIT_TMP,c
+                                   1265 ;	assignBit
+      0005E1 C2 AF            [12] 1266 	clr	_EA
+      0005E3 75 C7 AA         [24] 1267 	mov	_TA,#0xaa
+      0005E6 75 C7 55         [24] 1268 	mov	_TA,#0x55
+      0005E9 43 A4 01         [24] 1269 	orl	_IAPTRG,#0x01
+                                   1270 ;	assignBit
+      0005EC A2 04            [12] 1271 	mov	c,_BIT_TMP
+      0005EE 92 AF            [24] 1272 	mov	_EA,c
+                                   1273 ;	..\ISP_UART0_main.c:158: IAPFD = recv_CONF1;
+      0005F0 85 3B AE         [24] 1274 	mov	_IAPFD,_recv_CONF1
+                                   1275 ;	..\ISP_UART0_main.c:159: IAPAL = 0x01;
+      0005F3 75 A6 01         [24] 1276 	mov	_IAPAL,#0x01
+                                   1277 ;	..\ISP_UART0_main.c:160: set_IAPTRG_IAPGO;
+      0005F6 75 91 00         [24] 1278 	mov	_SFRS,#0x00
+                                   1279 ;	assignBit
+      0005F9 A2 AF            [12] 1280 	mov	c,_EA
+      0005FB 92 04            [24] 1281 	mov	_BIT_TMP,c
+                                   1282 ;	assignBit
+      0005FD C2 AF            [12] 1283 	clr	_EA
+      0005FF 75 C7 AA         [24] 1284 	mov	_TA,#0xaa
+      000602 75 C7 55         [24] 1285 	mov	_TA,#0x55
+      000605 43 A4 01         [24] 1286 	orl	_IAPTRG,#0x01
+                                   1287 ;	assignBit
+      000608 A2 04            [12] 1288 	mov	c,_BIT_TMP
+      00060A 92 AF            [24] 1289 	mov	_EA,c
+                                   1290 ;	..\ISP_UART0_main.c:161: IAPAL = 0x02;
+      00060C 75 A6 02         [24] 1291 	mov	_IAPAL,#0x02
+                                   1292 ;	..\ISP_UART0_main.c:162: IAPFD = recv_CONF2;
+      00060F 85 3C AE         [24] 1293 	mov	_IAPFD,_recv_CONF2
+                                   1294 ;	..\ISP_UART0_main.c:163: set_IAPTRG_IAPGO;
+      000612 75 91 00         [24] 1295 	mov	_SFRS,#0x00
+                                   1296 ;	assignBit
+      000615 A2 AF            [12] 1297 	mov	c,_EA
+      000617 92 04            [24] 1298 	mov	_BIT_TMP,c
+                                   1299 ;	assignBit
+      000619 C2 AF            [12] 1300 	clr	_EA
+      00061B 75 C7 AA         [24] 1301 	mov	_TA,#0xaa
+      00061E 75 C7 55         [24] 1302 	mov	_TA,#0x55
+      000621 43 A4 01         [24] 1303 	orl	_IAPTRG,#0x01
+                                   1304 ;	assignBit
+      000624 A2 04            [12] 1305 	mov	c,_BIT_TMP
+      000626 92 AF            [24] 1306 	mov	_EA,c
+                                   1307 ;	..\ISP_UART0_main.c:164: IAPAL = 0x04;
+      000628 75 A6 04         [24] 1308 	mov	_IAPAL,#0x04
+                                   1309 ;	..\ISP_UART0_main.c:165: IAPFD = recv_CONF4;
+      00062B 85 3D AE         [24] 1310 	mov	_IAPFD,_recv_CONF4
+                                   1311 ;	..\ISP_UART0_main.c:166: set_IAPTRG_IAPGO;
+      00062E 75 91 00         [24] 1312 	mov	_SFRS,#0x00
+                                   1313 ;	assignBit
+      000631 A2 AF            [12] 1314 	mov	c,_EA
+      000633 92 04            [24] 1315 	mov	_BIT_TMP,c
+                                   1316 ;	assignBit
+      000635 C2 AF            [12] 1317 	clr	_EA
+      000637 75 C7 AA         [24] 1318 	mov	_TA,#0xaa
+      00063A 75 C7 55         [24] 1319 	mov	_TA,#0x55
+      00063D 43 A4 01         [24] 1320 	orl	_IAPTRG,#0x01
+                                   1321 ;	assignBit
+      000640 A2 04            [12] 1322 	mov	c,_BIT_TMP
+      000642 92 AF            [24] 1323 	mov	_EA,c
+                                   1324 ;	..\ISP_UART0_main.c:167: clr_IAPUEN_CFUEN;
+                                   1325 ;	assignBit
+      000644 A2 AF            [12] 1326 	mov	c,_EA
+      000646 92 04            [24] 1327 	mov	_BIT_TMP,c
+                                   1328 ;	assignBit
+      000648 C2 AF            [12] 1329 	clr	_EA
+      00064A 75 C7 AA         [24] 1330 	mov	_TA,#0xaa
+      00064D 75 C7 55         [24] 1331 	mov	_TA,#0x55
+      000650 53 A5 FB         [24] 1332 	anl	_IAPUEN,#0xfb
+                                   1333 ;	assignBit
+      000653 A2 04            [12] 1334 	mov	c,_BIT_TMP
+      000655 92 AF            [24] 1335 	mov	_EA,c
+                                   1336 ;	..\ISP_UART0_main.c:169: READ_CONFIG();
+      000657 12 01 73         [24] 1337 	lcall	_READ_CONFIG
+                                   1338 ;	..\ISP_UART0_main.c:170: Package_checksum();
+      00065A 12 02 2F         [24] 1339 	lcall	_Package_checksum
+                                   1340 ;	..\ISP_UART0_main.c:171: uart_txbuf[8]=CONF0;
+      00065D 90 00 49         [24] 1341 	mov	dptr,#(_uart_txbuf + 0x0008)
+      000660 E5 36            [12] 1342 	mov	a,_CONF0
+      000662 F0               [24] 1343 	movx	@dptr,a
+                                   1344 ;	..\ISP_UART0_main.c:172: uart_txbuf[9]=CONF1;
+      000663 90 00 4A         [24] 1345 	mov	dptr,#(_uart_txbuf + 0x0009)
+      000666 E5 37            [12] 1346 	mov	a,_CONF1
+      000668 F0               [24] 1347 	movx	@dptr,a
+                                   1348 ;	..\ISP_UART0_main.c:173: uart_txbuf[10]=CONF2;
+      000669 90 00 4B         [24] 1349 	mov	dptr,#(_uart_txbuf + 0x000a)
+      00066C E5 38            [12] 1350 	mov	a,_CONF2
+      00066E F0               [24] 1351 	movx	@dptr,a
+                                   1352 ;	..\ISP_UART0_main.c:174: uart_txbuf[11]=0xff;
+      00066F 90 00 4C         [24] 1353 	mov	dptr,#(_uart_txbuf + 0x000b)
+      000672 74 FF            [12] 1354 	mov	a,#0xff
+      000674 F0               [24] 1355 	movx	@dptr,a
+                                   1356 ;	..\ISP_UART0_main.c:175: uart_txbuf[12]=CONF4;
+      000675 90 00 4D         [24] 1357 	mov	dptr,#(_uart_txbuf + 0x000c)
+      000678 E5 39            [12] 1358 	mov	a,_CONF4
+      00067A F0               [24] 1359 	movx	@dptr,a
+                                   1360 ;	..\ISP_UART0_main.c:176: uart_txbuf[13]=0xff;
+      00067B 90 00 4E         [24] 1361 	mov	dptr,#(_uart_txbuf + 0x000d)
+      00067E 74 FF            [12] 1362 	mov	a,#0xff
+      000680 F0               [24] 1363 	movx	@dptr,a
+                                   1364 ;	..\ISP_UART0_main.c:177: uart_txbuf[14]=0xff;
+      000681 90 00 4F         [24] 1365 	mov	dptr,#(_uart_txbuf + 0x000e)
+      000684 F0               [24] 1366 	movx	@dptr,a
+                                   1367 ;	..\ISP_UART0_main.c:178: uart_txbuf[15]=0xff;
+      000685 90 00 50         [24] 1368 	mov	dptr,#(_uart_txbuf + 0x000f)
+      000688 F0               [24] 1369 	movx	@dptr,a
+                                   1370 ;	..\ISP_UART0_main.c:179: Send_64byte_To_UART0();
+      000689 12 02 9F         [24] 1371 	lcall	_Send_64byte_To_UART0
+                                   1372 ;	..\ISP_UART0_main.c:180: break;
+      00068C 02 07 E8         [24] 1373 	ljmp	00142$
+                                   1374 ;	..\ISP_UART0_main.c:183: case CMD_UPDATE_APROM:
+      00068F                       1375 00126$:
+                                   1376 ;	..\ISP_UART0_main.c:186: set_IAPUEN_APUEN;
+                                   1377 ;	assignBit
+      00068F A2 AF            [12] 1378 	mov	c,_EA
+      000691 92 04            [24] 1379 	mov	_BIT_TMP,c
+                                   1380 ;	assignBit
+      000693 C2 AF            [12] 1381 	clr	_EA
+      000695 75 C7 AA         [24] 1382 	mov	_TA,#0xaa
+      000698 75 C7 55         [24] 1383 	mov	_TA,#0x55
+      00069B 43 A5 01         [24] 1384 	orl	_IAPUEN,#0x01
+                                   1385 ;	assignBit
+      00069E A2 04            [12] 1386 	mov	c,_BIT_TMP
+      0006A0 92 AF            [24] 1387 	mov	_EA,c
+                                   1388 ;	..\ISP_UART0_main.c:187: IAPFD = 0xFF;          //Erase must set IAPFD = 0xFF
+      0006A2 75 AE FF         [24] 1389 	mov	_IAPFD,#0xff
+                                   1390 ;	..\ISP_UART0_main.c:188: IAPCN = PAGE_ERASE_AP;
+      0006A5 75 AF 22         [24] 1391 	mov	_IAPCN,#0x22
+                                   1392 ;	..\ISP_UART0_main.c:190: for(flash_address=0x0000;flash_address<APROM_SIZE/PAGE_SIZE;flash_address++)
+      0006A8 E4               [12] 1393 	clr	a
+      0006A9 F5 22            [12] 1394 	mov	_flash_address,a
+      0006AB F5 23            [12] 1395 	mov	(_flash_address + 1),a
+      0006AD                       1396 00167$:
+      0006AD C3               [12] 1397 	clr	c
+      0006AE E5 22            [12] 1398 	mov	a,_flash_address
+      0006B0 94 E0            [12] 1399 	subb	a,#0xe0
+      0006B2 E5 23            [12] 1400 	mov	a,(_flash_address + 1)
+      0006B4 94 00            [12] 1401 	subb	a,#0x00
+      0006B6 50 3E            [24] 1402 	jnc	00127$
+                                   1403 ;	..\ISP_UART0_main.c:192: IAPAL = LOBYTE(flash_address*PAGE_SIZE);
+      0006B8 E5 22            [12] 1404 	mov	a,_flash_address
+      0006BA 75 F0 80         [24] 1405 	mov	b,#0x80
+      0006BD A4               [48] 1406 	mul	ab
+      0006BE FF               [12] 1407 	mov	r7,a
+      0006BF 8F A6            [24] 1408 	mov	_IAPAL,r7
+                                   1409 ;	..\ISP_UART0_main.c:193: IAPAH = HIBYTE(flash_address*PAGE_SIZE);
+      0006C1 AE 22            [24] 1410 	mov	r6,_flash_address
+      0006C3 E5 23            [12] 1411 	mov	a,(_flash_address + 1)
+      0006C5 54 01            [12] 1412 	anl	a,#0x01
+      0006C7 A2 E0            [12] 1413 	mov	c,acc.0
+      0006C9 CE               [12] 1414 	xch	a,r6
+      0006CA 13               [12] 1415 	rrc	a
+      0006CB CE               [12] 1416 	xch	a,r6
+      0006CC 13               [12] 1417 	rrc	a
+      0006CD CE               [12] 1418 	xch	a,r6
+      0006CE FF               [12] 1419 	mov	r7,a
+      0006CF 8F A7            [24] 1420 	mov	_IAPAH,r7
+                                   1421 ;	..\ISP_UART0_main.c:194: set_IAPTRG_IAPGO;
+      0006D1 75 91 00         [24] 1422 	mov	_SFRS,#0x00
+                                   1423 ;	assignBit
+      0006D4 A2 AF            [12] 1424 	mov	c,_EA
+      0006D6 92 04            [24] 1425 	mov	_BIT_TMP,c
+                                   1426 ;	assignBit
+      0006D8 C2 AF            [12] 1427 	clr	_EA
+      0006DA 75 C7 AA         [24] 1428 	mov	_TA,#0xaa
+      0006DD 75 C7 55         [24] 1429 	mov	_TA,#0x55
+      0006E0 43 A4 01         [24] 1430 	orl	_IAPTRG,#0x01
+                                   1431 ;	assignBit
+      0006E3 A2 04            [12] 1432 	mov	c,_BIT_TMP
+      0006E5 92 AF            [24] 1433 	mov	_EA,c
+                                   1434 ;	..\ISP_UART0_main.c:190: for(flash_address=0x0000;flash_address<APROM_SIZE/PAGE_SIZE;flash_address++)
+      0006E7 AE 22            [24] 1435 	mov	r6,_flash_address
+      0006E9 AF 23            [24] 1436 	mov	r7,(_flash_address + 1)
+      0006EB 74 01            [12] 1437 	mov	a,#0x01
+      0006ED 2E               [12] 1438 	add	a,r6
+      0006EE F5 22            [12] 1439 	mov	_flash_address,a
+      0006F0 E4               [12] 1440 	clr	a
+      0006F1 3F               [12] 1441 	addc	a,r7
+      0006F2 F5 23            [12] 1442 	mov	(_flash_address + 1),a
+      0006F4 80 B7            [24] 1443 	sjmp	00167$
+      0006F6                       1444 00127$:
+                                   1445 ;	..\ISP_UART0_main.c:197: g_totalchecksum=0;
+      0006F6 E4               [12] 1446 	clr	a
+      0006F7 F5 2E            [12] 1447 	mov	_g_totalchecksum,a
+      0006F9 F5 2F            [12] 1448 	mov	(_g_totalchecksum + 1),a
+      0006FB F5 30            [12] 1449 	mov	(_g_totalchecksum + 2),a
+      0006FD F5 31            [12] 1450 	mov	(_g_totalchecksum + 3),a
+                                   1451 ;	..\ISP_UART0_main.c:198: flash_address=0;
+      0006FF F5 22            [12] 1452 	mov	_flash_address,a
+      000701 F5 23            [12] 1453 	mov	(_flash_address + 1),a
+                                   1454 ;	..\ISP_UART0_main.c:199: AP_size=0;
+      000703 F5 24            [12] 1455 	mov	_AP_size,a
+      000705 F5 25            [12] 1456 	mov	(_AP_size + 1),a
+                                   1457 ;	..\ISP_UART0_main.c:200: AP_size=uart_rcvbuf[12];
+      000707 90 00 0D         [24] 1458 	mov	dptr,#(_uart_rcvbuf + 0x000c)
+      00070A E0               [24] 1459 	movx	a,@dptr
+      00070B FF               [12] 1460 	mov	r7,a
+      00070C 8F 24            [24] 1461 	mov	_AP_size,r7
+      00070E 75 25 00         [24] 1462 	mov	(_AP_size + 1),#0x00
+                                   1463 ;	..\ISP_UART0_main.c:201: AP_size|=(uart_rcvbuf[13]<<8);  
+      000711 90 00 0E         [24] 1464 	mov	dptr,#(_uart_rcvbuf + 0x000d)
+      000714 E0               [24] 1465 	movx	a,@dptr
+      000715 FE               [12] 1466 	mov	r6,a
+      000716 E4               [12] 1467 	clr	a
+      000717 FF               [12] 1468 	mov	r7,a
+      000718 42 24            [12] 1469 	orl	_AP_size,a
+      00071A EE               [12] 1470 	mov	a,r6
+      00071B 42 25            [12] 1471 	orl	(_AP_size + 1),a
+                                   1472 ;	..\ISP_UART0_main.c:202: g_progarmflag=1;
+                                   1473 ;	assignBit
+      00071D D2 03            [12] 1474 	setb	_g_progarmflag
+                                   1475 ;	..\ISP_UART0_main.c:204: for(count=16;count<64;count++)
+      00071F 75 27 10         [24] 1476 	mov	_count,#0x10
+      000722                       1477 00170$:
+      000722 74 C0            [12] 1478 	mov	a,#0x100 - 0x40
+      000724 25 27            [12] 1479 	add	a,_count
+      000726 50 03            [24] 1480 	jnc	00313$
+      000728 02 07 D4         [24] 1481 	ljmp	00141$
+      00072B                       1482 00313$:
+                                   1483 ;	..\ISP_UART0_main.c:206: IAPCN = BYTE_PROGRAM_AP;
+      00072B 75 AF 21         [24] 1484 	mov	_IAPCN,#0x21
+                                   1485 ;	..\ISP_UART0_main.c:207: IAPAL = flash_address&0xff;
+      00072E 85 22 A6         [24] 1486 	mov	_IAPAL,_flash_address
+                                   1487 ;	..\ISP_UART0_main.c:208: IAPAH = (flash_address>>8)&0xff;
+      000731 85 23 A7         [24] 1488 	mov	_IAPAH,(_flash_address + 1)
+                                   1489 ;	..\ISP_UART0_main.c:209: IAPFD=uart_rcvbuf[count];
+      000734 E5 27            [12] 1490 	mov	a,_count
+      000736 24 01            [12] 1491 	add	a,#_uart_rcvbuf
+      000738 F5 82            [12] 1492 	mov	dpl,a
+      00073A E4               [12] 1493 	clr	a
+      00073B 34 00            [12] 1494 	addc	a,#(_uart_rcvbuf >> 8)
+      00073D F5 83            [12] 1495 	mov	dph,a
+      00073F E0               [24] 1496 	movx	a,@dptr
+      000740 F5 AE            [12] 1497 	mov	_IAPFD,a
+                                   1498 ;	..\ISP_UART0_main.c:210: set_IAPTRG_IAPGO;                              
+      000742 75 91 00         [24] 1499 	mov	_SFRS,#0x00
+                                   1500 ;	assignBit
+      000745 A2 AF            [12] 1501 	mov	c,_EA
+      000747 92 04            [24] 1502 	mov	_BIT_TMP,c
+                                   1503 ;	assignBit
+      000749 C2 AF            [12] 1504 	clr	_EA
+      00074B 75 C7 AA         [24] 1505 	mov	_TA,#0xaa
+      00074E 75 C7 55         [24] 1506 	mov	_TA,#0x55
+      000751 43 A4 01         [24] 1507 	orl	_IAPTRG,#0x01
+                                   1508 ;	assignBit
+      000754 A2 04            [12] 1509 	mov	c,_BIT_TMP
+      000756 92 AF            [24] 1510 	mov	_EA,c
+                                   1511 ;	..\ISP_UART0_main.c:212: IAPCN = BYTE_READ_AP;                //program byte verify
+      000758 75 AF 00         [24] 1512 	mov	_IAPCN,#0x00
+                                   1513 ;	..\ISP_UART0_main.c:213: set_IAPTRG_IAPGO;                          
+      00075B 75 91 00         [24] 1514 	mov	_SFRS,#0x00
+                                   1515 ;	assignBit
+      00075E A2 AF            [12] 1516 	mov	c,_EA
+      000760 92 04            [24] 1517 	mov	_BIT_TMP,c
+                                   1518 ;	assignBit
+      000762 C2 AF            [12] 1519 	clr	_EA
+      000764 75 C7 AA         [24] 1520 	mov	_TA,#0xaa
+      000767 75 C7 55         [24] 1521 	mov	_TA,#0x55
+      00076A 43 A4 01         [24] 1522 	orl	_IAPTRG,#0x01
+                                   1523 ;	assignBit
+      00076D A2 04            [12] 1524 	mov	c,_BIT_TMP
+      00076F 92 AF            [24] 1525 	mov	_EA,c
+                                   1526 ;	..\ISP_UART0_main.c:214: if(IAPFD!=uart_rcvbuf[count])
+      000771 E5 27            [12] 1527 	mov	a,_count
+      000773 24 01            [12] 1528 	add	a,#_uart_rcvbuf
+      000775 F5 82            [12] 1529 	mov	dpl,a
+      000777 E4               [12] 1530 	clr	a
+      000778 34 00            [12] 1531 	addc	a,#(_uart_rcvbuf >> 8)
+      00077A F5 83            [12] 1532 	mov	dph,a
+      00077C E0               [24] 1533 	movx	a,@dptr
+      00077D FF               [12] 1534 	mov	r7,a
+      00077E B5 AE 02         [24] 1535 	cjne	a,_IAPFD,00314$
+      000781 80 02            [24] 1536 	sjmp	00132$
+      000783                       1537 00314$:
+                                   1538 ;	..\ISP_UART0_main.c:215: while(1);          
+      000783                       1539 00129$:
+      000783 80 FE            [24] 1540 	sjmp	00129$
+      000785                       1541 00132$:
+                                   1542 ;	..\ISP_UART0_main.c:216: if (CHPCON==0x43)                //if error flag set, program error stop ISP
+      000785 74 43            [12] 1543 	mov	a,#0x43
+      000787 B5 9F 02         [24] 1544 	cjne	a,_CHPCON,00137$
+                                   1545 ;	..\ISP_UART0_main.c:217: while(1);
+      00078A                       1546 00134$:
+      00078A 80 FE            [24] 1547 	sjmp	00134$
+      00078C                       1548 00137$:
+                                   1549 ;	..\ISP_UART0_main.c:219: g_totalchecksum=g_totalchecksum+uart_rcvbuf[count];
+      00078C E5 27            [12] 1550 	mov	a,_count
+      00078E 24 01            [12] 1551 	add	a,#_uart_rcvbuf
+      000790 F5 82            [12] 1552 	mov	dpl,a
+      000792 E4               [12] 1553 	clr	a
+      000793 34 00            [12] 1554 	addc	a,#(_uart_rcvbuf >> 8)
+      000795 F5 83            [12] 1555 	mov	dph,a
+      000797 E0               [24] 1556 	movx	a,@dptr
+      000798 FF               [12] 1557 	mov	r7,a
+      000799 E4               [12] 1558 	clr	a
+      00079A FE               [12] 1559 	mov	r6,a
+      00079B FD               [12] 1560 	mov	r5,a
+      00079C FC               [12] 1561 	mov	r4,a
+      00079D EF               [12] 1562 	mov	a,r7
+      00079E 25 2E            [12] 1563 	add	a,_g_totalchecksum
+      0007A0 F5 2E            [12] 1564 	mov	_g_totalchecksum,a
+      0007A2 EE               [12] 1565 	mov	a,r6
+      0007A3 35 2F            [12] 1566 	addc	a,(_g_totalchecksum + 1)
+      0007A5 F5 2F            [12] 1567 	mov	(_g_totalchecksum + 1),a
+      0007A7 ED               [12] 1568 	mov	a,r5
+      0007A8 35 30            [12] 1569 	addc	a,(_g_totalchecksum + 2)
+      0007AA F5 30            [12] 1570 	mov	(_g_totalchecksum + 2),a
+      0007AC EC               [12] 1571 	mov	a,r4
+      0007AD 35 31            [12] 1572 	addc	a,(_g_totalchecksum + 3)
+      0007AF F5 31            [12] 1573 	mov	(_g_totalchecksum + 3),a
+                                   1574 ;	..\ISP_UART0_main.c:220: flash_address++;
+      0007B1 AE 22            [24] 1575 	mov	r6,_flash_address
+      0007B3 AF 23            [24] 1576 	mov	r7,(_flash_address + 1)
+      0007B5 74 01            [12] 1577 	mov	a,#0x01
+      0007B7 2E               [12] 1578 	add	a,r6
+      0007B8 F5 22            [12] 1579 	mov	_flash_address,a
+      0007BA E4               [12] 1580 	clr	a
+      0007BB 3F               [12] 1581 	addc	a,r7
+      0007BC F5 23            [12] 1582 	mov	(_flash_address + 1),a
+                                   1583 ;	..\ISP_UART0_main.c:222: if(flash_address==AP_size)
+      0007BE E5 24            [12] 1584 	mov	a,_AP_size
+      0007C0 B5 22 09         [24] 1585 	cjne	a,_flash_address,00171$
+      0007C3 E5 25            [12] 1586 	mov	a,(_AP_size + 1)
+      0007C5 B5 23 04         [24] 1587 	cjne	a,(_flash_address + 1),00171$
+                                   1588 ;	..\ISP_UART0_main.c:224: g_progarmflag=0;
+                                   1589 ;	assignBit
+      0007C8 C2 03            [12] 1590 	clr	_g_progarmflag
+                                   1591 ;	..\ISP_UART0_main.c:225: goto END_1;          
+      0007CA 80 08            [24] 1592 	sjmp	00141$
+      0007CC                       1593 00171$:
+                                   1594 ;	..\ISP_UART0_main.c:204: for(count=16;count<64;count++)
+      0007CC E5 27            [12] 1595 	mov	a,_count
+      0007CE 04               [12] 1596 	inc	a
+      0007CF F5 27            [12] 1597 	mov	_count,a
+      0007D1 02 07 22         [24] 1598 	ljmp	00170$
+                                   1599 ;	..\ISP_UART0_main.c:228: END_1:                
+      0007D4                       1600 00141$:
+                                   1601 ;	..\ISP_UART0_main.c:229: Package_checksum();
+      0007D4 12 02 2F         [24] 1602 	lcall	_Package_checksum
+                                   1603 ;	..\ISP_UART0_main.c:230: uart_txbuf[8]=g_totalchecksum&0xff;
+      0007D7 AF 2E            [24] 1604 	mov	r7,_g_totalchecksum
+      0007D9 90 00 49         [24] 1605 	mov	dptr,#(_uart_txbuf + 0x0008)
+      0007DC EF               [12] 1606 	mov	a,r7
+      0007DD F0               [24] 1607 	movx	@dptr,a
+                                   1608 ;	..\ISP_UART0_main.c:231: uart_txbuf[9]=(g_totalchecksum>>8)&0xff;
+      0007DE AF 2F            [24] 1609 	mov	r7,(_g_totalchecksum + 1)
+      0007E0 90 00 4A         [24] 1610 	mov	dptr,#(_uart_txbuf + 0x0009)
+      0007E3 EF               [12] 1611 	mov	a,r7
+      0007E4 F0               [24] 1612 	movx	@dptr,a
+                                   1613 ;	..\ISP_UART0_main.c:232: Send_64byte_To_UART0();  
+      0007E5 12 02 9F         [24] 1614 	lcall	_Send_64byte_To_UART0
+                                   1615 ;	..\ISP_UART0_main.c:235: }  
+      0007E8                       1616 00142$:
+                                   1617 ;	..\ISP_UART0_main.c:236: bUartDataReady = FALSE;
+                                   1618 ;	assignBit
+      0007E8 C2 00            [12] 1619 	clr	_bUartDataReady
+                                   1620 ;	..\ISP_UART0_main.c:237: bufhead = 0;            
+      0007EA 75 21 00         [24] 1621 	mov	_bufhead,#0x00
+                                   1622 ;	..\ISP_UART0_main.c:238: EA=1;
+                                   1623 ;	assignBit
+      0007ED D2 AF            [12] 1624 	setb	_EA
+      0007EF                       1625 00144$:
+                                   1626 ;	..\ISP_UART0_main.c:241: if(g_timer0Over==1)
+      0007EF 20 01 1F         [24] 1627 	jb	_g_timer0Over,00156$
+                                   1628 ;	..\ISP_UART0_main.c:247: if(g_timer1Over==1)
+      0007F2 20 02 03         [24] 1629 	jb	_g_timer1Over,00320$
+      0007F5 02 03 86         [24] 1630 	ljmp	00154$
+      0007F8                       1631 00320$:
+                                   1632 ;	..\ISP_UART0_main.c:249: if((bufhead<64)&&(bufhead>0)||(bufhead>64))
+      0007F8 74 C0            [12] 1633 	mov	a,#0x100 - 0x40
+      0007FA 25 21            [12] 1634 	add	a,_bufhead
+      0007FC 40 04            [24] 1635 	jc	00150$
+      0007FE E5 21            [12] 1636 	mov	a,_bufhead
+      000800 70 09            [24] 1637 	jnz	00147$
+      000802                       1638 00150$:
+      000802 E5 21            [12] 1639 	mov	a,_bufhead
+      000804 24 BF            [12] 1640 	add	a,#0xff - 0x40
+      000806 40 03            [24] 1641 	jc	00323$
+      000808 02 03 86         [24] 1642 	ljmp	00154$
+      00080B                       1643 00323$:
+      00080B                       1644 00147$:
+                                   1645 ;	..\ISP_UART0_main.c:251: bufhead=0;         
+      00080B 75 21 00         [24] 1646 	mov	_bufhead,#0x00
+      00080E 02 03 86         [24] 1647 	ljmp	00154$
+                                   1648 ;	..\ISP_UART0_main.c:257: _APROM:
+      000811                       1649 00156$:
+                                   1650 ;	..\ISP_UART0_main.c:258: MODIFY_HIRC_16();
+      000811 12 00 AF         [24] 1651 	lcall	_MODIFY_HIRC_16
+                                   1652 ;	..\ISP_UART0_main.c:259: clr_CHPCON_IAPEN;
+      000814 75 91 00         [24] 1653 	mov	_SFRS,#0x00
+                                   1654 ;	assignBit
+      000817 A2 AF            [12] 1655 	mov	c,_EA
+      000819 92 04            [24] 1656 	mov	_BIT_TMP,c
+                                   1657 ;	assignBit
+      00081B C2 AF            [12] 1658 	clr	_EA
+      00081D 75 C7 AA         [24] 1659 	mov	_TA,#0xaa
+      000820 75 C7 55         [24] 1660 	mov	_TA,#0x55
+      000823 53 9F FE         [24] 1661 	anl	_CHPCON,#0xfe
+                                   1662 ;	assignBit
+      000826 A2 04            [12] 1663 	mov	c,_BIT_TMP
+      000828 92 AF            [24] 1664 	mov	_EA,c
+                                   1665 ;	..\ISP_UART0_main.c:260: TA = 0xAA;
+      00082A 75 C7 AA         [24] 1666 	mov	_TA,#0xaa
+                                   1667 ;	..\ISP_UART0_main.c:261: TA = 0x55;
+      00082D 75 C7 55         [24] 1668 	mov	_TA,#0x55
+                                   1669 ;	..\ISP_UART0_main.c:262: CHPCON &= 0xFD;                  //set boot from AP
+      000830 53 9F FD         [24] 1670 	anl	_CHPCON,#0xfd
+                                   1671 ;	..\ISP_UART0_main.c:263: TA = 0xAA;
+      000833 75 C7 AA         [24] 1672 	mov	_TA,#0xaa
+                                   1673 ;	..\ISP_UART0_main.c:264: TA = 0x55;
+      000836 75 C7 55         [24] 1674 	mov	_TA,#0x55
+                                   1675 ;	..\ISP_UART0_main.c:265: CHPCON |= 0x80;                   //software reset enable
+      000839 43 9F 80         [24] 1676 	orl	_CHPCON,#0x80
+                                   1677 ;	..\ISP_UART0_main.c:268: while(1);  
+      00083C                       1678 00158$:
+                                   1679 ;	..\ISP_UART0_main.c:269: }
+      00083C 80 FE            [24] 1680 	sjmp	00158$
+                                   1681 	.area CSEG    (CODE)
+                                   1682 	.area CONST   (CODE)
+                                   1683 	.area XINIT   (CODE)
+                                   1684 	.area CABS    (ABS,CODE)
